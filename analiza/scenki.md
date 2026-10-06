@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `bf76fb6`, 2026-10-06.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `4b16da2`, 2026-10-06.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -18,7 +18,7 @@ Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), 
 
 Każda scenka ma ten sam układ ekranu:
 
-1. Nagłówek: poziom (🟢 / 🟡 / 🔴) i etykieta kategorii.
+1. Nagłówek: poziom (🟢 / 🟡 / 🔴).
 2. Kontekst sytuacji (pole `ctx`).
 3. Wypowiedź nastolatka w cudzysłowie (pole `says`).
 4. Pytanie **„Co odpowiadasz?”** i pole na odpowiedź pisaną własnymi słowami.
@@ -29,13 +29,7 @@ Pola `emo` (emocja docelowa) i `dist` (trzy dystraktory) są zapisane w bazie pr
 
 Pole `sex` (płeć nastolatka: `m` albo `f`) ustala formy „Nastolatek/Nastolatka”, „zrozumiany/zrozumiana”, „jego/jej” na ekranach i trafia do oceny AI.
 
-Etykieta kategorii w nagłówku nie jest przypisana do scenki: aplikacja losuje ją przy każdym wyświetleniu z puli danego poziomu:
-
-- poziom 1: Szkoła, Emocje, Rówieśnicy, Presja, Ciało, Lęk, Smutek, Samotność
-- poziom 2: Autonomia, Granice, Telefon, Przyszłość, Relacje, Kontrola, Zmęczenie, Obowiązki
-- poziom 3: Konflikt, Złość na rodzica, Granice, Kontrola, Prywatność, Bunt, Autonomia
-
-Dlatego w eksporcie zamiast niej jest podział na sekcje z komentarzy w kodzie bazy.
+Podział na sekcje w tym eksporcie pochodzi z komentarzy w kodzie bazy; aplikacja go nie wyświetla (dawna etykieta kategorii, losowana niezależnie od treści, jest usunięta).
 
 Scenka Dnia to jedna z tych samych 187 scenek, wybierana na podstawie daty spośród wszystkich poziomów naraz.
 
@@ -124,7 +118,7 @@ Rozkład wieku: 13 lat (18) · 14 lat (36) · 15 lat (58) · 16 lat (46) · 17 l
 
 **10.** `id 103` · chłopak, 13 l.  
 *13-latek przygotowuje się do odpowiedzi ustnej, nerwowo przekładając kartki.*  
-„Jak mnie wywoła do tablicy, to chyba tam zemleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.”  
+„Jak mnie wywoła do tablicy, to chyba tam zemdleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.”  
 → emocja: **strach** · dystraktory: przytłoczenie, niepewność, bezsilność
 
 **11.** `id 104` · chłopak, 15 l.  
@@ -1044,7 +1038,7 @@ W kodzie ten poziom nie ma podsekcji.
 
 ### Scenka próbna (onboarding, przy pierwszym uruchomieniu)
 
-🟢 Poziom 1 · Szkoła. Ta sama treść co scenka `id 8`.
+🟢 Poziom 1. Ta sama treść co scenka `id 8`.
 
 *14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.*  
 „Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.”  
