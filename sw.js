@@ -3,7 +3,7 @@
 // Codzienne powiadomienia o 20:00 + cache offline
 // ══════════════════════════════════════════════════════════════
 
-const CACHE_NAME = 'uslyszmnie-v5';
+const CACHE_NAME = 'uslyszmnie-v6';
 
 // Install — cache kluczowych zasobów
 self.addEventListener('install', (event) => {
