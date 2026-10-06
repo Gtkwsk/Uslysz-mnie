@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f5f0eb">
+<meta name="description" content="Czy umiesz słuchać nastolatka? Sprawdź się w jednej scence.">
+<meta property="og:title" content="Usłysz Mnie — Czy umiesz słuchać nastolatka?">
+<meta property="og:description" content="90% rodziców wpada w pułapkę. Sprawdź czy Ty też.">
+<meta property="og:type" content="website">
+<title>Usłysz Mnie — Sprawdź się</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#f5f0eb;--card:#fff;--ac:#e07842;--acd:#c45a24;--acl:#fce8db;--tx:#1a1512;--ts:#4a4038;--tm:#8a7e74;--bd:#e0d8d0;--gn:#1a8a5a;--gl:#d4f5e4;--rd:#d94040;--rl:#fde0e0;--wm:#fdf4ec}
+body{font-family:'Lora',serif;background:var(--bg);color:var(--tx);min-height:100dvh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:480px;margin:0 auto;padding:0 18px 60px;min-height:100dvh}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:44px 0 28px}
+.hero-ear{font-size:48px;margin-bottom:12px;display:block}
+.hero h1{font-family:'Lora',serif;font-size:26px;font-weight:700;color:var(--tx);line-height:1.35;margin-bottom:8px}
+.hero h1 span{color:var(--ac)}
+.hero-sub{font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--tm);line-height:1.5}
+
+/* ── SCENKA CARD ── */
+.scene-card{background:var(--card);border-radius:20px;padding:24px 20px;box-shadow:0 2px 16px rgba(0,0,0,.06);margin-bottom:24px;animation:fu .6s ease-out both}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.scene-ctx{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);margin-bottom:16px;line-height:1.5;padding-left:12px;border-left:3px solid var(--acl)}
+
+/* ── BAŃKA NASTOLATKA — styl z apki ── */
+.teen-wrap{display:flex;align-items:flex-end;gap:10px;margin-bottom:6px}
+.teen-avatar{font-size:28px;flex-shrink:0;margin-bottom:4px}
+.teen-bubble{background:var(--card);border-radius:18px 18px 18px 4px;padding:14px 18px;box-shadow:0 1px 6px rgba(0,0,0,.08);position:relative;border:1px solid var(--bd)}
+.teen-bubble .teen-name{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-style:normal}
+.teen-bubble p{font-size:16.5px;line-height:1.55;color:var(--ts);font-style:italic;margin:0}
+
+/* ── PYTANIE ── */
+.scene-q{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:var(--ts);text-align:center;margin:22px 0 16px}
+
+/* ── OPCJE QUIZU ── */
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{background:var(--wm);border:2px solid transparent;border-radius:14px;padding:13px 14px;font-family:'Lora',serif;font-size:15px;line-height:1.5;color:var(--ts);cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:flex-start;gap:10px}
+.opt:active{transform:scale(.98)}
+.opt:hover{border-color:var(--ac);background:var(--acl)}
+.opt-letter{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:14px;color:var(--tm);flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s}
+.opt:hover .opt-letter{color:var(--ac);background:var(--acl)}
+.opt-text{flex:1}
+.opt.correct{border-color:var(--gn);background:var(--gl);cursor:default}
+.opt.correct .opt-letter{color:#fff;background:var(--gn)}
+.opt.wrong{border-color:var(--rd);background:var(--rl);cursor:default;opacity:.75}
+.opt.wrong .opt-letter{color:#fff;background:var(--rd)}
+.opt.dimmed{opacity:.35;cursor:default}
+
+/* ── FEEDBACK ── */
+.fb{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s ease-out, opacity .4s ease-out .1s}
+.fb.show{max-height:500px;opacity:1}
+.fb-inner{padding:20px 0 0}
+.fb-box{border-radius:14px;padding:16px;margin-bottom:12px;line-height:1.6}
+.fb-box.good{background:var(--gl);border-left:3.5px solid var(--gn)}
+.fb-box.bad{background:var(--rl);border-left:3.5px solid var(--rd)}
+.fb-box p{font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--ts)}
+.fb-box .fb-title{font-weight:700;margin-bottom:4px;display:block;color:var(--tx)}
+.fb-stat{font-family:'Source Sans 3',sans-serif;font-size:13.5px;color:var(--tm);text-align:center;margin-bottom:4px}
+
+/* ── CTA ── */
+.cta-box{text-align:center;margin-top:24px}
+.cta{display:inline-block;background:var(--ac);color:#fff;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:17px;padding:16px 40px;border-radius:16px;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(224,120,66,.3)}
+.cta:hover{background:var(--acd);transform:translateY(-1px);box-shadow:0 6px 20px rgba(224,120,66,.4)}
+.cta:active{transform:scale(.97)}
+.cta-note{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);margin-top:10px}
+
+/* ── FOOTER ── */
+.foot{text-align:center;padding:36px 0 20px}
+.foot p{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--tm);line-height:1.6}
+.foot-method{font-weight:600;color:var(--ts)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="hero-ear">👂</span>
+    <h1>Czy <span>umiesz słuchać</span><br>nastolatka?</h1>
+  </div>
+
+  <div class="scene-card">
+    <div class="scene-ctx">15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi.</div>
+
+    <div class="teen-wrap">
+      <span class="teen-avatar">🧑</span>
+      <div class="teen-bubble">
+        <div class="teen-name">Twój syn mówi</div>
+        <p>„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą."</p>
+      </div>
+    </div>
+
+    <div class="scene-q">Co mu powiesz?</div>
+
+    <div class="opts" id="quiz">
+      <button class="opt" data-idx="0" onclick="pick(this,false)">
+        <span class="opt-letter">A</span>
+        <span class="opt-text">Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.</span>
+      </button>
+      <button class="opt" data-idx="1" onclick="pick(this,true)">
+        <span class="opt-letter">B</span>
+        <span class="opt-text">Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.</span>
+      </button>
+      <button class="opt" data-idx="2" onclick="pick(this,false)">
+        <span class="opt-letter">C</span>
+        <span class="opt-text">Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.</span>
+      </button>
+    </div>
+
+    <div class="fb" id="fb">
+      <div class="fb-inner">
+        <div class="fb-box" id="fb-box">
+          <p id="fb-text"></p>
+        </div>
+        <div class="fb-stat" id="fb-stat"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box" id="cta" style="display:none">
+    <a class="cta" href="https://uslyszmnie.netlify.app">Chcę spróbować więcej scenek →</a>
+    <div class="cta-note">189 scenek · za darmo · 2 minuty dziennie</div>
+  </div>
+
+  <div class="foot">
+    <p>Usłysz Mnie · Trening empatii dla rodziców<br><span class="foot-method">© Robert Gutkowski</span></p>
+  </div>
+
+</div>
+
+<script>
+let picked = false;
+
+function pick(btn, correct) {
+  if (picked) return;
+  picked = true;
+
+  const opts = document.querySelectorAll('.opt');
+  const correctBtn = opts[1];
+
+  opts.forEach(o => {
+    if (o === btn && !correct) {
+      o.classList.add('wrong');
+    } else if (o === correctBtn) {
+      o.classList.add('correct');
+    } else {
+      o.classList.add('dimmed');
+    }
+  });
+
+  const fb = document.getElementById('fb');
+  const fbBox = document.getElementById('fb-box');
+  const fbText = document.getElementById('fb-text');
+  const fbStat = document.getElementById('fb-stat');
+
+  if (correct) {
+    fbBox.className = 'fb-box good';
+    fbText.innerHTML = '<span class="fb-title">✨ Brawo!</span>Powtórzyłeś jego doświadczenie własnymi słowami — bez ratowania, bez rady. Poczuł, że ktoś naprawdę go widzi.';
+    fbStat.textContent = '';
+  } else {
+    const wasA = btn.dataset.idx === '0';
+    fbBox.className = 'fb-box bad';
+    if (wasA) {
+      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Rada</span>Syn mówi „nikt mnie nie lubi", a słyszy „zrób coś z sobą". Rada w bólu brzmi jak krytyka — jakby problem był w nim.';
+    } else {
+      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Pocieszanie</span>„Nie przejmuj się" to odcięcie od uczucia. Syn słyszy: twój ból nie jest ważny, poczekaj parę lat.';
+    }
+    fbStat.textContent = 'Większość rodziców też wybiera tę opcję. To naturalny odruch.';
+  }
+
+  fb.classList.add('show');
+
+  setTimeout(() => {
+    const cta = document.getElementById('cta');
+    cta.style.display = 'block';
+    cta.style.animation = 'fu .6s ease-out both';
+  }, correct ? 1200 : 2000);
+}
+</script>
+</body>
+</html>

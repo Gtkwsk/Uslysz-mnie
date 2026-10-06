@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Usłysz Mnie">
+<meta name="theme-color" content="#f5f0eb">
+<meta name="description" content="Trening empatycznego reagowania dla rodziców nastolatków">
+<link rel="manifest" href="/manifest.json">
+<title>Usłysz Mnie</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#f5f0eb;--card:#fff;--ac:#e07842;--acd:#c45a24;--acl:#fce8db;--tx:#1a1512;--ts:#4a4038;--tm:#8a7e74;--bd:#e0d8d0;--sp:#f7efe6;--gn:#1a8a5a;--gl:#d4f5e4;--rd:#d94040;--rl:#fde0e0;--wm:#fdf4ec;--pp:#7c5cbf;--pl:#f0ebfa;--pd:#4a3580;--teal:#1a9a8a}
+body{font-family:'Lora',serif;background:var(--bg);color:var(--tx);min-height:100dvh;-webkit-font-smoothing:antialiased}
+#app{max-width:480px;margin:0 auto;padding:0 18px 44px;min-height:100dvh}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sr{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(26,138,90,.4)}70%{box-shadow:0 0 0 18px rgba(26,138,90,0)}100%{box-shadow:0 0 0 0 rgba(26,138,90,0)}}
+@keyframes confetti-fall{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(60px) rotate(360deg);opacity:0}}
+.scr-glow{animation:sr .6s cubic-bezier(.34,1.56,.64,1) both, glow 1.2s ease-out .6s both}
+.confetti-wrap{position:relative;display:flex;justify-content:center;margin:10px auto 6px}
+.confetti{position:absolute;width:6px;height:6px;border-radius:50%;animation:confetti-fall 1.2s ease-out forwards;opacity:0}
+.teen-react{display:flex;align-items:flex-end;gap:10px;max-width:85%}
+.teen-avatar{font-size:28px;flex-shrink:0;margin-bottom:4px}
+.teen-bubble{background:#fff;border-radius:18px 18px 18px 4px;padding:12px 16px;box-shadow:0 1px 4px rgba(0,0,0,.08);position:relative}
+.teen-bubble p{font-size:15.5px;line-height:1.5;color:var(--ts);font-style:italic;margin:0}
+.teen-bubble .teen-name{font-size:11px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-style:normal;font-family:'Source Sans 3',sans-serif}
+@keyframes typingDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+.typing-dots{display:flex;gap:4px;padding:4px 0}
+.typing-dots span{width:7px;height:7px;border-radius:50%;background:var(--ac);opacity:.3;animation:typingDot 1.2s ease-in-out infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+.streak-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border-radius:20px;padding:6px 14px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:#e65100;margin-bottom:12px}
+.hist-item{background:var(--card);border-radius:14px;border:1px solid var(--bd);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.hist-ctx{font-size:13px;color:var(--tm);line-height:1.4;font-family:'Source Sans 3',sans-serif}
+.hist-resp{font-size:14px;color:var(--ts);font-style:italic;line-height:1.45}
+.hist-meta{display:flex;justify-content:space-between;align-items:center}
+.hist-score{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;flex-shrink:0}
+.hist-date{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--tm)}
+.hist-empty{text-align:center;padding:40px 20px;color:var(--tm);font-size:15px}
+.custom-intro{background:var(--wm);border-radius:14px;padding:14px 18px;margin-bottom:16px;border-left:3.5px solid var(--pp)}.custom-intro p{font-size:14px;line-height:1.55;color:var(--ts)}
+.menu-link{background:none;border:none;color:var(--ac);font-size:14px;cursor:pointer;font-family:'Source Sans 3',sans-serif;font-weight:600;padding:8px 0;display:flex;align-items:center;gap:6px}
+.fu{animation:fu .5s ease-out both}.fu1{animation:fu .5s ease-out .1s both}.fu2{animation:fu .5s ease-out .2s both}.fu3{animation:fu .5s ease-out .3s both}
+.fd0{animation:fu .5s ease-out both}
+.fd1{animation:fu .5s ease-out .6s both}
+.fd2{animation:fu .5s ease-out .8s both}
+.fd3{animation:fu .5s ease-out 1.2s both}
+.fd4{animation:fu .5s ease-out 1.5s both}
+.fd5{animation:fu .5s ease-out 2.0s both}
+.fd6{animation:fu .5s ease-out 2.5s both}
+.fd7{animation:fu .5s ease-out 2.8s both}
+.fd8{animation:fu .5s ease-out 3.2s both}
+.sc-quote{animation:fu .6s ease-out .6s both}
+.sc-input{animation:fu .5s ease-out 1.2s both}
+.ss{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:10px 0}.si0{text-align:center;width:100%}
+.logo{font-size:48px;margin-bottom:6px;filter:drop-shadow(0 3px 10px rgba(224,120,66,.35))}
+h1{font-size:28px;font-weight:700;color:var(--acd);margin-bottom:4px;letter-spacing:-.5px}
+.st{font-size:16px;color:var(--ts);margin-bottom:16px;line-height:1.4}
+.ib{background:var(--wm);border-radius:14px;padding:14px 18px;margin-bottom:16px;border-left:3.5px solid var(--ac);text-align:left}
+.ib p{font-size:15px;line-height:1.55;color:var(--ts)}
+.lp{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.lb{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--card);border:1.5px solid var(--bd);border-radius:14px;cursor:pointer;text-align:left;transition:all .2s;font-family:inherit}
+.lb.a{border-color:var(--ac);background:var(--acl);box-shadow:0 0 0 2.5px rgba(224,120,66,.2)}
+.lb .e{font-size:22px;flex-shrink:0}.lb .l{font-family:'Source Sans 3',sans-serif;font-size:15.5px;font-weight:600}.lb .d{font-size:13px;color:var(--tm);margin-top:2px;font-family:'Source Sans 3',sans-serif}
+.bp{width:100%;padding:14px 0;background:var(--ac);color:#fff;border:none;border-radius:14px;font-size:17px;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:opacity .2s,transform .1s}
+.bs{width:100%;padding:12px 0;background:transparent;color:var(--ac);border:1.5px solid var(--ac);border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:opacity .2s;margin-top:8px}
+.bp:active{transform:scale(.98)}.bp:disabled{opacity:.45}
+.bp-ghost{background:transparent;color:var(--ac);border:1.5px solid var(--ac)}.bp-ghost:active{background:var(--acl)}
+.tb{display:flex;justify-content:space-between;align-items:center;padding:16px 0 10px}
+.bb{background:none;border:none;color:var(--ac);font-size:18px;cursor:pointer;font-family:'Source Sans 3',sans-serif;font-weight:600}
+.tl{font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--tm);font-weight:600}
+.stb{display:flex;justify-content:space-around;padding:12px 0 18px;border-bottom:1px solid var(--bd);margin-bottom:18px}
+.si{display:flex;flex-direction:column;align-items:center}
+.sn{font-family:'Source Sans 3',sans-serif;font-size:22px;font-weight:700;color:var(--acd)}
+.sl2{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--tm);margin-top:3px}
+.sc{background:var(--card);border-radius:20px;padding:22px;box-shadow:0 2px 20px rgba(26,21,18,.07)}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.sg{font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:var(--ts)}
+.sy{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--acd);background:var(--acl);padding:4px 12px;border-radius:20px;font-weight:600}
+.ss2{font-size:16.5px;line-height:1.65;color:var(--ts);margin-bottom:18px}
+.spb{background:var(--sp);border-radius:18px;border-top-left-radius:4px;padding:18px 20px;margin-bottom:22px}
+.spn{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;color:var(--ac);margin-bottom:8px}
+.spt{font-size:19px;font-weight:600;line-height:1.5;font-style:italic}
+.ra{border-top:1px solid var(--bd);padding-top:18px}
+.rl{font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600;color:var(--ts);display:block;margin-bottom:12px}
+.ta{width:100%;padding:15px 18px;border-radius:14px;border:1.5px solid var(--bd);font-size:17px;line-height:1.5;font-family:'Lora',serif;background:var(--bg);color:var(--tx);resize:vertical;outline:none}
+.ta:focus{border-color:var(--ac)}.ta::placeholder{color:var(--tm)}
+.snb{width:100%;margin-top:12px;padding:15px 0;background:var(--ac);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif}.snb:disabled{opacity:.4}
+.fw{display:flex;flex-direction:column;gap:16px}
+.scr{display:flex;flex-direction:column;align-items:center;justify-content:center;width:106px;height:106px;border-radius:50%;margin:10px auto 6px;color:#fff;animation:sr .6s cubic-bezier(.34,1.56,.64,1) both}
+.scrn{font-family:'Source Sans 3',sans-serif;font-size:30px;font-weight:800}.scrw{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;margin-top:2px}
+.pb{display:flex;align-items:flex-start;gap:12px;background:var(--gl);border-radius:16px;padding:16px 18px}.pb p{font-size:16px;line-height:1.5;color:var(--gn);font-weight:600}
+.trb{display:flex;align-items:center;gap:12px;background:var(--rl);border-radius:14px;padding:12px 16px}.trb span{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:600;color:var(--rd)}
+.eb{background:var(--wm);border-radius:14px;padding:14px 18px}.ebl{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);margin-bottom:5px;font-weight:600}.ebt{font-size:16px;line-height:1.5;color:var(--ts);font-style:italic}
+.sec{background:var(--card);border-radius:14px;border:1px solid var(--bd);overflow:hidden}
+.sech{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none;-webkit-user-select:none}.sech:active{background:rgba(0,0,0,.02)}.sech .tt{font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600;flex:1}.sech .ch{font-size:12px;color:var(--tm);transition:transform .2s}.sech .ch.o{transform:rotate(180deg)}
+.secb{font-size:16px;line-height:1.65;color:var(--ts);padding:0 16px 16px}
+.rfb{display:flex;align-items:flex-start;gap:12px;background:var(--pl);border-radius:16px;padding:16px 18px;border-left:3.5px solid var(--pp)}.rfb p{font-size:16px;line-height:1.5;color:var(--pd);font-weight:500;font-style:italic}
+.sgl{display:flex;flex-direction:column;gap:12px;padding:0 16px 16px}.sgi{display:flex;flex-direction:column;gap:3px}.sgla{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--ac);flex-shrink:0}.sglt{font-size:16px;color:var(--ts);line-height:1.45;font-style:italic}
+@keyframes dotd-shine{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes dotd-glow{0%,100%{box-shadow:0 0 12px rgba(234,176,32,.25)}50%{box-shadow:0 0 24px rgba(234,176,32,.45)}}
+@keyframes dotd-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.dotd-card{background:linear-gradient(135deg,#fffdf5 0%,#fef6de 50%,#fdf0c8 100%);border:2px solid #e8c840;border-radius:20px;padding:20px;margin-bottom:16px;position:relative;overflow:hidden;animation:dotd-glow 3s ease-in-out infinite;cursor:pointer;transition:transform .15s}
+.dotd-card:active{transform:scale(.98)}
+.dotd-card::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.4) 50%,transparent 100%);background-size:200% 100%;animation:dotd-shine 4s ease-in-out infinite;pointer-events:none;border-radius:18px}
+.dotd-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.dotd-label{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;color:#8a6d00;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+.dotd-timer{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#a08830;font-weight:600}
+.dotd-preview{font-size:14px;color:#5a4a20;line-height:1.5;margin-bottom:8px;font-style:italic}
+.dotd-cta{font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:700;color:#8a6d00;display:flex;align-items:center;gap:4px}
+.dotd-done{display:flex;align-items:center;gap:10px}
+.dotd-done-score{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:800;flex-shrink:0}
+.dotd-done-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#5a4a20;line-height:1.4}
+.dotd-share-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 0;background:linear-gradient(135deg,#e8c840,#d4a820);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:opacity .2s;margin-top:10px}.dotd-share-btn:active{opacity:.85}
+.dotd-scene .sc{border:2px solid #e8c840;box-shadow:0 2px 24px rgba(234,176,32,.15)}
+.dotd-scene .sh{border-bottom:1px solid rgba(232,200,64,.3);padding-bottom:12px;margin-bottom:14px}
+.dotd-badge{background:linear-gradient(135deg,#e8c840,#d4a820);color:#fff;padding:4px 12px;border-radius:20px;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px}
+.dotd-result{background:linear-gradient(135deg,#fffdf5,#fef6de);border:2px solid #e8c840;border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:16px}
+.dotd-result h3{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;color:#8a6d00;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.share-card{background:linear-gradient(135deg,#1a1512 0%,#2a2520 100%);border-radius:20px;padding:24px 20px;text-align:center;margin:16px 0;position:relative;overflow:hidden}
+.share-card::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(232,200,64,.08),transparent 60%);pointer-events:none}
+.share-grid{display:flex;justify-content:center;gap:20px;margin:16px 0}
+.share-cell{text-align:center}
+.share-cell .val{font-family:'Source Sans 3',sans-serif;font-size:24px;font-weight:800;color:#e8c840}
+.share-cell .lbl{font-family:'Source Sans 3',sans-serif;font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.share-divider{width:1px;background:rgba(255,255,255,.12);margin:0 4px}
+.share-copy{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 0;background:linear-gradient(135deg,#e8c840,#d4a820);color:#1a1512;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;margin-top:12px;transition:all .2s}.share-copy:active{transform:scale(.97)}
+.share-copied{background:var(--gn)!important;color:#fff!important}
+@keyframes badge-unlock{0%{transform:scale(0) rotate(-20deg);opacity:0}60%{transform:scale(1.3) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0deg);opacity:1}}
+@keyframes badge-shine{0%{filter:brightness(1)}50%{filter:brightness(1.3)}100%{filter:brightness(1)}}
+.onb-wrap{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .4s ease-out}
+.onb-inner{text-align:center;max-width:400px;width:100%}
+.onb-icon{font-size:56px;margin-bottom:16px;filter:drop-shadow(0 3px 12px rgba(224,120,66,.3))}
+.onb-title{font-size:22px;font-weight:700;color:var(--acd);margin-bottom:16px;line-height:1.3}
+.onb-text{font-size:17px;line-height:1.7;color:var(--ts);margin-bottom:24px;text-align:left;padding:0 4px}
+.onb-dots{display:flex;justify-content:center;gap:8px;margin-bottom:24px}
+.onb-dot{width:8px;height:8px;border-radius:50%;background:var(--bd);transition:all .3s}
+.onb-dot.active{background:var(--ac);transform:scale(1.3)}
+.onb-highlight{background:var(--wm);border-radius:16px;padding:18px 20px;border-left:3.5px solid var(--ac);margin:20px 0;text-align:left}
+.onb-highlight p{font-size:15.5px;line-height:1.7;color:var(--ts)}
+.onb-vs{display:flex;gap:12px;margin:16px 0;text-align:left}
+.onb-good,.onb-bad{flex:1;border-radius:14px;padding:14px 16px}
+.onb-good{background:var(--gl)}.onb-bad{background:var(--rl)}
+.onb-good .ovl{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--gn);margin-bottom:6px}
+.onb-bad .ovl{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--rd);margin-bottom:6px}
+.onb-good p{font-size:15.5px;line-height:1.5;font-style:italic;color:var(--gn)}
+.onb-bad p{font-size:15.5px;line-height:1.5;font-style:italic;color:var(--rd)}
+.onb-demo-card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 2px 20px rgba(26,21,18,.07);text-align:left;margin:16px 0}
+.onb-demo-result{border-radius:16px;padding:18px;margin:16px 0;text-align:center}
+.onb-demo-result.good{background:var(--gl);border:1.5px solid var(--gn)}
+.onb-demo-result.meh{background:var(--wm);border:1.5px solid var(--ac)}
+.onb-demo-result .dr-icon{font-size:32px;margin-bottom:6px}
+.onb-demo-result .dr-text{font-size:15px;line-height:1.5;color:var(--ts);font-style:italic}
+.onb-skip{background:none;border:none;color:var(--tm);font-size:13px;cursor:pointer;font-family:'Source Sans 3',sans-serif;margin-top:12px;text-decoration:underline}
+.notif-banner{background:linear-gradient(135deg,#f0f7ff,#e3f0ff);border:1.5px solid #a0c8f0;border-radius:18px;padding:18px 20px;margin:16px 0;text-align:center;animation:fu .5s ease-out both}
+.notif-banner-title{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:#2060a0;margin-bottom:6px;display:flex;align-items:center;justify-content:center;gap:6px}
+.notif-banner-text{font-size:14px;color:#4a7aaa;line-height:1.5;margin-bottom:14px}
+.notif-btns{display:flex;gap:10px;justify-content:center}
+.notif-yes{background:#2060a0;color:#fff;border:none;border-radius:10px;padding:10px 20px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}.notif-yes:active{transform:scale(.96)}
+.notif-later{background:none;border:none;color:#6a9ac0;font-family:'Source Sans 3',sans-serif;font-size:13px;cursor:pointer;padding:10px}
+.notif-done{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--gn);display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 0}
+.badges-shelf{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 8px}
+.badge-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;transition:all .2s;cursor:pointer;position:relative}
+.badge-icon.locked{background:var(--bg);border:1.5px dashed var(--bd);filter:grayscale(1);opacity:.4}
+.badge-icon.unlocked{background:linear-gradient(135deg,#fef6de,#fdf0c8);border:1.5px solid #e8c840;box-shadow:0 2px 8px rgba(234,176,32,.2);animation:badge-shine 3s ease-in-out infinite}
+.badge-icon.fresh{animation:badge-unlock .6s cubic-bezier(.34,1.56,.64,1) both}
+.badge-icon:active{transform:scale(.9)}
+.badges-count{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--tm);text-align:center;margin-bottom:4px}
+.badge-detail{background:var(--card);border-radius:16px;border:1px solid var(--bd);padding:16px;display:flex;align-items:flex-start;gap:14px;margin-bottom:10px}
+.badge-detail.unlocked{border-color:#e8c840;background:linear-gradient(135deg,#fffdf5,#fef6de)}
+.badge-detail-icon{font-size:32px;flex-shrink:0}
+.badge-detail-info{flex:1}
+.badge-detail-name{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:var(--tx);margin-bottom:2px}
+.badge-detail-desc{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--ts);line-height:1.4;margin-bottom:6px}
+.badge-detail-progress{height:6px;background:var(--bd);border-radius:3px;overflow:hidden;margin-top:6px}
+.badge-detail-fill{height:100%;background:linear-gradient(90deg,#e8c840,#d4a820);border-radius:3px;transition:width .5s ease-out}
+.badge-detail-stat{font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--tm);margin-top:4px}
+.badge-new-toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#e8c840,#d4a820);color:#fff;padding:12px 24px;border-radius:20px;font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;box-shadow:0 4px 20px rgba(234,176,32,.4);z-index:100;animation:fu .4s ease-out both;display:flex;align-items:center;gap:8px}
+.rsb{background:#fef9e7;border-radius:16px;padding:18px;margin-bottom:16px;border-left:3.5px solid #eab020}.rsb .rt{font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:700;color:#8a6d00;margin-bottom:8px}.rsb p{font-size:14px;line-height:1.55;color:#6b5600}
+.tmb{background:var(--rl);border-radius:14px;padding:14px 18px;margin-bottom:16px}.tmb p{font-size:14px;line-height:1.55;color:var(--rd)}
+.ic{font-size:20px;flex-shrink:0}
+.ld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px}.ld .le{font-size:52px;animation:pulse 1.5s ease-in-out infinite;margin-bottom:18px}.ld p{font-size:17px;color:var(--tm)}
+.ml-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;min-height:60vh;background:linear-gradient(180deg,#1a1520 0%,#2a1f35 50%,#1a1520 100%);border-radius:24px;margin:10px 0;text-align:center}
+.ml-scene{margin-bottom:24px}.ml-label{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.35)}
+.ml-teen-quote{font-size:16px;color:rgba(255,255,255,.7);font-style:italic;line-height:1.5;margin-top:8px;max-width:320px}
+.ml-answer{background:linear-gradient(135deg,rgba(232,200,64,.15),rgba(232,200,64,.05));border:1.5px solid rgba(232,200,64,.4);border-radius:16px;padding:16px 20px;margin-bottom:24px;max-width:340px;animation:pulse 2.5s ease-in-out infinite}
+.ml-parent-quote{font-size:17px;color:#e8c840;font-weight:600;line-height:1.5;margin-top:6px}
+.ml-bar-wrap{width:200px;height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin-bottom:20px}
+.ml-bar{height:100%;background:linear-gradient(90deg,#e8c840,#d4a820);border-radius:4px;transition:width .08s linear}
+@keyframes mlPhase{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.ml-phase{font-family:'Source Sans 3',sans-serif;font-size:15px;color:rgba(255,255,255,.5);font-weight:600;animation:mlPhase .4s ease-out both;min-height:22px}
+.err{background:var(--rl);border-radius:16px;padding:20px;text-align:center;margin:40px 0}.err p{font-size:15px;color:var(--rd);line-height:1.5;margin-bottom:12px}.err button{background:var(--ac);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.btns{display:flex;flex-direction:column;gap:10px}
+.author{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);margin-top:16px;letter-spacing:.3px}
+.splash{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:30px 20px;animation:fadeIn .4s ease-out}.splash-inner{text-align:center;max-width:380px}.splash-icon{font-size:56px;margin-bottom:16px;filter:drop-shadow(0 3px 10px rgba(224,120,66,.3))}.splash h2{font-size:24px;font-weight:700;color:var(--acd);margin-bottom:16px}.splash-text{font-size:15px;line-height:1.7;color:var(--ts);margin-bottom:24px}.splash-note{font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:28px;font-style:italic}.splash .bp{max-width:280px;margin:0 auto}
+.hb{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--bd);background:var(--card);color:var(--ac);font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}.hb:active{background:var(--acl)}
+.help{animation:fadeIn .3s ease-out;padding:8px 0 30px}
+.help-title{font-size:24px;font-weight:700;color:var(--acd);text-align:center;margin-bottom:6px}
+.help-sub{font-size:14px;color:var(--tm);text-align:center;margin-bottom:24px;font-family:'Source Sans 3',sans-serif}
+.help-section{margin-bottom:22px}
+.help-h{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:var(--ac);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.help-p{font-size:16.5px;line-height:1.7;color:var(--ts);margin-bottom:10px}
+.help-ex{background:var(--sp);border-radius:14px;padding:14px 18px;margin:10px 0;border-left:3px solid var(--ac)}
+.help-ex .he-label{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--tm);margin-bottom:4px}
+.help-ex .he-text{font-size:15px;font-style:italic;line-height:1.55;color:var(--ts)}
+.help-vs{display:flex;gap:12px;margin:12px 0}
+.help-do,.help-dont{flex:1;border-radius:12px;padding:12px 14px}
+.help-do{background:var(--gl)}.help-dont{background:var(--rl)}
+.help-do .hv-label{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--gn);margin-bottom:6px}
+.help-dont .hv-label{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--rd);margin-bottom:6px}
+.help-do p,.help-dont p{font-size:14px;line-height:1.5;font-style:italic}
+.help-do p{color:var(--gn)}.help-dont p{color:var(--rd)}
+.help-key{background:var(--wm);border-radius:16px;padding:18px 20px;border-left:3.5px solid var(--ac);margin:20px 0}
+.help-key p{font-size:16.5px;line-height:1.7;color:var(--ts)}
+.emo-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:1000;display:flex;justify-content:flex-end;animation:fu .2s ease-out}
+.emo-panel{width:300px;height:100%;background:var(--bg);overflow-y:auto;padding:20px 16px;box-shadow:-4px 0 20px rgba(0,0,0,.15);animation:slideIn .3s ease-out}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.emo-panel-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:12px;border-bottom:1.5px solid var(--bd)}
+.emo-close{background:none;border:none;font-size:18px;color:var(--tm);cursor:pointer;margin-left:auto;padding:4px 8px}
+.emo-group{margin-bottom:12px}
+.emo-group-name{font-size:12px;font-weight:700;font-family:'Source Sans 3',sans-serif;margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px}
+.emo-group-list{display:flex;flex-wrap:wrap;gap:5px}
+.emo-chip{background:transparent;border:1.5px solid;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;font-family:'Source Sans 3',sans-serif;cursor:pointer;transition:all .15s}
+.emo-chip:active{transform:scale(.95);opacity:.7}
+.emo-fab{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:100;transition:all .2s}
+.emo-fab:active{transform:scale(.9)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script type="text/babel">
+const{useState,useEffect,useCallback,useRef}=React;
+
+// Auto-rejestracja SW jeśli powiadomienia są włączone
+if("serviceWorker" in navigator){
+  try{navigator.serviceWorker.register("/sw.js").catch(()=>{})}catch(e){}
+}
+
+// ╔═══════════════════════════════════════════════════════════╗
+// ║  Usłysz Mnie v4.1 — 192 scenki + Scenka Dnia + GPT-5.6   ║
+// ╚═══════════════════════════════════════════════════════════╝
+
+// ── API (klucz ukryty w Netlify Environment Variables) ──
+const MODEL="gpt-5.6-terra";
+
+// ══════════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════════
+// BAZA SCENARIUSZY — 192 realistyczne scenki
+// Każda ma kontekst (z wiekiem i płcią) i wypowiedź.
+// ══════════════════════════════════════════════════════════════
+
+const SCENARIOS_DB = [
+// ═══════════════════════════════════════════════════════════
+// POZIOM 1 — emocja czytelna, łatwa do nazwania
+// ═══════════════════════════════════════════════════════════
+
+// --- Szkoła i presja ---
+{id:1,lv:1,ctx:"14-latek rzuca plecak na podłogę w przedpokoju. W e-dzienniku świeci nowa uwaga.",says:"Znowu mam uwagę. Nieważne co robię, i tak jestem winny.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
+{id:2,lv:1,ctx:"14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.",says:"Nie ogarniam tego. Jak jutro dostanę pałę, to ja serio pęknę.",emo:"przytłoczenie",dist:["strach","bezsilność","frustracja"]},
+{id:3,lv:1,ctx:"14-latek stoi rano w kurtce, ale nie rusza się do wyjścia.",says:"Nie idę dziś do szkoły. Nie mam siły wchodzić tam znowu.",emo:"przytłoczenie",dist:["strach","smutek","bezsilność"]},
+{id:4,lv:1,ctx:"Niedziela wieczór, jutro szkoła. 14-latek kręci się po pokoju i łapie za brzuch.",says:"Jutro nie dam rady. Jak o tym myślę, to aż mi się robi niedobrze.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
+{id:8,lv:1,ctx:"14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.",says:"Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.",emo:"bezsilność",dist:["smutek","rozczarowanie","wstyd"]},
+{id:9,lv:1,ctx:"15-latek wraca z treningu. Patrzy w okno samochodu, milczy.",says:"Trener mnie zjechał przy wszystkich. Chciałem po prostu zniknąć.",emo:"upokorzenie",dist:["wstyd","złość","bezsilność"]},
+{id:86,lv:1,ctx:"14-latek po kolejnej wpadce i krytyce. Mówi coś jak wyrok.",says:"Jestem głupi…",emo:"bezsilność",dist:["smutek","wstyd","rozczarowanie"]},
+{id:101,lv:1,ctx:"14-latek po oddaniu ważnego projektu, nad którym siedział dwa weekendy.",says:"Dostałem tróję. Gość napisał, że 'mało kreatywne'. Bez kitu, po co ja się w ogóle starałem?",emo:"rozczarowanie",dist:["bezsilność","złość","niesprawiedliwość"]},
+{id:102,lv:1,ctx:"16-latka otwiera Librusa i widzi kolejną jedynkę z matematyki.",says:"Znowu to samo. Ta baba tłumaczy to tak, że nikt nic nie czai. Równie dobrze mogę nie chodzić. Zero różnicy.",emo:"bezsilność",dist:["złość","frustracja","niesprawiedliwość"]},
+{id:103,lv:1,ctx:"13-latek przygotowuje się do odpowiedzi ustnej, nerwowo przekładając kartki.",says:"Jak mnie wywoła do tablicy, to chyba tam zemleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.",emo:"strach",dist:["przytłoczenie","niepewność","bezsilność"]},
+{id:104,lv:1,ctx:"15-latek wraca z próbnego egzaminu, rzuca plecakiem.",says:"W arkuszu były rzeczy, których w ogóle nie przerabialiśmy. Pół klasy oddało puste kartki. To jest jakiś żart.",emo:"niesprawiedliwość",dist:["złość","frustracja","bezsilność"]},
+{id:105,lv:1,ctx:"17-latka patrzy na listę lektur na ten semestr.",says:"Pięć grubych ksiąg w dwa miesiące? Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
+{id:106,lv:1,ctx:"14-latka po prezentacji przed klasą, podczas której pomyliła slajdy.",says:"Wszyscy zaczęli się śmiać, a ja stałam tam jak kołek. Chcę po prostu zniknąć z tej szkoły.",emo:"upokorzenie",dist:["wstyd","strach","samotność"]},
+{id:107,lv:1,ctx:"16-latek dowiaduje się, że nie przeszedł do drugiego etapu olimpiady o jeden punkt.",says:"Jeden punkt. Przez jedno głupie pytanie wszystko poszło w piach. Tyle miesięcy nauki na nic.",emo:"rozczarowanie",dist:["żal","bezsilność","frustracja"]},
+{id:108,lv:1,ctx:"13-latka po kłótni z nauczycielem, który oskarżył ją o ściąganie.",says:"Wcale nie ściągałam! Patrzyłam w okno, a ona mi zabrała kartkę przy wszystkich. To było tak niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
+{id:109,lv:1,ctx:"17-latek patrzy na kalendarz — do zakończenia roku zostały trzy dni.",says:"Nie dam rady tego ogarnąć. Za dużo tego.",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
+{id:110,lv:1,ctx:"15-latek wraca do domu po sprawdzianie, na który uczył się trzy dni z rzędu, i dowiaduje się, że dostał ocenę niedostateczną.",says:"Mam to gdzieś, serio. Po co ja się w ogóle staram, skoro ta baba i tak mnie uwali? To jest jakiś żart, nigdy więcej nie otworzę tego podręcznika.",emo:"bezsilność",dist:["złość","rozczarowanie","niesprawiedliwość"]},
+{id:111,lv:1,ctx:"15-latek wraca do domu po sprawdzianie z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.",says:"No i po co ja w ogóle otwierałem te książki?! Ta baba i tak mi wlepiła lufę, bo stwierdziła, że metoda jej się nie podoba. Więcej tam nie idę, niech sobie sama rozwiązuje te zadania.",emo:"bezsilność",dist:["złość","niesprawiedliwość","rozczarowanie"]},
+{id:112,lv:1,ctx:"15-latek został wyrzucony z lekcji przez nauczyciela, który uznał, że to on rzucał papierkami, choć chłopak siedział cicho.",says:"Wzięła mnie na cel i tyle. Inni robili syf, a ona wskazała palcem na mnie, bo tak jej było wygodniej. Aż mnie rozsadza od środka, jak to niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
+{id:113,lv:1,ctx:"17-latek został wyproszony z zajęć dodatkowych przez trenera za rzekome przeszkadzanie, choć to inna grupa robiła hałas.",says:"Wziął mnie na cel i tyle. Inni robili syf, a on wskazał palcem na mnie, bo tak mu było wygodniej, bo jestem najstarszy. Aż mnie rozsadza od środka, jak to podłe, noga tam więcej nie postanie!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
+
+// --- Emocje, lęk, smutek ---
+{id:22,lv:1,ctx:"14-latek późnym wieczorem przegląda terminy egzaminów i prób.",says:"Nie mogę oddychać, jak o tym myślę. Wszystko mi się miesza w głowie.",emo:"przytłoczenie",dist:["strach","bezsilność","desperacja"]},
+{id:23,lv:1,ctx:"15-latka wraca ze szkoły. Jutro prezentacja, nerwowo skubie rękaw.",says:"Jak się ośmieszę, to ja tam więcej nie pójdę. Serio.",emo:"strach",dist:["wstyd","niepewność","przytłoczenie"]},
+{id:30,lv:1,ctx:"15-latek wraca w środku tygodnia i od razu zamyka się w pokoju.",says:"Daj mi chwilę. W szkole cały dzień muszę być ogarnięty, a ja już nie mam baterii.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
+{id:64,lv:1,ctx:"16-latek rozmawia z rodzicem o motywacji. W pewnym momencie zaczyna mówić ciszej.",says:"Nie chodzi o lenistwo. Ja po prostu nie widzę sensu w tym, co robię.",emo:"bezsilność",dist:["smutek","przytłoczenie","desperacja"]},
+{id:89,lv:1,ctx:"17-latek milknie, kiedy rodzic naciska na temat studiów. Potem mówi cicho.",says:"Przeraża mnie to wszystko: studia, praca, decyzje. Ja nie wiem czy sobie z tym wszystkim poradzę.",emo:"strach",dist:["niepewność","przytłoczenie","bezsilność"]},
+{id:95,lv:1,ctx:"Rodzic próbuje pocieszyć 15-latkę. Reaguje, jakby to był atak.",says:"Nie mów mi, że przesadzam. Ja naprawdę cierpię.",emo:"smutek",dist:["bezsilność","złość","samotność"]},
+{id:46,lv:1,ctx:"Rodzic przed chwilą zażartował z tego, o czym marzy 15-latka. Czerwienieje ze złości.",says:"To moje marzenie. Jak się śmiejesz, to czuję się totalnie zniszczona.",emo:"upokorzenie",dist:["smutek","złość","bezsilność"]},
+
+// --- Rówieśnicy i odrzucenie ---
+{id:24,lv:1,ctx:"13-latka w poniedziałek rano trzyma się za brzuch i nie chce wstać.",says:"Znowu będę tam sama. Znowu będą patrzeć.",emo:"samotność",dist:["strach","smutek","odrzucenie"]},
+{id:114,lv:1,ctx:"14-latka przegląda relacje na Instagramie i widzi, że cała jej paczka jest razem na pizzy — bez niej.",says:"No jasne, świetnie się bawią. Nagle o mnie zapomnieli, jakbym w ogóle nie istniała.",emo:"odrzucenie",dist:["samotność","smutek","zazdrość"]},
+{id:115,lv:1,ctx:"14-latka siedzi w ciemnym pokoju z telefonem. Zobaczyła na TikToku relację, jak cała jej paczka bawi się w kinie bez niej.",says:"Patrz, znowu relacja u Julki. Wszyscy tam są, nawet ten nudziarz z trzeciej ławki. Mnie nikt nawet nie zapytał, czy chcę iść. Widocznie jestem dla nich tylko tłem, jak ich nie ma kto rozśmieszać.",emo:"odrzucenie",dist:["samotność","smutek","bezsilność"]},
+{id:116,lv:1,ctx:"15-latek wysłał wiadomość do przyjaciela trzy godziny temu, widzi, że została odczytana, ale nie ma odpowiedzi.",says:"Zlewa mnie totalnie. Widzę, że gra w LoL-a, ale odpisać to już nie łaska. Mam tego dość.",emo:"odrzucenie",dist:["złość","samotność","bezsilność"]},
+{id:117,lv:1,ctx:"14-latek zauważa, że dziewczyna, z którą pisał codziennie przez miesiąc, nagle przestała mu odpisywać i go zghostowała, choć publikuje nowe zdjęcia.",says:"Pisała do mnie non stop, a teraz nagle cisza. Widzę, że jest aktywna, ale mnie zlewa totalnie. Co ja niby zrobiłem źle? Wszystko mi się teraz sypie.",emo:"odrzucenie",dist:["bezsilność","smutek","niepewność"]},
+{id:118,lv:1,ctx:"13-latek słyszy, jak koledzy śmieją się z jego nowej fryzury.",says:"Wiedziałem, że to był błąd. Teraz będą o tym gadać przez miesiąc. Najlepiej by było, gdybym w ogóle nie wychodził z pokoju.",emo:"wstyd",dist:["strach","samotność","smutek"]},
+{id:119,lv:1,ctx:"17-latek dowiaduje się, że jego najlepszy przyjaciel wysłał screeny ich prywatnej, bardzo osobistej rozmowy do innych osób z klasy.",says:"Myślałem, że to mój brat, czaisz? A on mnie tak po prostu wystawił dla kilku lajków. Komu ja mam teraz w ogóle ufać? To koniec, z nikim już nie gadam.",emo:"odrzucenie",dist:["żal","złość","samotność"]},
+{id:120,lv:1,ctx:"17-latka przygotowuje się do imprezy, ale nagle rezygnuje.",says:"Ech, i tak będę tam stać w kącie. One wszystkie mają o czym gadać, a ja zawsze czuję się tam jak piąte koło u wozu.",emo:"samotność",dist:["niepewność","smutek","wstyd"]},
+{id:121,lv:1,ctx:"14-latek dowiaduje się, że nowy kolega w klasie stał się bardzo popularny.",says:"Nagle wszyscy latają za nim, jakby był jakimś Bogiem. Nawet Bartek już nie ma dla mnie czasu, bo ciągle siedzi u niego.",emo:"zazdrość",dist:["samotność","odrzucenie","smutek"]},
+{id:122,lv:1,ctx:"16-latka po otrzymaniu screena, na którym koleżanki ją obgadują.",says:"Patrz, co o mnie piszą. 'Że niby jestem sztywna'. A ja im tyle razy pomagałam w lekcjach. To jest obrzydliwe.",emo:"odrzucenie",dist:["złość","żal","upokorzenie"]},
+{id:123,lv:1,ctx:"15-latek nie został zaproszony na osiemnastkę kuzyna, na której bardzo mu zależało.",says:"Wszyscy moi znajomi tam będą, a ja mam siedzieć z wami? To będzie największy przypał świata, jak mnie tam zabraknie.",emo:"odrzucenie",dist:["wstyd","samotność","złość"]},
+{id:124,lv:1,ctx:"13-latka po powrocie ze szkoły, gdzie grupa dziewczyn ją ignorowała.",says:"Jak przechodziłam obok nich, to nagle wszystkie milkły i zaczynały się śmiać. Nienawidzę tej klasy.",emo:"odrzucenie",dist:["samotność","smutek","upokorzenie"]},
+{id:125,lv:1,ctx:"17-latka dowiaduje się, że jej chłopak wyjechał na weekend ze znajomymi, o czym zapomniał jej wspomnieć.",says:"Dowiedziałam się o tym z Instagrama, czaisz? Pisaliśmy rano i ani słowa o wyjeździe. Teraz nie odbiera, bo pewnie świetnie się bawi. Po prostu super, tak właśnie wygląda 'zaufanie' w tym związku.",emo:"żal",dist:["złość","odrzucenie","niepewność"]},
+{id:75,lv:1,ctx:"16-latka wraca ze szkoły i od razu rzuca się na łóżko.",says:"Powiedziałam mu, że go kocham, a on ma dziewczynę i mnie olewa. Czuję się jak śmieć.",emo:"odrzucenie",dist:["smutek","wstyd","bezsilność"]},
+
+// --- Wygląd i ciało ---
+{id:15,lv:1,ctx:"15-latek wraca po zdjęciach klasowych. Przygaszony.",says:"Nienawidzę jak mnie oceniają. Czuję się jak jakiś eksponat.",emo:"wstyd",dist:["złość","bezsilność","samotność"]},
+{id:25,lv:1,ctx:"15-latek podaje rodzicowi telefon. Na grupie klasowej docinki o wyglądzie.",says:"To mnie naprawdę boli. Udaję, że haha, ale w środku mam dość.",emo:"smutek",dist:["wstyd","bezsilność","samotność"]},
+{id:79,lv:1,ctx:"15-latek stoi przed lustrem w łazience. Długo dotyka skóry twarzy.",says:"Wszyscy mają idealne twarze. Ja wyglądam jak katastrofa.",emo:"wstyd",dist:["smutek","bezsilność","samotność"]},
+{id:84,lv:1,ctx:"Rozmowa przy kolacji schodzi na szkołę i wygląd. 14-latka mówi cicho.",says:"Mam kompleksy, ludzie się ze mnie wyśmiewają. A ja nie wiem, co robię źle.",emo:"wstyd",dist:["bezsilność","smutek","samotność"]},
+{id:85,lv:1,ctx:"15-latka staje na wadze po wakacjach. Płacze.",says:"Przytyłam i nienawidzę swojego ciała. Czuję się bezradna.",emo:"bezsilność",dist:["smutek","wstyd","desperacja"]},
+{id:126,lv:1,ctx:"16-latek szykuje się na osiemnastkę kolegi, ale po długim staniu przed lustrem nagle zdejmuje wyjściowe ubranie i kładzie się na łóżku.",says:"Nigdzie nie idę. Wyglądam jak totalny gnom, te włosy to porażka, a cera... szkoda gadać. Będą się tylko ze mnie nabijać po kątach.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
+{id:127,lv:1,ctx:"16-latek przygotował się na pierwsze spotkanie z dziewczyną, ale po długim czasie przed lustrem nagle zdejmuje nową bluzę.",says:"Nie no, po prostu masakra. Zobacz na to czoło, przecież to wygląda jak pole minowe, a te włosy żyją własnym życiem. Nigdzie nie idę, niech ona sobie myśli co chce, ja zostaję w łóżku pod kołdrą.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
+{id:128,lv:1,ctx:"14-latka mierzy sukienkę na bal ósmoklasisty.",says:"Wyglądam w tym grubo. Ta sukienka podkreśla wszystko, czego nienawidzę. Wszystkie dziewczyny będą wyglądać jak modelki, a ja jak worek.",emo:"wstyd",dist:["smutek","bezsilność","strach"]},
+{id:129,lv:1,ctx:"15-latek porównuje swój wzrost z kolegami z klasy.",says:"Wszyscy już wystrzelili w górę, a ja dalej stoję w miejscu. Wyglądam przy nich jak dzieciak z podstawówki.",emo:"wstyd",dist:["smutek","zazdrość","bezsilność"]},
+{id:130,lv:1,ctx:"17-latka wraca od fryzjera, patrzy w lustro z przerażeniem.",says:"Zobacz, co ona mi zrobiła! Za krótko, beznadziejny kolor, wszystko nie tak!",emo:"złość",dist:["smutek","bezsilność","rozczarowanie"]},
+{id:131,lv:1,ctx:"13-latek nosi aparat ortodontyczny od tygodnia.",says:"Przez ten aparat śmiesznie mówię i wyglądam fatalnie. Jeszcze dwa lata? Przecież to jest wieczność!",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
+{id:132,lv:1,ctx:"16-latka widzi swoje zdjęcie zrobione z ukrycia przez kogoś z klasy.",says:"Jak ja tu wyszłam? Mam jakąś dziwną minę i wyglądam tragicznie. Zaraz pewnie wrzucą to na grupę.",emo:"strach",dist:["wstyd","upokorzenie","bezsilność"]},
+{id:133,lv:1,ctx:"15-latek próbuje dobrać ubrania na wyjście do kina.",says:"Wszystko na mnie wisi albo jest za ciasne. Nie mam nic normalnego, w czym nie wstydziłbym się pokazać.",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
+{id:134,lv:1,ctx:"14-latka porównuje się do modelek z TikToka.",says:"One mają idealną cerę i figury, a ja... szkoda gadać. Czemu ja nie mogę tak wyglądać?",emo:"zazdrość",dist:["smutek","bezsilność","wstyd"]},
+{id:135,lv:1,ctx:"17-latek ma założyć garnitur na uroczystość rodzinną.",says:"Czuję się w tym jak przebrany. Wszyscy będą się na mnie gapić, to jest tak bardzo nie moje.",emo:"niepewność",dist:["wstyd","bezsilność","frustracja"]},
+{id:136,lv:1,ctx:"15-latka narzeka na swoje okulary.",says:"Znowu mi parują, jak wchodzę do autobusu. Wyglądam wtedy jak totalna ofiara losu.",emo:"wstyd",dist:["frustracja","bezsilność","smutek"]},
+
+// --- Media społecznościowe ---
+{id:26,lv:1,ctx:"13-latka zauważa, że pod jej filmikiem pojawił się hejt. Rzuca telefon na łóżko.",says:"Już nic nie wrzucę. Nie chcę kolejnej fali wyśmiewania.",emo:"strach",dist:["smutek","bezsilność","upokorzenie"]},
+{id:137,lv:1,ctx:"14-latka usunęła zdjęcie po tym, jak nikt go nie polubił przez piętnaście minut.",says:"Wiedziałam, że jest beznadziejne. Teraz pewnie wszyscy myślą, że jestem desperatką.",emo:"wstyd",dist:["odrzucenie","niepewność","smutek"]},
+{id:138,lv:1,ctx:"15-latek czyta kłótnię na grupie klasowej na Messengerze.",says:"Wszyscy tam na siebie jadą, a ja nie wiem, co napisać. Boję się, że jak coś powiem, to zaraz wszyscy obrócą się przeciwko mnie.",emo:"strach",dist:["niepewność","samotność","bezsilność"]},
+{id:139,lv:1,ctx:"16-latka widzi, że jej były chłopak dodał zdjęcie z nową dziewczyną.",says:"Patrz na to. Miesiąc po zerwaniu i już ma nową. Jakby te dwa lata ze mną w ogóle się nie liczyły.",emo:"żal",dist:["złość","odrzucenie","smutek"]},
+{id:140,lv:1,ctx:"13-latek dowiaduje się, że jego telefon jest zepsuty.",says:"Jestem odcięty od świata! Nie wiem, o czym oni teraz gadają, nie mam dostępu do niczego. To jest koniec mojego życia towarzyskiego.",emo:"strach",dist:["samotność","przytłoczenie","bezsilność"]},
+{id:141,lv:1,ctx:"15-latka czyta hejt pod swoim filmikiem.",says:"Napisali, że mam 'krzywy nos' i 'piskliwy głos'. Setki ludzi to widziało. Nie chcę już nigdy nic wrzucać do sieci.",emo:"upokorzenie",dist:["smutek","bezsilność","strach"]},
+{id:142,lv:1,ctx:"14-latka patrzy na relacje influencerów.",says:"Oni mają takie super życie, podróżują, mają kasę. A ja siedzę w tym nudnym domu i nic się u mnie nie dzieje.",emo:"zazdrość",dist:["smutek","bezsilność","tęsknota"]},
+{id:143,lv:1,ctx:"15-latka dowiaduje się, że koleżanka wrzuciła jej niekorzystne zdjęcie bez pytania.",says:"Wyglądam tam jak potwór! Prosiłam ją, żeby tego nie robiła, a ona to zostawiła. Jak ona mogła mi to zrobić?",emo:"złość",dist:["upokorzenie","żal","bezsilność"]},
+{id:144,lv:1,ctx:"13-latek odkrywa, że w grze został oszukany przez innego gracza.",says:"Oddałem mu wszystkie moje itemy, a on mnie zablokował. Ufałem mu, graliśmy razem od miesięcy!",emo:"żal",dist:["złość","odrzucenie","bezsilność"]},
+
+// --- Przytłoczenie i zmęczenie ---
+{id:145,lv:1,ctx:"15-latka siedzi o dwudziestej trzeciej nad stosem notatek, bo jutro ma dwa sprawdziany i prezentację, a rano musi jeszcze poćwiczyć do zawodów.",says:"Nie ogarniam tego, po prostu nie ogarniam. Zaraz mi mózg wyparuje, a jeszcze tyle zostało. Nie dam rady, to jest za dużo na jednego człowieka!",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
+{id:146,lv:1,ctx:"14-latka narzeka na poranne wstawanie.",says:"Znowu ta ciemność za oknem. Mam wrażenie, że całe moje życie to tylko szkoła, spanie i szkoła. Nie mam na nic siły.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
+{id:147,lv:1,ctx:"17-latka uczy się do egzaminów późno w nocy.",says:"Kawa już na mnie nie działa, oczy mi się same zamykają, a ja mam jeszcze 20 stron do przeczytania. To jest nie do zrobienia.",emo:"przytłoczenie",dist:["bezsilność","desperacja","frustracja"]},
+{id:148,lv:1,ctx:"13-latka odrabia lekcje z matematyki.",says:"To jest czarna magia. Siedzę nad tym zadaniem od godziny i dalej nie wiem, od czego zacząć. Zaraz ten zeszyt poleci w kąt!",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
+
+// --- Pasje i czas wolny ---
+{id:149,lv:1,ctx:"15-latek przegrywa ważny mecz w grze online przez błąd serwera.",says:"Nie wierzę! Cały ranking poszedł w dół przez jeden lag. Tyle godzin grindu zmarnowane w sekundę!",emo:"frustracja",dist:["złość","bezsilność","rozczarowanie"]},
+{id:150,lv:1,ctx:"16-latek dowiaduje się, że trener nie wystawił go w pierwszym składzie.",says:"Zasuwałem na każdym treningu, a on wziął tego typa, co połowę czasu przesiedział na ławce. To jest totalna zamuła.",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
+{id:151,lv:1,ctx:"13-latka dowiaduje się, że kółko plastyczne zostało odwołane.",says:"To była jedyna rzecz, na którą chciało mi się iść w tym tygodniu. Teraz będę musiała siedzieć w domu i się nudzić.",emo:"rozczarowanie",dist:["smutek","samotność","frustracja"]},
+{id:152,lv:1,ctx:"15-latka narzeka na stary sprzęt do fotografii.",says:"Tym starym rzęchem nic nie wyjdzie. Inni mają profesjonalny sprzęt i ich zdjęcia wyglądają super, a moje to żenada.",emo:"frustracja",dist:["zazdrość","bezsilność","smutek"]},
+{id:153,lv:1,ctx:"15-latek dowiaduje się, że nie został wybrany do szkolnej reprezentacji sportowej, mimo intensywnych treningów.",says:"Trenowałem całe wakacje, a oni wzięli tego gościa, co połowę zajęć olał. To jest po prostu kpina, więcej tam nie pójdę!",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
+
+// --- Przyszłość ---
+{id:154,lv:1,ctx:"18-latka wraca po rozmowie z doradcą zawodowym.",says:"Nie mam pojęcia, co chcę robić w przyszłości. Czuję, że niedługo muszę podjąć decyzję, a kompletnie nie wiem czego chcę.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
+{id:155,lv:1,ctx:"15-latka patrzy na progi punktowe do wymarzonego liceum.",says:"Nie ma szans. Z moimi wynikami to mogę co najwyżej pomarzyć. Wszystkie moje plany właśnie legły w gruzach.",emo:"bezsilność",dist:["smutek","rozczarowanie","strach"]},
+{id:156,lv:1,ctx:"17-latek mówi o dorosłości.",says:"Wszyscy oczekują, że nagle będę wiedział, jak płacić rachunki i co robić w życiu. A ja się czuję, jakbym utknął w miejscu.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
+{id:157,lv:1,ctx:"14-latka zastanawia się nad wyborem profilu klasy.",says:"Jak wybiorę mat-fiz, to nie będę miała czasu na nic innego. Jak wybiorę humanistyczny, to pewnie nie znajdę pracy. To jest bez sensu.",emo:"przytłoczenie",dist:["strach","bezsilność","niepewność"]},
+{id:158,lv:1,ctx:"15-latka słucha opowieści rodzica o sukcesach dziecka znajomych.",says:"No jasne, on jest genialny, a ja jestem zwykłą szarą myszą. Zawsze będę gorsza od innych, nieważne co zrobię.",emo:"bezsilność",dist:["smutek","zazdrość","wstyd"]},
+{id:159,lv:1,ctx:"17-latek mówi o maturze.",says:"Ten egzamin ma zdecydować o całym moim życiu? Przecież to jest chore. Czuję się, jakby ktoś przystawił mi pistolet do głowy.",emo:"strach",dist:["przytłoczenie","bezsilność","złość"]},
+{id:160,lv:1,ctx:"16-latka myśli o wyjeździe na studia do innego miasta.",says:"Chciałabym wyjechać, ale boję się, że sobie nie poradzę. Tutaj mam wszystko, a tam będę zupełnie sama.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
+{id:161,lv:1,ctx:"14-latek dowiaduje się, że nie dostał się na wymarzony kurs.",says:"To była moja jedyna droga do celu. Teraz już nic mi nie zostało, mogę się poddać.",emo:"bezsilność",dist:["rozczarowanie","smutek","desperacja"]},
+
+// ═══════════════════════════════════════════════════════════
+// POZIOM 2 — kusi żeby doradzać i naprawiać
+// ═══════════════════════════════════════════════════════════
+
+{id:5,lv:2,ctx:"Rodzic właśnie odłożył słuchawkę po telefonie od wychowawcy o spóźnieniach. 14-latek wchodzi do kuchni.",says:"On się na mnie uwziął. Cokolwiek zrobię, i tak mu nie pasuje.",emo:"niesprawiedliwość",dist:["złość","bezsilność","frustracja"]},
+{id:6,lv:2,ctx:"Przyszła wiadomość od nauczyciela o niewykonanym zadaniu. 15-latek wzrusza ramionami.",says:"Nie będę tego robić. I tak nikt nie widzi, ile ja się męczę.",emo:"bezsilność",dist:["smutek","złość","samotność"]},
+{id:7,lv:2,ctx:"Wieczór. Na grupie klasowej do projektu nikt nie odpisuje, a termin jutro. 15-latek siedzi z telefonem.",says:"Zrobili mnie liderem, a teraz mnie olali. Jak nie wyjdzie, to zgadnij, kto oberwie.",emo:"przytłoczenie",dist:["złość","strach","bezsilność"]},
+{id:10,lv:2,ctx:"Rodzic zatrzymuje auto pod szkołą i wysiada razem z 14-latkiem.",says:"Zostań w aucie. Nie odprowadzaj mnie.",emo:"wstyd",dist:["bunt","strach","niepewność"]},
+{id:11,lv:2,ctx:"W sklepie rodzic i 15-latek spotykają jego klasę. Rodzic zaczyna rozmowę z kolegami.",says:"Nie mów tak przy moich znajomych.",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:14,lv:2,ctx:"16-latek chce wyjść w czymś nietypowym. Rodzic komentuje.",says:"To jest mój styl. Nie każ mi wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
+{id:27,lv:2,ctx:"15-latka wraca ze szkoły z plamą na bluzie. Widać, że ktoś jej coś zrobił.",says:"Nie pytaj, bo i tak nic z tym nie zrobisz. Sama sobie poradzę.",emo:"bezsilność",dist:["wstyd","samotność","złość"]},
+{id:29,lv:2,ctx:"Rodzic prosi 15-latka, żeby zjadł z rodziną. Bierze talerz i idzie do pokoju.",says:"Chcę zjeść sam. Po prostu nie mam dziś siły na rozmowy.",emo:"przytłoczenie",dist:["samotność","smutek","bezsilność"]},
+{id:42,lv:2,ctx:"16-latek wraca po imprezie. Coś jest inaczej niż zwykle. Widać wstyd.",says:"Nie patrz na mnie tak. Ja… ja po prostu chciałem być jak inni.",emo:"wstyd",dist:["strach","żal","bezsilność"]},
+{id:59,lv:2,ctx:"Rodzic proponuje wspólny film w piątek. 15-latek kręci głową.",says:"Wolałbym wyjść. Nie jestem już małym dzieckiem.",emo:"bunt",dist:["frustracja","samotność","złość"]},
+{id:60,lv:2,ctx:"Sobota rano. Rodzic budzi 15-latka do sprzątania.",says:"Serio mam sprzątać w sobotę? Ja cały tydzień jadę na oparach.",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
+{id:63,lv:2,ctx:"Rodzic mówi: musisz się uczyć. 16-latek macha ręką.",says:"Ja się umiem nauczyć, tylko mi się nie chce ciągle żyć pod presją.",emo:"przytłoczenie",dist:["bunt","bezsilność","frustracja"]},
+{id:65,lv:2,ctx:"Kolacja. Rodzic pyta 15-latka o znajomych. Odpowiada chłodno.",says:"Nie mam ochoty o tym gadać. To i tak nic nie zmieni.",emo:"samotność",dist:["smutek","bezsilność","bunt"]},
+{id:70,lv:2,ctx:"Rozmowa o imprezach. Rodzic mówi, że ma obawy. 16-latek reaguje.",says:"Uważasz, że jak wyjdę, to od razu zrobię coś głupiego.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
+{id:71,lv:2,ctx:"16-latek mówi o relacji. Rodzic od razu zaczyna dopytywać o szczegóły.",says:"Nie chcę przesłuchania. Chcę tylko, żebyś była po mojej stronie.",emo:"samotność",dist:["smutek","złość","bezsilność"]},
+{id:74,lv:2,ctx:"17-latka siada naprzeciwko. Widać, że zbiera się na odwagę.",says:"Chcę ci powiedzieć, że spotykam się z kimś starszym, ale boję się twojej reakcji.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
+{id:76,lv:2,ctx:"16-latek chce iść sam do lekarza. Rodzic proponuje, że pójdzie razem.",says:"Nie chcę, żebyś ze mną szła. To jest dla mnie krępujące.",emo:"wstyd",dist:["bunt","niepewność","strach"]},
+{id:78,lv:2,ctx:"14-latka chce się malować. Rodzic mówi, że za wcześnie.",says:"Ja chcę się malować jak inne dziewczyny. Czuję się przez ciebie głupio i dziecinnie.",emo:"bunt",dist:["wstyd","złość","bezsilność"]},
+{id:83,lv:2,ctx:"Wieczór. 16-latek siada obok i mówi cicho, jakby z ulgą.",says:"Od jakiegoś czasu prawie nic nie jem i nie piję. I nie umiem tego odkręcić.",emo:"bezsilność",dist:["strach","smutek","desperacja"]},
+{id:87,lv:2,ctx:"Do matury zostały dwa tygodnie. Rodzic pyta: uczysz się? 17-latek odpowiada.",says:"Ale wynik matury nie będzie mnie definiował.",emo:"bunt",dist:["niepewność","strach","bezsilność"]},
+{id:88,lv:2,ctx:"17-latka tuż przed próbną maturą.",says:"Boli mnie głowa i ściska w żołądku.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
+{id:91,lv:2,ctx:"Rodzina planuje 18 urodziny 17-latka. Ktoś już rezerwuje salę.",says:"Nie wiem, czy chcę imprezę. Wolałbym w domu, bez wielkiej akcji.",emo:"niepewność",dist:["strach","samotność","bunt"]},
+{id:162,lv:2,ctx:"15-latek słucha rodzica, który dopytuje o poprawę ocen zaraz po wejściu do domu.",says:"Daj spokój, ledwo wszedłem do domu. Cały dzień tylko testy i pytania, a ty od progu znowu to samo!",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
+{id:163,lv:2,ctx:"14-latka rysuje w pokoju. Rodzic woła ją na obiad.",says:"Właśnie teraz miałam najlepszy pomysł na cieniowanie! Zanim wrócę, to wszystko mi ucieknie z głowy!",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
+{id:164,lv:2,ctx:"16-latek mówi o uzależnieniu od TikToka, kiedy rodzic zwraca mu uwagę na czas przed ekranem.",says:"Tylko tam mogę się wyłączyć i o niczym nie myśleć. Bez tego telefonu to bym chyba oszalał z nudów.",emo:"bezsilność",dist:["samotność","przytłoczenie","smutek"]},
+{id:165,lv:2,ctx:"15-latek wraca po siedmiu lekcjach i dodatkowym angielskim.",says:"Nie ruszę palcem. Nawet nie proś mnie o rozładowanie zmywarki, bo po prostu padnę na podłogę.",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
+{id:166,lv:2,ctx:"16-latek mówi o sprzątaniu pokoju.",says:"Po co mam to sprzątać, skoro jutro i tak będzie tak samo? To jest syzyfowa praca, daj mi spokój.",emo:"bezsilność",dist:["frustracja","przytłoczenie","smutek"]},
+{id:167,lv:2,ctx:"14-latka narzeka na robienie zakupów.",says:"Znowu długa lista. Będę tam stać w kolejkach godzinę. Mój jedyny wolny czas w tygodniu właśnie przepadł.",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
+{id:168,lv:2,ctx:"15-latka narzeka na gotowanie.",says:"Nie cierpię gotować. Wszystko mi się przypala i kuchnia wygląda jak po wojnie. Dlaczego nie możemy po prostu zamówić pizzy?",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
+{id:169,lv:2,ctx:"16-latek mówi o pomyśle na gap year po szkole.",says:"Chciałbym po prostu odpocząć rok po szkole, ale wy pewnie uznacie, że jestem leniem i nic nie robię.",emo:"strach",dist:["niepewność","bunt","samotność"]},
+{id:170,lv:2,ctx:"16-latka porównuje swoje kieszonkowe z rówieśnikami.",says:"Inni dostają dwa razy tyle i mogą sobie na coś odłożyć. Ja ledwo mam na bilet i herbatę. Czuję się jak biedak przy moich znajomych.",emo:"wstyd",dist:["bezsilność","niesprawiedliwość","zazdrość"]},
+{id:171,lv:2,ctx:"17-latka mówi o tym, że nie chce spędzać czasu z rodzicem.",says:"Wolisz, żebym siedziała z tobą na kanapie, zamiast być z ludźmi w moim wieku? To jest nudne!",emo:"bunt",dist:["frustracja","złość","samotność"]},
+
+// ═══════════════════════════════════════════════════════════
+// POZIOM 3 — nastolatek zły NA rodzica
+// ═══════════════════════════════════════════════════════════
+
+// --- Stare scenki (przepisane) ---
+{id:12,lv:3,ctx:"Rodzic siedzi z gośćmi w salonie i właśnie zażartował o 15-latce.",says:"Weź przestań!",emo:"upokorzenie",dist:["złość","wstyd","bezsilność"]},
+{id:13,lv:3,ctx:"14-latek stoi na przystanku. Rodzic woła za nim zbyt głośno.",says:"Nie rób siary!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:18,lv:3,ctx:"Kolejna dyskusja o godzinie powrotu. 17-latek rzuca plecak i siada na łóżku.",says:"Mam 17 lat i mam potrzebę wracać później. Czemu ty tego nie widzisz?",emo:"bunt",dist:["złość","niesprawiedliwość","bezsilność"]},
+{id:21,lv:3,ctx:"Rodzic wraca z wywiadówki i chce pogadać o ocenach. 16-latek odsuwa talerz.",says:"Nie chcę o tym teraz gadać. I nie rób ze mnie projektu do naprawy.",emo:"bunt",dist:["złość","upokorzenie","bezsilność"]},
+{id:31,lv:3,ctx:"Rodzic i 13-latek właśnie pokłócili się o drobiazg. Odwraca się do ściany.",says:"Nie lubię cię.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
+{id:32,lv:3,ctx:"Chwila ciszy po kłótni. 15-latek mówi już ciszej, ale twardo.",says:"Widzisz mnie tylko wtedy, kiedy coś robię źle.",emo:"smutek",dist:["bezsilność","samotność","żal"]},
+{id:33,lv:3,ctx:"Rodzic otwiera drzwi do pokoju 14-latka bez pukania.",says:"Nie wchodź tutaj bez pytania. To jest moja przestrzeń.",emo:"złość",dist:["bunt","strach","bezsilność"]},
+{id:34,lv:3,ctx:"Rodzic pyta 16-latkę, czemu ostatnio się oddala.",says:"Bo jak pytasz o wszystko, to mam ochotę tylko uciec. Serio.",emo:"przytłoczenie",dist:["bunt","złość","strach"]},
+{id:35,lv:3,ctx:"15-latek odrabia lekcje. Rodzic zaczyna doradzać.",says:"Przestań mi stać nad głową. Jak mnie ciśniesz, to mam jeszcze większy mętlik.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
+{id:36,lv:3,ctx:"Rodzic mówi: porozmawiajmy. 16-latek włącza głośniej muzykę.",says:"Nie teraz. Jak będę gotowy, to sam powiem.",emo:"bunt",dist:["przytłoczenie","złość","bezsilność"]},
+{id:37,lv:3,ctx:"Rodzic wiesza w kuchni kartkę z nowymi zasadami. 15-latek czyta i prycha.",says:"Zasady, zasady… A kto pyta, czego ja potrzebuję?",emo:"niesprawiedliwość",dist:["złość","bunt","samotność"]},
+{id:38,lv:3,ctx:"Rodzic przypomina o obowiązkach. 15-latek stoi w progu z telefonem.",says:"Ja nie jestem robotem. Potrzebuję czasem po prostu nic nie robić.",emo:"przytłoczenie",dist:["bunt","bezsilność","złość"]},
+{id:50,lv:3,ctx:"16-latek właśnie znalazł w telefonie rodzica screena ze swojej rozmowy.",says:"Nie miałaś prawa. Czuję się jak w klatce.",emo:"złość",dist:["żal","strach","bezsilność"]},
+{id:51,lv:3,ctx:"Rodzic wrzucił w sieci zdjęcie 15-latka z dzieciństwa. Wpada w panikę.",says:"Usuń to zdjęcie. Ja nie chcę, żeby to było w internecie.",emo:"złość",dist:["strach","upokorzenie","bezsilność"]},
+{id:52,lv:3,ctx:"Właśnie skończyła się ostra kłótnia między rodzicem a 16-latkiem. Drzwi trzaskają.",says:"Nienawidzę cię.",emo:"złość",dist:["smutek","bezsilność","desperacja"]},
+{id:53,lv:3,ctx:"Godzinę po kłótni 16-latek wraca spokojniejszy, ale głos mu się łamie.",says:"Mogłabyś chociaż raz posłuchać, zamiast tylko rządzić?",emo:"bezsilność",dist:["smutek","żal","samotność"]},
+{id:54,lv:3,ctx:"Rodzic prosi 14-latka o wyniesienie śmieci. Eksploduje.",says:"Zaraz! Czemu zawsze ja? Mam was wszystkich dosyć.",emo:"złość",dist:["przytłoczenie","niesprawiedliwość","bezsilność"]},
+{id:55,lv:3,ctx:"Rodzic komentuje bałagan w pokoju 15-latka. Ten mówi ostro.",says:"To mój pokój. Jak ci się nie podoba, to nie wchodź.",emo:"bunt",dist:["złość","niesprawiedliwość","frustracja"]},
+{id:56,lv:3,ctx:"16-latek nie ma ochoty sprzątać swojego pokoju.",says:"Jak będę dorosły, to zatrudnię kogoś do sprzątania w moim domu.",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
+{id:57,lv:3,ctx:"16-latek właśnie odkrył na swoim telefonie aplikację do śledzenia lokalizacji.",says:"Po co to znów robisz?",emo:"złość",dist:["żal","strach","bunt"]},
+{id:61,lv:3,ctx:"Rodzic prosi 16-latkę o pomoc w kuchni. Nawet nie podnosi wzroku.",says:"Nie. Jestem zmęczona. I nie udawaj, że tego nie słyszysz.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
+{id:62,lv:3,ctx:"Kolejna rozmowa o pomaganiu w domu. 15-latek wchodzi w obronę.",says:"Przestań gadać, że nic nie robię. Ja też mam swoje rzeczy i swoją głowę.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:67,lv:3,ctx:"Rodzic próbuje postawić granicę. 15-latek krzyczy.",says:"Zostaw mnie! Jak wejdziesz jeszcze raz, to zamknę drzwi na klucz.",emo:"złość",dist:["strach","bunt","bezsilność"]},
+{id:68,lv:3,ctx:"Po spięciu o komputer 16-latka idzie w groźbę emocjonalną.",says:"Jak tak dalej będziesz robić, to przestanę z tobą rozmawiać. I będziesz sama.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
+{id:69,lv:3,ctx:"15-latek krzyczy z pokoju podczas grania. Rodzic prosi o ciszę.",says:"Przestań wchodzić co pięć minut! Ja jestem w trakcie.",emo:"złość",dist:["frustracja","bunt","przytłoczenie"]},
+{id:73,lv:3,ctx:"Rodzic komentuje, że widział 16-latkę całującą się pod domem. Spina się.",says:"To nie twoja sprawa. Przestań mnie obserwować jak policja.",emo:"złość",dist:["bunt","wstyd","strach"]},
+{id:77,lv:3,ctx:"13-latka ma pretensje, że rodzic powiedział o jej okresie tacie i ciociom.",says:"Czemu powiedziałaś tacie i ciociom? To było moje i prywatne.",emo:"żal",dist:["złość","upokorzenie","wstyd"]},
+{id:90,lv:3,ctx:"Rozmowa o wyprowadzce. 18-latek broni swojej autonomii.",says:"Przecież mam 18 lat. Czemu moje życie ma być dalej waszą sprawą?",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
+{id:93,lv:3,ctx:"Wczoraj rodzic obiecał, że nie będzie krzyczeć. Wieczór, kuchnia. 15-latek mówi.",says:"Ja już ci nie wierzę. Za każdym razem jest tak samo.",emo:"żal",dist:["bezsilność","smutek","samotność"]},
+
+// --- Nowe scenki poziom 3 ---
+{id:172,lv:3,ctx:"16-latek odkrywa, że rodzic bez konsultacji oddał jego stare, ale wciąż używane gry komputerowe kuzynowi.",says:"To były moje rzeczy! Dlaczego zawsze decydujesz za mnie i bez pytania grzebiesz w moich szafkach?!",emo:"złość",dist:["niesprawiedliwość","żal","bunt"]},
+{id:173,lv:3,ctx:"14-latek prosi o zgodę na powrót z imprezy o północy, a rodzic stanowczo upiera się przy godzinie dwudziestej drugiej.",says:"Wszyscy mogą zostać do końca, tylko ja muszę uciekać jak jakiś maluch. Robisz mi obciach przed całą klasą, nigdy mi nie ufasz!",emo:"niesprawiedliwość",dist:["złość","wstyd","bunt"]},
+{id:174,lv:3,ctx:"16-latka słyszy, jak rodzic wychwala młodsze rodzeństwo za drobną pomoc w domu, ignorując jej wcześniejsze porządki.",says:"Jasne, on jest waszą idealną gwiazdą. Ja mogę posprzątać cały dom i nikt nawet nie zauważy, bo dla was liczy się tylko on!",emo:"niesprawiedliwość",dist:["żal","złość","samotność"]},
+{id:175,lv:3,ctx:"13-latek dowiaduje się, że z powodu pilnego wyjazdu rodzinnego nie będzie mógł wziąć udziału w turnieju online z kolegami.",says:"Nie no, świetnie! Teraz pomyślą, że stchórzyłem i wywalą mnie z klanu. Zawsze musicie mi wszystko psuć w ostatniej chwili!",emo:"złość",dist:["bezsilność","strach","żal"]},
+{id:176,lv:3,ctx:"13-latka przyłapuje rodzica na tym, że próbował podejrzeć powiadomienia na jej telefonie, gdy zostawiła go na chwilę w kuchni.",says:"No nie wierzę! Serio musisz mnie tak śledzić?",emo:"złość",dist:["żal","strach","bunt"]},
+{id:177,lv:3,ctx:"16-latek przegrywa ważny mecz w grze rankingowej, bo rodzic kazał mu natychmiast wyłączyć komputer, nie pozwalając dokończyć rundy.",says:"No i po randze! Przez ciebie przegraliśmy, bo musiałaś mi teraz truć o tych głupich śmieciach. Zero wyczucia, po prostu niszczysz mi wszystko, co dla mnie ważne!",emo:"złość",dist:["bezsilność","żal","frustracja"]},
+{id:178,lv:3,ctx:"17-latka słyszy przy obiedzie kolejne pytanie o to, czy na pewno złoży papiery na medycynę, bo 'artysta to nie zawód'.",says:"Rzygać mi się chce tym waszym prestiżem. Nikogo nie obchodzi, co ja czuję, tylko co powiecie znajomym. Mam dość tej wiecznej presji, dajcie mi w końcu żyć!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
+{id:179,lv:3,ctx:"13-latek wraca ze szkoły i odkrywa, że rodzic poukładał mu notatki i papiery na biurku, szukając ważnego dokumentu.",says:"Znowu tu byłaś?! Wszystko tu leżało tak jak trzeba! Czy ty naprawdę musisz wszędzie łazić? To jest mój pokój, a nie jakieś muzeum do zwiedzania dla ciebie!",emo:"złość",dist:["niesprawiedliwość","bunt","bezsilność"]},
+{id:181,lv:3,ctx:"16-latka o tym, że rodzic pyta ją, z kim pisze na telefonie.",says:"To jest moja prywatna sprawa. Czy ja ci zaglądam w telefon? Daj mi w końcu trochę oddechu!",emo:"złość",dist:["bunt","strach","bezsilność"]},
+{id:182,lv:3,ctx:"15-latek, gdy rodzic wchodzi do pokoju bez pukania.",says:"Wyjdź! Serio, czy tak trudno jest zapukać? Czuję się tutaj jak w jakimś monitorowanym więzieniu.",emo:"złość",dist:["bunt","upokorzenie","bezsilność"]},
+{id:183,lv:3,ctx:"17-latka dowiaduje się, że rodzice rozmawiali o jej ocenach z ciocią.",says:"Po co rozpowiadacie o moich sprawach całej rodzinie? To jest moje życie, a nie temat do plotek przy kawie!",emo:"złość",dist:["żal","upokorzenie","bunt"]},
+{id:184,lv:3,ctx:"14-latek po zainstalowaniu przez rodziców aplikacji do kontroli czasu przed ekranem.",says:"Blokujecie mi telefon o 21? Przecież to jest jedyny czas, kiedy mogę pogadać z ludźmi. Czuję się ubezwłasnowolniony.",emo:"złość",dist:["bunt","bezsilność","samotność"]},
+{id:185,lv:3,ctx:"16-latka, gdy mama próbuje dołączyć do jej znajomych na Facebooku.",says:"Proszę, nie rób mi tego. To jest moja przestrzeń, nie chcę tam mieć rodziców pod każdym postem.",emo:"strach",dist:["wstyd","bunt","złość"]},
+{id:186,lv:3,ctx:"15-latek o czytaniu jego pamiętnika lub notatek przez rodzica.",says:"Znalazłem to pod łóżkiem, leżało inaczej. Czytałaś to, prawda? Jak mogłaś mi to zrobić?!",emo:"żal",dist:["złość","upokorzenie","bezsilność"]},
+{id:187,lv:3,ctx:"13-latka o tym, że rodzice każą jej zostawiać telefon w salonie na noc.",says:"Nikt tak nie robi! Wszyscy mają telefony przy sobie, a wy traktujecie mnie, jakbym miała pięć lat.",emo:"niesprawiedliwość",dist:["złość","bunt","wstyd"]},
+{id:188,lv:3,ctx:"17-latek mówi o planach na weekend, które rodzice chcą znać godzina po godzinie.",says:"Nie wiem dokładnie, co będziemy robić! Po prostu wychodzę. Przecież nie ucieknę z kraju.",emo:"bunt",dist:["złość","frustracja","przytłoczenie"]},
+{id:189,lv:3,ctx:"16-latka o tym, że rodzic wszedł do łazienki, gdy ona się kąpała.",says:"Nie ma tu żadnego zamka? Nie mogę mieć nawet chwili dla siebie w tym domu?",emo:"złość",dist:["wstyd","bunt","bezsilność"]},
+{id:190,lv:3,ctx:"17-latka, której rodzice nie chcą puścić na koncert ulubionego zespołu.",says:"Oni przyjeżdżają raz na kilka lat! To jest moja jedyna szansa, żeby ich zobaczyć. Wszystko mi ucieka!",emo:"złość",dist:["smutek","bezsilność","tęsknota"]},
+{id:191,lv:3,ctx:"15-latek próbuje nagrać filmik na YouTube, ale rodzice ciągle wchodzą mu do pokoju.",says:"To jest nie do zrobienia. Nigdy nie uda mi się nagrać nic sensownego, jak ciągle ktoś tu łazi i coś chce!",emo:"frustracja",dist:["złość","bezsilność","bunt"]},
+{id:192,lv:3,ctx:"16-latek o nowym hobby, które rodzice wyśmiewają.",says:"Dla was wszystko, co robię, jest dziwne. Nawet nie spróbowaliście zrozumieć, o co w tym chodzi, od razu jest 'głupie'.",emo:"smutek",dist:["złość","bezsilność","samotność"]},
+{id:193,lv:3,ctx:"17-latek mówi o tym, że rodzice zmuszają go do nauki gry na instrumencie, którego nie lubi.",says:"Mam dosyć tego pianina. Każda godzina przy nim to dla mnie tortura. Dlaczego nie mogę robić tego, co ja chcę?",emo:"bezsilność",dist:["złość","bunt","smutek"]},
+{id:194,lv:3,ctx:"14-latek o swojej kolekcji kart i figurek, którą rodzic nazwał śmieciami.",says:"To nie są śmieci! Zbierałem to latami! Zupełnie tego nie szanujesz.",emo:"złość",dist:["żal","smutek","bezsilność"]},
+{id:195,lv:3,ctx:"16-latek o presji rodziców na konkretny kierunek studiów.",says:"To wasze marzenia, nie moje. Chcecie, żebym był lekarzem, ale ja mdleję na widok krwi. Nikt mnie nie słucha!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
+{id:197,lv:3,ctx:"14-latka o tym, że młodszy brat może więcej.",says:"On znowu nie musiał sprzątać po kolacji, bo 'jest mały'. Ja w jego wieku już wszystko robiłam sama. To jest totalnie nie fair!",emo:"niesprawiedliwość",dist:["złość","żal","bezsilność"]},
+{id:198,lv:3,ctx:"16-latek proszony o pomoc z zakupami, gdy właśnie planował wyjście.",says:"Dlaczego zawsze przypominasz sobie o zakupach, kiedy ja mam swoje plany? Nigdy nie szanujesz mojego czasu!",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
+{id:199,lv:3,ctx:"13-latka, której rodzice nie pozwalają kupić konkretnego ciucha.",says:"Wszystkie dziewczyny to noszą! Tylko ja mam wyglądać inaczej, bo wam się to nie podoba. Chcecie, żeby wszyscy się ze mnie śmiali?",emo:"niesprawiedliwość",dist:["złość","wstyd","strach"]},
+{id:200,lv:3,ctx:"15-latek o tym, że rodzice sprawdzają jego oceny codziennie.",says:"Mam 15 lat, a wy pilnujecie mnie jak w podstawówce. Czy wy mi w ogóle w czymkolwiek ufacie?",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:201,lv:3,ctx:"17-latka, która nie może pojechać pod namiot ze znajomymi.",says:"Znam ich od lat! Nic mi się nie stanie, ale wy zawsze widzicie najgorsze scenariusze. Mam dość tego pilnowania na każdym kroku.",emo:"złość",dist:["bunt","niesprawiedliwość","bezsilność"]},
+{id:202,lv:3,ctx:"14-latek o tym, że rodzic przerwał mu wypowiedź przy gościach.",says:"Zrobiłeś ze mnie głupka przy wszystkich, jakbym nie miał nic mądrego do gadania.",emo:"upokorzenie",dist:["złość","żal","bezsilność"]},
+{id:203,lv:3,ctx:"15-latek o tym, że rodzice wybrali mu zajęcia dodatkowe bez pytania.",says:"Nie zapytaliście mnie, czy ja w ogóle chcę tam chodzić. Po prostu mnie tam zapisaliście, jakbym był przedmiotem.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:204,lv:3,ctx:"17-latek o zakazie prowadzenia samochodu rodziców mimo zdanego prawa jazdy.",says:"Właśnie zrobiłem prawko! Skąd mam nabrać wprawy, jak wy mi nigdy nie dajecie kluczyków? Zawsze jestem 'za młody'.",emo:"niesprawiedliwość",dist:["złość","frustracja","bunt"]},
+{id:205,lv:3,ctx:"17-latek o tym, że rodzice skomentowali jego post w mediach społecznościowych.",says:"Po co to zrobiliście? Przecież to jest siara! Teraz moi znajomi będą to wyciągać przez pół roku.",emo:"upokorzenie",dist:["złość","wstyd","bunt"]},
+{id:206,lv:3,ctx:"15-latek o tym, że rodzic każe mu wyjść z psem w deszczu.",says:"Zawsze ja! Dlaczego to ja muszę iść, kiedy leje, a wy sobie siedzicie przed telewizorem? To jest niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","bunt","frustracja"]},
+{id:207,lv:3,ctx:"16-latek, któremu rodzic każe wynieść śmieci, choć właśnie usiadł.",says:"Właśnie usiadłem, żeby odpocząć. Czy naprawdę te śmieci nie mogą poczekać do jutra? Musisz mi truć teraz?",emo:"złość",dist:["frustracja","bunt","bezsilność"]},
+{id:208,lv:3,ctx:"17-latek o pomaganiu w ogrodzie w weekend.",says:"Cały weekend mamy kopać te grządki? Przecież ja miałem się spotkać z ekipą. Znowu mi psujecie plany.",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
+{id:209,lv:3,ctx:"16-latek o tym, że rodzic próbuje go przytulić przy znajomych.",says:"Przestań! Robisz mi totalny obciach. Nie jestem już małym dzieckiem!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:210,lv:3,ctx:"15-latka o tym, że rodzic chce iść z nią na zakupy odzieżowe.",says:"Sama sobie wybiorę ubrania. Twój gust to lata dziewięćdziesiąte, nie chcę wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
+{id:211,lv:3,ctx:"14-latek o tym, że rodzic ciągle pyta, jak było w szkole.",says:"Normalnie. Jak zawsze. Możesz przestać mnie tak przesłuchiwać co dwa dni?",emo:"frustracja",dist:["złość","bunt","przytłoczenie"]},
+{id:212,lv:3,ctx:"17-latka o tym, że rodzice chcą poznać jej nowego chłopaka.",says:"Nie przyprowadzę go tutaj, żebyście go oceniali od progu. To moja sprawa, z kim się spotykam.",emo:"strach",dist:["bunt","złość","wstyd"]},
+{id:213,lv:3,ctx:"16-latek o tym, że rodzic daje mu rady, o które nie prosił.",says:"Wiem, co mam robić! Nie musisz mi powtarzać wszystkiego po dziesięć razy, jakbym był głupi.",emo:"złość",dist:["frustracja","bunt","upokorzenie"]},
+{id:214,lv:3,ctx:"15-latka o tym, że rodzice krytykują jej muzykę.",says:"Słucham tego, co chcę słuchać. Jak wam się nie podoba, to wyjdźcie z mojego pokoju, ale nie mówcie, że to 'hałas'.",emo:"złość",dist:["bunt","smutek","niesprawiedliwość"]},
+{id:215,lv:3,ctx:"14-latek o tym, że rodzice śmieją się z jego problemów sercowych.",says:"Dla was to jest zabawne, ale dla mnie to jest teraz najważniejsze. Nic nie rozumiecie!",emo:"smutek",dist:["złość","samotność","żal"]},
+{id:216,lv:3,ctx:"16-latek o tym, że rodzic mówi do niego pieszczotliwym imieniem z dzieciństwa.",says:"Nie mów tak do mnie! Nienawidzę tego imienia, czuję się wtedy jak jakiś niemowlak.",emo:"wstyd",dist:["złość","bunt","smutek"]},
+{id:217,lv:3,ctx:"15-latka o tym, że rodzic próbuje być 'fajny' przy jej kolegach.",says:"To było takie cringe'owe. Proszę, po prostu zachowuj się normalnie, a nie udawaj nastolatka.",emo:"wstyd",dist:["złość","upokorzenie","frustracja"]},
+{id:218,lv:3,ctx:"15-latek, który bardzo liczył na wyjazd na obóz sportowy, dowiaduje się, że z powodu awarii samochodu rodzice muszą przesunąć wydatki.",says:"Obiecaliście mi to pół roku temu! Wszyscy moi kumple już mają opłacone miejsca, a ja teraz mam im powiedzieć, że co? Że znowu coś się zepsuło? Zawsze mi wszystko psujecie w ostatniej chwili!",emo:"złość",dist:["żal","niesprawiedliwość","bezsilność"]},
+];
+
+// ══════════════════════════════════════════════════════════════
+// LOSOWANIE SCENKI Z BAZY
+// ══════════════════════════════════════════════════════════════
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+
+const types1=["Szkoła","Emocje","Rówieśnicy","Presja","Ciało","Lęk","Smutek","Samotność"];
+const types2=["Autonomia","Granice","Telefon","Przyszłość","Relacje","Kontrola","Zmęczenie","Obowiązki"];
+const types3=["Konflikt","Złość na rodzica","Granice","Kontrola","Prywatność","Bunt","Autonomia"];
+
+function drawScene(level, usedIds){
+  const pool=SCENARIOS_DB.filter(s=>s.lv===level&&!usedIds.has(s.id));
+  if(pool.length===0) return null;
+  const raw=pick(pool);
+  const typePool=level===1?types1:level===2?types2:types3;
+  return{
+    id:raw.id, level,
+    situation:raw.ctx,
+    teen_says:raw.says,
+    situation_type:pick(typePool)
+  };
+}
+
+// ══════════════════════════════════════════════════════════════
+// PROMPT: FEEDBACK — zachowany z v2
+// ══════════════════════════════════════════════════════════════
+const SYS_FEEDBACK = `Oceniasz odpowiedzi rodziców na emocje nastolatków. Metoda Faber-Mazlish.
+
+ZASADA: Empatia = być PRZY dziecku. Nie naprawiać, nie doradzać, nie tłumaczyć.
+
+Program uczy dwóch narzędzi:
+1. Nazywanie uczuć — "To cię wkurza", "Czujesz się sam", "Czujesz, że to niesprawiedliwe"
+2. Echo (ciepłe odbicie) — "Dużo z siebie dałeś ... liczyłeś na lepszy wynik"
+
+Jeśli rodzic użyje czegoś innego (fantazja, cisza, "Mmm") — oceń pozytywnie, ale w sugestiach dawaj tylko nazywanie i echo.
+
+Rozpoznawaj empatię szeroko: potoczne ("No to lipa"), metafory ("Masz w głowie kocioł"), odważne ("Czujesz się niewystarczający") — to wszystko jest dobre.
+
+SKALA — co obniża ocenę:
+10: Celne nazwanie uczucia lub trafne echo. Krótko, naturalnie. Nie szukaj wad.
+8-9: Empatia trafia. Rodzic jest przy dziecku.
+7: Empatia jest, ale ostrożna — zostaje na poziomie sytuacji, nie schodzi głębiej.
+6: Empatia + rada. Zaczął dobrze, potem przeskoczył na naprawianie.
+4-5: Pułapka dominuje — ratowanie, rada, moralizowanie, logika — ale bez wrogości.
+2-3: Bagatelizowanie, uciszanie, nietrafne nazwanie uczucia, wypytywanie.
+1: Atak, kara, odrzucenie.
+
+Pułapki (każda obniża): Ratowanie, Rada, Tłumaczenie, Moralizowanie, Bagatelizowanie, Porównywanie, Wypytywanie, Przełączanie na siebie, Logika, Nietrafne nazwanie uczucia.
+Drobna rada PO dobrej empatii = naturalny odruch, nie karz surowo (max -1).
+
+PRZYKŁADY — nastolatek: "Starałem się, a i tak wszystko spieprzyłem. Chyba jestem do niczego."
+4: "Następnym razem się lepiej przygotuj" → rada zamiast obecności
+5: "Nie mów tak o sobie, jeden sprawdzian to nie koniec świata" → pocieszanie
+7: "To musi być frustrujące — tyle pracy i taki wynik" → widzi sytuację, nie uczucie
+9: "Dałeś z siebie ile mogłeś... i to i tak nie wystarczyło" → przy dziecku
+10: "Tyle pracy — i jakby to nic nie znaczyło." → trafia w ból pod spodem
+
+FEEDBACK — krótko, prosto, po ludzku:
+- what_works: 1-2 zdania. Co zrobiono dobrze. Formy neutralne płciowo.
+- watch_out: 1 zdanie. Przy >=9 co jest świetne. Przy niższym — na co uważać.
+- reflection_question: Jedno pytanie o przeżycie RODZICA w tej konkretnej sytuacji. Nie generyczne.
+
+JĘZYK — mów po polsku jak człowiek, nie jak tłumaczenie z angielskiego:
+"Jest ci samotno" → "Czujesz się sam" / "Nikogo tu nie masz"
+"Odczuwasz frustrację" → "Wkurza cię to"
+"To musi być trudne" → "To jest ciężkie"
+"To musi być bolesne" → "To boli"
+"Odczuwasz smutek" → "Jest ci ciężko"
+"Czujesz się bezsilny" → "Nie masz już siły"
+"Czujesz się przytłoczony" → "Za dużo tego na raz"
+"Odczuwasz niesprawiedliwość" → "To niesprawiedliwe"
+"Odczuwasz lęk" → "Boisz się"
+"Czujesz gniew" → "Jesteś wściekły"
+"...i samotnie" → "...i nikogo"
+Jeśli zdanie brzmi jak z podręcznika — przepisz prościej.
+
+SUGESTIE — max 10 słów każda, jak rodzic w kuchni:
+Poziom 1-2:
+- naming: Nazwij uczucie którego dziecko nie powiedziało wprost. "Czujesz, że cokolwiek zrobisz, to nie wystarczy."
+- warm: Echo — rodzic mówi DO dziecka, odbijając jego sytuację własnymi słowami. Zawsze w 2. osobie (ty/ci/cię). NIGDY opis w 3. osobie. "Dużo z siebie dałeś ... liczyłeś na lepszy wynik.", "Miałaś plan, przygotowałaś się, a i tak nie wyszło.", "Liczyłeś na nich, a oni cię olali."
+Poziom 3 (dziecko zły na rodzica):
+- best: Nazwij co dziecko czuje WOBEC RODZICA lub co jest POD złością (ból, strach, tęsknota). Zależnie od scenki jedno lub drugie trafia celniej. "Wkurza cię, że się wtrącam." / "Boisz się, że ci nie ufam." (naming="" warm="")
+
+POZIOM 3 — DODATKOWE WYTYCZNE:
+Poziom 3 to scenki gdzie dziecko kieruje emocje wprost na rodzica. To najtrudniejszy moment — rodzic stoi pod ostrzałem i musi nie uciec, nie oddać, nie wzbudzić poczucia winy.
+
+Pułapki specyficzne dla poziomu 3 (każda obniża mocno):
+- Obrona: "Robiłem to dla twojego dobra", "Ale ja tylko chcę pomóc" → rodzic broni siebie zamiast słuchać dziecka
+- Kontratak: "Nie mów tak do mnie", "Jak możesz!" → rodzic oddaje cios
+- Wzbudzanie poczucia winy: "Tyle dla ciebie robię, a ty tak?", "Jak możesz tak mówić po tym wszystkim" → rodzic zamienia się w ofiarę
+- Pułapki z poziomu 1-2 (rada, moralizowanie, bagatelizowanie) też obowiązują.
+
+Skala dla poziomu 3:
+10: Rodzic nazywa co dziecko czuje wobec niego LUB trafia w to co jest pod złością. Krótko, bez obrony. "Wściekasz się, że nie słucham." / "Czujesz, że ci nie ufam."
+8-9: Rodzic jest przy dziecku, nie broni się, ale nie trafia celnie w emocję.
+6-7: Rodzic próbuje empatii, ale przemyca obronę lub tłumaczenie. "Rozumiem, że cię to denerwuje, ale chciałem tylko..."
+4-5: Obrona lub poczucie winy dominują, ale bez agresji.
+2-3: Kontratak, kara, uciszanie.
+1: Atak, odrzucenie, groźba.
+
+PRZYKŁADY — nastolatek: "Widzisz mnie tylko wtedy, kiedy coś robię źle."
+3: "To nieprawda, wczoraj rozmawialiśmy o filmie" → obrona, zaprzeczenie bólowi dziecka
+5: "Nie mów tak, staram się być dobrym rodzicem" → poczucie winy
+7: "Widzę, że to cię boli" → empatia, ale ogólnikowa, nie dotyka sedna
+9: "Czujesz, że widzę tylko twoje potknięcia... a nie ciebie" → przy dziecku, trafia głębiej
+10: "Chcesz, żebym cię widział... nie tylko twoje błędy." → trafia w tęsknotę pod złością
+
+POLSZCZYZNA: Emocje przez osobę ("jest ci smutno"). Formy żeńskie dla dziewcząt. Polskie znaki.
+teen_reaction: Max 8 słów, 3 osoba. "Poczuł, że ktoś go widzi."
+Score >=9: dodaj perfect_note. Pułapka dominuje: trap_detected="nazwa".
+
+FORMAT — czysty JSON (proste cudzysłowy "):
+{"score":N,"teen_reaction":"...","what_works":"...","watch_out":"...","reflection_question":"...","suggestions":{"warm":"...","naming":"...","best":""},"trap_detected":null,"perfect_note":null}`;
+
+const FB_MSG=(sc,resp)=>`POZIOM: ${sc.level}
+SYTUACJA: ${sc.situation}
+Nastolatek mówi: "${sc.teen_says}"
+
+ODPOWIEDŹ RODZICA: "${resp}"
+
+Oceń. WYŁĄCZNIE czysty JSON.`;
+
+// ── PROMPT: GENEROWANIE SCENKI Z OPISU RODZICA ──
+const SYS_CUSTOM=`Rodzic opisuje sytuację z własnym nastolatkiem. Na podstawie opisu wygeneruj scenkę treningową.
+
+Twoim zadaniem jest:
+1. Wyciągnij z opisu: co nastolatek powiedział lub mógłby powiedzieć
+2. Stwórz krótki kontekst (1-2 zdania, z wiekiem i płcią jeśli podane, np. "15-latek wraca ze szkoły...")
+3. Stwórz wypowiedź nastolatka (naturalna, potoczna, jak prawdziwy nastolatek)
+4. Oceń poziom trudności: 1 (emocja czytelna), 2 (kusi żeby doradzać), 3 (zły na rodzica)
+
+Jeśli rodzic nie podał wieku — oszacuj. Jeśli nie podał płci — wybierz.
+Wypowiedź nastolatka ma brzmieć autentycznie — potocznie, z emocją, jak polski nastolatek w domu.
+
+FORMAT — WYŁĄCZNIE czysty JSON:
+{"level":N,"situation":"kontekst","teen_says":"wypowiedź"}`;
+
+const CUSTOM_MSG=(desc)=>`Rodzic opisuje sytuację: "${desc}"
+
+Wygeneruj scenkę. WYŁĄCZNIE czysty JSON.`;
+
+// ── HISTORIA ODPOWIEDZI ──
+const HIST_KEY="uslysz_mnie_hist";
+
+// ══════════════════════════════════════════════════════════════
+// SCENKA DNIA — deterministyczny wybór na podstawie daty
+// ══════════════════════════════════════════════════════════════
+const DOTD_KEY="uslysz_mnie_dotd";
+
+function hashDate(dateStr){
+  // Simple deterministic hash from date string
+  let h=0;
+  for(let i=0;i<dateStr.length;i++){h=((h<<5)-h)+dateStr.charCodeAt(i);h|=0}
+  return Math.abs(h);
+}
+
+function getDailyScene(){
+  const today=new Date().toISOString().slice(0,10);
+  const idx=hashDate(today+"uslyszmnie")%SCENARIOS_DB.length;
+  const raw=SCENARIOS_DB[idx];
+  const typePool=raw.lv===1?types1:raw.lv===2?types2:types3;
+  return{
+    id:raw.id, level:raw.lv,
+    situation:raw.ctx,
+    teen_says:raw.says,
+    situation_type:pick(typePool),
+    date:today
+  };
+}
+
+function loadDotd(){
+  try{const raw=localStorage.getItem(DOTD_KEY);if(!raw)return null;return JSON.parse(raw)}catch(e){return null}
+}
+function saveDotd(data){
+  try{localStorage.setItem(DOTD_KEY,JSON.stringify(data))}catch(e){}
+}
+
+function getTimeUntilMidnight(){
+  const now=new Date();
+  const tomorrow=new Date(now);
+  tomorrow.setDate(tomorrow.getDate()+1);
+  tomorrow.setHours(0,0,0,0);
+  return tomorrow-now;
+}
+
+function formatCountdown(ms){
+  const h=Math.floor(ms/3600000);
+  const m=Math.floor((ms%3600000)/60000);
+  const s=Math.floor((ms%60000)/1000);
+  return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+}
+
+function getDotdShareText(score,date,streakVal,sceneSays){
+  const d=new Date(date);
+  const monthNames=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
+  // Numer dnia od startu (jak Wordle)
+  const dayZero=new Date("2026-01-01");
+  const dayNum=Math.floor((d-dayZero)/(1000*60*60*24))+1;
+  // Pasek — zielony do wyniku, szary reszta
+  const bar=Array.from({length:10},(_,i)=>i<score?"🟩":"⬜").join("");
+  let txt=`👂 Usłysz Mnie #${dayNum}\n${bar}  ${score}/10\n`;
+  if(streakVal>=2)txt+=`🔥 ${streakVal}. dzień z rzędu\n`;
+  if(sceneSays){
+    txt+=`\n„${sceneSays}"\nCo odpowiadasz nastolatkowi? 😏\n`;
+  }
+  txt+=`\nhttps://uslyszmnie.netlify.app`;
+  return txt;
+}
+
+// Komponent Timer
+function DotdTimer(){
+  const[ms,setMs]=useState(getTimeUntilMidnight());
+  useEffect(()=>{const iv=setInterval(()=>setMs(getTimeUntilMidnight()),1000);return()=>clearInterval(iv)},[]);
+  return <span className="dotd-timer">⏰ {formatCountdown(ms)}</span>;
+}
+function loadHistory(){
+  try{const raw=localStorage.getItem(HIST_KEY);if(!raw)return[];return JSON.parse(raw)}catch(e){return[]}
+}
+function saveHistory(hist){
+  try{localStorage.setItem(HIST_KEY,JSON.stringify(hist.slice(0,50)))}catch(e){}
+}
+function addToHistory(scene,response,score){
+  const hist=loadHistory();
+  hist.unshift({ctx:scene.situation,says:scene.teen_says,resp:response,score,date:new Date().toISOString().slice(0,10),lv:scene.level});
+  saveHistory(hist);
+}
+
+// ══════════════════════════════════════════════════════════════
+// fixPolish — siatka bezpieczeństwa dla feedbacku AI
+// Literówki + sztuczne frazy → naturalne polskie odpowiedniki
+// ══════════════════════════════════════════════════════════════
+function fixPolish(obj){
+  const typos=[
+    [/\bTwója\b/g,"Twoja"],[/\bTwóją\b/g,"Twoją"],[/\bTwójej\b/g,"Twojej"],
+    [/\bTwóje\b/g,"Twoje"],[/\bTwójego\b/g,"Twojego"],[/\bTwójemu\b/g,"Twojemu"],
+    [/\btwója\b/g,"twoja"],[/\btwóją\b/g,"twoją"],[/\btwójej\b/g,"twojej"],
+    [/\btwóje\b/g,"twoje"],[/\btwójego\b/g,"twojego"],[/\btwójemu\b/g,"twojemu"],
+  ];
+  const phrases=[
+    // Samotność
+    [/\bjest ci samotno\b/gi,"czujesz się sam"],
+    [/\bjest ci bardzo samotno\b/gi,"czujesz się sam"],
+    [/\bodczuwasz izolację\b/gi,"jakby cię nie było"],
+    [/\bczujesz się wykluczony\b/gi,"zostawili cię z boku"],
+    [/\bczujesz się wykluczona\b/gi,"zostawiły cię z boku"],
+    [/\bdoświadczasz odrzucenia\b/gi,"odstawili cię"],
+    // Złość
+    [/\bodczuwasz frustrację\b/gi,"wkurza cię to"],
+    [/\bczujesz frustrację\b/gi,"wkurza cię to"],
+    [/\bto musi być frustrujące\b/gi,"to wkurzające"],
+    [/\bczujesz gniew\b/gi,"jesteś wściekły"],
+    [/\bodczuwasz złość\b/gi,"zły jesteś"],
+    // Smutek
+    [/\bto musi być trudne\b/gi,"to jest ciężkie"],
+    [/\bto musi być bardzo trudne\b/gi,"to jest naprawdę ciężkie"],
+    [/\bto musi być bolesne\b/gi,"to boli"],
+    [/\bto musiało być bolesne\b/gi,"to bolało"],
+    [/\bto musiało być niezwykle bolesne doświadczenie\b/gi,"to bolało"],
+    [/\bto musiało być trudne\b/gi,"to było ciężkie"],
+    [/\bodczuwasz smutek\b/gi,"jest ci ciężko"],
+    [/\bczujesz pustkę\b/gi,"nic ci się nie chce"],
+    // Bezsilność
+    [/\bczujesz się bezsilny\b/gi,"nie masz już siły"],
+    [/\bczujesz się bezsilna\b/gi,"nie masz już siły"],
+    [/\bodczuwasz bezradność\b/gi,"nie wiesz co z tym zrobić"],
+    [/\bczujesz się przytłoczony\b/gi,"za dużo tego na raz"],
+    [/\bczujesz się przytłoczona\b/gi,"za dużo tego na raz"],
+    [/\bdoświadczasz wyczerpania\b/gi,"padasz z nóg"],
+    // Niesprawiedliwość
+    [/\bczujesz się niesprawiedliwie potraktowany\b/gi,"to niesprawiedliwe"],
+    [/\bczujesz się niesprawiedliwie potraktowana\b/gi,"to niesprawiedliwe"],
+    [/\bodczuwasz niesprawiedliwość\b/gi,"to niesprawiedliwe"],
+    // Strach
+    [/\bodczuwasz lęk\b/gi,"boisz się"],
+    [/\bczujesz niepokój\b/gi,"stresuje cię to"],
+    [/\bdoświadczasz strachu\b/gi,"boisz się"],
+    // Sztuczne konstrukcje
+    [/\bodczuwasz\b/gi,"czujesz"],
+    [/\bdoświadczasz\b/gi,"czujesz"],
+    [/\bi samotnie\.?\s*$/gi,"i nikogo"],
+    [/\bniezwykle bolesne\b/gi,"bardzo ciężkie"],
+  ];
+  function fixStr(s){
+    if(typeof s!=="string")return s;
+    for(const[re,rv]of typos)s=s.replace(re,rv);
+    for(const[re,rv]of phrases)s=s.replace(re,rv);
+    return s;
+  }
+  if(typeof obj==="string")return fixStr(obj);
+  if(Array.isArray(obj))return obj.map(fixPolish);
+  if(obj&&typeof obj==="object"){const r={};for(const k in obj)r[k]=fixPolish(obj[k]);return r}
+  return obj;
+}
+
+// ══════════════════════════════════════════════════════════════
+// API CALL — GPT-5.6 Terra (tylko do feedbacku)
+// ══════════════════════════════════════════════════════════════
+async function callAPI(sys,msg,effort="medium",attempt=1){
+  try{
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),45000);
+    const r=await fetch("/.netlify/functions/api",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      signal:controller.signal,
+      body:JSON.stringify({model:MODEL,max_completion_tokens:1024,reasoning_effort:effort,
+        messages:[{role:"system",content:sys},{role:"user",content:msg}]})
+    });
+    clearTimeout(timeout);
+    if(!r.ok){const errBody=await r.text().catch(()=>"");throw new Error(`API ${r.status}: ${errBody.slice(0,200)}`);}
+    const d=await r.json();
+    const t=d.choices?.[0]?.message?.content||"";
+    const clean=t.replace(/```json|```/g,"").trim();
+    const start=clean.indexOf("{");const end=clean.lastIndexOf("}");
+    if(start===-1||end===-1)throw new Error("No JSON");
+    let jsonStr=clean.slice(start,end+1);
+    try{return fixPolish(JSON.parse(jsonStr))}catch(e1){
+      let fix1=jsonStr.replace(/[\u201E\u201D\u201C\u00AB\u00BB]/g,'\\"');
+      try{return fixPolish(JSON.parse(fix1))}catch(e2){
+        let fix2=jsonStr.replace(/[\u201E\u201D\u201C\u00AB\u00BB\u201A\u2018\u2019]/g,"'");
+        try{return fixPolish(JSON.parse(fix2))}catch(e3){throw e3}
+      }
+    }
+  }catch(e){
+    const isRetryable=e.name==="AbortError"||e.message.includes("429")||e.message.includes("5")||e.message.includes("fetch")||e.message.includes("JSON");
+    if(isRetryable&&attempt<5){
+      const delay=Math.min(1500*Math.pow(1.5,attempt-1),12000)+Math.random()*1000;
+      await new Promise(r=>setTimeout(r,delay));
+      return callAPI(sys,msg,effort,attempt+1);
+    }
+    throw e;
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// UI — React
+// ══════════════════════════════════════════════════════════════
+const hasKey=true; // klucz API na serwerze (Netlify Functions)
+const le=l=>l===1?"🟢":l===2?"🟡":"🔴";
+const scol=s=>s>=9?"var(--gn)":s>=7?"var(--teal)":s>=5?"var(--ac)":"var(--rd)";
+const swl=s=>s>=9?"Świetnie!":s>=7?"Dobrze":s>=5?"Do pracy":"Spróbuj inaczej";
+const teenFace=s=>s>=9?"😊":s>=7?"🙂":s>=5?"😐":s>=3?"😔":"😢";
+
+function Sec({icon,title,children,startOpen}){
+  const[o,s]=useState(!!startOpen);
+  return(<div className="sec"><div className="sech" onClick={()=>s(!o)}><span className="ic">{icon}</span><span className="tt">{title}</span><span className={`ch ${o?"o":""}`}>▼</span></div>{o&&children}</div>);
+}
+function Loading({text}){
+  const[d,setD]=useState("");
+  useEffect(()=>{const iv=setInterval(()=>setD(x=>x.length>=3?"":x+"."),400);return()=>clearInterval(iv)},[]);
+  return <div className="ld"><div className="le">⏳</div><p>{text||"Przygotowuję"}{d}</p></div>;
+}
+
+function FeedbackLoading({teenSays,parentResp,ctx}){
+  const f=ctx&&/\d+-lat(ka|ki|ce|ką|ek|ków)|córk|dziewczyn/i.test(ctx);
+  const phases=f?[
+    "Odpowiedź przyjęta...",
+    "Jak to usłyszy?",
+    "Czy poczuje się zrozumiana?",
+    "Jak jej to zabrzmi?"
+  ]:[
+    "Odpowiedź przyjęta...",
+    "Jak to usłyszy?",
+    "Czy poczuje się zrozumiany?",
+    "Jak mu to zabrzmi?"
+  ];
+  const label=f?"Nastolatka powiedziała:":"Nastolatek powiedział:";
+  const[phase,setPhase]=useState(0);
+  const[barW,setBarW]=useState(0);
+  useEffect(()=>{
+    const iv=setInterval(()=>setPhase(p=>(p+1)%phases.length),1800);
+    return()=>clearInterval(iv);
+  },[]);
+  useEffect(()=>{
+    const iv=setInterval(()=>setBarW(w=>w>=100?0:w+2),80);
+    return()=>clearInterval(iv);
+  },[]);
+  return <div className="ml-loading">
+    <div className="ml-scene">
+      <span className="ml-label">{label}</span>
+      <p className="ml-teen-quote">„{teenSays}"</p>
+    </div>
+    <div className="ml-answer">
+      <span className="ml-label">Twoja odpowiedź:</span>
+      <p className="ml-parent-quote">„{parentResp}"</p>
+    </div>
+    <div className="ml-bar-wrap">
+      <div className="ml-bar" style={{width:barW+"%"}}/>
+    </div>
+    <p className="ml-phase">{phases[phase]}</p>
+  </div>;
+}
+
+const STORAGE_KEY="uslysz_mnie_v4";
+function loadSaved(){
+  try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return null;return JSON.parse(raw)}catch(e){return null}
+}
+function saveSt(data){
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}catch(e){}
+}
+
+// ── CONFETTI ──
+function Confetti(){
+  const colors=["#e07842","#1a8a5a","#7c5cbf","#eab020","#d94040","#1a9a8a"];
+  const dots=Array.from({length:12},(_,i)=>({
+    left:`${15+Math.random()*70}%`,
+    delay:`${Math.random()*0.5}s`,
+    color:colors[i%colors.length],
+    size:4+Math.random()*4
+  }));
+  return <>{dots.map((d,i)=><div key={i} className="confetti" style={{left:d.left,top:"40%",backgroundColor:d.color,width:d.size,height:d.size,animationDelay:d.delay}}/>)}</>;
+}
+
+// ── STREAK ──
+function getStreak(saved){
+  if(!saved?.lastDay)return{streak:0,lastDay:null};
+  const today=new Date().toISOString().slice(0,10);
+  const last=saved.lastDay;
+  if(last===today)return{streak:saved.streak||1,lastDay:last};
+  const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+  if(last===yesterday)return{streak:(saved.streak||0)+1,lastDay:today};
+  return{streak:1,lastDay:today};
+}
+function markToday(saved){
+  const today=new Date().toISOString().slice(0,10);
+  if(saved?.lastDay===today)return{streak:saved.streak||1,lastDay:today};
+  const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+  if(saved?.lastDay===yesterday)return{streak:(saved.streak||0)+1,lastDay:today};
+  return{streak:1,lastDay:today};
+}
+
+// ══════════════════════════════════════════════════════════════
+// WYZWANIE DLA ZNAJOMEGO — quiz A/B/C z losową scenką
+// ══════════════════════════════════════════════════════════════
+
+const CHALLENGE_PROMPTS=[
+  "90% rodziców wybiera źle 😏",
+  "Sprawdź czy umiesz nie doradzać 😏",
+  "Większość rodziców wpada w pułapkę 😏",
+];
+
+const SYS_CHALLENGE=`Dostajesz scenę: kontekst + wypowiedź nastolatka. Wygeneruj quiz z 3 opcjami odpowiedzi rodzica.
+
+ZASADY:
+- Dokładnie 1 opcja empatyczna (correct:true) — krótka, naturalna, nazywa uczucie lub jest przy dziecku
+- Dokładnie 2 opcje-pułapki (correct:false) — typowe błędy rodziców: doradzanie, pocieszanie, bagatelizowanie, moralizowanie
+- Każda opcja: max 10 słów, brzmi jak prawdziwy rodzic
+- Pułapki NIE mogą być karykaturalnie złe — muszą brzmieć rozsądnie, żeby kusiły
+- Kolejność losowa (empatyczna nie zawsze na tej samej pozycji)
+- Opcja empatyczna powinna być wyraźnie empatyczna — ale NIE oczywista
+
+FORMAT — WYŁĄCZNIE czysty JSON:
+{"quiz":[{"text":"...","correct":false},{"text":"...","correct":true},{"text":"...","correct":false}]}`;
+
+const CHALLENGE_MSG=(sc)=>`SYTUACJA: ${sc.ctx}\nNastolatek mówi: "${sc.says}"\n\nWygeneruj quiz. WYŁĄCZNIE czysty JSON.`;
+
+// ══════════════════════════════════════════════════════════════
+// ODZNAKI NARRACYJNE
+// ══════════════════════════════════════════════════════════════
+const BADGES=[
+  {id:"first_step",icon:"💬",name:"Pierwszy krok",desc:"Ukończ pierwszą scenkę",
+    check:(s)=>s.stats.t>=1,progress:(s)=>Math.min(s.stats.t,1),goal:1},
+  {id:"going_forward",icon:"🚶",name:"Idziesz do przodu",desc:"3 scenki za tobą — idziesz",
+    check:(s)=>s.stats.t>=3,progress:(s)=>Math.min(s.stats.t,3),goal:3},
+  {id:"mirror",icon:"🪞",name:"Lustro",desc:"5 odpowiedzi z wynikiem 9 lub 10 — nazywasz emocje głębiej niż nastolatek",
+    check:(s)=>s.nines>=5,progress:(s)=>Math.min(s.nines,5),goal:5},
+  {id:"sniper",icon:"🎯",name:"Snajper",desc:"3 dziesiątki — celne trafienia prosto w serce",
+    check:(s)=>s.tens>=3,progress:(s)=>Math.min(s.tens,3),goal:3},
+  {id:"ice",icon:"🧊",name:"Zimna krew",desc:"3 scenki z poziomu 3 z wynikiem 8 lub wyżej",
+    check:(s)=>s.lv3high>=3,progress:(s)=>Math.min(s.lv3high,3),goal:3},
+  {id:"clean",icon:"🫂",name:"Bez pułapki",desc:"5 scenek z rzędu bez wpadnięcia w pułapkę",
+    check:(s)=>s.cleanMax>=5,progress:(s)=>Math.min(s.cleanMax,5),goal:5},
+  {id:"week",icon:"🔥",name:"Tydzień",desc:"7 dni ćwiczeń z rzędu",
+    check:(s)=>s.streak>=7,progress:(s)=>Math.min(s.streak,7),goal:7},
+  {id:"marathon",icon:"🏃",name:"Maraton",desc:"50 scenek — empatia to nawyk",
+    check:(s)=>s.stats.t>=50,progress:(s)=>Math.min(s.stats.t,50),goal:50},
+  {id:"collector",icon:"⭐",name:"Kolekcjoner",desc:"15 Scenek Dnia ukończonych",
+    check:(s)=>s.dotdCount>=15,progress:(s)=>Math.min(s.dotdCount,15),goal:15},
+  {id:"alllevels",icon:"🌈",name:"Pełne spektrum",desc:"Zrób minimum 5 scenek na każdym poziomie",
+    check:(s)=>s.lvCounts[1]>=5&&s.lvCounts[2]>=5&&s.lvCounts[3]>=5,progress:(s)=>Math.min(s.lvCounts[1],5)+Math.min(s.lvCounts[2],5)+Math.min(s.lvCounts[3],5),goal:15},
+  {id:"rising",icon:"📈",name:"Wzrost",desc:"Średnia powyżej 7.5 z ostatnich 10 scenek",
+    check:(s)=>s.last10avg>=7.5,progress:(s)=>s.last10avg>=7.5?1:0,goal:1},
+];
+
+const BADGE_KEY="uslysz_mnie_badges";
+function loadBadges(){try{const r=localStorage.getItem(BADGE_KEY);if(!r)return{};return JSON.parse(r)}catch(e){return{}}}
+function saveBadges(b){try{localStorage.setItem(BADGE_KEY,JSON.stringify(b))}catch(e){}}
+
+// ══════════════════════════════════════════════════════════════
+// ONBOARDING — pierwsza wizyta
+// ══════════════════════════════════════════════════════════════
+const ONB_KEY="uslysz_mnie_onb";
+function isOnboardingDone(){try{return localStorage.getItem(ONB_KEY)==="done"}catch(e){return false}}
+function markOnboardingDone(){try{localStorage.setItem(ONB_KEY,"done")}catch(e){}}
+
+const DEMO_SCENE={
+  id:0,level:1,
+  situation:"14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.",
+  teen_says:"Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.",
+  situation_type:"Szkoła"
+};
+
+// Onboarding slides content
+const ONB_SLIDES=[
+  {icon:"👂",title:"Twoje dziecko mówi coś trudnego",text:"W Tobie natychmiast włącza się alarm. Chcesz naprawić, pocieszyć, doradzić. To naturalne — bo kochasz."},
+  {icon:"❤️",title:"Ale ono nie prosi o ratunek",text:"Prosi, żebyś je usłyszał i był z nim w tym, co przeżywa."},
+  {icon:"🎯",title:"Niech Twoje dziecko poczuje, że je rozumiesz.",text:""},
+];
+
+// ══════════════════════════════════════════════════════════════
+// POWIADOMIENIA
+// ══════════════════════════════════════════════════════════════
+const NOTIF_KEY="uslysz_mnie_notif";
+function loadNotifState(){try{const r=localStorage.getItem(NOTIF_KEY);if(!r)return{asked:0,enabled:false};return JSON.parse(r)}catch(e){return{asked:0,enabled:false}}}
+function saveNotifState(s){try{localStorage.setItem(NOTIF_KEY,JSON.stringify(s))}catch(e){}}
+
+function canAskNotif(notifState,totalScenarios){
+  // Pytamy przy 3 scenkach (1. raz) i przy 8 scenkach (2. raz) — max 2 razy
+  if(notifState.enabled)return false;
+  if(notifState.asked>=2)return false;
+  if(!("Notification" in window))return false;
+  if(Notification.permission==="denied")return false;
+  if(Notification.permission==="granted"){return false}
+  if(notifState.asked===0&&totalScenarios>=3)return true;
+  if(notifState.asked===1&&totalScenarios>=8)return true;
+  return false;
+}
+
+async function requestNotifPermission(){
+  if(!("Notification" in window))return false;
+  try{
+    const perm=await Notification.requestPermission();
+    if(perm==="granted"){
+      // Rejestruj service worker jeśli dostępny
+      if("serviceWorker" in navigator){
+        try{await navigator.serviceWorker.register("/sw.js")}catch(e){console.log("SW registration skipped:",e)}
+      }
+      // Wyślij testowe powiadomienie
+      try{new Notification("👂 Usłysz Mnie",{body:"Powiadomienia włączone! Przypomnimy Ci o Scence Dnia.",icon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>"})}catch(e){}
+      return true;
+    }
+    return false;
+  }catch(e){return false}
+}
+
+function computeBadgeData(stats,history,streak,dotd){
+  const nines=history.filter(h=>h.score>=9).length;
+  const tens=history.filter(h=>h.score>=10).length;
+  const lv3high=history.filter(h=>h.lv===3&&h.score>=8).length;
+  
+  // Seria bez pułapki — trzeba liczyć z historii (brak trap info w historii, więc liczymy serie score>=5 jako proxy)
+  // Lepsze rozwiązanie: dodajemy cleanStreak do persystowanych danych
+  let cleanMax=0,cleanCur=0;
+  // Historia jest od najnowszej, więc iterujemy od końca do początku
+  for(let i=history.length-1;i>=0;i--){
+    // Proxy: wynik >=6 zazwyczaj oznacza brak dominującej pułapki
+    if(history[i].score>=6){cleanCur++; if(cleanCur>cleanMax)cleanMax=cleanCur}
+    else{cleanCur=0}
+  }
+  
+  // Ile dotd ukończono (zliczamy z historii DOTD — potrzebujemy nowego countera)
+  let dotdCount=0;
+  try{const raw=localStorage.getItem(BADGE_KEY);if(raw){const b=JSON.parse(raw);dotdCount=b._dotdCount||0}}catch(e){}
+  
+  const lvCounts={1:history.filter(h=>h.lv===1).length,2:history.filter(h=>h.lv===2).length,3:history.filter(h=>h.lv===3).length};
+  
+  const last10=history.slice(0,10);
+  const last10avg=last10.length>=10?last10.reduce((a,h)=>a+h.score,0)/10:0;
+  
+  return{stats,nines,tens,lv3high,cleanMax,streak:streak?.streak||0,dotdCount,lvCounts,last10avg};
+}
+
+// ══════════════════════════════════════════════════════════════
+// PANEL EMOCJI — boczny panel z pogrupowanymi emocjami
+// ══════════════════════════════════════════════════════════════
+const EMOTION_GROUPS=[
+  {name:"Złość",color:"#d94040",emotions:["wściekłość","irytacja","frustracja"]},
+  {name:"Lęk",color:"#7c5cbf",emotions:["strach","niepewność","panika"]},
+  {name:"Smutek",color:"#4a7ab5",emotions:["rozczarowanie","przygnębienie","tęsknota"]},
+  {name:"Wstyd",color:"#e07842",emotions:["upokorzenie","zażenowanie","obciach"]},
+  {name:"Poczucie odrzucenia",color:"#c25a7a",emotions:["samotność","poczucie bycia niewidzialnym","poczucie bycia niezrozumianym"]},
+  {name:"Bezsilność",color:"#1a8a5a",emotions:["bezradność","beznadzieja","zniechęcenie"]},
+];
+
+function EmotionPanel({open,onClose}){
+  if(!open)return null;
+  return React.createElement("div",{className:"emo-overlay",onClick:onClose},
+    React.createElement("div",{className:"emo-panel",onClick:e=>e.stopPropagation()},
+      React.createElement("div",{className:"emo-panel-header"},
+        React.createElement("span",{style:{fontSize:"18px"}},"🧭"),
+        React.createElement("span",{style:{fontWeight:700,fontSize:"16px",color:"var(--ts)"}},"Mapa emocji"),
+        React.createElement("button",{className:"emo-close",onClick:onClose},"✕")
+      ),
+      EMOTION_GROUPS.map(g=>React.createElement("div",{key:g.name,className:"emo-group"},
+        React.createElement("div",{className:"emo-group-name",style:{color:g.color}},g.name),
+        React.createElement("div",{className:"emo-group-list"},
+          g.emotions.map(e=>React.createElement("button",{key:e,className:"emo-chip",style:{borderColor:g.color,color:g.color},onClick:onClose},e))
+        )
+      ))
+    )
+  );
+}
+
+function App(){
+  const saved=useRef(loadSaved()).current;
+  const[scr,setScr]=useState("start");
+  const[lv,setLv]=useState(saved?.lv||1);
+  const[scene,setSc]=useState(null);
+  const[fb,setFb]=useState(null);
+  const[pr,setPr]=useState("");
+  const[txt,setTxt]=useState("");
+  const[loading,setL]=useState(false);
+  const[err,setErr]=useState(null);
+  const[ldTxt,setLdTxt]=useState("");
+  const[stats,setSt]=useState(saved?.stats||{t:0,ts:0,b:0});
+  const[lvGood,setLvGood]=useState(saved?.lvGood||{1:0,2:0,3:0});
+  const[ls,setLs]=useState(0);
+  const[tc,setTc]=useState(saved?.tc||{});
+  const[usedIds,setUsedIds]=useState(new Set(saved?.usedIds||[]));
+  const[fbDone,setFD]=useState(false);
+  const[note,setNote]=useState(null);
+  const[showHelp,setShowHelp]=useState(false);
+  const[inSession,setInSession]=useState(false);
+  const[emoPanelOpen,setEmoPanelOpen]=useState(false);
+  const[streak,setStreak]=useState(()=>getStreak(saved));
+  const[history,setHistory]=useState(()=>loadHistory());
+  const[customTxt,setCustomTxt]=useState("");
+  const[customMode,setCustomMode]=useState(false);
+  const[dotd,setDotd]=useState(()=>loadDotd());
+  const[dotdMode,setDotdMode]=useState(false);
+  const[copied,setCopied]=useState(false);
+  const[unlockedBadges,setUnlockedBadges]=useState(()=>loadBadges());
+  const[badgeToast,setBadgeToast]=useState(null);
+  const[showBadges,setShowBadges]=useState(false);
+  const[onbDone,setOnbDone]=useState(()=>isOnboardingDone());
+  const[onbStep,setOnbStep]=useState(0);
+  const[onbTxt,setOnbTxt]=useState("");
+  const[onbFb,setOnbFb]=useState(null);
+  const[onbLoading,setOnbLoading]=useState(false);
+  const[notifState,setNotifState]=useState(()=>loadNotifState());
+  const[showNotifBanner,setShowNotifBanner]=useState(false);
+  const[teenTyping,setTeenTyping]=useState(true);
+  const[notifJustEnabled,setNotifJustEnabled]=useState(false);
+  const[challengeLoading,setChallengeLoading]=useState(false);
+
+  // Sprawdź czy dotd jest z dzisiejszego dnia
+  const today=new Date().toISOString().slice(0,10);
+  const dotdDone=dotd?.date===today&&dotd?.score!=null;
+  const dailyScene=getDailyScene();
+
+  // Zapisuj stan po każdej zmianie kluczowych danych
+  useEffect(()=>{
+    saveSt({lv,stats,lvGood,tc,usedIds:[...usedIds],streak:streak.streak,lastDay:streak.lastDay});
+  },[lv,stats,lvGood,tc,usedIds,streak]);
+
+  useEffect(()=>{window.scrollTo({top:0,behavior:"smooth"})},[scr,scene,fb]);
+
+  useEffect(()=>{
+    if(!fbDone||!fb)return;
+    setSt(s=>({t:s.t+1,ts:s.ts+fb.score,b:Math.max(s.b,fb.score)}));
+    const curLv=scene?.level||lv;
+    if(fb.score>=7){
+      setLvGood(s=>{const n={...s,[curLv]:s[curLv]+1};
+        if(n[curLv]>=10&&curLv<3){setLv(curLv+1);setNote("🎉 Świetna robota! Masz już "+n[curLv]+" dobrych odpowiedzi na tym poziomie — czas na wyższy.");}
+        return n;});
+    }
+    if(fb.score<6){setLs(s=>s+1)}else{setLs(0)}
+    if(fb.trap_detected)setTc(c=>({...c,[fb.trap_detected]:(c[fb.trap_detected]||0)+1}));
+    if(ls>=2&&fb.score<5&&lv>1){setLv(l=>l-1);setNote("Wracasz na łatwiejszy poziom — to normalne, ćwicz dalej!")}
+    
+    // ── SPRAWDŹ ODZNAKI ──
+    setTimeout(()=>{
+      const currentHist=loadHistory();
+      const bd=computeBadgeData(
+        {t:stats.t+1,ts:stats.ts+fb.score,b:Math.max(stats.b,fb.score)},
+        currentHist,streak,dotd
+      );
+      const prev=loadBadges();
+      let newBadge=null;
+      const updated={...prev};
+      for(const b of BADGES){
+        if(!prev[b.id]&&b.check(bd)){
+          updated[b.id]=new Date().toISOString().slice(0,10);
+          if(!newBadge)newBadge=b;
+        }
+      }
+      if(newBadge){
+        saveBadges(updated);
+        setUnlockedBadges(updated);
+        setBadgeToast(newBadge);
+        setTimeout(()=>setBadgeToast(null),3500);
+        // Pokaż baner powiadomień przy odznace "Idziesz do przodu" (3 scenki)
+        if(newBadge.id==="going_forward"&&canAskNotif(notifState,stats.t+1)){
+          setTimeout(()=>setShowNotifBanner(true),4000); // po toaście odznaki
+        }
+      }
+      // Drugi trigger: 8 scenek bez odznaki
+      if(!newBadge&&canAskNotif(notifState,stats.t+1)){
+        setTimeout(()=>setShowNotifBanner(true),1500);
+      }
+    },500);
+    
+    setFD(false);
+  },[fbDone,fb]);
+
+  const getScene=useCallback((level)=>{
+    const sc=drawScene(level,usedIds);
+    if(sc){
+      setUsedIds(prev=>{const n=new Set(prev);n.add(sc.id);return n});
+      setSc(sc);
+      setScr("scene");
+      setErr(null);
+    } else {
+      // Baza wyczerpana na tym poziomie — resetuj użyte ID
+      setUsedIds(new Set());
+      const sc2=drawScene(level,new Set());
+      if(sc2){setSc(sc2);setScr("scene");setErr(null);setUsedIds(new Set([sc2.id]))}
+    }
+  },[usedIds]);
+
+  const startGame=(l)=>{
+    setLv(l);
+    setInSession(true);
+    getScene(l);
+  };
+
+  const retry=()=>{setScr("scene");setFb(null);setPr("");setTxt("")};
+
+  const respond=async()=>{
+    if(!txt.trim())return;
+    const t=txt.trim();setPr(t);setTxt("");setL(true);setErr(null);setLdTxt("Jak to zabrzmi nastolatkowi");
+    try{
+      const f=await callAPI(SYS_FEEDBACK,FB_MSG(scene,t),"medium");
+      setFb(f);setScr("feedback");setFD(true);setTeenTyping(true);setTimeout(()=>setTeenTyping(false),1400);
+      setStreak(markToday({streak:streak.streak,lastDay:streak.lastDay}));
+      addToHistory(scene,t,f.score);setHistory(loadHistory());
+      // Zapisz wynik Scenki Dnia
+      if(dotdMode){
+        const dotdData={date:today,score:f.score,response:t};
+        saveDotd(dotdData);setDotd(dotdData);
+        // Inkrementuj dotdCount w badges
+        const bdata=loadBadges();bdata._dotdCount=(bdata._dotdCount||0)+1;saveBadges(bdata);setUnlockedBadges(bdata);
+      }
+    }catch(e){
+      setErr("Nie udało się uzyskać oceny. Sprawdź połączenie z internetem i spróbuj ponownie.");
+      setPr("");setTxt(t);
+    }
+    setL(false);
+  };
+
+  const next=()=>{if((stats.t)%10===0&&stats.t>0){setScr("summary")}else{getScene(lv)}};
+  const goHome=()=>{setScr("start");setSc(null);setFb(null);setErr(null);setNote(null);setShowHelp(false);setLs(0);setCustomMode(false);setCustomTxt("");setDotdMode(false);setCopied(false);setShowBadges(false)};
+
+  const startDotd=()=>{
+    setSc(dailyScene);setScr("scene");setDotdMode(true);setErr(null);setFb(null);setPr("");setTxt("");
+  };
+
+  const shareDotd=async()=>{
+    const text=getDotdShareText(dotd?.score||fb?.score,today,streak?.streak||0,scene?.teen_says||dailyScene?.teen_says);
+    if(navigator.share){
+      try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
+    }
+    try{await navigator.clipboard.writeText(text);setCopied("dotd");setTimeout(()=>setCopied(""),2500)}catch(e){}
+  };
+
+  const shareScene=async()=>{
+    if(!fb||!scene)return;
+    const bar=Array.from({length:10},(_,i)=>i<fb.score?"🟩":"⬜").join("");
+    const text=`👂 Usłysz Mnie\n${bar}  ${fb.score}/10\n\n„${scene.teen_says}"\nCo odpowiadasz nastolatkowi? 😏\n\nhttps://uslyszmnie.netlify.app`;
+    if(navigator.share){
+      try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
+    }
+    try{await navigator.clipboard.writeText(text);setCopied("scene");setTimeout(()=>setCopied(""),2500)}catch(e){}
+  };
+
+  const shareChallenge=async()=>{
+    const hook=CHALLENGE_PROMPTS[Math.floor(Math.random()*CHALLENGE_PROMPTS.length)];
+    const text=`👂 Usłysz Mnie — Wyzwanie\n\n${hook}\n\n15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi:\n\n„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą."\n\nCo mu powiesz?\nA) Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.\nB) Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.\nC) Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.\n\nSprawdź odpowiedź 👇\nhttps://uslyszmnie.netlify.app/quiz`;
+    if(navigator.share){
+      try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
+    }
+    try{await navigator.clipboard.writeText(text);setCopied("challenge");setTimeout(()=>setCopied(""),2500)}catch(e){}
+  };
+
+  const submitCustom=async()=>{
+    if(!customTxt.trim())return;
+    setL(true);setErr(null);setLdTxt("Tworzę scenkę z Twojego opisu…");
+    try{
+      const raw=await callAPI(SYS_CUSTOM,CUSTOM_MSG(customTxt.trim()),"medium");
+      const sc={id:9999,level:raw.level||2,situation:raw.situation,teen_says:raw.teen_says,situation_type:"Twoja sytuacja"};
+      setSc(sc);setScr("scene");setCustomMode(true);setCustomTxt("");
+    }catch(e){
+      setErr("Nie udało się wygenerować scenki. Spróbuj ponownie.");
+    }
+    setL(false);
+  };
+  const fullReset=()=>{setScr("start");setSc(null);setFb(null);setSt({t:0,ts:0,b:0});setLvGood({1:0,2:0,3:0});setLs(0);setTc({});setUsedIds(new Set());setErr(null);setNote(null);setShowHelp(false);setInSession(false);setLv(1);setStreak({streak:0,lastDay:null});setHistory([]);setCustomMode(false);setCustomTxt("");setDotdMode(false);setDotd(null);setCopied(false);setUnlockedBadges({});setShowBadges(false);setOnbDone(false);setOnbStep(0);setOnbTxt("");setOnbFb(null);setChallengeLoading(false);setTeenTyping(true);try{localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(HIST_KEY);localStorage.removeItem(DOTD_KEY);localStorage.removeItem(BADGE_KEY);localStorage.removeItem(ONB_KEY);localStorage.removeItem(NOTIF_KEY)}catch(e){}};
+  const rt=Object.entries(tc).find(([,c])=>c>=3);
+  const topTrap=Object.entries(tc).sort((a,b)=>b[1]-a[1])[0];
+
+  if(!hasKey)return(
+    <div className="ss"><div className="si0">
+      <div className="logo">🔑</div>
+      <h1 style={{fontSize:24}}>Brak klucza API</h1>
+      <p className="st">Aby korzystać z aplikacji, otwórz plik w edytorze tekstu i wklej klucz API w oznaczonym miejscu na górze kodu.</p>
+    </div></div>);
+
+  if(scr==="start"&&!onbDone)return(
+    <div className="onb-wrap">
+      <div className="onb-inner">
+        {/* ═══ SLAJDY INTRO ═══ */}
+        {onbStep<3&&<div key={"slide"+onbStep} style={{animation:"fu .5s ease-out both"}}>
+          <div className="onb-icon">{ONB_SLIDES[onbStep].icon}</div>
+          <h2 className="onb-title">{ONB_SLIDES[onbStep].title}</h2>
+          {ONB_SLIDES[onbStep].text&&<p className="onb-text">{ONB_SLIDES[onbStep].text}</p>}
+
+          {onbStep===2&&<>
+            <div style={{background:"var(--sp)",borderRadius:"14px",padding:"14px 18px",margin:"0 0 16px",borderLeft:"3px solid var(--ac)",textAlign:"left"}}>
+              <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"12px",fontWeight:700,color:"var(--tm)",marginBottom:"6px"}}>Dziecko mówi:</div>
+              <div style={{fontSize:"16px",fontStyle:"italic",color:"var(--ts)"}}>"Nie dam rady…"</div>
+            </div>
+            <div className="onb-vs fu2">
+              <div className="onb-bad"><div className="ovl">✗ ŹLE</div><p>„Nie przesadzaj, to nie takie trudne."</p></div>
+              <div className="onb-good"><div className="ovl">✓ DOBRZE</div><p>„Widzę, że jest ci ciężko."</p></div>
+            </div>
+          </>}
+
+          <div className="onb-dots">
+            {[0,1,2].map(i=><div key={i} className={`onb-dot ${onbStep===i?"active":""}`}/>)}
+          </div>
+          <button className="bp" onClick={()=>setOnbStep(onbStep+1)}>{onbStep===2?"Spróbuję →":"Dalej →"}</button>
+          <button className="onb-skip" onClick={()=>{markOnboardingDone();setOnbDone(true)}}>Pomiń intro</button>
+        </div>}
+
+        {/* ═══ DEMO SCENKA ═══ */}
+        {onbStep===3&&!onbFb&&!onbLoading&&<div className="fu">
+          <div style={{fontSize:"13px",color:"var(--ac)",fontFamily:"'Source Sans 3',sans-serif",fontWeight:700,marginBottom:"12px",textTransform:"uppercase",letterSpacing:"1px"}}>🎯 Scenka próbna</div>
+          <div className="onb-demo-card">
+            <p style={{fontSize:"14px",color:"var(--tm)",marginBottom:"12px",fontFamily:"'Source Sans 3',sans-serif",fontWeight:600}}>🟢 Poziom 1 · Szkoła</p>
+            <p style={{fontSize:"15px",lineHeight:"1.6",color:"var(--ts)",marginBottom:"14px"}}>{DEMO_SCENE.situation}</p>
+            <div className="spb" style={{margin:"0 0 16px"}}><p className="spt">„{DEMO_SCENE.teen_says}"</p></div>
+            <label className="rl">Co odpowiadasz?</label>
+            <textarea value={onbTxt} onChange={e=>setOnbTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." className="ta" rows={3}
+              onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();
+                if(onbTxt.trim()){setOnbLoading(true);
+                  callAPI(SYS_FEEDBACK,FB_MSG(DEMO_SCENE,onbTxt.trim()),"medium").then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
+                }}}}/>
+            <button className="snb" disabled={!onbTxt.trim()} onClick={()=>{setOnbLoading(true);
+              callAPI(SYS_FEEDBACK,FB_MSG(DEMO_SCENE,onbTxt.trim()),"medium").then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
+            }}>Wyślij odpowiedź</button>
+          </div>
+          <button className="onb-skip" onClick={()=>{markOnboardingDone();setOnbDone(true)}}>Pomiń</button>
+        </div>}
+
+        {/* ═══ LOADING DEMO ═══ */}
+        {onbStep===3&&onbLoading&&<Loading text="Jak to zabrzmi nastolatkowi"/>}
+
+        {/* ═══ WYNIK DEMO ═══ */}
+        {onbStep===3&&onbFb&&!onbLoading&&<div className="fu">
+          <div style={{fontSize:"13px",color:"var(--ac)",fontFamily:"'Source Sans 3',sans-serif",fontWeight:700,marginBottom:"16px",textTransform:"uppercase",letterSpacing:"1px"}}>🎯 Wynik próbny</div>
+          
+          <div className={`onb-demo-result ${onbFb.score>=7?"good":"meh"}`}>
+            <div className="dr-icon">{onbFb.score>=7?"😊":"🤔"}</div>
+            <div className="dr-text">{onbFb.teen_reaction}</div>
+          </div>
+
+          <div style={{textAlign:"left",marginBottom:"16px"}}>
+            <div className="eb"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{onbTxt}"</p></div>
+          </div>
+
+          <div style={{textAlign:"left",marginBottom:"16px"}}>
+            <div style={{background:"var(--gl)",borderRadius:"14px",padding:"14px 18px"}}>
+              <p style={{fontSize:"14px",lineHeight:"1.55",color:"var(--gn)"}}>{onbFb.what_works}</p>
+            </div>
+          </div>
+
+          <div className="onb-highlight">
+            <p>{onbFb.score>=7
+              ?"Brawo — to był dobry instynkt! Teraz zobaczysz więcej sytuacji. Każda inna, każda uczy czegoś nowego."
+              :"To dopiero początek — i to jest OK. Większość rodziców zaczyna dokładnie od tego miejsca. Z każdą scenką będzie łatwiej."
+            }</p>
+          </div>
+
+          <button className="bp" onClick={()=>{markOnboardingDone();setOnbDone(true)}}>Zaczynamy! →</button>
+        </div>}
+      </div>
+    </div>
+  );
+
+  if(scr==="start")return(
+    <div className="ss"><div className="si0">
+      <div className="logo fu">👂</div><h1 className="fu1">Usłysz Mnie</h1>
+      <p className="st fu1">Trening empatycznego reagowania<br/>dla rodziców nastolatków</p>
+      {streak.streak>=2&&<div className="fu1" style={{textAlign:"center"}}><span className="streak-badge">🔥 {streak.streak}. dzień z rzędu</span></div>}
+
+      {/* ═══ SCENKA DNIA ═══ */}
+      {!dotdDone?
+        <div className="dotd-card fu2" onClick={startDotd}>
+          <div className="dotd-head">
+            <span className="dotd-label">⭐ Scenka Dnia</span>
+            <DotdTimer/>
+          </div>
+          <p className="dotd-preview">„{dailyScene.teen_says.length>60?dailyScene.teen_says.slice(0,57)+"…":dailyScene.teen_says}"</p>
+          <div className="dotd-cta">Odpowiedz → <span style={{fontSize:"11px",opacity:.7,marginLeft:"4px"}}>{le(dailyScene.level)} Poz. {dailyScene.level}</span></div>
+        </div>
+      :
+        <div className="dotd-card fu2" style={{cursor:"default",animation:"none"}}>
+          <div className="dotd-head">
+            <span className="dotd-label">⭐ Scenka Dnia — gotowe!</span>
+            <DotdTimer/>
+          </div>
+          <div className="dotd-done">
+            <div className="dotd-done-score" style={{backgroundColor:scol(dotd.score)}}>{dotd.score}</div>
+            <div className="dotd-done-text">Twój wynik dzisiaj: <strong>{dotd.score}/10</strong><br/>Następna scenka za {formatCountdown(getTimeUntilMidnight()).split(":").slice(0,2).join("h ")}min</div>
+          </div>
+          <button className="dotd-share-btn" onClick={e=>{e.stopPropagation();shareDotd()}} style={{display:dotd.score>=9?"flex":"none"}}>
+            {copied?"✅ Skopiowano!":"📤 Pochwal się wynikiem"}
+          </button>
+        </div>
+      }
+
+      {/* ═══ ODZNAKI ═══ */}
+      {stats.t>0&&<div className="fu2" style={{marginBottom:"12px"}}>
+        <div className="badges-shelf">
+          {BADGES.map(b=>{
+            const unlocked=!!unlockedBadges[b.id];
+            return <div key={b.id} className={`badge-icon ${unlocked?"unlocked":"locked"}`} 
+              onClick={()=>setShowBadges(true)} title={b.name}>
+              {b.icon}
+            </div>
+          })}
+        </div>
+        <div className="badges-count">{BADGES.filter(b=>unlockedBadges[b.id]).length}/{BADGES.length} odznak · <button style={{background:"none",border:"none",color:"var(--ac)",fontSize:"12px",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",fontWeight:600,padding:0}} onClick={()=>setShowBadges(true)}>Zobacz wszystkie</button></div>
+      </div>}
+
+      <div className="ib fu2"><p>Ćwiczysz reagowanie na trudne emocje dziecka. Nie ma jednej dobrej odpowiedzi — są lepsze i gorsze sposoby. Odpowiadaj własnymi słowami, tak jak w domu.</p></div>
+      <div className="lp fu3">
+        {[{l:1,la:"Podstawy",d:"Emocja wyraźna, łatwa do odczytania",e:"🟢"},{l:2,la:"Trudniej się powstrzymać",d:"Pokusa rady i naprawy",e:"🟡"},{l:3,la:"Kiedy to o Ciebie chodzi",d:"Emocje skierowane na rodzica",e:"🔴"}].map(x=>(
+          <button key={x.l} className="lb" onClick={()=>startGame(x.l)}>
+            <span className="e">{x.e}</span><div><div className="l">Poziom {x.l} — {x.la}</div><div className="d">{x.d}</div></div>
+          </button>))}
+        <button className="lb" onClick={()=>setScr("custom")}>
+          <span className="e">🔵</span><div><div className="l">Moja sytuacja</div><div className="d">Opisz co się stało — AI stworzy scenkę</div></div>
+        </button>
+      </div>
+      {stats.t>0&&<div className="fu3" style={{marginTop:"16px"}}>
+        <div style={{background:"var(--card)",borderRadius:"16px",border:"1.5px solid var(--bd)",padding:"16px 20px",boxShadow:"0 2px 12px rgba(26,21,18,.05)"}}>
+          <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"13px",fontWeight:700,color:"var(--ac)",textTransform:"uppercase",letterSpacing:".5px",marginBottom:"10px"}}>📊 Twój postęp</div>
+          <div style={{display:"flex",justifyContent:"space-around",textAlign:"center"}}>
+            <div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"24px",fontWeight:800,color:"var(--acd)"}}>{stats.t}</div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"11px",color:"var(--tm)",marginTop:"2px"}}>scenek</div></div>
+            <div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"24px",fontWeight:800,color:"var(--teal)"}}>{(stats.ts/stats.t).toFixed(1)}</div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"11px",color:"var(--tm)",marginTop:"2px"}}>średnia</div></div>
+            <div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"24px",fontWeight:800,color:"var(--gn)"}}>{stats.b}</div><div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"11px",color:"var(--tm)",marginTop:"2px"}}>najlepsza</div></div>
+          </div>
+        </div>
+        <div style={{display:"flex",gap:"8px",justifyContent:"center",marginTop:"10px"}}>
+          {history.length>0&&<button style={{flex:1,maxWidth:"160px",padding:"10px 0",background:"var(--card)",border:"1.5px solid var(--bd)",borderRadius:"10px",fontSize:"13px",fontWeight:600,color:"var(--ts)",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif"}} onClick={()=>setScr("history")}>📋 Historia</button>}
+          <button style={{flex:1,maxWidth:"160px",padding:"10px 0",background:"var(--card)",border:"1.5px solid var(--bd)",borderRadius:"10px",fontSize:"13px",fontWeight:600,color:"var(--tm)",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif"}} onClick={()=>{if(confirm("Na pewno? Wyzerujesz cały postęp."))fullReset()}}>🔄 Od nowa</button>
+        </div>
+      </div>}
+      {/* ═══ WYZWANIE DLA ZNAJOMEGO ═══ */}
+      <div className="fu3" style={{marginTop:"16px"}}>
+        <button onClick={shareChallenge}
+          style={{width:"100%",padding:"14px 0",background:"linear-gradient(135deg,#7c5cbf,#5a3d9e)",color:"#fff",border:"none",borderRadius:"14px",fontSize:"16px",fontWeight:700,cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",display:"flex",alignItems:"center",justifyContent:"center",gap:"8px",transition:"all .2s"}}>
+          {copied==="challenge"?"✅ Skopiowano!":"🎯 Zrób znajomemu wyzwanie"}
+        </button>
+        <p style={{fontSize:"12px",color:"var(--tm)",textAlign:"center",marginTop:"6px",fontFamily:"'Source Sans 3',sans-serif"}}>Wyślij quiz — niech sprawdzi, czy umie słuchać</p>
+      </div>
+
+      <p className="author fu3">© Robert Gutkowski</p>
+
+      {/* ═══ MODAL ODZNAK ═══ */}
+      {showBadges&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.45)",zIndex:90,display:"flex",alignItems:"center",justifyContent:"center",padding:"20px"}} onClick={()=>setShowBadges(false)}>
+        <div style={{background:"var(--bg)",borderRadius:"24px",maxWidth:"440px",width:"100%",maxHeight:"80vh",overflow:"auto",padding:"24px 20px",boxShadow:"0 8px 40px rgba(0,0,0,.2)"}} onClick={e=>e.stopPropagation()}>
+          <div style={{textAlign:"center",marginBottom:"16px"}}>
+            <div style={{fontSize:"36px",marginBottom:"6px"}}>🏆</div>
+            <h2 style={{fontSize:"20px",color:"var(--acd)",marginBottom:"4px"}}>Twoje odznaki</h2>
+            <p style={{fontSize:"13px",color:"var(--tm)",fontFamily:"'Source Sans 3',sans-serif"}}>{BADGES.filter(b=>unlockedBadges[b.id]).length} z {BADGES.length} odblokowanych</p>
+          </div>
+          {(()=>{
+            const bd=computeBadgeData(stats,history,streak,dotd);
+            return BADGES.map(b=>{
+              const unlocked=!!unlockedBadges[b.id];
+              const prog=b.progress(bd);
+              const pct=Math.min(100,Math.round((prog/b.goal)*100));
+              return <div key={b.id} className={`badge-detail ${unlocked?"unlocked":""}`}>
+                <div className="badge-detail-icon" style={{opacity:unlocked?1:.3,filter:unlocked?"none":"grayscale(1)"}}>{b.icon}</div>
+                <div className="badge-detail-info">
+                  <div className="badge-detail-name">{b.name}</div>
+                  <div className="badge-detail-desc">{b.desc}</div>
+                  {!unlocked&&<>
+                    <div className="badge-detail-progress"><div className="badge-detail-fill" style={{width:`${pct}%`}}/></div>
+                    <div className="badge-detail-stat">{prog}/{b.goal}</div>
+                  </>}
+                  {unlocked&&<div className="badge-detail-stat" style={{color:"#8a6d00"}}>✓ Odblokowana {unlockedBadges[b.id]}</div>}
+                </div>
+              </div>
+            })
+          })()}
+          <button className="bp" style={{marginTop:"12px"}} onClick={()=>setShowBadges(false)}>Zamknij</button>
+        </div>
+      </div>}
+    </div></div>);
+
+  return(<>
+    <div className="tb"><button className="bb" onClick={goHome}>← Menu</button><span className="tl">{dotdMode?"⭐ Scenka Dnia":`${le(lv)} Poziom ${lv}${stats.t>0?` · Scenka ${stats.t+1}`:""}`}</span><button className="hb" onClick={()=>setShowHelp(!showHelp)}>?</button></div>
+
+    {showHelp&&<div className="help fu">
+      <div style={{fontSize:"40px",textAlign:"center",marginBottom:"8px"}}>💡</div>
+      <div className="help-title">Jak reagować?</div>
+      <div className="help-sub">Krótki przewodnik po empatycznym słuchaniu</div>
+
+      <div className="help-key">
+        <p>Twoje dziecko nie potrzebuje rady. Nie potrzebuje rozwiązania. Potrzebuje poczuć, że ktoś jest przy nim — i że to, co czuje, ma prawo istnieć.</p>
+      </div>
+
+      <div className="help-section">
+        <div className="help-h">🎯 O co tu chodzi?</div>
+        <p className="help-p">Kiedy nastolatek mówi coś trudnego, w Tobie natychmiast włącza się alarm. Chcesz naprawić, pocieszyć, doradzić. To naturalne — bo kochasz. Ale dziecko w tej chwili nie prosi o ratunek. Prosi, żebyś usłyszał.</p>
+        <p className="help-p">Empatia to nie technika. To decyzja, żeby przez chwilę być po jego stronie — zanim cokolwiek powiesz, zanim cokolwiek naprawisz.</p>
+      </div>
+
+      <div className="help-section">
+        <div className="help-h">🔑 Co działa?</div>
+        <p className="help-p"><strong>Nazwij to, co widzisz.</strong> Nie to, co chcesz naprawić. Powiedz jednym zdaniem, co Twoje dziecko czuje — nawet jeśli nie masz pewności. Samo to, że próbujesz, zmienia wszystko.</p>
+        <div className="help-ex">
+          <div className="he-label">Dziecko mówi:</div>
+          <div className="he-text">„Starałem się, a i tak wszystko spieprzyłem."</div>
+        </div>
+        <div className="help-vs">
+          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Tyle pracy — i jakby to nic nie znaczyło."</p></div>
+          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Następnym razem się lepiej przygotuj."</p></div>
+        </div>
+      </div>
+
+      <div className="help-section">
+        <div className="help-h">⚡ Typowe pułapki</div>
+        <p className="help-p">Nie musisz ich unikać perfekcyjnie — wystarczy, że je zauważysz. Większość z nas wpada w nie codziennie. To nie znaczy, że jesteś złym rodzicem. To znaczy, że jesteś człowiekiem.</p>
+        <div className="help-ex">
+          <div className="he-text">„Nie przesadzaj" — bagatelizowanie<br/>„Pogadaj z wychowawcą" — naprawianie<br/>„Jak się pouczysz, to będzie lepiej" — doradzanie<br/>„Ja w twoim wieku…" — porównywanie</div>
+        </div>
+        <p className="help-p">Wszystkie mają wspólny mianownik: mówią dziecku, że to co czuje jest do naprawienia. A ono chce tylko usłyszeć, że to co czuje — jest.</p>
+      </div>
+
+      <div className="help-section">
+        <div className="help-h">🔴 Gdy jest zły na Ciebie</div>
+        <p className="help-p">To najtrudniejsze. „Nienawidzę cię", „Zostaw mnie", „Nie miałaś prawa". Ciało krzyczy: broń się albo przeproś. Ale jedno i drugie zamyka drzwi.</p>
+        <p className="help-p">Spróbuj wytrzymać i zobaczyć, co jest pod złością. Zwykle jest tam ból, strach, albo poczucie, że jest nieważny. Powiedz to, co widzisz — spokojnie, bez cofania się.</p>
+        <div className="help-vs">
+          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Czujesz, że zepsułem coś między nami."</p></div>
+          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Nie pozwalam tak do mnie mówić."</p></div>
+        </div>
+      </div>
+
+      <div className="help-key">
+        <p>Nie musisz mieć idealnej odpowiedzi. Wystarczy jedno zdanie, w którym dziecko poczuje: <em>ktoś mnie widzi</em>.</p>
+      </div>
+
+      <button className="bp" style={{marginTop:"12px"}} onClick={()=>setShowHelp(false)}>Wracam do ćwiczenia →</button>
+    </div>}
+
+    {!showHelp&&stats.t>0&&<div className="stb"><div className="si"><span className="sn">{stats.t}</span><span className="sl2">sytuacji</span></div><div className="si"><span className="sn">{(stats.ts/stats.t).toFixed(1)}</span><span className="sl2">średnia</span></div><div className="si"><span className="sn">{stats.b}</span><span className="sl2">najlepsza</span></div></div>}
+    {!showHelp&&loading&&(scene&&pr&&scr==="scene"?<FeedbackLoading teenSays={scene.teen_says} parentResp={pr} ctx={scene.situation}/>:<Loading text={ldTxt}/>)}
+    {!showHelp&&err&&!loading&&<div className="err"><p>{err}</p><button onClick={()=>{setErr(null);if(scr==="custom"){setCustomTxt(customTxt)}else if(!fb)getScene(lv);else{setTxt(pr);setPr("")}}}>Spróbuj ponownie</button></div>}
+
+    {!showHelp&&scr==="scene"&&!loading&&!err&&scene&&<div className={dotdMode?"dotd-scene":""}>
+      {ls>=3&&<div className="rsb"><p>{pick(["Spróbuj powiedzieć to, co widzisz — nie to, co chcesz naprawić.","Nie musisz mieć rozwiązania. Wystarczy, że usłyszysz.","Nazwij to, co czuje — nawet jednym zdaniem.","Pomyśl: co by chciał usłyszeć, żeby poczuć, że go rozumiesz?","Spróbuj być lustrem, nie ratownikiem.","Zamiast rady — powiedz, co widzisz w jego oczach."])}</p></div>}
+      {rt&&<div className="tmb"><p>Często pojawia się pułapka „{rt[0]}". To normalne. Spróbuj skupić się na nazywaniu uczuć.</p></div>}
+      <div className="sc fu">
+        <div className="sh">
+          {dotdMode?<span className="dotd-badge">⭐ SCENKA DNIA</span>:<span className="sg">{le(scene.level)} Poziom {scene.level}</span>}
+          <span className="sy">{scene.situation_type}</span>
+        </div>
+
+        <p className="ss2">{scene.situation}</p>
+        <div className="spb sc-quote"><p className="spt">„{scene.teen_says}"</p></div>
+        <div className="ra sc-input"><label className="rl">Co odpowiadasz?</label>
+          <textarea value={txt} onChange={e=>setTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." className="ta" rows={3} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();respond()}}}/>
+          <button className="snb" disabled={!txt.trim()||loading} onClick={respond}>Wyślij odpowiedź</button>
+        </div></div>
+      {dotdMode&&<div style={{textAlign:"center",marginTop:"8px"}}><span style={{fontSize:"12px",color:"#a08830",fontFamily:"'Source Sans 3',sans-serif"}}>⭐ Masz jeden strzał — to Scenka Dnia</span></div>}
+    </div>}
+
+    {!showHelp&&scr==="feedback"&&!loading&&!err&&fb&&<div className="fw">
+      <div className="fd0" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"14px",margin:"10px auto 6px",position:"relative"}}>
+        <div style={{position:"relative"}}>
+          {fb.score>=9&&<Confetti/>}
+          <div className={`scr ${fb.score>=9?"scr-glow":""}`} style={{backgroundColor:scol(fb.score),margin:0}}><span className="scrn">{fb.score}/10</span><span className="scrw">{swl(fb.score)}</span></div>
+        </div>
+        {fb.score>=9&&!dotdMode&&!customMode&&<button className={`${copied?"share-copied":""}`} onClick={shareScene}
+          style={{background:"linear-gradient(135deg,#e8c840,#d4a820)",color:"#fff",border:"none",borderRadius:"20px",padding:"12px 18px",width:"120px",height:"90px",fontSize:"13px",fontWeight:700,cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"4px",boxShadow:"0 2px 12px rgba(234,176,32,.3)",transition:"all .2s",lineHeight:"1.3"}}>
+          <span style={{fontSize:"18px"}}>{copied?"✅":"📤"}</span>
+          <span>{copied?"Skopiowano!":"Pochwal się wynikiem"}</span>
+        </button>}
+      </div>
+      {fb.teen_reaction&&<div className="teen-react fd2">
+        <div className="teen-avatar">{teenFace(fb.score)}</div>
+        <div className="teen-bubble">
+          <div className="teen-name">Nastolatek</div>
+          {teenTyping?<div className="typing-dots"><span/><span/><span/></div>
+          :<p>{fb.teen_reaction}</p>}
+        </div>
+      </div>}
+      {fb.perfect_note&&<div className="pb fd3"><span className="ic">✨</span><p>{fb.perfect_note}</p></div>}
+      {fb.trap_detected&&<div className="trb fd3"><span className="ic">⚡</span><span>Pułapka: {fb.trap_detected}</span></div>}
+      <div className="eb fd4"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{pr}"</p></div>
+      <div className="fd5"><Sec icon="👍" title="Co działa" startOpen><p className="secb">{fb.what_works}</p></Sec></div>
+      <div className="fd5"><Sec icon="👀" title="Na co uważać"><p className="secb">{fb.watch_out}</p></Sec></div>
+      <div className="rfb fd6"><span className="ic">💭</span><p>{fb.reflection_question}</p></div>
+      <div className="fd7"><Sec icon="💡" title="Podpowiedź">{scene?.level===3?
+        <div className="sgl"><div className="sgi" style={{flexDirection:"column",gap:"4px"}}><span className="sglt" style={{fontStyle:"normal",fontSize:"16px",lineHeight:"1.6"}}>{fb.suggestions.best||fb.suggestions.warm||fb.suggestions.naming}</span></div></div>
+        :<div className="sgl">
+        <div className="sgi"><span className="sgla">Nazwij uczucie</span><span className="sglt">{fb.suggestions.naming}</span></div>
+        <div className="sgi"><span className="sgla">Echo</span><span className="sglt">{fb.suggestions.warm}</span></div>
+      </div>}</Sec></div>
+      {note&&<div className="pb fd7" style={{background:"#fef9e7",borderLeft:"3.5px solid #eab020"}}><p style={{color:"#6b5600"}}>{note}</p></div>}
+
+      {/* ═══ KARTA UDOSTĘPNIANIA — SCENKA DNIA ═══ */}
+      {dotdMode&&fb.score>=9&&<div className="share-card fd8">
+        <div style={{fontSize:"12px",color:"rgba(255,255,255,.45)",fontFamily:"'Source Sans 3',sans-serif",fontWeight:700,textTransform:"uppercase",letterSpacing:"1.5px",marginBottom:"14px"}}>👂 Usłysz Mnie · Scenka Dnia</div>
+        
+        <div style={{fontSize:"22px",letterSpacing:"1px",marginBottom:"4px"}}>
+          {Array.from({length:10},(_, i)=>i<fb.score?"🟩":"⬜").join("")}
+        </div>
+        
+        <div className="share-grid">
+          <div className="share-cell"><div className="val">{fb.score}/10</div><div className="lbl">wynik</div></div>
+          <div className="share-divider"/>
+          <div className="share-cell"><div className="val">{le(scene?.level)}</div><div className="lbl">poziom</div></div>
+          <div className="share-divider"/>
+          <div className="share-cell"><div className="val">{fb.trap_detected?"⚡":"✅"}</div><div className="lbl">{fb.trap_detected?"pułapka":"czysto"}</div></div>
+          {streak.streak>=2&&<><div className="share-divider"/><div className="share-cell"><div className="val">🔥{streak.streak}</div><div className="lbl">seria</div></div></>}
+        </div>
+        
+        <p style={{fontSize:"14px",color:"rgba(255,255,255,.6)",fontStyle:"italic",margin:"8px 0 4px",lineHeight:"1.4"}}>„{scene?.teen_says||dailyScene?.teen_says}"<br/><span style={{fontStyle:"normal",fontSize:"13px"}}>Co odpowiadasz nastolatkowi? 😏</span></p>
+        
+        <button className={`share-copy ${copied?"share-copied":""}`} onClick={shareDotd}>
+          {copied?"✅ Skopiowano!":"📤 Pochwal się wynikiem"}
+        </button>
+      </div>}
+
+      {/* ═══ BANER POWIADOMIEŃ ═══ */}
+      {showNotifBanner&&!notifState.enabled&&<div className="notif-banner">
+        <div className="notif-banner-title">🔔 Chcesz codzienne przypomnienie?</div>
+        <p className="notif-banner-text">Jedno powiadomienie wieczorem — żebyś nie zgubił serii i nie przegapił Scenki Dnia.</p>
+        <div className="notif-btns">
+          <button className="notif-yes" onClick={async()=>{
+            const ok=await requestNotifPermission();
+            const ns={asked:notifState.asked+1,enabled:ok};
+            saveNotifState(ns);setNotifState(ns);
+            setShowNotifBanner(false);
+            if(ok)setNotifJustEnabled(true);
+          }}>Tak, przypominaj</button>
+          <button className="notif-later" onClick={()=>{
+            const ns={...notifState,asked:notifState.asked+1};
+            saveNotifState(ns);setNotifState(ns);
+            setShowNotifBanner(false);
+          }}>Nie teraz</button>
+        </div>
+      </div>}
+      {notifJustEnabled&&<div className="notif-done">✅ Powiadomienia włączone!</div>}
+
+      <div className="btns fd8">
+        {dotdMode?<button className="bp" onClick={goHome}>Wróć do menu →</button>
+        :customMode?<button className="bp" onClick={goHome}>Wróć do menu →</button>
+        :<>
+          <button className="bp" onClick={()=>{setNote(null);next()}}>Następna sytuacja →</button>
+          {fb&&fb.score<=6&&<button className="bs" onClick={retry}>Spróbuj ponownie</button>}
+          {fb&&fb.score>=7&&fb.score<=8&&<button className="bs" style={{borderColor:"var(--teal)",color:"var(--teal)"}} onClick={retry}>Udoskonal odpowiedź</button>}
+        </>}
+      </div>
+    </div>}
+
+    <EmotionPanel open={emoPanelOpen} onClose={()=>setEmoPanelOpen(false)} />
+    {(scr==="scene"||scr==="feedback")&&!loading&&!showHelp&&<button className="emo-fab" onClick={()=>setEmoPanelOpen(true)} title="Mapa emocji">🧭</button>}
+
+    {!showHelp&&scr==="custom"&&!loading&&<div className="fw fu">
+      <div style={{textAlign:"center",padding:"10px 0 16px"}}>
+        <div style={{fontSize:"36px",marginBottom:"8px"}}>✏️</div>
+        <h2 style={{fontSize:"20px",color:"var(--acd)",marginBottom:"6px"}}>Moja sytuacja</h2>
+      </div>
+      <div className="custom-intro"><p>Opisz, co się wydarzyło — co powiedział Twój nastolatek, w jakiej sytuacji. AI stworzy scenkę treningową, na którą będziesz mógł odpowiedzieć i dostać feedback.</p></div>
+      <div className="ra">
+        <label className="rl">Co powiedział Twój nastolatek? Co się działo?</label>
+        <textarea value={customTxt} onChange={e=>setCustomTxt(e.target.value)} placeholder="Np. Mój 15-letni syn wrócił ze szkoły wściekły i powiedział, że nienawidzi nauczyciela..." className="ta" rows={4}/>
+        <button className="snb" disabled={!customTxt.trim()||loading} onClick={submitCustom}>Stwórz scenkę →</button>
+      </div>
+      <div style={{textAlign:"center",marginTop:"16px"}}>
+        <button className="menu-link" onClick={goHome} style={{display:"inline-flex"}}>← Wróć do menu</button>
+      </div>
+    </div>}
+
+    {!showHelp&&scr==="history"&&<div className="fw fu">
+      <div style={{textAlign:"center",padding:"10px 0 16px"}}>
+        <div style={{fontSize:"36px",marginBottom:"8px"}}>📋</div>
+        <h2 style={{fontSize:"20px",color:"var(--acd)",marginBottom:"6px"}}>Historia odpowiedzi</h2>
+        <p style={{fontSize:"13px",color:"var(--tm)"}}>{history.length} odpowiedzi</p>
+      </div>
+      {history.length===0&&<div className="hist-empty">Jeszcze nie masz historii. Zacznij ćwiczyć!</div>}
+      <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+        {history.map((h,i)=><div key={i} className="hist-item fu">
+          <div className="hist-meta">
+            <span className="hist-date">{h.date} · Poziom {h.lv}</span>
+            <span className="hist-score" style={{backgroundColor:scol(h.score)}}>{h.score}</span>
+          </div>
+          <div className="hist-ctx">💬 „{h.says}"</div>
+          <div className="hist-resp">→ „{h.resp}"</div>
+        </div>)}
+      </div>
+      <div style={{textAlign:"center",marginTop:"20px"}}>
+        <button className="menu-link" onClick={goHome} style={{display:"inline-flex"}}>← Wróć do menu</button>
+      </div>
+    </div>}
+
+    {!showHelp&&scr==="summary"&&<div className="fw fu">
+      <div style={{textAlign:"center",padding:"20px 0 10px"}}>
+        <div style={{fontSize:"48px",marginBottom:"12px"}}>👏</div>
+        <h2 style={{fontSize:"22px",color:"var(--acd)",marginBottom:"6px"}}>Podsumowanie</h2>
+        <p style={{fontSize:"15px",color:"var(--tm)"}}>Masz za sobą {stats.t} scenek!</p>
+      </div>
+      <div className="stb" style={{borderBottom:"none",marginBottom:"0"}}>
+        <div className="si"><span className="sn">{stats.t}</span><span className="sl2">scenek</span></div>
+        <div className="si"><span className="sn">{(stats.ts/stats.t).toFixed(1)}</span><span className="sl2">średnia</span></div>
+        <div className="si"><span className="sn">{stats.b}</span><span className="sl2">najlepsza</span></div>
+      </div>
+      {topTrap&&<div className="eb fu1"><div className="ebl">Najczęstsza pułapka</div><p className="ebt">{topTrap[0]} ({topTrap[1]}×)</p></div>}
+      {(stats.ts/stats.t)>=7.5&&<div className="pb fu1"><span className="ic">✨</span><p>Świetna robota! Empatia to jest to.</p></div>}
+      {(stats.ts/stats.t)>=5&&(stats.ts/stats.t)<7.5&&<div className="pb fu1" style={{background:"var(--wm)"}}><span className="ic">💪</span><p style={{color:"var(--ts)"}}>Dobry kierunek. Z każdą scenką idzie lepiej.</p></div>}
+      {(stats.ts/stats.t)<5&&<div className="pb fu1" style={{background:"var(--wm)"}}><span className="ic">🌱</span><p style={{color:"var(--ts)"}}>To dopiero początek. Samo ćwiczenie to już dużo.</p></div>}
+      <div className="btns fu2">
+        <button className="bp" onClick={()=>getScene(lv)}>Ćwiczę dalej →</button>
+        <button className="bp bp-ghost" onClick={goHome}>Wróć do menu</button>
+      </div>
+    </div>}
+
+    {/* ═══ TOAST NOWEJ ODZNAKI ═══ */}
+    {badgeToast&&<div className="badge-new-toast">{badgeToast.icon} Nowa odznaka: {badgeToast.name}!</div>}
+  </>)}
+
+ReactDOM.createRoot(document.getElementById("app")).render(<App/>);
+</script>
+</body>
+</html>
