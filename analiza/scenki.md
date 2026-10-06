@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `94dd3a0`, 2026-10-06.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `0ddcfeb`, 2026-10-06.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -277,7 +277,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **41.** `id 41` · dziewczyna, 15 l.  
 *Niedzielny obiad u dziadków. 15-latka wychodzi od stołu w połowie deseru i czeka w samochodzie.*  
-„Wujek musiał przy wszystkich rzucić 'ale ci urosły biodra'. I wszyscy się śmiali, jakby to był żart.”  
+„Wujek musiał przy wszystkich rzucić, że mi biodra urosły. I wszyscy się śmiali, jakby to był żart.”  
 → emocja: **złość** · dystraktory: upokorzenie, wstyd, bezsilność
 
 **42.** `id 42` · chłopak, 14 l.  
@@ -1185,7 +1185,7 @@ Po złej odpowiedzi dodatkowo: „Większość rodziców też wybiera tę opcję
 
 ## Uwagi z ekstrakcji
 
-1. **Źródło: pula v2** (200 scenek) z sesji „Scenki v2”, gałąź `scenki-v2`, commit `f22fe2f`, wklejona do aplikacji w miejsce poprzedniej bazy. Poprzednia baza 200 scenek zostaje w historii gita (commit `fb6a255`). Numery `id` 1-200, bez luk i duplikatów.
+1. **Źródło: pula v2** (200 scenek) z sesji „Scenki v2”, gałąź `scenki-v2`, commit `6f0767e`, wklejona do aplikacji w miejsce poprzedniej bazy. Poprzednia baza 200 scenek zostaje w historii gita (commit `fb6a255`). Numery `id` 1-200, bez luk i duplikatów.
 2. **Poziomy:** poziom 1: 80, poziom 2: 45, poziom 3: 75; 21 sfer opisanych komentarzami w kodzie bazy.
 3. **Zapamiętane losowania:** numery 1-200 wskazują teraz inne scenki niż w poprzedniej bazie, więc aplikacja (stała `DB_VER=2`) jednorazowo zeruje u powracających użytkowników listę już wylosowanych scenek. Statystyki, poziom, odznaki i seria zostają.
 4. **Rodzic w scenkach:** mama pojawia się w 41 scenkach, tata w 33; w pozostałych rodzic nie jest nazwany. Interfejs nadal zwraca się do użytkownika w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”).

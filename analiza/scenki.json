@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "94dd3a04d5c4172bbffdfdb44992e98178f4ab49",
+  "commit": "0ddcfebeb3db7807634435394f6c83ab069230f8",
   "data_eksportu": "2026-10-06",
   "liczba": 200,
   "poziomy": {
@@ -742,7 +742,7 @@
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "Niedzielny obiad u dziadków. 15-latka wychodzi od stołu w połowie deseru i czeka w samochodzie.",
-      "wypowiedz": "Wujek musiał przy wszystkich rzucić 'ale ci urosły biodra'. I wszyscy się śmiali, jakby to był żart.",
+      "wypowiedz": "Wujek musiał przy wszystkich rzucić, że mi biodra urosły. I wszyscy się śmiali, jakby to był żart.",
       "emocja": "złość",
       "dystraktory": [
         "upokorzenie",
