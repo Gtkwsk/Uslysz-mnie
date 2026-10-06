@@ -256,8 +256,8 @@ const MODEL="gpt-5.6-terra";
 // ══════════════════════════════════════════════════════════════
 
 // ══════════════════════════════════════════════════════════════
-// BAZA SCENARIUSZY — 192 realistyczne scenki
-// Każda ma kontekst (z wiekiem i płcią) i wypowiedź.
+// BAZA SCENARIUSZY — 187 realistycznych scenek
+// Każda ma kontekst (z wiekiem i płcią), wypowiedź i płeć nastolatka (sex: "m" chłopak, "f" dziewczyna).
 // ══════════════════════════════════════════════════════════════
 
 const SCENARIOS_DB = [
@@ -266,222 +266,220 @@ const SCENARIOS_DB = [
 // ═══════════════════════════════════════════════════════════
 
 // --- Szkoła i presja ---
-{id:1,lv:1,ctx:"14-latek rzuca plecak na podłogę w przedpokoju. W e-dzienniku świeci nowa uwaga.",says:"Znowu mam uwagę. Nieważne co robię, i tak jestem winny.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
-{id:2,lv:1,ctx:"14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.",says:"Nie ogarniam tego. Jak jutro dostanę pałę, to ja serio pęknę.",emo:"przytłoczenie",dist:["strach","bezsilność","frustracja"]},
-{id:3,lv:1,ctx:"14-latek stoi rano w kurtce, ale nie rusza się do wyjścia.",says:"Nie idę dziś do szkoły. Nie mam siły wchodzić tam znowu.",emo:"przytłoczenie",dist:["strach","smutek","bezsilność"]},
-{id:4,lv:1,ctx:"Niedziela wieczór, jutro szkoła. 14-latek kręci się po pokoju i łapie za brzuch.",says:"Jutro nie dam rady. Jak o tym myślę, to aż mi się robi niedobrze.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
-{id:8,lv:1,ctx:"14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.",says:"Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.",emo:"bezsilność",dist:["smutek","rozczarowanie","wstyd"]},
-{id:9,lv:1,ctx:"15-latek wraca z treningu. Patrzy w okno samochodu, milczy.",says:"Trener mnie zjechał przy wszystkich. Chciałem po prostu zniknąć.",emo:"upokorzenie",dist:["wstyd","złość","bezsilność"]},
-{id:86,lv:1,ctx:"14-latek po kolejnej wpadce i krytyce. Mówi coś jak wyrok.",says:"Jestem głupi…",emo:"bezsilność",dist:["smutek","wstyd","rozczarowanie"]},
-{id:101,lv:1,ctx:"14-latek po oddaniu ważnego projektu, nad którym siedział dwa weekendy.",says:"Dostałem tróję. Gość napisał, że 'mało kreatywne'. Bez kitu, po co ja się w ogóle starałem?",emo:"rozczarowanie",dist:["bezsilność","złość","niesprawiedliwość"]},
-{id:102,lv:1,ctx:"16-latka otwiera Librusa i widzi kolejną jedynkę z matematyki.",says:"Znowu to samo. Ta baba tłumaczy to tak, że nikt nic nie czai. Równie dobrze mogę nie chodzić. Zero różnicy.",emo:"bezsilność",dist:["złość","frustracja","niesprawiedliwość"]},
-{id:103,lv:1,ctx:"13-latek przygotowuje się do odpowiedzi ustnej, nerwowo przekładając kartki.",says:"Jak mnie wywoła do tablicy, to chyba tam zemleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.",emo:"strach",dist:["przytłoczenie","niepewność","bezsilność"]},
-{id:104,lv:1,ctx:"15-latek wraca z próbnego egzaminu, rzuca plecakiem.",says:"W arkuszu były rzeczy, których w ogóle nie przerabialiśmy. Pół klasy oddało puste kartki. To jest jakiś żart.",emo:"niesprawiedliwość",dist:["złość","frustracja","bezsilność"]},
-{id:105,lv:1,ctx:"17-latka patrzy na listę lektur na ten semestr.",says:"Pięć grubych ksiąg w dwa miesiące? Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
-{id:106,lv:1,ctx:"14-latka po prezentacji przed klasą, podczas której pomyliła slajdy.",says:"Wszyscy zaczęli się śmiać, a ja stałam tam jak kołek. Chcę po prostu zniknąć z tej szkoły.",emo:"upokorzenie",dist:["wstyd","strach","samotność"]},
-{id:107,lv:1,ctx:"16-latek dowiaduje się, że nie przeszedł do drugiego etapu olimpiady o jeden punkt.",says:"Jeden punkt. Przez jedno głupie pytanie wszystko poszło w piach. Tyle miesięcy nauki na nic.",emo:"rozczarowanie",dist:["żal","bezsilność","frustracja"]},
-{id:108,lv:1,ctx:"13-latka po kłótni z nauczycielem, który oskarżył ją o ściąganie.",says:"Wcale nie ściągałam! Patrzyłam w okno, a ona mi zabrała kartkę przy wszystkich. To było tak niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
-{id:109,lv:1,ctx:"17-latek patrzy na kalendarz — do zakończenia roku zostały trzy dni.",says:"Nie dam rady tego ogarnąć. Za dużo tego.",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
-{id:110,lv:1,ctx:"15-latek wraca do domu po sprawdzianie, na który uczył się trzy dni z rzędu, i dowiaduje się, że dostał ocenę niedostateczną.",says:"Mam to gdzieś, serio. Po co ja się w ogóle staram, skoro ta baba i tak mnie uwali? To jest jakiś żart, nigdy więcej nie otworzę tego podręcznika.",emo:"bezsilność",dist:["złość","rozczarowanie","niesprawiedliwość"]},
-{id:111,lv:1,ctx:"15-latek wraca do domu po sprawdzianie z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.",says:"No i po co ja w ogóle otwierałem te książki?! Ta baba i tak mi wlepiła lufę, bo stwierdziła, że metoda jej się nie podoba. Więcej tam nie idę, niech sobie sama rozwiązuje te zadania.",emo:"bezsilność",dist:["złość","niesprawiedliwość","rozczarowanie"]},
-{id:112,lv:1,ctx:"15-latek został wyrzucony z lekcji przez nauczyciela, który uznał, że to on rzucał papierkami, choć chłopak siedział cicho.",says:"Wzięła mnie na cel i tyle. Inni robili syf, a ona wskazała palcem na mnie, bo tak jej było wygodniej. Aż mnie rozsadza od środka, jak to niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
-{id:113,lv:1,ctx:"17-latek został wyproszony z zajęć dodatkowych przez trenera za rzekome przeszkadzanie, choć to inna grupa robiła hałas.",says:"Wziął mnie na cel i tyle. Inni robili syf, a on wskazał palcem na mnie, bo tak mu było wygodniej, bo jestem najstarszy. Aż mnie rozsadza od środka, jak to podłe, noga tam więcej nie postanie!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
+{id:1,lv:1,sex:"m",ctx:"14-latek rzuca plecak na podłogę w przedpokoju. W e-dzienniku świeci nowa uwaga.",says:"Znowu mam uwagę. Nieważne co robię, i tak jestem winny.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
+{id:2,lv:1,sex:"m",ctx:"14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.",says:"Nie ogarniam tego. Jak jutro dostanę pałę, to ja serio pęknę.",emo:"przytłoczenie",dist:["strach","bezsilność","frustracja"]},
+{id:3,lv:1,sex:"m",ctx:"14-latek stoi rano w kurtce, ale nie rusza się do wyjścia.",says:"Nie idę dziś do szkoły. Nie mam siły wchodzić tam znowu.",emo:"przytłoczenie",dist:["strach","smutek","bezsilność"]},
+{id:4,lv:1,sex:"m",ctx:"Niedziela wieczór, jutro szkoła. 14-latek kręci się po pokoju i łapie za brzuch.",says:"Jutro nie dam rady. Jak o tym myślę, to aż mi się robi niedobrze.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
+{id:8,lv:1,sex:"m",ctx:"14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.",says:"Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.",emo:"bezsilność",dist:["smutek","rozczarowanie","wstyd"]},
+{id:9,lv:1,sex:"m",ctx:"15-latek wraca z treningu. Patrzy w okno samochodu, milczy.",says:"Trener mnie zjechał przy wszystkich. Chciałem po prostu zniknąć.",emo:"upokorzenie",dist:["wstyd","złość","bezsilność"]},
+{id:86,lv:1,sex:"m",ctx:"14-latek po kolejnej wpadce i krytyce. Mówi coś jak wyrok.",says:"Jestem głupi…",emo:"bezsilność",dist:["smutek","wstyd","rozczarowanie"]},
+{id:101,lv:1,sex:"m",ctx:"14-latek po oddaniu ważnego projektu, nad którym siedział dwa weekendy.",says:"Dostałem tróję. Gość napisał, że 'mało kreatywne'. Bez kitu, po co ja się w ogóle starałem?",emo:"rozczarowanie",dist:["bezsilność","złość","niesprawiedliwość"]},
+{id:102,lv:1,sex:"f",ctx:"16-latka otwiera Librusa i widzi kolejną jedynkę z matematyki.",says:"Znowu to samo. Ta baba tłumaczy to tak, że nikt nic nie czai. Równie dobrze mogę nie chodzić. Zero różnicy.",emo:"bezsilność",dist:["złość","frustracja","niesprawiedliwość"]},
+{id:103,lv:1,sex:"m",ctx:"13-latek przygotowuje się do odpowiedzi ustnej, nerwowo przekładając kartki.",says:"Jak mnie wywoła do tablicy, to chyba tam zemleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.",emo:"strach",dist:["przytłoczenie","niepewność","bezsilność"]},
+{id:104,lv:1,sex:"m",ctx:"15-latek wraca z próbnego egzaminu, rzuca plecakiem.",says:"W arkuszu były rzeczy, których w ogóle nie przerabialiśmy. Pół klasy oddało puste kartki. To jest jakiś żart.",emo:"niesprawiedliwość",dist:["złość","frustracja","bezsilność"]},
+{id:105,lv:1,sex:"f",ctx:"17-latka patrzy na listę lektur na ten semestr.",says:"Pięć grubych ksiąg w dwa miesiące? Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
+{id:106,lv:1,sex:"f",ctx:"14-latka po prezentacji przed klasą, podczas której pomyliła slajdy.",says:"Wszyscy zaczęli się śmiać, a ja stałam tam jak kołek. Chcę po prostu zniknąć z tej szkoły.",emo:"upokorzenie",dist:["wstyd","strach","samotność"]},
+{id:107,lv:1,sex:"m",ctx:"16-latek dowiaduje się, że nie przeszedł do drugiego etapu olimpiady o jeden punkt.",says:"Jeden punkt. Przez jedno głupie pytanie wszystko poszło w piach. Tyle miesięcy nauki na nic.",emo:"rozczarowanie",dist:["żal","bezsilność","frustracja"]},
+{id:108,lv:1,sex:"f",ctx:"13-latka po kłótni z nauczycielką, która oskarżyła ją o ściąganie.",says:"Wcale nie ściągałam! Patrzyłam w okno, a ona mi zabrała kartkę przy wszystkich. To było tak niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
+{id:109,lv:1,sex:"m",ctx:"17-latek patrzy na kalendarz — do zakończenia roku zostały trzy dni.",says:"Nie dam rady tego ogarnąć. Za dużo tego.",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
+{id:110,lv:1,sex:"m",ctx:"15-latek wraca do domu z jedynką ze sprawdzianu z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.",says:"Mam to gdzieś, serio. Po co ja się w ogóle staram, skoro ta baba i tak mnie uwali? To jest jakiś żart, nigdy więcej nie otworzę tego podręcznika.",emo:"bezsilność",dist:["złość","rozczarowanie","niesprawiedliwość"]},
+{id:112,lv:1,sex:"m",ctx:"15-latek został wyrzucony z lekcji przez nauczycielkę, która uznała, że to on rzucał papierkami, choć chłopak siedział cicho.",says:"Wzięła mnie na cel i tyle. Inni robili syf, a ona wskazała palcem na mnie, bo tak jej było wygodniej. Aż mnie rozsadza od środka, jak to niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","upokorzenie","bezsilność"]},
 
 // --- Emocje, lęk, smutek ---
-{id:22,lv:1,ctx:"14-latek późnym wieczorem przegląda terminy egzaminów i prób.",says:"Nie mogę oddychać, jak o tym myślę. Wszystko mi się miesza w głowie.",emo:"przytłoczenie",dist:["strach","bezsilność","desperacja"]},
-{id:23,lv:1,ctx:"15-latka wraca ze szkoły. Jutro prezentacja, nerwowo skubie rękaw.",says:"Jak się ośmieszę, to ja tam więcej nie pójdę. Serio.",emo:"strach",dist:["wstyd","niepewność","przytłoczenie"]},
-{id:30,lv:1,ctx:"15-latek wraca w środku tygodnia i od razu zamyka się w pokoju.",says:"Daj mi chwilę. W szkole cały dzień muszę być ogarnięty, a ja już nie mam baterii.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
-{id:64,lv:1,ctx:"16-latek rozmawia z rodzicem o motywacji. W pewnym momencie zaczyna mówić ciszej.",says:"Nie chodzi o lenistwo. Ja po prostu nie widzę sensu w tym, co robię.",emo:"bezsilność",dist:["smutek","przytłoczenie","desperacja"]},
-{id:89,lv:1,ctx:"17-latek milknie, kiedy rodzic naciska na temat studiów. Potem mówi cicho.",says:"Przeraża mnie to wszystko: studia, praca, decyzje. Ja nie wiem czy sobie z tym wszystkim poradzę.",emo:"strach",dist:["niepewność","przytłoczenie","bezsilność"]},
-{id:95,lv:1,ctx:"Rodzic próbuje pocieszyć 15-latkę. Reaguje, jakby to był atak.",says:"Nie mów mi, że przesadzam. Ja naprawdę cierpię.",emo:"smutek",dist:["bezsilność","złość","samotność"]},
-{id:46,lv:1,ctx:"Rodzic przed chwilą zażartował z tego, o czym marzy 15-latka. Czerwienieje ze złości.",says:"To moje marzenie. Jak się śmiejesz, to czuję się totalnie zniszczona.",emo:"upokorzenie",dist:["smutek","złość","bezsilność"]},
+{id:22,lv:1,sex:"m",ctx:"14-latek późnym wieczorem przegląda terminy egzaminów i prób.",says:"Nie mogę oddychać, jak o tym myślę. Wszystko mi się miesza w głowie.",emo:"przytłoczenie",dist:["strach","bezsilność","desperacja"]},
+{id:23,lv:1,sex:"f",ctx:"15-latka wraca ze szkoły. Jutro prezentacja, nerwowo skubie rękaw.",says:"Jak się ośmieszę, to ja tam więcej nie pójdę. Serio.",emo:"strach",dist:["wstyd","niepewność","przytłoczenie"]},
+{id:30,lv:1,sex:"m",ctx:"15-latek wraca w środku tygodnia i od razu zamyka się w pokoju.",says:"Daj mi chwilę. W szkole cały dzień muszę być ogarnięty, a ja już nie mam baterii.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
+{id:64,lv:1,sex:"m",ctx:"16-latek rozmawia z rodzicem o motywacji. W pewnym momencie zaczyna mówić ciszej.",says:"Nie chodzi o lenistwo. Ja po prostu nie widzę sensu w tym, co robię.",emo:"bezsilność",dist:["smutek","przytłoczenie","desperacja"]},
+{id:89,lv:1,sex:"m",ctx:"17-latek milknie, kiedy rodzic naciska na temat studiów. Potem mówi cicho.",says:"Przeraża mnie to wszystko: studia, praca, decyzje. Ja nie wiem czy sobie z tym wszystkim poradzę.",emo:"strach",dist:["niepewność","przytłoczenie","bezsilność"]},
+{id:95,lv:1,sex:"f",ctx:"Rodzic próbuje pocieszyć 15-latkę. Reaguje, jakby to był atak.",says:"Nie mów mi, że przesadzam. Ja naprawdę cierpię.",emo:"smutek",dist:["bezsilność","złość","samotność"]},
+{id:46,lv:1,sex:"f",ctx:"Rodzic przed chwilą zażartował z tego, o czym marzy 15-latka. Czerwienieje ze złości.",says:"To moje marzenie. Jak się śmiejesz, to czuję się totalnie zniszczona.",emo:"upokorzenie",dist:["smutek","złość","bezsilność"]},
 
 // --- Rówieśnicy i odrzucenie ---
-{id:24,lv:1,ctx:"13-latka w poniedziałek rano trzyma się za brzuch i nie chce wstać.",says:"Znowu będę tam sama. Znowu będą patrzeć.",emo:"samotność",dist:["strach","smutek","odrzucenie"]},
-{id:114,lv:1,ctx:"14-latka przegląda relacje na Instagramie i widzi, że cała jej paczka jest razem na pizzy — bez niej.",says:"No jasne, świetnie się bawią. Nagle o mnie zapomnieli, jakbym w ogóle nie istniała.",emo:"odrzucenie",dist:["samotność","smutek","zazdrość"]},
-{id:115,lv:1,ctx:"14-latka siedzi w ciemnym pokoju z telefonem. Zobaczyła na TikToku relację, jak cała jej paczka bawi się w kinie bez niej.",says:"Patrz, znowu relacja u Julki. Wszyscy tam są, nawet ten nudziarz z trzeciej ławki. Mnie nikt nawet nie zapytał, czy chcę iść. Widocznie jestem dla nich tylko tłem, jak ich nie ma kto rozśmieszać.",emo:"odrzucenie",dist:["samotność","smutek","bezsilność"]},
-{id:116,lv:1,ctx:"15-latek wysłał wiadomość do przyjaciela trzy godziny temu, widzi, że została odczytana, ale nie ma odpowiedzi.",says:"Zlewa mnie totalnie. Widzę, że gra w LoL-a, ale odpisać to już nie łaska. Mam tego dość.",emo:"odrzucenie",dist:["złość","samotność","bezsilność"]},
-{id:117,lv:1,ctx:"14-latek zauważa, że dziewczyna, z którą pisał codziennie przez miesiąc, nagle przestała mu odpisywać i go zghostowała, choć publikuje nowe zdjęcia.",says:"Pisała do mnie non stop, a teraz nagle cisza. Widzę, że jest aktywna, ale mnie zlewa totalnie. Co ja niby zrobiłem źle? Wszystko mi się teraz sypie.",emo:"odrzucenie",dist:["bezsilność","smutek","niepewność"]},
-{id:118,lv:1,ctx:"13-latek słyszy, jak koledzy śmieją się z jego nowej fryzury.",says:"Wiedziałem, że to był błąd. Teraz będą o tym gadać przez miesiąc. Najlepiej by było, gdybym w ogóle nie wychodził z pokoju.",emo:"wstyd",dist:["strach","samotność","smutek"]},
-{id:119,lv:1,ctx:"17-latek dowiaduje się, że jego najlepszy przyjaciel wysłał screeny ich prywatnej, bardzo osobistej rozmowy do innych osób z klasy.",says:"Myślałem, że to mój brat, czaisz? A on mnie tak po prostu wystawił dla kilku lajków. Komu ja mam teraz w ogóle ufać? To koniec, z nikim już nie gadam.",emo:"odrzucenie",dist:["żal","złość","samotność"]},
-{id:120,lv:1,ctx:"17-latka przygotowuje się do imprezy, ale nagle rezygnuje.",says:"Ech, i tak będę tam stać w kącie. One wszystkie mają o czym gadać, a ja zawsze czuję się tam jak piąte koło u wozu.",emo:"samotność",dist:["niepewność","smutek","wstyd"]},
-{id:121,lv:1,ctx:"14-latek dowiaduje się, że nowy kolega w klasie stał się bardzo popularny.",says:"Nagle wszyscy latają za nim, jakby był jakimś Bogiem. Nawet Bartek już nie ma dla mnie czasu, bo ciągle siedzi u niego.",emo:"zazdrość",dist:["samotność","odrzucenie","smutek"]},
-{id:122,lv:1,ctx:"16-latka po otrzymaniu screena, na którym koleżanki ją obgadują.",says:"Patrz, co o mnie piszą. 'Że niby jestem sztywna'. A ja im tyle razy pomagałam w lekcjach. To jest obrzydliwe.",emo:"odrzucenie",dist:["złość","żal","upokorzenie"]},
-{id:123,lv:1,ctx:"15-latek nie został zaproszony na osiemnastkę kuzyna, na której bardzo mu zależało.",says:"Wszyscy moi znajomi tam będą, a ja mam siedzieć z wami? To będzie największy przypał świata, jak mnie tam zabraknie.",emo:"odrzucenie",dist:["wstyd","samotność","złość"]},
-{id:124,lv:1,ctx:"13-latka po powrocie ze szkoły, gdzie grupa dziewczyn ją ignorowała.",says:"Jak przechodziłam obok nich, to nagle wszystkie milkły i zaczynały się śmiać. Nienawidzę tej klasy.",emo:"odrzucenie",dist:["samotność","smutek","upokorzenie"]},
-{id:125,lv:1,ctx:"17-latka dowiaduje się, że jej chłopak wyjechał na weekend ze znajomymi, o czym zapomniał jej wspomnieć.",says:"Dowiedziałam się o tym z Instagrama, czaisz? Pisaliśmy rano i ani słowa o wyjeździe. Teraz nie odbiera, bo pewnie świetnie się bawi. Po prostu super, tak właśnie wygląda 'zaufanie' w tym związku.",emo:"żal",dist:["złość","odrzucenie","niepewność"]},
-{id:75,lv:1,ctx:"16-latka wraca ze szkoły i od razu rzuca się na łóżko.",says:"Powiedziałam mu, że go kocham, a on ma dziewczynę i mnie olewa. Czuję się jak śmieć.",emo:"odrzucenie",dist:["smutek","wstyd","bezsilność"]},
+{id:24,lv:1,sex:"f",ctx:"13-latka w poniedziałek rano trzyma się za brzuch i nie chce wstać.",says:"Znowu będę tam sama. Znowu będą patrzeć.",emo:"samotność",dist:["strach","smutek","odrzucenie"]},
+{id:114,lv:1,sex:"f",ctx:"14-latka przegląda relacje na Instagramie i widzi, że cała jej paczka jest razem na pizzy — bez niej.",says:"No jasne, świetnie się bawią. Nagle o mnie zapomnieli, jakbym w ogóle nie istniała.",emo:"odrzucenie",dist:["samotność","smutek","zazdrość"]},
+{id:115,lv:1,sex:"f",ctx:"14-latka siedzi w ciemnym pokoju z telefonem. Zobaczyła na TikToku relację, jak cała jej paczka bawi się w kinie bez niej.",says:"Patrz, znowu relacja u Julki. Wszyscy tam są, nawet ten nudziarz z trzeciej ławki. Mnie nikt nawet nie zapytał, czy chcę iść. Widocznie jestem dla nich tylko tłem, jak ich nie ma kto rozśmieszać.",emo:"odrzucenie",dist:["samotność","smutek","bezsilność"]},
+{id:116,lv:1,sex:"m",ctx:"15-latek wysłał wiadomość do przyjaciela trzy godziny temu, widzi, że została odczytana, ale nie ma odpowiedzi.",says:"Zlewa mnie totalnie. Widzę, że gra w LoL-a, ale odpisać to już nie łaska. Mam tego dość.",emo:"odrzucenie",dist:["złość","samotność","bezsilność"]},
+{id:117,lv:1,sex:"m",ctx:"14-latek zauważa, że dziewczyna, z którą pisał codziennie przez miesiąc, nagle przestała mu odpisywać i go zghostowała, choć publikuje nowe zdjęcia.",says:"Pisała do mnie non stop, a teraz nagle cisza. Widzę, że jest aktywna, ale mnie zlewa totalnie. Co ja niby zrobiłem źle? Wszystko mi się teraz sypie.",emo:"odrzucenie",dist:["bezsilność","smutek","niepewność"]},
+{id:118,lv:1,sex:"m",ctx:"13-latek słyszy, jak koledzy śmieją się z jego nowej fryzury.",says:"Wiedziałem, że to był błąd. Teraz będą o tym gadać przez miesiąc. Najlepiej by było, gdybym w ogóle nie wychodził z pokoju.",emo:"wstyd",dist:["strach","samotność","smutek"]},
+{id:119,lv:1,sex:"m",ctx:"17-latek dowiaduje się, że jego najlepszy przyjaciel wysłał screeny ich prywatnej, bardzo osobistej rozmowy do innych osób z klasy.",says:"Myślałem, że to mój brat, czaisz? A on mnie tak po prostu wystawił dla kilku lajków. Komu ja mam teraz w ogóle ufać? To koniec, z nikim już nie gadam.",emo:"odrzucenie",dist:["żal","złość","samotność"]},
+{id:120,lv:1,sex:"f",ctx:"17-latka przygotowuje się do imprezy, ale nagle rezygnuje.",says:"Ech, i tak będę tam stać w kącie. One wszystkie mają o czym gadać, a ja zawsze czuję się tam jak piąte koło u wozu.",emo:"samotność",dist:["niepewność","smutek","wstyd"]},
+{id:121,lv:1,sex:"m",ctx:"14-latek dowiaduje się, że nowy kolega w klasie stał się bardzo popularny.",says:"Nagle wszyscy latają za nim, jakby był jakimś Bogiem. Nawet Bartek już nie ma dla mnie czasu, bo ciągle siedzi u niego.",emo:"zazdrość",dist:["samotność","odrzucenie","smutek"]},
+{id:122,lv:1,sex:"f",ctx:"16-latka po otrzymaniu screena, na którym koleżanki ją obgadują.",says:"Patrz, co o mnie piszą. 'Że niby jestem sztywna'. A ja im tyle razy pomagałam w lekcjach. To jest obrzydliwe.",emo:"odrzucenie",dist:["złość","żal","upokorzenie"]},
+{id:123,lv:1,sex:"m",ctx:"15-latek nie został zaproszony na osiemnastkę kuzyna, na której bardzo mu zależało.",says:"Wszyscy moi znajomi tam będą, a ja mam siedzieć z wami? To będzie największy przypał świata, jak mnie tam zabraknie.",emo:"odrzucenie",dist:["wstyd","samotność","złość"]},
+{id:124,lv:1,sex:"f",ctx:"13-latka po powrocie ze szkoły, gdzie grupa dziewczyn ją ignorowała.",says:"Jak przechodziłam obok nich, to nagle wszystkie milkły i zaczynały się śmiać. Nienawidzę tej klasy.",emo:"odrzucenie",dist:["samotność","smutek","upokorzenie"]},
+{id:125,lv:1,sex:"f",ctx:"17-latka dowiaduje się, że jej chłopak wyjechał na weekend ze znajomymi, o czym zapomniał jej wspomnieć.",says:"Dowiedziałam się o tym z Instagrama, czaisz? Pisaliśmy rano i ani słowa o wyjeździe. Teraz nie odbiera, bo pewnie świetnie się bawi. Po prostu super, tak właśnie wygląda 'zaufanie' w tym związku.",emo:"żal",dist:["złość","odrzucenie","niepewność"]},
+{id:75,lv:1,sex:"f",ctx:"16-latka wraca ze szkoły i od razu rzuca się na łóżko.",says:"Powiedziałam mu, że go kocham, a on ma dziewczynę i mnie olewa. Czuję się jak śmieć.",emo:"odrzucenie",dist:["smutek","wstyd","bezsilność"]},
 
 // --- Wygląd i ciało ---
-{id:15,lv:1,ctx:"15-latek wraca po zdjęciach klasowych. Przygaszony.",says:"Nienawidzę jak mnie oceniają. Czuję się jak jakiś eksponat.",emo:"wstyd",dist:["złość","bezsilność","samotność"]},
-{id:25,lv:1,ctx:"15-latek podaje rodzicowi telefon. Na grupie klasowej docinki o wyglądzie.",says:"To mnie naprawdę boli. Udaję, że haha, ale w środku mam dość.",emo:"smutek",dist:["wstyd","bezsilność","samotność"]},
-{id:79,lv:1,ctx:"15-latek stoi przed lustrem w łazience. Długo dotyka skóry twarzy.",says:"Wszyscy mają idealne twarze. Ja wyglądam jak katastrofa.",emo:"wstyd",dist:["smutek","bezsilność","samotność"]},
-{id:84,lv:1,ctx:"Rozmowa przy kolacji schodzi na szkołę i wygląd. 14-latka mówi cicho.",says:"Mam kompleksy, ludzie się ze mnie wyśmiewają. A ja nie wiem, co robię źle.",emo:"wstyd",dist:["bezsilność","smutek","samotność"]},
-{id:85,lv:1,ctx:"15-latka staje na wadze po wakacjach. Płacze.",says:"Przytyłam i nienawidzę swojego ciała. Czuję się bezradna.",emo:"bezsilność",dist:["smutek","wstyd","desperacja"]},
-{id:126,lv:1,ctx:"16-latek szykuje się na osiemnastkę kolegi, ale po długim staniu przed lustrem nagle zdejmuje wyjściowe ubranie i kładzie się na łóżku.",says:"Nigdzie nie idę. Wyglądam jak totalny gnom, te włosy to porażka, a cera... szkoda gadać. Będą się tylko ze mnie nabijać po kątach.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
-{id:127,lv:1,ctx:"16-latek przygotował się na pierwsze spotkanie z dziewczyną, ale po długim czasie przed lustrem nagle zdejmuje nową bluzę.",says:"Nie no, po prostu masakra. Zobacz na to czoło, przecież to wygląda jak pole minowe, a te włosy żyją własnym życiem. Nigdzie nie idę, niech ona sobie myśli co chce, ja zostaję w łóżku pod kołdrą.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
-{id:128,lv:1,ctx:"14-latka mierzy sukienkę na bal ósmoklasisty.",says:"Wyglądam w tym grubo. Ta sukienka podkreśla wszystko, czego nienawidzę. Wszystkie dziewczyny będą wyglądać jak modelki, a ja jak worek.",emo:"wstyd",dist:["smutek","bezsilność","strach"]},
-{id:129,lv:1,ctx:"15-latek porównuje swój wzrost z kolegami z klasy.",says:"Wszyscy już wystrzelili w górę, a ja dalej stoję w miejscu. Wyglądam przy nich jak dzieciak z podstawówki.",emo:"wstyd",dist:["smutek","zazdrość","bezsilność"]},
-{id:130,lv:1,ctx:"17-latka wraca od fryzjera, patrzy w lustro z przerażeniem.",says:"Zobacz, co ona mi zrobiła! Za krótko, beznadziejny kolor, wszystko nie tak!",emo:"złość",dist:["smutek","bezsilność","rozczarowanie"]},
-{id:131,lv:1,ctx:"13-latek nosi aparat ortodontyczny od tygodnia.",says:"Przez ten aparat śmiesznie mówię i wyglądam fatalnie. Jeszcze dwa lata? Przecież to jest wieczność!",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
-{id:132,lv:1,ctx:"16-latka widzi swoje zdjęcie zrobione z ukrycia przez kogoś z klasy.",says:"Jak ja tu wyszłam? Mam jakąś dziwną minę i wyglądam tragicznie. Zaraz pewnie wrzucą to na grupę.",emo:"strach",dist:["wstyd","upokorzenie","bezsilność"]},
-{id:133,lv:1,ctx:"15-latek próbuje dobrać ubrania na wyjście do kina.",says:"Wszystko na mnie wisi albo jest za ciasne. Nie mam nic normalnego, w czym nie wstydziłbym się pokazać.",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
-{id:134,lv:1,ctx:"14-latka porównuje się do modelek z TikToka.",says:"One mają idealną cerę i figury, a ja... szkoda gadać. Czemu ja nie mogę tak wyglądać?",emo:"zazdrość",dist:["smutek","bezsilność","wstyd"]},
-{id:135,lv:1,ctx:"17-latek ma założyć garnitur na uroczystość rodzinną.",says:"Czuję się w tym jak przebrany. Wszyscy będą się na mnie gapić, to jest tak bardzo nie moje.",emo:"niepewność",dist:["wstyd","bezsilność","frustracja"]},
-{id:136,lv:1,ctx:"15-latka narzeka na swoje okulary.",says:"Znowu mi parują, jak wchodzę do autobusu. Wyglądam wtedy jak totalna ofiara losu.",emo:"wstyd",dist:["frustracja","bezsilność","smutek"]},
+{id:15,lv:1,sex:"m",ctx:"15-latek wraca po zdjęciach klasowych. Przygaszony.",says:"Nienawidzę jak mnie oceniają. Czuję się jak jakiś eksponat.",emo:"wstyd",dist:["złość","bezsilność","samotność"]},
+{id:25,lv:1,sex:"m",ctx:"15-latek podaje rodzicowi telefon. Na grupie klasowej docinki o wyglądzie.",says:"To mnie naprawdę boli. Udaję, że haha, ale w środku mam dość.",emo:"smutek",dist:["wstyd","bezsilność","samotność"]},
+{id:79,lv:1,sex:"m",ctx:"15-latek stoi przed lustrem w łazience. Długo dotyka skóry twarzy.",says:"Wszyscy mają idealne twarze. Ja wyglądam jak katastrofa.",emo:"wstyd",dist:["smutek","bezsilność","samotność"]},
+{id:84,lv:1,sex:"f",ctx:"Rozmowa przy kolacji schodzi na szkołę i wygląd. 14-latka mówi cicho.",says:"Mam kompleksy, ludzie się ze mnie wyśmiewają. A ja nie wiem, co robię źle.",emo:"wstyd",dist:["bezsilność","smutek","samotność"]},
+{id:85,lv:1,sex:"f",ctx:"15-latka staje na wadze po wakacjach. Płacze.",says:"Przytyłam i nienawidzę swojego ciała. Czuję się bezradna.",emo:"bezsilność",dist:["smutek","wstyd","desperacja"]},
+{id:126,lv:1,sex:"m",ctx:"16-latek szykuje się na osiemnastkę kolegi, ale po długim staniu przed lustrem nagle zdejmuje wyjściowe ubranie i kładzie się na łóżku.",says:"Nigdzie nie idę. Wyglądam jak totalny gnom, te włosy to porażka, a cera... szkoda gadać. Będą się tylko ze mnie nabijać po kątach.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
+{id:127,lv:1,sex:"m",ctx:"16-latek przygotował się na pierwsze spotkanie z dziewczyną, ale po długim czasie przed lustrem nagle zdejmuje nową bluzę.",says:"Nie no, po prostu masakra. Zobacz na to czoło, przecież to wygląda jak pole minowe, a te włosy żyją własnym życiem. Nigdzie nie idę, niech ona sobie myśli co chce, ja zostaję w łóżku pod kołdrą.",emo:"wstyd",dist:["strach","bezsilność","smutek"]},
+{id:128,lv:1,sex:"f",ctx:"14-latka mierzy sukienkę na bal ósmoklasisty.",says:"Wyglądam w tym grubo. Ta sukienka podkreśla wszystko, czego nienawidzę. Wszystkie dziewczyny będą wyglądać jak modelki, a ja jak worek.",emo:"wstyd",dist:["smutek","bezsilność","strach"]},
+{id:129,lv:1,sex:"m",ctx:"15-latek porównuje swój wzrost z kolegami z klasy.",says:"Wszyscy już wystrzelili w górę, a ja dalej stoję w miejscu. Wyglądam przy nich jak dzieciak z podstawówki.",emo:"wstyd",dist:["smutek","zazdrość","bezsilność"]},
+{id:130,lv:1,sex:"f",ctx:"17-latka wraca od fryzjera, patrzy w lustro z przerażeniem.",says:"Zobacz, co ona mi zrobiła! Za krótko, beznadziejny kolor, wszystko nie tak!",emo:"złość",dist:["smutek","bezsilność","rozczarowanie"]},
+{id:131,lv:1,sex:"m",ctx:"13-latek nosi aparat ortodontyczny od tygodnia.",says:"Przez ten aparat śmiesznie mówię i wyglądam fatalnie. Jeszcze dwa lata? Przecież to jest wieczność!",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
+{id:132,lv:1,sex:"f",ctx:"16-latka widzi swoje zdjęcie zrobione z ukrycia przez kogoś z klasy.",says:"Jak ja tu wyszłam? Mam jakąś dziwną minę i wyglądam tragicznie. Zaraz pewnie wrzucą to na grupę.",emo:"strach",dist:["wstyd","upokorzenie","bezsilność"]},
+{id:133,lv:1,sex:"m",ctx:"15-latek próbuje dobrać ubrania na wyjście do kina.",says:"Wszystko na mnie wisi albo jest za ciasne. Nie mam nic normalnego, w czym nie wstydziłbym się pokazać.",emo:"frustracja",dist:["wstyd","bezsilność","smutek"]},
+{id:134,lv:1,sex:"f",ctx:"14-latka porównuje się do modelek z TikToka.",says:"One mają idealną cerę i figury, a ja... szkoda gadać. Czemu ja nie mogę tak wyglądać?",emo:"zazdrość",dist:["smutek","bezsilność","wstyd"]},
+{id:135,lv:1,sex:"m",ctx:"17-latek ma założyć garnitur na uroczystość rodzinną.",says:"Czuję się w tym jak przebrany. Wszyscy będą się na mnie gapić, to jest tak bardzo nie moje.",emo:"niepewność",dist:["wstyd","bezsilność","frustracja"]},
+{id:136,lv:1,sex:"f",ctx:"15-latka narzeka na swoje okulary.",says:"Znowu mi parują, jak wchodzę do autobusu. Wyglądam wtedy jak totalna ofiara losu.",emo:"wstyd",dist:["frustracja","bezsilność","smutek"]},
 
 // --- Media społecznościowe ---
-{id:26,lv:1,ctx:"13-latka zauważa, że pod jej filmikiem pojawił się hejt. Rzuca telefon na łóżko.",says:"Już nic nie wrzucę. Nie chcę kolejnej fali wyśmiewania.",emo:"strach",dist:["smutek","bezsilność","upokorzenie"]},
-{id:137,lv:1,ctx:"14-latka usunęła zdjęcie po tym, jak nikt go nie polubił przez piętnaście minut.",says:"Wiedziałam, że jest beznadziejne. Teraz pewnie wszyscy myślą, że jestem desperatką.",emo:"wstyd",dist:["odrzucenie","niepewność","smutek"]},
-{id:138,lv:1,ctx:"15-latek czyta kłótnię na grupie klasowej na Messengerze.",says:"Wszyscy tam na siebie jadą, a ja nie wiem, co napisać. Boję się, że jak coś powiem, to zaraz wszyscy obrócą się przeciwko mnie.",emo:"strach",dist:["niepewność","samotność","bezsilność"]},
-{id:139,lv:1,ctx:"16-latka widzi, że jej były chłopak dodał zdjęcie z nową dziewczyną.",says:"Patrz na to. Miesiąc po zerwaniu i już ma nową. Jakby te dwa lata ze mną w ogóle się nie liczyły.",emo:"żal",dist:["złość","odrzucenie","smutek"]},
-{id:140,lv:1,ctx:"13-latek dowiaduje się, że jego telefon jest zepsuty.",says:"Jestem odcięty od świata! Nie wiem, o czym oni teraz gadają, nie mam dostępu do niczego. To jest koniec mojego życia towarzyskiego.",emo:"strach",dist:["samotność","przytłoczenie","bezsilność"]},
-{id:141,lv:1,ctx:"15-latka czyta hejt pod swoim filmikiem.",says:"Napisali, że mam 'krzywy nos' i 'piskliwy głos'. Setki ludzi to widziało. Nie chcę już nigdy nic wrzucać do sieci.",emo:"upokorzenie",dist:["smutek","bezsilność","strach"]},
-{id:142,lv:1,ctx:"14-latka patrzy na relacje influencerów.",says:"Oni mają takie super życie, podróżują, mają kasę. A ja siedzę w tym nudnym domu i nic się u mnie nie dzieje.",emo:"zazdrość",dist:["smutek","bezsilność","tęsknota"]},
-{id:143,lv:1,ctx:"15-latka dowiaduje się, że koleżanka wrzuciła jej niekorzystne zdjęcie bez pytania.",says:"Wyglądam tam jak potwór! Prosiłam ją, żeby tego nie robiła, a ona to zostawiła. Jak ona mogła mi to zrobić?",emo:"złość",dist:["upokorzenie","żal","bezsilność"]},
-{id:144,lv:1,ctx:"13-latek odkrywa, że w grze został oszukany przez innego gracza.",says:"Oddałem mu wszystkie moje itemy, a on mnie zablokował. Ufałem mu, graliśmy razem od miesięcy!",emo:"żal",dist:["złość","odrzucenie","bezsilność"]},
+{id:26,lv:1,sex:"f",ctx:"13-latka zauważa, że pod jej filmikiem pojawił się hejt. Rzuca telefon na łóżko.",says:"Już nic nie wrzucę. Nie chcę kolejnej fali wyśmiewania.",emo:"strach",dist:["smutek","bezsilność","upokorzenie"]},
+{id:137,lv:1,sex:"f",ctx:"14-latka usunęła zdjęcie po tym, jak nikt go nie polubił przez piętnaście minut.",says:"Wiedziałam, że jest beznadziejne. Teraz pewnie wszyscy myślą, że jestem desperatką.",emo:"wstyd",dist:["odrzucenie","niepewność","smutek"]},
+{id:138,lv:1,sex:"m",ctx:"15-latek czyta kłótnię na grupie klasowej na Messengerze.",says:"Wszyscy tam na siebie jadą, a ja nie wiem, co napisać. Boję się, że jak coś powiem, to zaraz wszyscy obrócą się przeciwko mnie.",emo:"strach",dist:["niepewność","samotność","bezsilność"]},
+{id:139,lv:1,sex:"f",ctx:"16-latka widzi, że jej były chłopak dodał zdjęcie z nową dziewczyną.",says:"Patrz na to. Miesiąc po zerwaniu i już ma nową. Jakby te dwa lata ze mną w ogóle się nie liczyły.",emo:"żal",dist:["złość","odrzucenie","smutek"]},
+{id:140,lv:1,sex:"m",ctx:"13-latek dowiaduje się, że jego telefon jest zepsuty.",says:"Jestem odcięty od świata! Nie wiem, o czym oni teraz gadają, nie mam dostępu do niczego. To jest koniec mojego życia towarzyskiego.",emo:"strach",dist:["samotność","przytłoczenie","bezsilność"]},
+{id:141,lv:1,sex:"f",ctx:"15-latka czyta hejt pod swoim filmikiem.",says:"Napisali, że mam 'krzywy nos' i 'piskliwy głos'. Setki ludzi to widziało. Nie chcę już nigdy nic wrzucać do sieci.",emo:"upokorzenie",dist:["smutek","bezsilność","strach"]},
+{id:142,lv:1,sex:"f",ctx:"14-latka patrzy na relacje influencerów.",says:"Oni mają takie super życie, podróżują, mają kasę. A ja siedzę w tym nudnym domu i nic się u mnie nie dzieje.",emo:"zazdrość",dist:["smutek","bezsilność","tęsknota"]},
+{id:143,lv:1,sex:"f",ctx:"15-latka dowiaduje się, że koleżanka wrzuciła jej niekorzystne zdjęcie bez pytania.",says:"Wyglądam tam jak potwór! Prosiłam ją, żeby tego nie robiła, a ona to zostawiła. Jak ona mogła mi to zrobić?",emo:"złość",dist:["upokorzenie","żal","bezsilność"]},
+{id:144,lv:1,sex:"m",ctx:"13-latek odkrywa, że w grze został oszukany przez innego gracza.",says:"Oddałem mu wszystkie moje itemy, a on mnie zablokował. Ufałem mu, graliśmy razem od miesięcy!",emo:"żal",dist:["złość","odrzucenie","bezsilność"]},
 
 // --- Przytłoczenie i zmęczenie ---
-{id:145,lv:1,ctx:"15-latka siedzi o dwudziestej trzeciej nad stosem notatek, bo jutro ma dwa sprawdziany i prezentację, a rano musi jeszcze poćwiczyć do zawodów.",says:"Nie ogarniam tego, po prostu nie ogarniam. Zaraz mi mózg wyparuje, a jeszcze tyle zostało. Nie dam rady, to jest za dużo na jednego człowieka!",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
-{id:146,lv:1,ctx:"14-latka narzeka na poranne wstawanie.",says:"Znowu ta ciemność za oknem. Mam wrażenie, że całe moje życie to tylko szkoła, spanie i szkoła. Nie mam na nic siły.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
-{id:147,lv:1,ctx:"17-latka uczy się do egzaminów późno w nocy.",says:"Kawa już na mnie nie działa, oczy mi się same zamykają, a ja mam jeszcze 20 stron do przeczytania. To jest nie do zrobienia.",emo:"przytłoczenie",dist:["bezsilność","desperacja","frustracja"]},
-{id:148,lv:1,ctx:"13-latka odrabia lekcje z matematyki.",says:"To jest czarna magia. Siedzę nad tym zadaniem od godziny i dalej nie wiem, od czego zacząć. Zaraz ten zeszyt poleci w kąt!",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
+{id:145,lv:1,sex:"f",ctx:"15-latka siedzi o dwudziestej trzeciej nad stosem notatek, bo jutro ma dwa sprawdziany i prezentację, a rano musi jeszcze poćwiczyć do zawodów.",says:"Nie ogarniam tego, po prostu nie ogarniam. Zaraz mi mózg wyparuje, a jeszcze tyle zostało. Nie dam rady, to jest za dużo na jednego człowieka!",emo:"przytłoczenie",dist:["bezsilność","strach","desperacja"]},
+{id:146,lv:1,sex:"f",ctx:"14-latka narzeka na poranne wstawanie.",says:"Znowu ta ciemność za oknem. Mam wrażenie, że całe moje życie to tylko szkoła, spanie i szkoła. Nie mam na nic siły.",emo:"przytłoczenie",dist:["smutek","bezsilność","samotność"]},
+{id:147,lv:1,sex:"f",ctx:"17-latka uczy się do egzaminów późno w nocy.",says:"Kawa już na mnie nie działa, oczy mi się same zamykają, a ja mam jeszcze 20 stron do przeczytania. To jest nie do zrobienia.",emo:"przytłoczenie",dist:["bezsilność","desperacja","frustracja"]},
+{id:148,lv:1,sex:"f",ctx:"13-latka odrabia lekcje z matematyki.",says:"To jest czarna magia. Siedzę nad tym zadaniem od godziny i dalej nie wiem, od czego zacząć. Zaraz ten zeszyt poleci w kąt!",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
 
 // --- Pasje i czas wolny ---
-{id:149,lv:1,ctx:"15-latek przegrywa ważny mecz w grze online przez błąd serwera.",says:"Nie wierzę! Cały ranking poszedł w dół przez jeden lag. Tyle godzin grindu zmarnowane w sekundę!",emo:"frustracja",dist:["złość","bezsilność","rozczarowanie"]},
-{id:150,lv:1,ctx:"16-latek dowiaduje się, że trener nie wystawił go w pierwszym składzie.",says:"Zasuwałem na każdym treningu, a on wziął tego typa, co połowę czasu przesiedział na ławce. To jest totalna zamuła.",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
-{id:151,lv:1,ctx:"13-latka dowiaduje się, że kółko plastyczne zostało odwołane.",says:"To była jedyna rzecz, na którą chciało mi się iść w tym tygodniu. Teraz będę musiała siedzieć w domu i się nudzić.",emo:"rozczarowanie",dist:["smutek","samotność","frustracja"]},
-{id:152,lv:1,ctx:"15-latka narzeka na stary sprzęt do fotografii.",says:"Tym starym rzęchem nic nie wyjdzie. Inni mają profesjonalny sprzęt i ich zdjęcia wyglądają super, a moje to żenada.",emo:"frustracja",dist:["zazdrość","bezsilność","smutek"]},
-{id:153,lv:1,ctx:"15-latek dowiaduje się, że nie został wybrany do szkolnej reprezentacji sportowej, mimo intensywnych treningów.",says:"Trenowałem całe wakacje, a oni wzięli tego gościa, co połowę zajęć olał. To jest po prostu kpina, więcej tam nie pójdę!",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
+{id:149,lv:1,sex:"m",ctx:"15-latek przegrywa ważny mecz w grze online przez błąd serwera.",says:"Nie wierzę! Cały ranking poszedł w dół przez jeden lag. Tyle godzin grindu zmarnowane w sekundę!",emo:"frustracja",dist:["złość","bezsilność","rozczarowanie"]},
+{id:150,lv:1,sex:"m",ctx:"16-latek dowiaduje się, że trener nie wystawił go w pierwszym składzie.",says:"Zasuwałem na każdym treningu, a on wziął tego typa, co połowę czasu przesiedział na ławce. To jest totalna zamuła.",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
+{id:151,lv:1,sex:"f",ctx:"13-latka dowiaduje się, że kółko plastyczne zostało odwołane.",says:"To była jedyna rzecz, na którą chciało mi się iść w tym tygodniu. Teraz będę musiała siedzieć w domu i się nudzić.",emo:"rozczarowanie",dist:["smutek","samotność","frustracja"]},
+{id:152,lv:1,sex:"f",ctx:"15-latka narzeka na stary sprzęt do fotografii.",says:"Tym starym rzęchem nic nie wyjdzie. Inni mają profesjonalny sprzęt i ich zdjęcia wyglądają super, a moje to żenada.",emo:"frustracja",dist:["zazdrość","bezsilność","smutek"]},
+{id:153,lv:1,sex:"m",ctx:"15-latek dowiaduje się, że nie został wybrany do szkolnej reprezentacji sportowej, mimo intensywnych treningów.",says:"Trenowałem całe wakacje, a oni wzięli tego gościa, co połowę zajęć olał. To jest po prostu kpina, więcej tam nie pójdę!",emo:"niesprawiedliwość",dist:["złość","rozczarowanie","bezsilność"]},
 
 // --- Przyszłość ---
-{id:154,lv:1,ctx:"18-latka wraca po rozmowie z doradcą zawodowym.",says:"Nie mam pojęcia, co chcę robić w przyszłości. Czuję, że niedługo muszę podjąć decyzję, a kompletnie nie wiem czego chcę.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
-{id:155,lv:1,ctx:"15-latka patrzy na progi punktowe do wymarzonego liceum.",says:"Nie ma szans. Z moimi wynikami to mogę co najwyżej pomarzyć. Wszystkie moje plany właśnie legły w gruzach.",emo:"bezsilność",dist:["smutek","rozczarowanie","strach"]},
-{id:156,lv:1,ctx:"17-latek mówi o dorosłości.",says:"Wszyscy oczekują, że nagle będę wiedział, jak płacić rachunki i co robić w życiu. A ja się czuję, jakbym utknął w miejscu.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
-{id:157,lv:1,ctx:"14-latka zastanawia się nad wyborem profilu klasy.",says:"Jak wybiorę mat-fiz, to nie będę miała czasu na nic innego. Jak wybiorę humanistyczny, to pewnie nie znajdę pracy. To jest bez sensu.",emo:"przytłoczenie",dist:["strach","bezsilność","niepewność"]},
-{id:158,lv:1,ctx:"15-latka słucha opowieści rodzica o sukcesach dziecka znajomych.",says:"No jasne, on jest genialny, a ja jestem zwykłą szarą myszą. Zawsze będę gorsza od innych, nieważne co zrobię.",emo:"bezsilność",dist:["smutek","zazdrość","wstyd"]},
-{id:159,lv:1,ctx:"17-latek mówi o maturze.",says:"Ten egzamin ma zdecydować o całym moim życiu? Przecież to jest chore. Czuję się, jakby ktoś przystawił mi pistolet do głowy.",emo:"strach",dist:["przytłoczenie","bezsilność","złość"]},
-{id:160,lv:1,ctx:"16-latka myśli o wyjeździe na studia do innego miasta.",says:"Chciałabym wyjechać, ale boję się, że sobie nie poradzę. Tutaj mam wszystko, a tam będę zupełnie sama.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
-{id:161,lv:1,ctx:"14-latek dowiaduje się, że nie dostał się na wymarzony kurs.",says:"To była moja jedyna droga do celu. Teraz już nic mi nie zostało, mogę się poddać.",emo:"bezsilność",dist:["rozczarowanie","smutek","desperacja"]},
+{id:154,lv:1,sex:"f",ctx:"18-latka wraca po rozmowie z doradcą zawodowym.",says:"Nie mam pojęcia, co chcę robić w przyszłości. Czuję, że niedługo muszę podjąć decyzję, a kompletnie nie wiem czego chcę.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
+{id:155,lv:1,sex:"f",ctx:"15-latka patrzy na progi punktowe do wymarzonego liceum.",says:"Nie ma szans. Z moimi wynikami to mogę co najwyżej pomarzyć. Wszystkie moje plany właśnie legły w gruzach.",emo:"bezsilność",dist:["smutek","rozczarowanie","strach"]},
+{id:156,lv:1,sex:"m",ctx:"17-latek mówi o dorosłości.",says:"Wszyscy oczekują, że nagle będę wiedział, jak płacić rachunki i co robić w życiu. A ja się czuję, jakbym utknął w miejscu.",emo:"przytłoczenie",dist:["strach","niepewność","bezsilność"]},
+{id:157,lv:1,sex:"f",ctx:"14-latka zastanawia się nad wyborem profilu klasy.",says:"Jak wybiorę mat-fiz, to nie będę miała czasu na nic innego. Jak wybiorę humanistyczny, to pewnie nie znajdę pracy. To jest bez sensu.",emo:"przytłoczenie",dist:["strach","bezsilność","niepewność"]},
+{id:158,lv:1,sex:"f",ctx:"15-latka słucha opowieści rodzica o sukcesach dziecka znajomych.",says:"No jasne, on jest genialny, a ja jestem zwykłą szarą myszą. Zawsze będę gorsza od innych, nieważne co zrobię.",emo:"bezsilność",dist:["smutek","zazdrość","wstyd"]},
+{id:159,lv:1,sex:"m",ctx:"17-latek mówi o maturze.",says:"Ten egzamin ma zdecydować o całym moim życiu? Przecież to jest chore. Czuję się, jakby ktoś przystawił mi pistolet do głowy.",emo:"strach",dist:["przytłoczenie","bezsilność","złość"]},
+{id:160,lv:1,sex:"f",ctx:"16-latka myśli o wyjeździe na studia do innego miasta.",says:"Chciałabym wyjechać, ale boję się, że sobie nie poradzę. Tutaj mam wszystko, a tam będę zupełnie sama.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
+{id:161,lv:1,sex:"m",ctx:"14-latek dowiaduje się, że nie dostał się na wymarzony kurs.",says:"To była moja jedyna droga do celu. Teraz już nic mi nie zostało, mogę się poddać.",emo:"bezsilność",dist:["rozczarowanie","smutek","desperacja"]},
 
 // ═══════════════════════════════════════════════════════════
 // POZIOM 2 — kusi żeby doradzać i naprawiać
 // ═══════════════════════════════════════════════════════════
 
-{id:5,lv:2,ctx:"Rodzic właśnie odłożył słuchawkę po telefonie od wychowawcy o spóźnieniach. 14-latek wchodzi do kuchni.",says:"On się na mnie uwziął. Cokolwiek zrobię, i tak mu nie pasuje.",emo:"niesprawiedliwość",dist:["złość","bezsilność","frustracja"]},
-{id:6,lv:2,ctx:"Przyszła wiadomość od nauczyciela o niewykonanym zadaniu. 15-latek wzrusza ramionami.",says:"Nie będę tego robić. I tak nikt nie widzi, ile ja się męczę.",emo:"bezsilność",dist:["smutek","złość","samotność"]},
-{id:7,lv:2,ctx:"Wieczór. Na grupie klasowej do projektu nikt nie odpisuje, a termin jutro. 15-latek siedzi z telefonem.",says:"Zrobili mnie liderem, a teraz mnie olali. Jak nie wyjdzie, to zgadnij, kto oberwie.",emo:"przytłoczenie",dist:["złość","strach","bezsilność"]},
-{id:10,lv:2,ctx:"Rodzic zatrzymuje auto pod szkołą i wysiada razem z 14-latkiem.",says:"Zostań w aucie. Nie odprowadzaj mnie.",emo:"wstyd",dist:["bunt","strach","niepewność"]},
-{id:11,lv:2,ctx:"W sklepie rodzic i 15-latek spotykają jego klasę. Rodzic zaczyna rozmowę z kolegami.",says:"Nie mów tak przy moich znajomych.",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
-{id:14,lv:2,ctx:"16-latek chce wyjść w czymś nietypowym. Rodzic komentuje.",says:"To jest mój styl. Nie każ mi wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
-{id:27,lv:2,ctx:"15-latka wraca ze szkoły z plamą na bluzie. Widać, że ktoś jej coś zrobił.",says:"Nie pytaj, bo i tak nic z tym nie zrobisz. Sama sobie poradzę.",emo:"bezsilność",dist:["wstyd","samotność","złość"]},
-{id:29,lv:2,ctx:"Rodzic prosi 15-latka, żeby zjadł z rodziną. Bierze talerz i idzie do pokoju.",says:"Chcę zjeść sam. Po prostu nie mam dziś siły na rozmowy.",emo:"przytłoczenie",dist:["samotność","smutek","bezsilność"]},
-{id:42,lv:2,ctx:"16-latek wraca po imprezie. Coś jest inaczej niż zwykle. Widać wstyd.",says:"Nie patrz na mnie tak. Ja… ja po prostu chciałem być jak inni.",emo:"wstyd",dist:["strach","żal","bezsilność"]},
-{id:59,lv:2,ctx:"Rodzic proponuje wspólny film w piątek. 15-latek kręci głową.",says:"Wolałbym wyjść. Nie jestem już małym dzieckiem.",emo:"bunt",dist:["frustracja","samotność","złość"]},
-{id:60,lv:2,ctx:"Sobota rano. Rodzic budzi 15-latka do sprzątania.",says:"Serio mam sprzątać w sobotę? Ja cały tydzień jadę na oparach.",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
-{id:63,lv:2,ctx:"Rodzic mówi: musisz się uczyć. 16-latek macha ręką.",says:"Ja się umiem nauczyć, tylko mi się nie chce ciągle żyć pod presją.",emo:"przytłoczenie",dist:["bunt","bezsilność","frustracja"]},
-{id:65,lv:2,ctx:"Kolacja. Rodzic pyta 15-latka o znajomych. Odpowiada chłodno.",says:"Nie mam ochoty o tym gadać. To i tak nic nie zmieni.",emo:"samotność",dist:["smutek","bezsilność","bunt"]},
-{id:70,lv:2,ctx:"Rozmowa o imprezach. Rodzic mówi, że ma obawy. 16-latek reaguje.",says:"Uważasz, że jak wyjdę, to od razu zrobię coś głupiego.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
-{id:71,lv:2,ctx:"16-latek mówi o relacji. Rodzic od razu zaczyna dopytywać o szczegóły.",says:"Nie chcę przesłuchania. Chcę tylko, żebyś była po mojej stronie.",emo:"samotność",dist:["smutek","złość","bezsilność"]},
-{id:74,lv:2,ctx:"17-latka siada naprzeciwko. Widać, że zbiera się na odwagę.",says:"Chcę ci powiedzieć, że spotykam się z kimś starszym, ale boję się twojej reakcji.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
-{id:76,lv:2,ctx:"16-latek chce iść sam do lekarza. Rodzic proponuje, że pójdzie razem.",says:"Nie chcę, żebyś ze mną szła. To jest dla mnie krępujące.",emo:"wstyd",dist:["bunt","niepewność","strach"]},
-{id:78,lv:2,ctx:"14-latka chce się malować. Rodzic mówi, że za wcześnie.",says:"Ja chcę się malować jak inne dziewczyny. Czuję się przez ciebie głupio i dziecinnie.",emo:"bunt",dist:["wstyd","złość","bezsilność"]},
-{id:83,lv:2,ctx:"Wieczór. 16-latek siada obok i mówi cicho, jakby z ulgą.",says:"Od jakiegoś czasu prawie nic nie jem i nie piję. I nie umiem tego odkręcić.",emo:"bezsilność",dist:["strach","smutek","desperacja"]},
-{id:87,lv:2,ctx:"Do matury zostały dwa tygodnie. Rodzic pyta: uczysz się? 17-latek odpowiada.",says:"Ale wynik matury nie będzie mnie definiował.",emo:"bunt",dist:["niepewność","strach","bezsilność"]},
-{id:88,lv:2,ctx:"17-latka tuż przed próbną maturą.",says:"Boli mnie głowa i ściska w żołądku.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
-{id:91,lv:2,ctx:"Rodzina planuje 18 urodziny 17-latka. Ktoś już rezerwuje salę.",says:"Nie wiem, czy chcę imprezę. Wolałbym w domu, bez wielkiej akcji.",emo:"niepewność",dist:["strach","samotność","bunt"]},
-{id:162,lv:2,ctx:"15-latek słucha rodzica, który dopytuje o poprawę ocen zaraz po wejściu do domu.",says:"Daj spokój, ledwo wszedłem do domu. Cały dzień tylko testy i pytania, a ty od progu znowu to samo!",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
-{id:163,lv:2,ctx:"14-latka rysuje w pokoju. Rodzic woła ją na obiad.",says:"Właśnie teraz miałam najlepszy pomysł na cieniowanie! Zanim wrócę, to wszystko mi ucieknie z głowy!",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
-{id:164,lv:2,ctx:"16-latek mówi o uzależnieniu od TikToka, kiedy rodzic zwraca mu uwagę na czas przed ekranem.",says:"Tylko tam mogę się wyłączyć i o niczym nie myśleć. Bez tego telefonu to bym chyba oszalał z nudów.",emo:"bezsilność",dist:["samotność","przytłoczenie","smutek"]},
-{id:165,lv:2,ctx:"15-latek wraca po siedmiu lekcjach i dodatkowym angielskim.",says:"Nie ruszę palcem. Nawet nie proś mnie o rozładowanie zmywarki, bo po prostu padnę na podłogę.",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
-{id:166,lv:2,ctx:"16-latek mówi o sprzątaniu pokoju.",says:"Po co mam to sprzątać, skoro jutro i tak będzie tak samo? To jest syzyfowa praca, daj mi spokój.",emo:"bezsilność",dist:["frustracja","przytłoczenie","smutek"]},
-{id:167,lv:2,ctx:"14-latka narzeka na robienie zakupów.",says:"Znowu długa lista. Będę tam stać w kolejkach godzinę. Mój jedyny wolny czas w tygodniu właśnie przepadł.",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
-{id:168,lv:2,ctx:"15-latka narzeka na gotowanie.",says:"Nie cierpię gotować. Wszystko mi się przypala i kuchnia wygląda jak po wojnie. Dlaczego nie możemy po prostu zamówić pizzy?",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
-{id:169,lv:2,ctx:"16-latek mówi o pomyśle na gap year po szkole.",says:"Chciałbym po prostu odpocząć rok po szkole, ale wy pewnie uznacie, że jestem leniem i nic nie robię.",emo:"strach",dist:["niepewność","bunt","samotność"]},
-{id:170,lv:2,ctx:"16-latka porównuje swoje kieszonkowe z rówieśnikami.",says:"Inni dostają dwa razy tyle i mogą sobie na coś odłożyć. Ja ledwo mam na bilet i herbatę. Czuję się jak biedak przy moich znajomych.",emo:"wstyd",dist:["bezsilność","niesprawiedliwość","zazdrość"]},
-{id:171,lv:2,ctx:"17-latka mówi o tym, że nie chce spędzać czasu z rodzicem.",says:"Wolisz, żebym siedziała z tobą na kanapie, zamiast być z ludźmi w moim wieku? To jest nudne!",emo:"bunt",dist:["frustracja","złość","samotność"]},
+{id:5,lv:2,sex:"m",ctx:"Rodzic właśnie odłożył słuchawkę po telefonie od wychowawcy o spóźnieniach. 14-latek wchodzi do kuchni.",says:"On się na mnie uwziął. Cokolwiek zrobię, i tak mu nie pasuje.",emo:"niesprawiedliwość",dist:["złość","bezsilność","frustracja"]},
+{id:6,lv:2,sex:"m",ctx:"Przyszła wiadomość od nauczyciela o niewykonanym zadaniu. 15-latek wzrusza ramionami.",says:"Nie będę tego robić. I tak nikt nie widzi, ile ja się męczę.",emo:"bezsilność",dist:["smutek","złość","samotność"]},
+{id:7,lv:2,sex:"m",ctx:"Wieczór. Na grupie klasowej do projektu nikt nie odpisuje, a termin jutro. 15-latek siedzi z telefonem.",says:"Zrobili mnie liderem, a teraz mnie olali. Jak nie wyjdzie, to zgadnij, kto oberwie.",emo:"przytłoczenie",dist:["złość","strach","bezsilność"]},
+{id:10,lv:2,sex:"m",ctx:"Rodzic zatrzymuje auto pod szkołą i wysiada razem z 14-latkiem.",says:"Zostań w aucie. Nie odprowadzaj mnie.",emo:"wstyd",dist:["bunt","strach","niepewność"]},
+{id:11,lv:2,sex:"m",ctx:"W sklepie rodzic i 15-latek spotykają jego klasę. Rodzic zaczyna rozmowę z kolegami.",says:"Nie mów tak przy moich znajomych.",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:14,lv:2,sex:"m",ctx:"16-latek chce wyjść w czymś nietypowym. Rodzic komentuje.",says:"To jest mój styl. Nie każ mi wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
+{id:27,lv:2,sex:"f",ctx:"15-latka wraca ze szkoły z plamą na bluzie. Widać, że ktoś jej coś zrobił.",says:"Nie pytaj, bo i tak nic z tym nie zrobisz. Sama sobie poradzę.",emo:"bezsilność",dist:["wstyd","samotność","złość"]},
+{id:29,lv:2,sex:"m",ctx:"Rodzic prosi 15-latka, żeby zjadł z rodziną. Bierze talerz i idzie do pokoju.",says:"Chcę zjeść sam. Po prostu nie mam dziś siły na rozmowy.",emo:"przytłoczenie",dist:["samotność","smutek","bezsilność"]},
+{id:42,lv:2,sex:"m",ctx:"16-latek wraca po imprezie. Coś jest inaczej niż zwykle. Widać wstyd.",says:"Nie patrz na mnie tak. Ja… ja po prostu chciałem być jak inni.",emo:"wstyd",dist:["strach","żal","bezsilność"]},
+{id:59,lv:2,sex:"m",ctx:"Rodzic proponuje wspólny film w piątek. 15-latek kręci głową.",says:"Wolałbym wyjść. Nie jestem już małym dzieckiem.",emo:"bunt",dist:["frustracja","samotność","złość"]},
+{id:60,lv:2,sex:"m",ctx:"Sobota rano. Rodzic budzi 15-latka do sprzątania.",says:"Serio mam sprzątać w sobotę? Ja cały tydzień jadę na oparach.",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
+{id:63,lv:2,sex:"m",ctx:"Rodzic mówi: musisz się uczyć. 16-latek macha ręką.",says:"Ja się umiem nauczyć, tylko mi się nie chce ciągle żyć pod presją.",emo:"przytłoczenie",dist:["bunt","bezsilność","frustracja"]},
+{id:65,lv:2,sex:"m",ctx:"Kolacja. Rodzic pyta 15-latka o znajomych. Odpowiada chłodno.",says:"Nie mam ochoty o tym gadać. To i tak nic nie zmieni.",emo:"samotność",dist:["smutek","bezsilność","bunt"]},
+{id:70,lv:2,sex:"m",ctx:"Rozmowa o imprezach. Rodzic mówi, że ma obawy. 16-latek reaguje.",says:"Uważasz, że jak wyjdę, to od razu zrobię coś głupiego.",emo:"niesprawiedliwość",dist:["złość","smutek","bunt"]},
+{id:71,lv:2,sex:"m",ctx:"16-latek mówi o relacji. Rodzic od razu zaczyna dopytywać o szczegóły.",says:"Nie chcę przesłuchania. Chcę tylko, żebyś była po mojej stronie.",emo:"samotność",dist:["smutek","złość","bezsilność"]},
+{id:74,lv:2,sex:"f",ctx:"17-latka siada naprzeciwko. Widać, że zbiera się na odwagę.",says:"Chcę ci powiedzieć, że spotykam się z kimś starszym, ale boję się twojej reakcji.",emo:"strach",dist:["niepewność","tęsknota","samotność"]},
+{id:76,lv:2,sex:"m",ctx:"16-latek chce iść sam do lekarza. Rodzic proponuje, że pójdzie razem.",says:"Nie chcę, żebyś ze mną szła. To jest dla mnie krępujące.",emo:"wstyd",dist:["bunt","niepewność","strach"]},
+{id:78,lv:2,sex:"f",ctx:"14-latka chce się malować. Rodzic mówi, że za wcześnie.",says:"Ja chcę się malować jak inne dziewczyny. Czuję się przez ciebie głupio i dziecinnie.",emo:"bunt",dist:["wstyd","złość","bezsilność"]},
+{id:83,lv:2,sex:"m",ctx:"Wieczór. 16-latek siada obok i mówi cicho, jakby z ulgą.",says:"Od jakiegoś czasu prawie nic nie jem i nie piję. I nie umiem tego odkręcić.",emo:"bezsilność",dist:["strach","smutek","desperacja"]},
+{id:87,lv:2,sex:"m",ctx:"Do matury zostały dwa tygodnie. Rodzic pyta: uczysz się? 17-latek odpowiada.",says:"Ale wynik matury nie będzie mnie definiował.",emo:"bunt",dist:["niepewność","strach","bezsilność"]},
+{id:88,lv:2,sex:"f",ctx:"17-latka tuż przed próbną maturą.",says:"Boli mnie głowa i ściska w żołądku.",emo:"strach",dist:["przytłoczenie","bezsilność","smutek"]},
+{id:91,lv:2,sex:"m",ctx:"Rodzina planuje 18 urodziny 17-latka. Ktoś już rezerwuje salę.",says:"Nie wiem, czy chcę imprezę. Wolałbym w domu, bez wielkiej akcji.",emo:"niepewność",dist:["strach","samotność","bunt"]},
+{id:162,lv:2,sex:"m",ctx:"15-latek słucha rodzica, który dopytuje o poprawę ocen zaraz po wejściu do domu.",says:"Daj spokój, ledwo wszedłem do domu. Cały dzień tylko testy i pytania, a ty od progu znowu to samo!",emo:"przytłoczenie",dist:["złość","frustracja","bezsilność"]},
+{id:163,lv:2,sex:"f",ctx:"14-latka rysuje w pokoju. Rodzic woła ją na obiad.",says:"Właśnie teraz miałam najlepszy pomysł na cieniowanie! Zanim wrócę, to wszystko mi ucieknie z głowy!",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
+{id:164,lv:2,sex:"m",ctx:"16-latek mówi o uzależnieniu od TikToka, kiedy rodzic zwraca mu uwagę na czas przed ekranem.",says:"Tylko tam mogę się wyłączyć i o niczym nie myśleć. Bez tego telefonu to bym chyba oszalał z nudów.",emo:"bezsilność",dist:["samotność","przytłoczenie","smutek"]},
+{id:165,lv:2,sex:"m",ctx:"15-latek wraca po siedmiu lekcjach i dodatkowym angielskim.",says:"Nie ruszę palcem. Nawet nie proś mnie o rozładowanie zmywarki, bo po prostu padnę na podłogę.",emo:"przytłoczenie",dist:["bezsilność","złość","frustracja"]},
+{id:166,lv:2,sex:"m",ctx:"16-latek mówi o sprzątaniu pokoju.",says:"Po co mam to sprzątać, skoro jutro i tak będzie tak samo? To jest syzyfowa praca, daj mi spokój.",emo:"bezsilność",dist:["frustracja","przytłoczenie","smutek"]},
+{id:167,lv:2,sex:"f",ctx:"14-latka narzeka na robienie zakupów.",says:"Znowu długa lista. Będę tam stać w kolejkach godzinę. Mój jedyny wolny czas w tygodniu właśnie przepadł.",emo:"frustracja",dist:["złość","bezsilność","smutek"]},
+{id:168,lv:2,sex:"f",ctx:"15-latka narzeka na gotowanie.",says:"Nie cierpię gotować. Wszystko mi się przypala i kuchnia wygląda jak po wojnie. Dlaczego nie możemy po prostu zamówić pizzy?",emo:"frustracja",dist:["bezsilność","złość","przytłoczenie"]},
+{id:169,lv:2,sex:"m",ctx:"16-latek mówi o pomyśle na gap year po szkole.",says:"Chciałbym po prostu odpocząć rok po szkole, ale wy pewnie uznacie, że jestem leniem i nic nie robię.",emo:"strach",dist:["niepewność","bunt","samotność"]},
+{id:170,lv:2,sex:"f",ctx:"16-latka porównuje swoje kieszonkowe z rówieśnikami.",says:"Inni dostają dwa razy tyle i mogą sobie na coś odłożyć. Ja ledwo mam na bilet i herbatę. Czuję się jak biedak przy moich znajomych.",emo:"wstyd",dist:["bezsilność","niesprawiedliwość","zazdrość"]},
+{id:171,lv:2,sex:"f",ctx:"17-latka mówi o tym, że nie chce spędzać czasu z rodzicem.",says:"Wolisz, żebym siedziała z tobą na kanapie, zamiast być z ludźmi w moim wieku? To jest nudne!",emo:"bunt",dist:["frustracja","złość","samotność"]},
 
 // ═══════════════════════════════════════════════════════════
 // POZIOM 3 — nastolatek zły NA rodzica
 // ═══════════════════════════════════════════════════════════
 
 // --- Stare scenki (przepisane) ---
-{id:12,lv:3,ctx:"Rodzic siedzi z gośćmi w salonie i właśnie zażartował o 15-latce.",says:"Weź przestań!",emo:"upokorzenie",dist:["złość","wstyd","bezsilność"]},
-{id:13,lv:3,ctx:"14-latek stoi na przystanku. Rodzic woła za nim zbyt głośno.",says:"Nie rób siary!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
-{id:18,lv:3,ctx:"Kolejna dyskusja o godzinie powrotu. 17-latek rzuca plecak i siada na łóżku.",says:"Mam 17 lat i mam potrzebę wracać później. Czemu ty tego nie widzisz?",emo:"bunt",dist:["złość","niesprawiedliwość","bezsilność"]},
-{id:21,lv:3,ctx:"Rodzic wraca z wywiadówki i chce pogadać o ocenach. 16-latek odsuwa talerz.",says:"Nie chcę o tym teraz gadać. I nie rób ze mnie projektu do naprawy.",emo:"bunt",dist:["złość","upokorzenie","bezsilność"]},
-{id:31,lv:3,ctx:"Rodzic i 13-latek właśnie pokłócili się o drobiazg. Odwraca się do ściany.",says:"Nie lubię cię.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
-{id:32,lv:3,ctx:"Chwila ciszy po kłótni. 15-latek mówi już ciszej, ale twardo.",says:"Widzisz mnie tylko wtedy, kiedy coś robię źle.",emo:"smutek",dist:["bezsilność","samotność","żal"]},
-{id:33,lv:3,ctx:"Rodzic otwiera drzwi do pokoju 14-latka bez pukania.",says:"Nie wchodź tutaj bez pytania. To jest moja przestrzeń.",emo:"złość",dist:["bunt","strach","bezsilność"]},
-{id:34,lv:3,ctx:"Rodzic pyta 16-latkę, czemu ostatnio się oddala.",says:"Bo jak pytasz o wszystko, to mam ochotę tylko uciec. Serio.",emo:"przytłoczenie",dist:["bunt","złość","strach"]},
-{id:35,lv:3,ctx:"15-latek odrabia lekcje. Rodzic zaczyna doradzać.",says:"Przestań mi stać nad głową. Jak mnie ciśniesz, to mam jeszcze większy mętlik.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
-{id:36,lv:3,ctx:"Rodzic mówi: porozmawiajmy. 16-latek włącza głośniej muzykę.",says:"Nie teraz. Jak będę gotowy, to sam powiem.",emo:"bunt",dist:["przytłoczenie","złość","bezsilność"]},
-{id:37,lv:3,ctx:"Rodzic wiesza w kuchni kartkę z nowymi zasadami. 15-latek czyta i prycha.",says:"Zasady, zasady… A kto pyta, czego ja potrzebuję?",emo:"niesprawiedliwość",dist:["złość","bunt","samotność"]},
-{id:38,lv:3,ctx:"Rodzic przypomina o obowiązkach. 15-latek stoi w progu z telefonem.",says:"Ja nie jestem robotem. Potrzebuję czasem po prostu nic nie robić.",emo:"przytłoczenie",dist:["bunt","bezsilność","złość"]},
-{id:50,lv:3,ctx:"16-latek właśnie znalazł w telefonie rodzica screena ze swojej rozmowy.",says:"Nie miałaś prawa. Czuję się jak w klatce.",emo:"złość",dist:["żal","strach","bezsilność"]},
-{id:51,lv:3,ctx:"Rodzic wrzucił w sieci zdjęcie 15-latka z dzieciństwa. Wpada w panikę.",says:"Usuń to zdjęcie. Ja nie chcę, żeby to było w internecie.",emo:"złość",dist:["strach","upokorzenie","bezsilność"]},
-{id:52,lv:3,ctx:"Właśnie skończyła się ostra kłótnia między rodzicem a 16-latkiem. Drzwi trzaskają.",says:"Nienawidzę cię.",emo:"złość",dist:["smutek","bezsilność","desperacja"]},
-{id:53,lv:3,ctx:"Godzinę po kłótni 16-latek wraca spokojniejszy, ale głos mu się łamie.",says:"Mogłabyś chociaż raz posłuchać, zamiast tylko rządzić?",emo:"bezsilność",dist:["smutek","żal","samotność"]},
-{id:54,lv:3,ctx:"Rodzic prosi 14-latka o wyniesienie śmieci. Eksploduje.",says:"Zaraz! Czemu zawsze ja? Mam was wszystkich dosyć.",emo:"złość",dist:["przytłoczenie","niesprawiedliwość","bezsilność"]},
-{id:55,lv:3,ctx:"Rodzic komentuje bałagan w pokoju 15-latka. Ten mówi ostro.",says:"To mój pokój. Jak ci się nie podoba, to nie wchodź.",emo:"bunt",dist:["złość","niesprawiedliwość","frustracja"]},
-{id:56,lv:3,ctx:"16-latek nie ma ochoty sprzątać swojego pokoju.",says:"Jak będę dorosły, to zatrudnię kogoś do sprzątania w moim domu.",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
-{id:57,lv:3,ctx:"16-latek właśnie odkrył na swoim telefonie aplikację do śledzenia lokalizacji.",says:"Po co to znów robisz?",emo:"złość",dist:["żal","strach","bunt"]},
-{id:61,lv:3,ctx:"Rodzic prosi 16-latkę o pomoc w kuchni. Nawet nie podnosi wzroku.",says:"Nie. Jestem zmęczona. I nie udawaj, że tego nie słyszysz.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
-{id:62,lv:3,ctx:"Kolejna rozmowa o pomaganiu w domu. 15-latek wchodzi w obronę.",says:"Przestań gadać, że nic nie robię. Ja też mam swoje rzeczy i swoją głowę.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
-{id:67,lv:3,ctx:"Rodzic próbuje postawić granicę. 15-latek krzyczy.",says:"Zostaw mnie! Jak wejdziesz jeszcze raz, to zamknę drzwi na klucz.",emo:"złość",dist:["strach","bunt","bezsilność"]},
-{id:68,lv:3,ctx:"Po spięciu o komputer 16-latka idzie w groźbę emocjonalną.",says:"Jak tak dalej będziesz robić, to przestanę z tobą rozmawiać. I będziesz sama.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
-{id:69,lv:3,ctx:"15-latek krzyczy z pokoju podczas grania. Rodzic prosi o ciszę.",says:"Przestań wchodzić co pięć minut! Ja jestem w trakcie.",emo:"złość",dist:["frustracja","bunt","przytłoczenie"]},
-{id:73,lv:3,ctx:"Rodzic komentuje, że widział 16-latkę całującą się pod domem. Spina się.",says:"To nie twoja sprawa. Przestań mnie obserwować jak policja.",emo:"złość",dist:["bunt","wstyd","strach"]},
-{id:77,lv:3,ctx:"13-latka ma pretensje, że rodzic powiedział o jej okresie tacie i ciociom.",says:"Czemu powiedziałaś tacie i ciociom? To było moje i prywatne.",emo:"żal",dist:["złość","upokorzenie","wstyd"]},
-{id:90,lv:3,ctx:"Rozmowa o wyprowadzce. 18-latek broni swojej autonomii.",says:"Przecież mam 18 lat. Czemu moje życie ma być dalej waszą sprawą?",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
-{id:93,lv:3,ctx:"Wczoraj rodzic obiecał, że nie będzie krzyczeć. Wieczór, kuchnia. 15-latek mówi.",says:"Ja już ci nie wierzę. Za każdym razem jest tak samo.",emo:"żal",dist:["bezsilność","smutek","samotność"]},
+{id:12,lv:3,sex:"f",ctx:"Rodzic siedzi z gośćmi w salonie i właśnie zażartował o 15-latce.",says:"Weź przestań!",emo:"upokorzenie",dist:["złość","wstyd","bezsilność"]},
+{id:13,lv:3,sex:"m",ctx:"14-latek stoi na przystanku. Rodzic woła za nim zbyt głośno.",says:"Nie rób siary!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:18,lv:3,sex:"m",ctx:"Kolejna dyskusja o godzinie powrotu. 17-latek rzuca plecak i siada na łóżku.",says:"Mam 17 lat i mam potrzebę wracać później. Czemu ty tego nie widzisz?",emo:"bunt",dist:["złość","niesprawiedliwość","bezsilność"]},
+{id:21,lv:3,sex:"m",ctx:"Rodzic wraca z wywiadówki i chce pogadać o ocenach. 16-latek odsuwa talerz.",says:"Nie chcę o tym teraz gadać. I nie rób ze mnie projektu do naprawy.",emo:"bunt",dist:["złość","upokorzenie","bezsilność"]},
+{id:31,lv:3,sex:"m",ctx:"Rodzic i 13-latek właśnie pokłócili się o drobiazg. Odwraca się do ściany.",says:"Nie lubię cię.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
+{id:32,lv:3,sex:"m",ctx:"Chwila ciszy po kłótni. 15-latek mówi już ciszej, ale twardo.",says:"Widzisz mnie tylko wtedy, kiedy coś robię źle.",emo:"smutek",dist:["bezsilność","samotność","żal"]},
+{id:33,lv:3,sex:"m",ctx:"Rodzic otwiera drzwi do pokoju 14-latka bez pukania.",says:"Nie wchodź tutaj bez pytania. To jest moja przestrzeń.",emo:"złość",dist:["bunt","strach","bezsilność"]},
+{id:34,lv:3,sex:"f",ctx:"Rodzic pyta 16-latkę, czemu ostatnio się oddala.",says:"Bo jak pytasz o wszystko, to mam ochotę tylko uciec. Serio.",emo:"przytłoczenie",dist:["bunt","złość","strach"]},
+{id:35,lv:3,sex:"m",ctx:"15-latek odrabia lekcje. Rodzic zaczyna doradzać.",says:"Przestań mi stać nad głową. Jak mnie ciśniesz, to mam jeszcze większy mętlik.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
+{id:36,lv:3,sex:"m",ctx:"Rodzic mówi: porozmawiajmy. 16-latek włącza głośniej muzykę.",says:"Nie teraz. Jak będę gotowy, to sam powiem.",emo:"bunt",dist:["przytłoczenie","złość","bezsilność"]},
+{id:37,lv:3,sex:"m",ctx:"Rodzic wiesza w kuchni kartkę z nowymi zasadami. 15-latek czyta i prycha.",says:"Zasady, zasady… A kto pyta, czego ja potrzebuję?",emo:"niesprawiedliwość",dist:["złość","bunt","samotność"]},
+{id:38,lv:3,sex:"m",ctx:"Rodzic przypomina o obowiązkach. 15-latek stoi w progu z telefonem.",says:"Ja nie jestem robotem. Potrzebuję czasem po prostu nic nie robić.",emo:"przytłoczenie",dist:["bunt","bezsilność","złość"]},
+{id:50,lv:3,sex:"m",ctx:"16-latek właśnie znalazł w telefonie rodzica screena ze swojej rozmowy.",says:"Nie miałaś prawa. Czuję się jak w klatce.",emo:"złość",dist:["żal","strach","bezsilność"]},
+{id:51,lv:3,sex:"m",ctx:"Rodzic wrzucił w sieci zdjęcie 15-latka z dzieciństwa. Wpada w panikę.",says:"Usuń to zdjęcie. Ja nie chcę, żeby to było w internecie.",emo:"złość",dist:["strach","upokorzenie","bezsilność"]},
+{id:52,lv:3,sex:"m",ctx:"Właśnie skończyła się ostra kłótnia między rodzicem a 16-latkiem. Drzwi trzaskają.",says:"Nienawidzę cię.",emo:"złość",dist:["smutek","bezsilność","desperacja"]},
+{id:53,lv:3,sex:"m",ctx:"Godzinę po kłótni 16-latek wraca spokojniejszy, ale głos mu się łamie.",says:"Mogłabyś chociaż raz posłuchać, zamiast tylko rządzić?",emo:"bezsilność",dist:["smutek","żal","samotność"]},
+{id:54,lv:3,sex:"m",ctx:"Rodzic prosi 14-latka o wyniesienie śmieci. Eksploduje.",says:"Zaraz! Czemu zawsze ja? Mam was wszystkich dosyć.",emo:"złość",dist:["przytłoczenie","niesprawiedliwość","bezsilność"]},
+{id:55,lv:3,sex:"m",ctx:"Rodzic komentuje bałagan w pokoju 15-latka. Ten mówi ostro.",says:"To mój pokój. Jak ci się nie podoba, to nie wchodź.",emo:"bunt",dist:["złość","niesprawiedliwość","frustracja"]},
+{id:56,lv:3,sex:"m",ctx:"16-latek nie ma ochoty sprzątać swojego pokoju.",says:"Jak będę dorosły, to zatrudnię kogoś do sprzątania w moim domu.",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
+{id:57,lv:3,sex:"m",ctx:"16-latek właśnie odkrył na swoim telefonie aplikację do śledzenia lokalizacji.",says:"Po co to znów robisz?",emo:"złość",dist:["żal","strach","bunt"]},
+{id:61,lv:3,sex:"f",ctx:"Rodzic prosi 16-latkę o pomoc w kuchni. Nawet nie podnosi wzroku.",says:"Nie. Jestem zmęczona. I nie udawaj, że tego nie słyszysz.",emo:"przytłoczenie",dist:["złość","bunt","bezsilność"]},
+{id:62,lv:3,sex:"m",ctx:"Kolejna rozmowa o pomaganiu w domu. 15-latek wchodzi w obronę.",says:"Przestań gadać, że nic nie robię. Ja też mam swoje rzeczy i swoją głowę.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:67,lv:3,sex:"m",ctx:"Rodzic próbuje postawić granicę. 15-latek krzyczy.",says:"Zostaw mnie! Jak wejdziesz jeszcze raz, to zamknę drzwi na klucz.",emo:"złość",dist:["strach","bunt","bezsilność"]},
+{id:68,lv:3,sex:"f",ctx:"Po spięciu o komputer 16-latka idzie w groźbę emocjonalną.",says:"Jak tak dalej będziesz robić, to przestanę z tobą rozmawiać. I będziesz sama.",emo:"złość",dist:["smutek","bezsilność","samotność"]},
+{id:69,lv:3,sex:"m",ctx:"15-latek krzyczy z pokoju podczas grania. Rodzic prosi o ciszę.",says:"Przestań wchodzić co pięć minut! Ja jestem w trakcie.",emo:"złość",dist:["frustracja","bunt","przytłoczenie"]},
+{id:73,lv:3,sex:"f",ctx:"Rodzic komentuje, że widział 16-latkę całującą się pod domem. Spina się.",says:"To nie twoja sprawa. Przestań mnie obserwować jak policja.",emo:"złość",dist:["bunt","wstyd","strach"]},
+{id:77,lv:3,sex:"f",ctx:"13-latka ma pretensje, że rodzic powiedział o jej okresie tacie i ciociom.",says:"Czemu powiedziałaś tacie i ciociom? To było moje i prywatne.",emo:"żal",dist:["złość","upokorzenie","wstyd"]},
+{id:90,lv:3,sex:"m",ctx:"Rozmowa o wyprowadzce. 18-latek broni swojej autonomii.",says:"Przecież mam 18 lat. Czemu moje życie ma być dalej waszą sprawą?",emo:"bunt",dist:["złość","frustracja","bezsilność"]},
+{id:93,lv:3,sex:"m",ctx:"Wczoraj rodzic obiecał, że nie będzie krzyczeć. Wieczór, kuchnia. 15-latek mówi.",says:"Ja już ci nie wierzę. Za każdym razem jest tak samo.",emo:"żal",dist:["bezsilność","smutek","samotność"]},
 
 // --- Nowe scenki poziom 3 ---
-{id:172,lv:3,ctx:"16-latek odkrywa, że rodzic bez konsultacji oddał jego stare, ale wciąż używane gry komputerowe kuzynowi.",says:"To były moje rzeczy! Dlaczego zawsze decydujesz za mnie i bez pytania grzebiesz w moich szafkach?!",emo:"złość",dist:["niesprawiedliwość","żal","bunt"]},
-{id:173,lv:3,ctx:"14-latek prosi o zgodę na powrót z imprezy o północy, a rodzic stanowczo upiera się przy godzinie dwudziestej drugiej.",says:"Wszyscy mogą zostać do końca, tylko ja muszę uciekać jak jakiś maluch. Robisz mi obciach przed całą klasą, nigdy mi nie ufasz!",emo:"niesprawiedliwość",dist:["złość","wstyd","bunt"]},
-{id:174,lv:3,ctx:"16-latka słyszy, jak rodzic wychwala młodsze rodzeństwo za drobną pomoc w domu, ignorując jej wcześniejsze porządki.",says:"Jasne, on jest waszą idealną gwiazdą. Ja mogę posprzątać cały dom i nikt nawet nie zauważy, bo dla was liczy się tylko on!",emo:"niesprawiedliwość",dist:["żal","złość","samotność"]},
-{id:175,lv:3,ctx:"13-latek dowiaduje się, że z powodu pilnego wyjazdu rodzinnego nie będzie mógł wziąć udziału w turnieju online z kolegami.",says:"Nie no, świetnie! Teraz pomyślą, że stchórzyłem i wywalą mnie z klanu. Zawsze musicie mi wszystko psuć w ostatniej chwili!",emo:"złość",dist:["bezsilność","strach","żal"]},
-{id:176,lv:3,ctx:"13-latka przyłapuje rodzica na tym, że próbował podejrzeć powiadomienia na jej telefonie, gdy zostawiła go na chwilę w kuchni.",says:"No nie wierzę! Serio musisz mnie tak śledzić?",emo:"złość",dist:["żal","strach","bunt"]},
-{id:177,lv:3,ctx:"16-latek przegrywa ważny mecz w grze rankingowej, bo rodzic kazał mu natychmiast wyłączyć komputer, nie pozwalając dokończyć rundy.",says:"No i po randze! Przez ciebie przegraliśmy, bo musiałaś mi teraz truć o tych głupich śmieciach. Zero wyczucia, po prostu niszczysz mi wszystko, co dla mnie ważne!",emo:"złość",dist:["bezsilność","żal","frustracja"]},
-{id:178,lv:3,ctx:"17-latka słyszy przy obiedzie kolejne pytanie o to, czy na pewno złoży papiery na medycynę, bo 'artysta to nie zawód'.",says:"Rzygać mi się chce tym waszym prestiżem. Nikogo nie obchodzi, co ja czuję, tylko co powiecie znajomym. Mam dość tej wiecznej presji, dajcie mi w końcu żyć!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
-{id:179,lv:3,ctx:"13-latek wraca ze szkoły i odkrywa, że rodzic poukładał mu notatki i papiery na biurku, szukając ważnego dokumentu.",says:"Znowu tu byłaś?! Wszystko tu leżało tak jak trzeba! Czy ty naprawdę musisz wszędzie łazić? To jest mój pokój, a nie jakieś muzeum do zwiedzania dla ciebie!",emo:"złość",dist:["niesprawiedliwość","bunt","bezsilność"]},
-{id:181,lv:3,ctx:"16-latka o tym, że rodzic pyta ją, z kim pisze na telefonie.",says:"To jest moja prywatna sprawa. Czy ja ci zaglądam w telefon? Daj mi w końcu trochę oddechu!",emo:"złość",dist:["bunt","strach","bezsilność"]},
-{id:182,lv:3,ctx:"15-latek, gdy rodzic wchodzi do pokoju bez pukania.",says:"Wyjdź! Serio, czy tak trudno jest zapukać? Czuję się tutaj jak w jakimś monitorowanym więzieniu.",emo:"złość",dist:["bunt","upokorzenie","bezsilność"]},
-{id:183,lv:3,ctx:"17-latka dowiaduje się, że rodzice rozmawiali o jej ocenach z ciocią.",says:"Po co rozpowiadacie o moich sprawach całej rodzinie? To jest moje życie, a nie temat do plotek przy kawie!",emo:"złość",dist:["żal","upokorzenie","bunt"]},
-{id:184,lv:3,ctx:"14-latek po zainstalowaniu przez rodziców aplikacji do kontroli czasu przed ekranem.",says:"Blokujecie mi telefon o 21? Przecież to jest jedyny czas, kiedy mogę pogadać z ludźmi. Czuję się ubezwłasnowolniony.",emo:"złość",dist:["bunt","bezsilność","samotność"]},
-{id:185,lv:3,ctx:"16-latka, gdy mama próbuje dołączyć do jej znajomych na Facebooku.",says:"Proszę, nie rób mi tego. To jest moja przestrzeń, nie chcę tam mieć rodziców pod każdym postem.",emo:"strach",dist:["wstyd","bunt","złość"]},
-{id:186,lv:3,ctx:"15-latek o czytaniu jego pamiętnika lub notatek przez rodzica.",says:"Znalazłem to pod łóżkiem, leżało inaczej. Czytałaś to, prawda? Jak mogłaś mi to zrobić?!",emo:"żal",dist:["złość","upokorzenie","bezsilność"]},
-{id:187,lv:3,ctx:"13-latka o tym, że rodzice każą jej zostawiać telefon w salonie na noc.",says:"Nikt tak nie robi! Wszyscy mają telefony przy sobie, a wy traktujecie mnie, jakbym miała pięć lat.",emo:"niesprawiedliwość",dist:["złość","bunt","wstyd"]},
-{id:188,lv:3,ctx:"17-latek mówi o planach na weekend, które rodzice chcą znać godzina po godzinie.",says:"Nie wiem dokładnie, co będziemy robić! Po prostu wychodzę. Przecież nie ucieknę z kraju.",emo:"bunt",dist:["złość","frustracja","przytłoczenie"]},
-{id:189,lv:3,ctx:"16-latka o tym, że rodzic wszedł do łazienki, gdy ona się kąpała.",says:"Nie ma tu żadnego zamka? Nie mogę mieć nawet chwili dla siebie w tym domu?",emo:"złość",dist:["wstyd","bunt","bezsilność"]},
-{id:190,lv:3,ctx:"17-latka, której rodzice nie chcą puścić na koncert ulubionego zespołu.",says:"Oni przyjeżdżają raz na kilka lat! To jest moja jedyna szansa, żeby ich zobaczyć. Wszystko mi ucieka!",emo:"złość",dist:["smutek","bezsilność","tęsknota"]},
-{id:191,lv:3,ctx:"15-latek próbuje nagrać filmik na YouTube, ale rodzice ciągle wchodzą mu do pokoju.",says:"To jest nie do zrobienia. Nigdy nie uda mi się nagrać nic sensownego, jak ciągle ktoś tu łazi i coś chce!",emo:"frustracja",dist:["złość","bezsilność","bunt"]},
-{id:192,lv:3,ctx:"16-latek o nowym hobby, które rodzice wyśmiewają.",says:"Dla was wszystko, co robię, jest dziwne. Nawet nie spróbowaliście zrozumieć, o co w tym chodzi, od razu jest 'głupie'.",emo:"smutek",dist:["złość","bezsilność","samotność"]},
-{id:193,lv:3,ctx:"17-latek mówi o tym, że rodzice zmuszają go do nauki gry na instrumencie, którego nie lubi.",says:"Mam dosyć tego pianina. Każda godzina przy nim to dla mnie tortura. Dlaczego nie mogę robić tego, co ja chcę?",emo:"bezsilność",dist:["złość","bunt","smutek"]},
-{id:194,lv:3,ctx:"14-latek o swojej kolekcji kart i figurek, którą rodzic nazwał śmieciami.",says:"To nie są śmieci! Zbierałem to latami! Zupełnie tego nie szanujesz.",emo:"złość",dist:["żal","smutek","bezsilność"]},
-{id:195,lv:3,ctx:"16-latek o presji rodziców na konkretny kierunek studiów.",says:"To wasze marzenia, nie moje. Chcecie, żebym był lekarzem, ale ja mdleję na widok krwi. Nikt mnie nie słucha!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
-{id:197,lv:3,ctx:"14-latka o tym, że młodszy brat może więcej.",says:"On znowu nie musiał sprzątać po kolacji, bo 'jest mały'. Ja w jego wieku już wszystko robiłam sama. To jest totalnie nie fair!",emo:"niesprawiedliwość",dist:["złość","żal","bezsilność"]},
-{id:198,lv:3,ctx:"16-latek proszony o pomoc z zakupami, gdy właśnie planował wyjście.",says:"Dlaczego zawsze przypominasz sobie o zakupach, kiedy ja mam swoje plany? Nigdy nie szanujesz mojego czasu!",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
-{id:199,lv:3,ctx:"13-latka, której rodzice nie pozwalają kupić konkretnego ciucha.",says:"Wszystkie dziewczyny to noszą! Tylko ja mam wyglądać inaczej, bo wam się to nie podoba. Chcecie, żeby wszyscy się ze mnie śmiali?",emo:"niesprawiedliwość",dist:["złość","wstyd","strach"]},
-{id:200,lv:3,ctx:"15-latek o tym, że rodzice sprawdzają jego oceny codziennie.",says:"Mam 15 lat, a wy pilnujecie mnie jak w podstawówce. Czy wy mi w ogóle w czymkolwiek ufacie?",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
-{id:201,lv:3,ctx:"17-latka, która nie może pojechać pod namiot ze znajomymi.",says:"Znam ich od lat! Nic mi się nie stanie, ale wy zawsze widzicie najgorsze scenariusze. Mam dość tego pilnowania na każdym kroku.",emo:"złość",dist:["bunt","niesprawiedliwość","bezsilność"]},
-{id:202,lv:3,ctx:"14-latek o tym, że rodzic przerwał mu wypowiedź przy gościach.",says:"Zrobiłeś ze mnie głupka przy wszystkich, jakbym nie miał nic mądrego do gadania.",emo:"upokorzenie",dist:["złość","żal","bezsilność"]},
-{id:203,lv:3,ctx:"15-latek o tym, że rodzice wybrali mu zajęcia dodatkowe bez pytania.",says:"Nie zapytaliście mnie, czy ja w ogóle chcę tam chodzić. Po prostu mnie tam zapisaliście, jakbym był przedmiotem.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
-{id:204,lv:3,ctx:"17-latek o zakazie prowadzenia samochodu rodziców mimo zdanego prawa jazdy.",says:"Właśnie zrobiłem prawko! Skąd mam nabrać wprawy, jak wy mi nigdy nie dajecie kluczyków? Zawsze jestem 'za młody'.",emo:"niesprawiedliwość",dist:["złość","frustracja","bunt"]},
-{id:205,lv:3,ctx:"17-latek o tym, że rodzice skomentowali jego post w mediach społecznościowych.",says:"Po co to zrobiliście? Przecież to jest siara! Teraz moi znajomi będą to wyciągać przez pół roku.",emo:"upokorzenie",dist:["złość","wstyd","bunt"]},
-{id:206,lv:3,ctx:"15-latek o tym, że rodzic każe mu wyjść z psem w deszczu.",says:"Zawsze ja! Dlaczego to ja muszę iść, kiedy leje, a wy sobie siedzicie przed telewizorem? To jest niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","bunt","frustracja"]},
-{id:207,lv:3,ctx:"16-latek, któremu rodzic każe wynieść śmieci, choć właśnie usiadł.",says:"Właśnie usiadłem, żeby odpocząć. Czy naprawdę te śmieci nie mogą poczekać do jutra? Musisz mi truć teraz?",emo:"złość",dist:["frustracja","bunt","bezsilność"]},
-{id:208,lv:3,ctx:"17-latek o pomaganiu w ogrodzie w weekend.",says:"Cały weekend mamy kopać te grządki? Przecież ja miałem się spotkać z ekipą. Znowu mi psujecie plany.",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
-{id:209,lv:3,ctx:"16-latek o tym, że rodzic próbuje go przytulić przy znajomych.",says:"Przestań! Robisz mi totalny obciach. Nie jestem już małym dzieckiem!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
-{id:210,lv:3,ctx:"15-latka o tym, że rodzic chce iść z nią na zakupy odzieżowe.",says:"Sama sobie wybiorę ubrania. Twój gust to lata dziewięćdziesiąte, nie chcę wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
-{id:211,lv:3,ctx:"14-latek o tym, że rodzic ciągle pyta, jak było w szkole.",says:"Normalnie. Jak zawsze. Możesz przestać mnie tak przesłuchiwać co dwa dni?",emo:"frustracja",dist:["złość","bunt","przytłoczenie"]},
-{id:212,lv:3,ctx:"17-latka o tym, że rodzice chcą poznać jej nowego chłopaka.",says:"Nie przyprowadzę go tutaj, żebyście go oceniali od progu. To moja sprawa, z kim się spotykam.",emo:"strach",dist:["bunt","złość","wstyd"]},
-{id:213,lv:3,ctx:"16-latek o tym, że rodzic daje mu rady, o które nie prosił.",says:"Wiem, co mam robić! Nie musisz mi powtarzać wszystkiego po dziesięć razy, jakbym był głupi.",emo:"złość",dist:["frustracja","bunt","upokorzenie"]},
-{id:214,lv:3,ctx:"15-latka o tym, że rodzice krytykują jej muzykę.",says:"Słucham tego, co chcę słuchać. Jak wam się nie podoba, to wyjdźcie z mojego pokoju, ale nie mówcie, że to 'hałas'.",emo:"złość",dist:["bunt","smutek","niesprawiedliwość"]},
-{id:215,lv:3,ctx:"14-latek o tym, że rodzice śmieją się z jego problemów sercowych.",says:"Dla was to jest zabawne, ale dla mnie to jest teraz najważniejsze. Nic nie rozumiecie!",emo:"smutek",dist:["złość","samotność","żal"]},
-{id:216,lv:3,ctx:"16-latek o tym, że rodzic mówi do niego pieszczotliwym imieniem z dzieciństwa.",says:"Nie mów tak do mnie! Nienawidzę tego imienia, czuję się wtedy jak jakiś niemowlak.",emo:"wstyd",dist:["złość","bunt","smutek"]},
-{id:217,lv:3,ctx:"15-latka o tym, że rodzic próbuje być 'fajny' przy jej kolegach.",says:"To było takie cringe'owe. Proszę, po prostu zachowuj się normalnie, a nie udawaj nastolatka.",emo:"wstyd",dist:["złość","upokorzenie","frustracja"]},
-{id:218,lv:3,ctx:"15-latek, który bardzo liczył na wyjazd na obóz sportowy, dowiaduje się, że z powodu awarii samochodu rodzice muszą przesunąć wydatki.",says:"Obiecaliście mi to pół roku temu! Wszyscy moi kumple już mają opłacone miejsca, a ja teraz mam im powiedzieć, że co? Że znowu coś się zepsuło? Zawsze mi wszystko psujecie w ostatniej chwili!",emo:"złość",dist:["żal","niesprawiedliwość","bezsilność"]},
+{id:172,lv:3,sex:"m",ctx:"16-latek odkrywa, że rodzic bez konsultacji oddał jego stare, ale wciąż używane gry komputerowe kuzynowi.",says:"To były moje rzeczy! Dlaczego zawsze decydujesz za mnie i bez pytania grzebiesz w moich szafkach?!",emo:"złość",dist:["niesprawiedliwość","żal","bunt"]},
+{id:173,lv:3,sex:"m",ctx:"14-latek prosi o zgodę na powrót z imprezy o północy, a rodzic stanowczo upiera się przy godzinie dwudziestej drugiej.",says:"Wszyscy mogą zostać do końca, tylko ja muszę uciekać jak jakiś maluch. Robisz mi obciach przed całą klasą, nigdy mi nie ufasz!",emo:"niesprawiedliwość",dist:["złość","wstyd","bunt"]},
+{id:174,lv:3,sex:"f",ctx:"16-latka słyszy, jak rodzic wychwala młodsze rodzeństwo za drobną pomoc w domu, ignorując jej wcześniejsze porządki.",says:"Jasne, on jest waszą idealną gwiazdą. Ja mogę posprzątać cały dom i nikt nawet nie zauważy, bo dla was liczy się tylko on!",emo:"niesprawiedliwość",dist:["żal","złość","samotność"]},
+{id:175,lv:3,sex:"m",ctx:"13-latek dowiaduje się, że z powodu pilnego wyjazdu rodzinnego nie będzie mógł wziąć udziału w turnieju online z kolegami.",says:"Nie no, świetnie! Teraz pomyślą, że stchórzyłem i wywalą mnie z klanu. Zawsze musicie mi wszystko psuć w ostatniej chwili!",emo:"złość",dist:["bezsilność","strach","żal"]},
+{id:176,lv:3,sex:"f",ctx:"13-latka przyłapuje rodzica na tym, że próbował podejrzeć powiadomienia na jej telefonie, gdy zostawiła go na chwilę w kuchni.",says:"No nie wierzę! Serio musisz mnie tak śledzić?",emo:"złość",dist:["żal","strach","bunt"]},
+{id:177,lv:3,sex:"m",ctx:"16-latek przegrywa ważny mecz w grze rankingowej, bo rodzic kazał mu natychmiast wyłączyć komputer, nie pozwalając dokończyć rundy.",says:"No i po randze! Przez ciebie przegraliśmy, bo musiałaś mi teraz truć o tych głupich śmieciach. Zero wyczucia, po prostu niszczysz mi wszystko, co dla mnie ważne!",emo:"złość",dist:["bezsilność","żal","frustracja"]},
+{id:178,lv:3,sex:"f",ctx:"17-latka słyszy przy obiedzie kolejne pytanie o to, czy na pewno złoży papiery na medycynę, bo 'artysta to nie zawód'.",says:"Rzygać mi się chce tym waszym prestiżem. Nikogo nie obchodzi, co ja czuję, tylko co powiecie znajomym. Mam dość tej wiecznej presji, dajcie mi w końcu żyć!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
+{id:179,lv:3,sex:"m",ctx:"13-latek wraca ze szkoły i odkrywa, że rodzic poukładał mu notatki i papiery na biurku, szukając ważnego dokumentu.",says:"Znowu tu byłaś?! Wszystko tu leżało tak jak trzeba! Czy ty naprawdę musisz wszędzie łazić? To jest mój pokój, a nie jakieś muzeum do zwiedzania dla ciebie!",emo:"złość",dist:["niesprawiedliwość","bunt","bezsilność"]},
+{id:181,lv:3,sex:"f",ctx:"16-latka o tym, że rodzic pyta ją, z kim pisze na telefonie.",says:"To jest moja prywatna sprawa. Czy ja ci zaglądam w telefon? Daj mi w końcu trochę oddechu!",emo:"złość",dist:["bunt","strach","bezsilność"]},
+{id:182,lv:3,sex:"m",ctx:"15-latek, gdy rodzic wchodzi do pokoju bez pukania.",says:"Wyjdź! Serio, czy tak trudno jest zapukać? Czuję się tutaj jak w jakimś monitorowanym więzieniu.",emo:"złość",dist:["bunt","upokorzenie","bezsilność"]},
+{id:183,lv:3,sex:"f",ctx:"17-latka dowiaduje się, że rodzice rozmawiali o jej ocenach z ciocią.",says:"Po co rozpowiadacie o moich sprawach całej rodzinie? To jest moje życie, a nie temat do plotek przy kawie!",emo:"złość",dist:["żal","upokorzenie","bunt"]},
+{id:184,lv:3,sex:"m",ctx:"14-latek po zainstalowaniu przez rodziców aplikacji do kontroli czasu przed ekranem.",says:"Blokujecie mi telefon o 21? Przecież to jest jedyny czas, kiedy mogę pogadać z ludźmi. Czuję się ubezwłasnowolniony.",emo:"złość",dist:["bunt","bezsilność","samotność"]},
+{id:185,lv:3,sex:"f",ctx:"16-latka, gdy mama próbuje dołączyć do jej znajomych na Facebooku.",says:"Proszę, nie rób mi tego. To jest moja przestrzeń, nie chcę tam mieć rodziców pod każdym postem.",emo:"strach",dist:["wstyd","bunt","złość"]},
+{id:186,lv:3,sex:"m",ctx:"15-latek o czytaniu jego pamiętnika lub notatek przez rodzica.",says:"Znalazłem to pod łóżkiem, leżało inaczej. Czytałaś to, prawda? Jak mogłaś mi to zrobić?!",emo:"żal",dist:["złość","upokorzenie","bezsilność"]},
+{id:187,lv:3,sex:"f",ctx:"13-latka o tym, że rodzice każą jej zostawiać telefon w salonie na noc.",says:"Nikt tak nie robi! Wszyscy mają telefony przy sobie, a wy traktujecie mnie, jakbym miała pięć lat.",emo:"niesprawiedliwość",dist:["złość","bunt","wstyd"]},
+{id:188,lv:3,sex:"m",ctx:"17-latek mówi o planach na weekend, które rodzice chcą znać godzina po godzinie.",says:"Nie wiem dokładnie, co będziemy robić! Po prostu wychodzę. Przecież nie ucieknę z kraju.",emo:"bunt",dist:["złość","frustracja","przytłoczenie"]},
+{id:189,lv:3,sex:"f",ctx:"16-latka o tym, że rodzic wszedł do łazienki, gdy ona się kąpała.",says:"Nie ma tu żadnego zamka? Nie mogę mieć nawet chwili dla siebie w tym domu?",emo:"złość",dist:["wstyd","bunt","bezsilność"]},
+{id:190,lv:3,sex:"f",ctx:"17-latka, której rodzice nie chcą puścić na koncert ulubionego zespołu.",says:"Oni przyjeżdżają raz na kilka lat! To jest moja jedyna szansa, żeby ich zobaczyć. Wszystko mi ucieka!",emo:"złość",dist:["smutek","bezsilność","tęsknota"]},
+{id:191,lv:3,sex:"m",ctx:"15-latek próbuje nagrać filmik na YouTube, ale rodzice ciągle wchodzą mu do pokoju.",says:"To jest nie do zrobienia. Nigdy nie uda mi się nagrać nic sensownego, jak ciągle ktoś tu łazi i coś chce!",emo:"frustracja",dist:["złość","bezsilność","bunt"]},
+{id:192,lv:3,sex:"m",ctx:"16-latek o nowym hobby, które rodzice wyśmiewają.",says:"Dla was wszystko, co robię, jest dziwne. Nawet nie spróbowaliście zrozumieć, o co w tym chodzi, od razu jest 'głupie'.",emo:"smutek",dist:["złość","bezsilność","samotność"]},
+{id:193,lv:3,sex:"m",ctx:"17-latek mówi o tym, że rodzice zmuszają go do nauki gry na instrumencie, którego nie lubi.",says:"Mam dosyć tego pianina. Każda godzina przy nim to dla mnie tortura. Dlaczego nie mogę robić tego, co ja chcę?",emo:"bezsilność",dist:["złość","bunt","smutek"]},
+{id:194,lv:3,sex:"m",ctx:"14-latek o swojej kolekcji kart i figurek, którą rodzic nazwał śmieciami.",says:"To nie są śmieci! Zbierałem to latami! Zupełnie tego nie szanujesz.",emo:"złość",dist:["żal","smutek","bezsilność"]},
+{id:195,lv:3,sex:"m",ctx:"16-latek o presji rodziców na konkretny kierunek studiów.",says:"To wasze marzenia, nie moje. Chcecie, żebym był lekarzem, ale ja mdleję na widok krwi. Nikt mnie nie słucha!",emo:"złość",dist:["bunt","bezsilność","smutek"]},
+{id:197,lv:3,sex:"f",ctx:"14-latka o tym, że młodszy brat może więcej.",says:"On znowu nie musiał sprzątać po kolacji, bo 'jest mały'. Ja w jego wieku już wszystko robiłam sama. To jest totalnie nie fair!",emo:"niesprawiedliwość",dist:["złość","żal","bezsilność"]},
+{id:198,lv:3,sex:"m",ctx:"16-latek proszony o pomoc z zakupami, gdy właśnie planował wyjście.",says:"Dlaczego zawsze przypominasz sobie o zakupach, kiedy ja mam swoje plany? Nigdy nie szanujesz mojego czasu!",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
+{id:199,lv:3,sex:"f",ctx:"13-latka, której rodzice nie pozwalają kupić konkretnego ciucha.",says:"Wszystkie dziewczyny to noszą! Tylko ja mam wyglądać inaczej, bo wam się to nie podoba. Chcecie, żeby wszyscy się ze mnie śmiali?",emo:"niesprawiedliwość",dist:["złość","wstyd","strach"]},
+{id:200,lv:3,sex:"m",ctx:"15-latek o tym, że rodzice sprawdzają jego oceny codziennie.",says:"Mam 15 lat, a wy pilnujecie mnie jak w podstawówce. Czy wy mi w ogóle w czymkolwiek ufacie?",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:201,lv:3,sex:"f",ctx:"17-latka, która nie może pojechać pod namiot ze znajomymi.",says:"Znam ich od lat! Nic mi się nie stanie, ale wy zawsze widzicie najgorsze scenariusze. Mam dość tego pilnowania na każdym kroku.",emo:"złość",dist:["bunt","niesprawiedliwość","bezsilność"]},
+{id:202,lv:3,sex:"m",ctx:"14-latek o tym, że rodzic przerwał mu wypowiedź przy gościach.",says:"Zrobiłeś ze mnie głupka przy wszystkich, jakbym nie miał nic mądrego do gadania.",emo:"upokorzenie",dist:["złość","żal","bezsilność"]},
+{id:203,lv:3,sex:"m",ctx:"15-latek o tym, że rodzice wybrali mu zajęcia dodatkowe bez pytania.",says:"Nie zapytaliście mnie, czy ja w ogóle chcę tam chodzić. Po prostu mnie tam zapisaliście, jakbym był przedmiotem.",emo:"niesprawiedliwość",dist:["złość","bunt","bezsilność"]},
+{id:204,lv:3,sex:"m",ctx:"17-latek o zakazie prowadzenia samochodu rodziców mimo zdanego prawa jazdy.",says:"Właśnie zrobiłem prawko! Skąd mam nabrać wprawy, jak wy mi nigdy nie dajecie kluczyków? Zawsze jestem 'za młody'.",emo:"niesprawiedliwość",dist:["złość","frustracja","bunt"]},
+{id:205,lv:3,sex:"m",ctx:"17-latek o tym, że rodzice skomentowali jego post w mediach społecznościowych.",says:"Po co to zrobiliście? Przecież to jest siara! Teraz moi znajomi będą to wyciągać przez pół roku.",emo:"upokorzenie",dist:["złość","wstyd","bunt"]},
+{id:206,lv:3,sex:"m",ctx:"15-latek o tym, że rodzic każe mu wyjść z psem w deszczu.",says:"Zawsze ja! Dlaczego to ja muszę iść, kiedy leje, a wy sobie siedzicie przed telewizorem? To jest niesprawiedliwe!",emo:"niesprawiedliwość",dist:["złość","bunt","frustracja"]},
+{id:207,lv:3,sex:"m",ctx:"16-latek, któremu rodzic każe wynieść śmieci, choć właśnie usiadł.",says:"Właśnie usiadłem, żeby odpocząć. Czy naprawdę te śmieci nie mogą poczekać do jutra? Musisz mi truć teraz?",emo:"złość",dist:["frustracja","bunt","bezsilność"]},
+{id:208,lv:3,sex:"m",ctx:"17-latek o pomaganiu w ogrodzie w weekend.",says:"Cały weekend mamy kopać te grządki? Przecież ja miałem się spotkać z ekipą. Znowu mi psujecie plany.",emo:"złość",dist:["niesprawiedliwość","bunt","frustracja"]},
+{id:209,lv:3,sex:"m",ctx:"16-latek o tym, że rodzic próbuje go przytulić przy znajomych.",says:"Przestań! Robisz mi totalny obciach. Nie jestem już małym dzieckiem!",emo:"wstyd",dist:["złość","upokorzenie","bunt"]},
+{id:210,lv:3,sex:"f",ctx:"15-latka o tym, że rodzic chce iść z nią na zakupy odzieżowe.",says:"Sama sobie wybiorę ubrania. Twój gust to lata dziewięćdziesiąte, nie chcę wyglądać jak ty.",emo:"bunt",dist:["złość","wstyd","frustracja"]},
+{id:211,lv:3,sex:"m",ctx:"14-latek o tym, że rodzic ciągle pyta, jak było w szkole.",says:"Normalnie. Jak zawsze. Możesz przestać mnie tak przesłuchiwać co dwa dni?",emo:"frustracja",dist:["złość","bunt","przytłoczenie"]},
+{id:212,lv:3,sex:"f",ctx:"17-latka o tym, że rodzice chcą poznać jej nowego chłopaka.",says:"Nie przyprowadzę go tutaj, żebyście go oceniali od progu. To moja sprawa, z kim się spotykam.",emo:"strach",dist:["bunt","złość","wstyd"]},
+{id:213,lv:3,sex:"m",ctx:"16-latek o tym, że rodzic daje mu rady, o które nie prosił.",says:"Wiem, co mam robić! Nie musisz mi powtarzać wszystkiego po dziesięć razy, jakbym był głupi.",emo:"złość",dist:["frustracja","bunt","upokorzenie"]},
+{id:214,lv:3,sex:"f",ctx:"15-latka o tym, że rodzice krytykują jej muzykę.",says:"Słucham tego, co chcę słuchać. Jak wam się nie podoba, to wyjdźcie z mojego pokoju, ale nie mówcie, że to 'hałas'.",emo:"złość",dist:["bunt","smutek","niesprawiedliwość"]},
+{id:215,lv:3,sex:"m",ctx:"14-latek o tym, że rodzice śmieją się z jego problemów sercowych.",says:"Dla was to jest zabawne, ale dla mnie to jest teraz najważniejsze. Nic nie rozumiecie!",emo:"smutek",dist:["złość","samotność","żal"]},
+{id:216,lv:3,sex:"m",ctx:"16-latek o tym, że rodzic mówi do niego pieszczotliwym imieniem z dzieciństwa.",says:"Nie mów tak do mnie! Nienawidzę tego imienia, czuję się wtedy jak jakiś niemowlak.",emo:"wstyd",dist:["złość","bunt","smutek"]},
+{id:217,lv:3,sex:"f",ctx:"15-latka o tym, że rodzic próbuje być 'fajny' przy jej kolegach.",says:"To było takie cringe'owe. Proszę, po prostu zachowuj się normalnie, a nie udawaj nastolatka.",emo:"wstyd",dist:["złość","upokorzenie","frustracja"]},
+{id:218,lv:3,sex:"m",ctx:"15-latek, który bardzo liczył na wyjazd na obóz sportowy, dowiaduje się, że z powodu awarii samochodu rodzice muszą przesunąć wydatki.",says:"Obiecaliście mi to pół roku temu! Wszyscy moi kumple już mają opłacone miejsca, a ja teraz mam im powiedzieć, że co? Że znowu coś się zepsuło? Zawsze mi wszystko psujecie w ostatniej chwili!",emo:"złość",dist:["żal","niesprawiedliwość","bezsilność"]},
 ];
 
 // ══════════════════════════════════════════════════════════════
@@ -493,13 +491,16 @@ const types1=["Szkoła","Emocje","Rówieśnicy","Presja","Ciało","Lęk","Smutek
 const types2=["Autonomia","Granice","Telefon","Przyszłość","Relacje","Kontrola","Zmęczenie","Obowiązki"];
 const types3=["Konflikt","Złość na rodzica","Granice","Kontrola","Prywatność","Bunt","Autonomia"];
 
+// Płeć nastolatka: z pola sex; gdy go brak (scenka od AI), zgadywana z formy "N-latek/N-latka" w kontekście
+const isGirl=sc=>sc?.sex?sc.sex==="f":/\d+-latk(i|ę|ą|ce)(?![a-ząćęłńóśźż])|(^|[.!?]\s+)\d+-latka(?![a-ząćęłńóśźż])|córk|dziewczyn/i.test(sc?.situation||"");
+
 function drawScene(level, usedIds){
   const pool=SCENARIOS_DB.filter(s=>s.lv===level&&!usedIds.has(s.id));
   if(pool.length===0) return null;
   const raw=pick(pool);
   const typePool=level===1?types1:level===2?types2:types3;
   return{
-    id:raw.id, level,
+    id:raw.id, level, sex:raw.sex,
     situation:raw.ctx,
     teen_says:raw.says,
     situation_type:pick(typePool)
@@ -599,7 +600,7 @@ FORMAT — czysty JSON (proste cudzysłowy "):
 
 const FB_MSG=(sc,resp)=>`POZIOM: ${sc.level}
 SYTUACJA: ${sc.situation}
-Nastolatek mówi: "${sc.teen_says}"
+${isGirl(sc)?"Nastolatka (dziewczyna)":"Nastolatek (chłopak)"} mówi: "${sc.teen_says}"
 
 ODPOWIEDŹ RODZICA: "${resp}"
 
@@ -613,12 +614,13 @@ Twoim zadaniem jest:
 2. Stwórz krótki kontekst (1-2 zdania, z wiekiem i płcią jeśli podane, np. "15-latek wraca ze szkoły...")
 3. Stwórz wypowiedź nastolatka (naturalna, potoczna, jak prawdziwy nastolatek)
 4. Oceń poziom trudności: 1 (emocja czytelna), 2 (kusi żeby doradzać), 3 (zły na rodzica)
+5. Podaj płeć nastolatka w polu sex: "m" (chłopak) albo "f" (dziewczyna)
 
 Jeśli rodzic nie podał wieku — oszacuj. Jeśli nie podał płci — wybierz.
 Wypowiedź nastolatka ma brzmieć autentycznie — potocznie, z emocją, jak polski nastolatek w domu.
 
 FORMAT — WYŁĄCZNIE czysty JSON:
-{"level":N,"situation":"kontekst","teen_says":"wypowiedź"}`;
+{"level":N,"sex":"m/f","situation":"kontekst","teen_says":"wypowiedź"}`;
 
 const CUSTOM_MSG=(desc)=>`Rodzic opisuje sytuację: "${desc}"
 
@@ -645,7 +647,7 @@ function getDailyScene(){
   const raw=SCENARIOS_DB[idx];
   const typePool=raw.lv===1?types1:raw.lv===2?types2:types3;
   return{
-    id:raw.id, level:raw.lv,
+    id:raw.id, level:raw.lv, sex:raw.sex,
     situation:raw.ctx,
     teen_says:raw.says,
     situation_type:pick(typePool),
@@ -836,8 +838,8 @@ function Loading({text}){
   return <div className="ld"><div className="le">⏳</div><p>{text||"Przygotowuję"}{d}</p></div>;
 }
 
-function FeedbackLoading({teenSays,parentResp,ctx}){
-  const f=ctx&&/\d+-lat(ka|ki|ce|ką|ek|ków)|córk|dziewczyn/i.test(ctx);
+function FeedbackLoading({teenSays,parentResp,girl}){
+  const f=girl;
   const phases=f?[
     "Odpowiedź przyjęta...",
     "Jak to usłyszy?",
@@ -979,7 +981,7 @@ function isOnboardingDone(){try{return localStorage.getItem(ONB_KEY)==="done"}ca
 function markOnboardingDone(){try{localStorage.setItem(ONB_KEY,"done")}catch(e){}}
 
 const DEMO_SCENE={
-  id:0,level:1,
+  id:0,level:1,sex:"m",
   situation:"14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.",
   teen_says:"Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.",
   situation_type:"Szkoła"
@@ -1272,7 +1274,7 @@ function App(){
     setL(true);setErr(null);setLdTxt("Tworzę scenkę z Twojego opisu…");
     try{
       const raw=await callAPI(SYS_CUSTOM,CUSTOM_MSG(customTxt.trim()),"medium");
-      const sc={id:9999,level:raw.level||2,situation:raw.situation,teen_says:raw.teen_says,situation_type:"Twoja sytuacja"};
+      const sc={id:9999,level:raw.level||2,sex:raw.sex==="m"||raw.sex==="f"?raw.sex:null,situation:raw.situation,teen_says:raw.teen_says,situation_type:"Twoja sytuacja"};
       setSc(sc);setScr("scene");setCustomMode(true);setCustomTxt("");
     }catch(e){
       setErr("Nie udało się wygenerować scenki. Spróbuj ponownie.");
@@ -1544,11 +1546,11 @@ function App(){
     </div>}
 
     {!showHelp&&stats.t>0&&<div className="stb"><div className="si"><span className="sn">{stats.t}</span><span className="sl2">sytuacji</span></div><div className="si"><span className="sn">{(stats.ts/stats.t).toFixed(1)}</span><span className="sl2">średnia</span></div><div className="si"><span className="sn">{stats.b}</span><span className="sl2">najlepsza</span></div></div>}
-    {!showHelp&&loading&&(scene&&pr&&scr==="scene"?<FeedbackLoading teenSays={scene.teen_says} parentResp={pr} ctx={scene.situation}/>:<Loading text={ldTxt}/>)}
+    {!showHelp&&loading&&(scene&&pr&&scr==="scene"?<FeedbackLoading teenSays={scene.teen_says} parentResp={pr} girl={isGirl(scene)}/>:<Loading text={ldTxt}/>)}
     {!showHelp&&err&&!loading&&<div className="err"><p>{err}</p><button onClick={()=>{setErr(null);if(scr==="custom"){setCustomTxt(customTxt)}else if(!fb)getScene(lv);else{setTxt(pr);setPr("")}}}>Spróbuj ponownie</button></div>}
 
     {!showHelp&&scr==="scene"&&!loading&&!err&&scene&&<div className={dotdMode?"dotd-scene":""}>
-      {ls>=3&&<div className="rsb"><p>{pick(["Spróbuj powiedzieć to, co widzisz — nie to, co chcesz naprawić.","Nie musisz mieć rozwiązania. Wystarczy, że usłyszysz.","Nazwij to, co czuje — nawet jednym zdaniem.","Pomyśl: co by chciał usłyszeć, żeby poczuć, że go rozumiesz?","Spróbuj być lustrem, nie ratownikiem.","Zamiast rady — powiedz, co widzisz w jego oczach."])}</p></div>}
+      {ls>=3&&<div className="rsb"><p>{pick(["Spróbuj powiedzieć to, co widzisz — nie to, co chcesz naprawić.","Nie musisz mieć rozwiązania. Wystarczy, że usłyszysz.","Nazwij to, co czuje — nawet jednym zdaniem.",isGirl(scene)?"Pomyśl: co by chciała usłyszeć, żeby poczuć, że ją rozumiesz?":"Pomyśl: co by chciał usłyszeć, żeby poczuć, że go rozumiesz?","Spróbuj być lustrem, nie ratownikiem.",isGirl(scene)?"Zamiast rady — powiedz, co widzisz w jej oczach.":"Zamiast rady — powiedz, co widzisz w jego oczach."])}</p></div>}
       {rt&&<div className="tmb"><p>Często pojawia się pułapka „{rt[0]}". To normalne. Spróbuj skupić się na nazywaniu uczuć.</p></div>}
       <div className="sc fu">
         <div className="sh">
@@ -1580,7 +1582,7 @@ function App(){
       {fb.teen_reaction&&<div className="teen-react fd2">
         <div className="teen-avatar">{teenFace(fb.score)}</div>
         <div className="teen-bubble">
-          <div className="teen-name">Nastolatek</div>
+          <div className="teen-name">{isGirl(scene)?"Nastolatka":"Nastolatek"}</div>
           {teenTyping?<div className="typing-dots"><span/><span/><span/></div>
           :<p>{fb.teen_reaction}</p>}
         </div>
