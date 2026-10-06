@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `a0c1897`, 2026-10-06.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `94dd3a0`, 2026-10-06.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -37,1073 +37,1093 @@ Scenka Dnia to jedna z tych samych 200 scenek, wybierana na podstawie daty spoś
 
 | Poziom | Nazwa w menu | Scenek | Chłopcy | Dziewczyny | Wiek |
 |---|---|--:|--:|--:|---|
-| 🟢 1 | Podstawy | 80 | 42 | 38 | 13-18 |
-| 🟡 2 | Trudniej się powstrzymać | 45 | 28 | 17 | 13-18 |
-| 🔴 3 | Kiedy to o Ciebie chodzi | 75 | 51 | 24 | 13-18 |
-| **razem** | | **200** | **121** | **79** | 13-18 |
+| 🟢 1 | Podstawy | 80 | 44 | 36 | 13-18 |
+| 🟡 2 | Trudniej się powstrzymać | 45 | 25 | 20 | 13-18 |
+| 🔴 3 | Kiedy to o Ciebie chodzi | 75 | 43 | 32 | 13-18 |
+| **razem** | | **200** | **112** | **88** | 13-18 |
 
-Rozkład wieku: 13 lat (21) · 14 lat (39) · 15 lat (61) · 16 lat (46) · 17 lat (30) · 18 lat (3)
+Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 lat (29) · 18 lat (10)
 
 ### Emocje docelowe (`emo`)
 
 | Emocja | Poz. 1 | Poz. 2 | Poz. 3 | Razem |
 |---|--:|--:|--:|--:|
-| złość | 2 | 1 | 31 | 34 |
-| przytłoczenie | 12 | 6 | 4 | 22 |
-| wstyd | 9 | 8 | 4 | 21 |
-| niesprawiedliwość | 5 | 3 | 11 | 19 |
-| strach | 11 | 5 | 2 | 18 |
-| bezsilność | 10 | 5 | 2 | 17 |
-| bunt |  | 6 | 7 | 13 |
-| frustracja | 5 | 3 | 2 | 10 |
-| żal | 3 | 2 | 4 | 9 |
-| odrzucenie | 8 |  |  | 8 |
-| smutek | 3 | 1 | 4 | 8 |
-| upokorzenie | 3 |  | 4 | 7 |
-| samotność | 2 | 3 |  | 5 |
-| rozczarowanie | 3 | 1 |  | 4 |
-| zazdrość | 3 |  |  | 3 |
-| niepewność | 1 | 1 |  | 2 |
+| żal | 8 | 5 | 9 | 22 |
+| wstyd | 7 | 6 | 7 | 20 |
+| frustracja | 6 | 4 | 6 | 16 |
+| rozczarowanie | 7 | 5 | 4 | 16 |
+| złość | 3 |  | 13 | 16 |
+| bezsilność | 5 | 4 | 5 | 14 |
+| upokorzenie | 4 | 2 | 8 | 14 |
+| niesprawiedliwość | 5 | 1 | 7 | 13 |
+| przytłoczenie | 7 | 3 | 2 | 12 |
+| smutek | 7 | 2 | 3 | 12 |
+| niepewność | 6 | 5 |  | 11 |
+| strach | 5 | 5 |  | 10 |
+| bunt |  |  | 7 | 7 |
+| odrzucenie | 4 | 1 | 2 | 7 |
+| zazdrość | 5 |  | 1 | 6 |
+| samotność | 1 | 2 | 1 | 4 |
 
 <a id="poziom-1"></a>
 
 ## Poziom 1: emocja czytelna, łatwa do nazwania (80)
 
-### Szkoła i presja (19)
+### Szkoła, oceny, nauczyciele, egzaminy (20)
 
-**1.** `id 1` · chłopak, 14 l.  
-*14-latek rzuca plecak na podłogę w przedpokoju. W e-dzienniku świeci nowa uwaga.*  
-„Znowu mam uwagę. Nieważne co robię, i tak jestem winny.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, smutek, bunt
+**1.** `id 1` · chłopak, 15 l.  
+*15-latek spędził cały weekend nad fizyką. W środę wraca ze szkoły i rzuca sprawdzian na blat w kuchni.*  
+„Dwa. Cały weekend nauki w plecy.”  
+→ emocja: **rozczarowanie** · dystraktory: frustracja, bezsilność, wstyd
 
-**2.** `id 2` · chłopak, 14 l.  
-*14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.*  
-„Nie ogarniam tego. Jak jutro dostanę pałę, to się załamię.”  
-→ emocja: **przytłoczenie** · dystraktory: strach, bezsilność, frustracja
+**2.** `id 2` · dziewczyna, 14 l.  
+*14-latka wraca ze szkoły ze spuszczoną głową i od progu idzie do swojego pokoju. Po chwili wychodzi po herbatę.*  
+„Matematyczka wzięła mnie do tablicy z czegoś, czego jeszcze nie było. Stałam tam jak słup, a oni rechotali.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, smutek
 
-**3.** `id 3` · chłopak, 14 l.  
-*14-latek stoi rano w kurtce, ale nie rusza się do wyjścia.*  
-„Nie idę dziś do szkoły. Nie mam siły wchodzić tam znowu.”  
-→ emocja: **przytłoczenie** · dystraktory: strach, smutek, bezsilność
+**3.** `id 3` · chłopak, 16 l.  
+*Wtorek wieczór. 16-latek siedzi przy biurku nad trzema otwartymi podręcznikami i laptopem z nieskończoną prezentacją.*  
+„Matma jutro, chemia w czwartek, polski w piątek i jeszcze ten projekt. Nie wiem nawet, od czego zacząć.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, strach, frustracja
 
-**4.** `id 4` · chłopak, 14 l.  
-*Niedziela wieczór, jutro szkoła. 14-latek kręci się po pokoju i łapie za brzuch.*  
-„Jutro nie dam rady. Jak o tym myślę, to aż mi się robi niedobrze.”  
-→ emocja: **strach** · dystraktory: przytłoczenie, bezsilność, smutek
+**4.** `id 4` · dziewczyna, 17 l.  
+*17-latka wraca z angielskiego, na którym prezentowała projekt przygotowywany przez dwa tygodnie. Pokazuje tacie ocenę w Librusie.*  
+„Trzy, bo 'za cicho mówiłam'. Kolega czytał wszystko z kartki i ma piątkę.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, rozczarowanie
 
-**5.** `id 8` · chłopak, 14 l.  
-*14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.*  
-„Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.”  
-→ emocja: **bezsilność** · dystraktory: smutek, rozczarowanie, wstyd
-
-**6.** `id 9` · chłopak, 15 l.  
-*15-latek wraca z treningu. Patrzy w okno samochodu, milczy.*  
-„Trener mnie zjechał przy wszystkich. Chciałem po prostu zniknąć.”  
-→ emocja: **upokorzenie** · dystraktory: wstyd, złość, bezsilność
-
-**7.** `id 86` · chłopak, 14 l.  
-*14-latek po kolejnej wpadce i krytyce. Mówi coś jak wyrok.*  
-„Jestem głupi…”  
-→ emocja: **bezsilność** · dystraktory: smutek, wstyd, rozczarowanie
-
-**8.** `id 101` · chłopak, 14 l.  
-*14-latek po oddaniu ważnego projektu, nad którym siedział dwa weekendy.*  
-„Dostałem tróję. Gość napisał, że 'mało kreatywne'. Bez kitu, po co ja się w ogóle starałem?”  
-→ emocja: **rozczarowanie** · dystraktory: bezsilność, złość, niesprawiedliwość
-
-**9.** `id 102` · dziewczyna, 16 l.  
-*16-latka otwiera Librusa i widzi kolejną jedynkę z matematyki.*  
-„Znowu to samo. Ta baba tłumaczy to tak, że nikt nic nie czai. Równie dobrze mogę nie chodzić. Zero różnicy.”  
-→ emocja: **bezsilność** · dystraktory: złość, frustracja, niesprawiedliwość
-
-**10.** `id 103` · chłopak, 13 l.  
-*13-latek przygotowuje się do odpowiedzi ustnej, nerwowo przekładając kartki.*  
-„Jak mnie wywoła do tablicy, to chyba tam zemdleję. Wszystko mi się miesza, kompletnie nic nie pamiętam.”  
+**5.** `id 5` · chłopak, 14 l.  
+*Tydzień przed egzaminem ósmoklasisty. 14-latek o 23 wciąż siedzi nad arkuszem z matematyki, trzeci wieczór z rzędu.*  
+„Za tydzień egzamin, a ja dalej nie ogarniam procentów. Co, jak pójdzie mi tak, że nigdzie się nie dostanę?”  
 → emocja: **strach** · dystraktory: przytłoczenie, niepewność, bezsilność
 
-**11.** `id 104` · chłopak, 15 l.  
-*15-latek wraca z próbnego egzaminu, rzuca plecakiem.*  
-„W arkuszu były rzeczy, których w ogóle nie przerabialiśmy. Pół klasy oddało puste kartki. To jest jakiś żart.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, frustracja, bezsilność
-
-**12.** `id 105` · dziewczyna, 17 l.  
-*17-latka patrzy na listę lektur na ten semestr.*  
-„Ja tego wszystkiego nie dam rady przeczytać w trzy miesiące. Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?”  
-→ emocja: **przytłoczenie** · dystraktory: bezsilność, złość, frustracja
-
-**13.** `id 106` · dziewczyna, 14 l.  
-*14-latka po prezentacji przed klasą, podczas której pomyliła slajdy.*  
-„Wszyscy zaczęli się śmiać, a ja stałam tam jak kołek. Chcę po prostu zniknąć z tej szkoły.”  
-→ emocja: **upokorzenie** · dystraktory: wstyd, strach, samotność
-
-**14.** `id 107` · chłopak, 16 l.  
-*16-latek dowiaduje się, że nie przeszedł do drugiego etapu olimpiady o jeden punkt.*  
-„Jeden punkt. Przez jedno głupie pytanie wszystko poszło w piach. Tyle miesięcy nauki na nic.”  
-→ emocja: **rozczarowanie** · dystraktory: żal, bezsilność, frustracja
-
-**15.** `id 108` · dziewczyna, 13 l.  
-*13-latka po kłótni z nauczycielką, która oskarżyła ją o ściąganie.*  
-„Wcale nie ściągałam! Patrzyłam w okno, a ona mi zabrała kartkę przy wszystkich. I nawet nie chciała mnie wysłuchać.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, upokorzenie, bezsilność
-
-**16.** `id 109` · chłopak, 17 l.  
-*Ostatni tydzień przed wystawieniem ocen. 17-latek przegląda Librusa: do poprawy matma, polski i chemia.*  
-„Nie dam rady tego ogarnąć. Za dużo tego.”  
-→ emocja: **przytłoczenie** · dystraktory: bezsilność, strach, desperacja
-
-**17.** `id 110` · chłopak, 15 l.  
-*15-latek wraca do domu z jedynką ze sprawdzianu z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.*  
-„Mam to gdzieś, serio. Po co ja się w ogóle staram, skoro ta baba i tak mnie uwali? To jest jakiś żart, nigdy więcej nie otworzę tego podręcznika.”  
-→ emocja: **bezsilność** · dystraktory: złość, rozczarowanie, niesprawiedliwość
-
-**18.** `id 112` · chłopak, 15 l.  
-*15-latek został wyrzucony z lekcji przez nauczycielkę, która uznała, że to on rzucał papierkami, choć chłopak siedział cicho.*  
-„Wzięła mnie na cel i tyle. Inni robili syf, a ona wskazała palcem na mnie, bo tak jej było wygodniej. Aż mnie trzęsie.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, upokorzenie, bezsilność
-
-**19.** `id 222` · chłopak, 15 l.  
-*Wieczór przed ogłoszeniem wyników egzaminu ósmoklasisty. 15-latek krąży po kuchni.*  
-„A jak mi nie starczy punktów? Wszyscy się dostaną, tylko nie ja.”  
-→ emocja: **strach** · dystraktory: niepewność, przytłoczenie, bezsilność
-
-### Emocje, lęk, smutek (6)
-
-**20.** `id 22` · chłopak, 14 l.  
-*14-latek późnym wieczorem przegląda terminy sprawdzianów i egzaminów.*  
-„Nie mogę oddychać, jak o tym myślę. Wszystko mi się miesza w głowie.”  
-→ emocja: **przytłoczenie** · dystraktory: strach, bezsilność, desperacja
-
-**21.** `id 23` · dziewczyna, 15 l.  
-*15-latka wraca ze szkoły. Jutro prezentacja, nerwowo skubie rękaw.*  
-„Jak się ośmieszę, to ja tam więcej nie pójdę. Serio.”  
-→ emocja: **strach** · dystraktory: wstyd, niepewność, przytłoczenie
-
-**22.** `id 30` · chłopak, 15 l.  
-*15-latek wraca w środku tygodnia i od razu zamyka się w pokoju.*  
-„Daj mi chwilę. W szkole cały dzień muszę być ogarnięty, a ja już nie mam baterii.”  
-→ emocja: **przytłoczenie** · dystraktory: smutek, bezsilność, samotność
-
-**23.** `id 64` · chłopak, 16 l.  
-*16-latek rozmawia z rodzicem o motywacji. W pewnym momencie zaczyna mówić ciszej.*  
-„Nie chodzi o lenistwo. Ja po prostu nie widzę sensu w tym, co robię.”  
-→ emocja: **bezsilność** · dystraktory: smutek, przytłoczenie, desperacja
-
-**24.** `id 89` · chłopak, 17 l.  
-*17-latek milknie, kiedy rodzic naciska na temat studiów. Potem mówi cicho.*  
-„Przeraża mnie to wszystko: studia, praca, decyzje. Ja nie wiem czy sobie z tym wszystkim poradzę.”  
-→ emocja: **strach** · dystraktory: niepewność, przytłoczenie, bezsilność
-
-**25.** `id 219` · chłopak, 13 l.  
-*Rano okazało się, że chomik 13-latka nie żyje. Chłopak siedzi przy pustej klatce.*  
-„Przecież jeszcze wczoraj dawałem mu jeść. I nie ruszajcie klatki, niech stoi.”  
-→ emocja: **smutek** · dystraktory: żal, bezsilność, tęsknota
-
-### Rówieśnicy i odrzucenie (14)
-
-**26.** `id 24` · dziewczyna, 13 l.  
-*13-latka w poniedziałek rano trzyma się za brzuch i nie chce wstać.*  
-„Znowu będę tam sama. Znowu będą patrzeć.”  
-→ emocja: **samotność** · dystraktory: strach, smutek, odrzucenie
-
-**27.** `id 114` · dziewczyna, 14 l.  
-*14-latka przegląda relacje na Instagramie i widzi, że cała jej paczka jest razem na pizzy — bez niej.*  
-„No jasne, świetnie się bawią. Nagle o mnie zapomnieli, jakbym w ogóle nie istniała.”  
-→ emocja: **odrzucenie** · dystraktory: samotność, smutek, zazdrość
-
-**28.** `id 116` · chłopak, 15 l.  
-*15-latek wysłał wiadomość do przyjaciela trzy godziny temu, widzi, że została odczytana, ale nie ma odpowiedzi.*  
-„Zlewa mnie totalnie. Widzę, że gra w LoL-a, ale odpisać to już nie łaska. Mam tego dość.”  
-→ emocja: **odrzucenie** · dystraktory: złość, samotność, bezsilność
-
-**29.** `id 117` · chłopak, 14 l.  
-*14-latek zauważa, że dziewczyna, z którą pisał codziennie przez miesiąc, nagle przestała odpowiadać, choć wrzuca nowe zdjęcia.*  
-„Pisała do mnie non stop, a teraz nagle cisza. Widzę, że jest aktywna, ale mnie zlewa totalnie. Co ja niby zrobiłem źle? Wszystko mi się teraz sypie.”  
-→ emocja: **odrzucenie** · dystraktory: bezsilność, smutek, niepewność
-
-**30.** `id 118` · chłopak, 13 l.  
-*13-latek słyszy, jak koledzy śmieją się z jego nowej fryzury.*  
-„Wiedziałem, że to był błąd. Teraz będą o tym gadać przez miesiąc. Najlepiej by było, gdybym w ogóle nie wychodził z pokoju.”  
-→ emocja: **wstyd** · dystraktory: strach, samotność, smutek
-
-**31.** `id 119` · chłopak, 17 l.  
-*17-latek dowiaduje się, że jego najlepszy przyjaciel wysłał screeny ich prywatnej, bardzo osobistej rozmowy do innych osób z klasy.*  
-„Myślałem, że to mój brat, czaisz? A on mnie tak po prostu wystawił dla kilku lajków. Komu ja mam teraz w ogóle ufać? To koniec, z nikim już nie gadam.”  
-→ emocja: **odrzucenie** · dystraktory: żal, złość, samotność
-
-**32.** `id 120` · dziewczyna, 17 l.  
-*17-latka przygotowuje się do imprezy, ale nagle rezygnuje.*  
-„Ech, i tak będę tam stać w kącie. One wszystkie mają o czym gadać, a ja zawsze czuję się tam jak piąte koło u wozu.”  
-→ emocja: **samotność** · dystraktory: niepewność, smutek, wstyd
-
-**33.** `id 121` · chłopak, 14 l.  
-*14-latek dowiaduje się, że nowy kolega w klasie stał się bardzo popularny.*  
-„Nagle wszyscy latają za nim, jakby był jakimś Bogiem. Nawet Bartek już nie ma dla mnie czasu, bo ciągle siedzi u niego.”  
-→ emocja: **zazdrość** · dystraktory: samotność, odrzucenie, smutek
-
-**34.** `id 122` · dziewczyna, 16 l.  
-*16-latka po otrzymaniu screena, na którym koleżanki ją obgadują.*  
-„Patrz, co o mnie piszą. 'Że niby jestem sztywna'. A ja im tyle razy pomagałam z lekcjami. To jest obrzydliwe.”  
-→ emocja: **odrzucenie** · dystraktory: złość, żal, upokorzenie
-
-**35.** `id 123` · chłopak, 15 l.  
-*15-latek dowiaduje się, że cała jego paczka idzie na osiemnastkę, na którą jego nie zaproszono.*  
-„Wszyscy tam będą, tylko nie ja. To będzie największy przypał świata.”  
-→ emocja: **odrzucenie** · dystraktory: wstyd, samotność, złość
-
-**36.** `id 124` · dziewczyna, 13 l.  
-*13-latka po powrocie ze szkoły, gdzie grupa dziewczyn ją ignorowała.*  
-„Jak przechodziłam obok nich, to nagle wszystkie milkły i zaczynały się śmiać. Nienawidzę tej klasy.”  
-→ emocja: **odrzucenie** · dystraktory: samotność, smutek, upokorzenie
-
-**37.** `id 125` · dziewczyna, 17 l.  
-*17-latka dowiaduje się, że jej chłopak wyjechał na weekend ze znajomymi, o czym zapomniał jej wspomnieć.*  
-„Dowiedziałam się o tym z Instagrama, czaisz? Pisaliśmy rano i ani słowa o wyjeździe. Teraz nie odbiera, bo pewnie świetnie się bawi. Po prostu super, tak właśnie wygląda 'zaufanie' w tym związku.”  
-→ emocja: **żal** · dystraktory: złość, odrzucenie, niepewność
-
-**38.** `id 75` · dziewczyna, 16 l.  
-*16-latka wraca ze szkoły i od razu rzuca się na łóżko.*  
-„Powiedziałam mu, co czuję, a on tylko: 'sorry, mam dziewczynę'. Czuję się jak śmieć.”  
-→ emocja: **odrzucenie** · dystraktory: smutek, wstyd, bezsilność
-
-**39.** `id 221` · dziewczyna, 14 l.  
-*Najlepsza przyjaciółka 14-latki powiedziała jej dziś, że po wakacjach przeprowadza się do innego miasta.*  
-„Z kim ja teraz będę siedzieć? Tylko z nią dało się pogadać o wszystkim.”  
-→ emocja: **smutek** · dystraktory: samotność, tęsknota, bezsilność
-
-### Wygląd i ciało (15)
-
-**40.** `id 15` · chłopak, 15 l.  
-*15-latek wraca po zdjęciach klasowych. Przygaszony.*  
-„Nienawidzę jak mnie oceniają. Czuję się jak jakiś eksponat.”  
-→ emocja: **wstyd** · dystraktory: złość, bezsilność, samotność
-
-**41.** `id 25` · chłopak, 15 l.  
-*15-latek podaje rodzicowi telefon. Na grupie klasowej docinki o wyglądzie.*  
-„To mnie naprawdę boli. Udaję, że haha, ale w środku mam dość.”  
-→ emocja: **smutek** · dystraktory: wstyd, bezsilność, samotność
-
-**42.** `id 79` · chłopak, 15 l.  
-*15-latek stoi przed lustrem w łazience. Długo dotyka skóry twarzy.*  
-„Wszyscy mają idealne twarze. Ja wyglądam jak katastrofa.”  
-→ emocja: **wstyd** · dystraktory: smutek, bezsilność, samotność
-
-**43.** `id 84` · dziewczyna, 14 l.  
-*Rozmowa przy kolacji schodzi na szkołę i wygląd. 14-latka mówi cicho.*  
-„Mam kompleksy, ludzie się ze mnie wyśmiewają. A ja nie wiem, co robię źle.”  
-→ emocja: **wstyd** · dystraktory: bezsilność, smutek, samotność
-
-**44.** `id 85` · dziewczyna, 15 l.  
-*15-latka staje na wadze po wakacjach. Płacze.*  
-„Przytyłam i nienawidzę swojego ciała.”  
-→ emocja: **bezsilność** · dystraktory: smutek, wstyd, desperacja
-
-**45.** `id 126` · chłopak, 16 l.  
-*16-latek szykuje się na osiemnastkę kolegi, ale po długim staniu przed lustrem nagle zdejmuje wyjściowe ubranie i kładzie się na łóżku.*  
-„Nigdzie nie idę. Wyglądam jak totalny gnom, te włosy to porażka, a cera... szkoda gadać. Będą się tylko ze mnie nabijać.”  
-→ emocja: **wstyd** · dystraktory: strach, bezsilność, smutek
-
-**46.** `id 128` · dziewczyna, 14 l.  
-*14-latka mierzy sukienkę na bal ósmoklasisty.*  
-„Wyglądam w tym grubo. Ta sukienka podkreśla wszystko, czego nienawidzę. Wszystkie dziewczyny będą wyglądać jak modelki, a ja jak worek.”  
-→ emocja: **wstyd** · dystraktory: smutek, bezsilność, strach
-
-**47.** `id 129` · chłopak, 15 l.  
-*15-latek ogląda zdjęcie klasowe, na którym stoi w pierwszym rzędzie, najniższy.*  
-„Wszyscy już wystrzelili w górę, a ja dalej stoję w miejscu. Wyglądam przy nich jak dzieciak z podstawówki.”  
-→ emocja: **wstyd** · dystraktory: smutek, zazdrość, bezsilność
-
-**48.** `id 130` · dziewczyna, 17 l.  
-*17-latka wraca od fryzjera, patrzy w lustro z przerażeniem.*  
-„Zobacz, co ona mi zrobiła! Za krótko, beznadziejny kolor, wszystko nie tak!”  
-→ emocja: **złość** · dystraktory: smutek, bezsilność, rozczarowanie
-
-**49.** `id 131` · chłopak, 13 l.  
-*13-latek nosi aparat ortodontyczny od tygodnia.*  
-„Przez ten aparat śmiesznie mówię i wyglądam fatalnie. Jeszcze dwa lata? Przecież to jest wieczność!”  
-→ emocja: **frustracja** · dystraktory: wstyd, bezsilność, smutek
-
-**50.** `id 132` · dziewczyna, 16 l.  
-*16-latka widzi swoje zdjęcie zrobione z ukrycia przez kogoś z klasy.*  
-„Jak ja tu wyszłam? Mam jakąś dziwną minę i wyglądam tragicznie. Zaraz pewnie wrzucą to na grupę.”  
-→ emocja: **strach** · dystraktory: wstyd, upokorzenie, bezsilność
-
-**51.** `id 133` · chłopak, 15 l.  
-*15-latek próbuje dobrać ubrania na wyjście do kina.*  
-„Wszystko na mnie wisi albo jest za ciasne. Nie mam nic normalnego, w czym nie wstydziłbym się pokazać.”  
-→ emocja: **frustracja** · dystraktory: wstyd, bezsilność, smutek
-
-**52.** `id 134` · dziewczyna, 14 l.  
-*14-latka scrolluje TikToka, co chwilę zerkając w lustro.*  
-„One mają idealną cerę i figury, a ja... szkoda gadać. Czemu ja nie mogę tak wyglądać?”  
-→ emocja: **zazdrość** · dystraktory: smutek, bezsilność, wstyd
-
-**53.** `id 135` · chłopak, 17 l.  
-*17-latek ma założyć garnitur na uroczystość rodzinną.*  
-„Czuję się w tym jak przebrany. Wszyscy będą się na mnie gapić, to jest tak bardzo nie moje.”  
-→ emocja: **niepewność** · dystraktory: wstyd, bezsilność, frustracja
-
-**54.** `id 136` · dziewczyna, 15 l.  
-*15-latka wraca do domu i rzuca okulary na stół.*  
-„Znowu mi parują, jak wchodzę do autobusu. Wyglądam wtedy jak totalna ofiara losu.”  
-→ emocja: **wstyd** · dystraktory: frustracja, bezsilność, smutek
-
-### Media społecznościowe (9)
-
-**55.** `id 26` · dziewczyna, 13 l.  
-*13-latka zauważa, że pod jej filmikiem pojawił się hejt. Rzuca telefon na łóżko.*  
-„Już nic nie wrzucę. Nie chcę kolejnej fali wyśmiewania.”  
-→ emocja: **strach** · dystraktory: smutek, bezsilność, upokorzenie
-
-**56.** `id 137` · dziewczyna, 14 l.  
-*14-latka usunęła zdjęcie po tym, jak nikt go nie polubił przez piętnaście minut.*  
-„Wiedziałam, że jest beznadziejne. Teraz pewnie wszyscy myślą, że jestem desperatką.”  
-→ emocja: **wstyd** · dystraktory: odrzucenie, niepewność, smutek
-
-**57.** `id 138` · chłopak, 15 l.  
-*15-latek czyta kłótnię na grupie klasowej na Messengerze.*  
-„Wszyscy tam na siebie jadą, a ja nie wiem, co napisać. Boję się, że jak coś powiem, to zaraz wszyscy obrócą się przeciwko mnie.”  
-→ emocja: **strach** · dystraktory: niepewność, samotność, bezsilność
-
-**58.** `id 139` · dziewczyna, 16 l.  
-*16-latka widzi, że jej były chłopak dodał zdjęcie z nową dziewczyną.*  
-„Patrz na to. Miesiąc po zerwaniu i już ma nową. Jakby te dwa lata ze mną w ogóle się nie liczyły.”  
-→ emocja: **żal** · dystraktory: złość, odrzucenie, smutek
-
-**59.** `id 140` · chłopak, 13 l.  
-*Telefon 13-latka właśnie padł i nie chce się włączyć.*  
-„Jestem odcięty od świata! Nie wiem, o czym oni teraz gadają, nie mam dostępu do niczego. To jest koniec mojego życia towarzyskiego.”  
-→ emocja: **strach** · dystraktory: samotność, przytłoczenie, bezsilność
-
-**60.** `id 141` · dziewczyna, 15 l.  
-*15-latka czyta hejt pod swoim filmikiem.*  
-„Napisali, że mam 'krzywy nos' i 'piskliwy głos'. Setki ludzi to widziało. Nie chcę już nigdy nic wrzucać do sieci.”  
-→ emocja: **upokorzenie** · dystraktory: smutek, bezsilność, strach
-
-**61.** `id 142` · dziewczyna, 14 l.  
-*14-latka patrzy na relacje influencerów.*  
-„Oni mają takie super życie, podróżują, mają kasę. A ja siedzę w tym nudnym domu i nic się u mnie nie dzieje.”  
-→ emocja: **zazdrość** · dystraktory: smutek, bezsilność, tęsknota
-
-**62.** `id 143` · dziewczyna, 15 l.  
-*15-latka dowiaduje się, że koleżanka wrzuciła jej niekorzystne zdjęcie bez pytania.*  
-„Wyglądam tam jak potwór! Prosiłam ją, żeby tego nie robiła, a ona to zostawiła. Jak ona mogła mi to zrobić?”  
-→ emocja: **złość** · dystraktory: upokorzenie, żal, bezsilność
-
-**63.** `id 144` · chłopak, 13 l.  
-*13-latek odkrywa, że w grze został oszukany przez innego gracza.*  
-„Oddałem mu wszystkie moje itemy, a on mnie zablokował. Ufałem mu, graliśmy razem od miesięcy!”  
-→ emocja: **żal** · dystraktory: złość, odrzucenie, bezsilność
-
-### Przytłoczenie i zmęczenie (4)
-
-**64.** `id 145` · dziewczyna, 15 l.  
-*15-latka siedzi o dwudziestej trzeciej nad stosem notatek, bo jutro ma dwa sprawdziany i prezentację, a rano musi jeszcze poćwiczyć do zawodów.*  
-„Nie ogarniam tego, po prostu nie ogarniam. Zaraz mi mózg wyparuje, a jeszcze tyle zostało. Nie dam rady, to jest za dużo na jednego człowieka!”  
-→ emocja: **przytłoczenie** · dystraktory: bezsilność, strach, desperacja
-
-**65.** `id 146` · dziewczyna, 14 l.  
-*Poniedziałek, 6:45. Rodzic budzi 14-latkę trzeci raz.*  
-„Znowu ta ciemność za oknem. Mam wrażenie, że całe moje życie to tylko szkoła, spanie i szkoła. Nie mam na nic siły.”  
-→ emocja: **przytłoczenie** · dystraktory: smutek, bezsilność, samotność
-
-**66.** `id 147` · dziewczyna, 17 l.  
-*17-latka uczy się do egzaminów późno w nocy.*  
-„Kawa już na mnie nie działa, oczy mi się same zamykają, a ja mam jeszcze 20 stron do przeczytania. To jest nie do zrobienia.”  
-→ emocja: **przytłoczenie** · dystraktory: bezsilność, desperacja, frustracja
-
-**67.** `id 148` · dziewczyna, 13 l.  
-*13-latka odrabia matematykę przy kuchennym stole. Nagle odpycha zeszyt.*  
-„To jest czarna magia. Siedzę nad tym zadaniem od godziny i dalej nie wiem, od czego zacząć. Zaraz ten zeszyt poleci w kąt!”  
-→ emocja: **frustracja** · dystraktory: bezsilność, złość, przytłoczenie
-
-### Pasje i czas wolny (5)
-
-**68.** `id 149` · chłopak, 15 l.  
-*15-latek przegrywa ważny mecz w grze online przez błąd serwera.*  
-„Nie wierzę! Cały ranking poszedł w dół przez jeden lag. Tyle godzin grindu zmarnowane w sekundę!”  
-→ emocja: **frustracja** · dystraktory: złość, bezsilność, rozczarowanie
-
-**69.** `id 150` · chłopak, 16 l.  
-*16-latek dowiaduje się, że trener nie wystawił go w pierwszym składzie.*  
-„Zasuwałem na każdym treningu, a on wziął tego typa, co połowę czasu przesiedział na ławce. To jest jakaś ściema.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, rozczarowanie, bezsilność
-
-**70.** `id 151` · dziewczyna, 13 l.  
-*13-latka dowiaduje się, że kółko plastyczne zostało odwołane.*  
-„To była jedyna rzecz, na którą chciało mi się iść w tym tygodniu. Teraz będę musiała siedzieć w domu i się nudzić.”  
-→ emocja: **rozczarowanie** · dystraktory: smutek, samotność, frustracja
-
-**71.** `id 152` · dziewczyna, 15 l.  
-*15-latka wraca z fotografowania i przegląda zdjęcia.*  
-„Tym starym złomem nic nie wyjdzie. Inni mają profesjonalny sprzęt i ich zdjęcia wyglądają super, a moje to żenada.”  
-→ emocja: **frustracja** · dystraktory: zazdrość, bezsilność, smutek
-
-**72.** `id 220` · dziewczyna, 15 l.  
-*15-latka wraca od lekarza z nogą w ortezie. Za dwa tygodnie zawody, do których trenowała cały rok.*  
-„Cały rok przygotowań i co? Mam teraz siedzieć na trybunach i patrzeć, jak inne startują.”  
-→ emocja: **bezsilność** · dystraktory: rozczarowanie, żal, złość
-
-### Przyszłość (8)
-
-**73.** `id 154` · dziewczyna, 18 l.  
-*18-latka wraca po rozmowie z doradcą zawodowym.*  
-„Nie mam pojęcia, co chcę robić w przyszłości. Czuję, że niedługo muszę podjąć decyzję, a kompletnie nie wiem czego chcę.”  
-→ emocja: **przytłoczenie** · dystraktory: strach, niepewność, bezsilność
-
-**74.** `id 155` · dziewczyna, 15 l.  
-*15-latka patrzy na progi punktowe do wymarzonego liceum.*  
-„Nie ma szans. Z moimi wynikami to mogę co najwyżej pomarzyć. Wszystko mi się właśnie posypało.”  
-→ emocja: **bezsilność** · dystraktory: smutek, rozczarowanie, strach
-
-**75.** `id 156` · chłopak, 17 l.  
-*Przy kolacji wypływa temat, co po maturze. 17-latek odsuwa talerz.*  
-„Wszyscy oczekują, że nagle będę wiedział, jak płacić rachunki i co robić w życiu. A ja się czuję, jakbym utknął w miejscu.”  
-→ emocja: **przytłoczenie** · dystraktory: strach, niepewność, bezsilność
-
-**76.** `id 157` · dziewczyna, 14 l.  
-*14-latka zastanawia się nad wyborem profilu klasy.*  
-„Jak wybiorę mat-fiz, to nie będę miała czasu na nic innego. Jak wybiorę humanistyczny, to pewnie nie znajdę pracy. To jest bez sensu.”  
+**6.** `id 6` · dziewczyna, 13 l.  
+*13-latka wraca ze szkoły i zanim zdejmie plecak, pokazuje w telefonie nową uwagę w Librusie.*  
+„Za rozmawianie na lekcji. To koleżanka gadała, ja tylko powiedziałam jej 'cicho'. A babka nawet nie spojrzała, kto mówi.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, upokorzenie
+
+**7.** `id 7` · chłopak, 17 l.  
+*17-latek dostał wyniki szkolnej diagnozy z matematyki, pisanej rok przed maturą. Siedzi na łóżku z telefonem, nie włączył światła.*  
+„Trzydzieści procent. Za rok prawdziwa matura. Jak teraz nie umiem, to za rok nagle będę umiał?”  
+→ emocja: **strach** · dystraktory: rozczarowanie, przytłoczenie, niepewność
+
+**8.** `id 8` · dziewczyna, 15 l.  
+*Pierwszy miesiąc w liceum. 15-latka wraca z pierwszego sprawdzianu z matematyki i rzuca plecak na podłogę.*  
+„Trzy. W podstawówce byłam najlepsza z klasy, a tu każdy jest lepszy ode mnie. Nie wiem, co ja tu robię.”  
+→ emocja: **niepewność** · dystraktory: rozczarowanie, wstyd, smutek
+
+**9.** `id 9` · chłopak, 16 l.  
+*16-latek wraca z wf-u i rzuca worek ze strojem w kąt przedpokoju.*  
+„Wuefista nazwał mnie 'ciężarówką'. Przy całej klasie. Do końca dnia wszyscy tak na mnie wołali.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, złość, smutek
+
+**10.** `id 10` · dziewczyna, 14 l.  
+*14-latka od miesiąca chodzi na korepetycje z matematyki. Wraca ze sprawdzianu i siada w kuchni w kurtce.*  
+„Znowu dwa. Miesiąc korków, uczyłam się, rozumiałam. A na sprawdzianie wszystko wyparowało.”  
+→ emocja: **bezsilność** · dystraktory: frustracja, rozczarowanie, smutek
+
+**11.** `id 11` · chłopak, 13 l.  
+*13-latek wraca ze szkoły i staje w drzwiach kuchni, nie wchodzi dalej.*  
+„Mam uwagę w Librusie. Pierwszą. Zapomniałem zadania i historyczka od razu wpisała, zanim zdążyłem cokolwiek powiedzieć.”  
+→ emocja: **wstyd** · dystraktory: strach, smutek, żal
+
+**12.** `id 12` · dziewczyna, 15 l.  
+*Koniec roku szkolnego. 15-latka wraca z zakończenia i kładzie świadectwo na stole bez słowa.*  
+„Cztery siedemdziesiąt cztery. Do paska zabrakło jednej setnej. Jedna ocena z plastyki wyżej i bym miała.”  
+→ emocja: **żal** · dystraktory: rozczarowanie, frustracja, niesprawiedliwość
+
+**13.** `id 13` · chłopak, 15 l.  
+*15-latek sprawdza w telefonie wyniki etapu rejonowego konkursu z historii. Odkłada telefon ekranem do dołu.*  
+„Dwa punkty. Dwa i byłbym w wojewódzkim. Pół roku czytania i odpadam na jednym pytaniu.”  
+→ emocja: **frustracja** · dystraktory: rozczarowanie, żal, złość
+
+**14.** `id 14` · dziewczyna, 16 l.  
+*16-latka dostała z powrotem rozprawkę z polskiego. Kładzie ją przed mamą i pokazuje palcem czerwony dopisek.*  
+„'Bez własnych przemyśleń'. Pisałam to trzy wieczory, wszystko z własnej głowy. Trzy wieczory.”  
+→ emocja: **żal** · dystraktory: niesprawiedliwość, złość, rozczarowanie
+
+**15.** `id 15` · chłopak, 14 l.  
+*14-latek miał rozpisany plan nauki na cały tydzień. Wraca ze szkoły i wyrzuca kartkę z planem do kosza.*  
+„Zapowiedziała na jutro kartkówkę z całego działu. Na jutro! A ja miałem to rozpisane na czwartek.”  
+→ emocja: **frustracja** · dystraktory: złość, bezsilność, przytłoczenie
+
+**16.** `id 16` · dziewczyna, 18 l.  
+*Miesiąc przed maturą. 18-latka siedzi na podłodze w pokoju wśród rozłożonych notatek z czterech lat.*  
+„Powtarzam wszystko od pierwszej klasy i nic mi nie zostaje w głowie. Im więcej czytam, tym mniej umiem.”  
 → emocja: **przytłoczenie** · dystraktory: strach, bezsilność, niepewność
 
-**77.** `id 158` · dziewczyna, 15 l.  
-*15-latka słucha opowieści rodzica o sukcesach dziecka znajomych.*  
-„No jasne, on jest genialny, a ja jestem nikim. Zawsze będę gorsza od innych, nieważne co zrobię.”  
-→ emocja: **bezsilność** · dystraktory: smutek, zazdrość, wstyd
+**17.** `id 17` · chłopak, 16 l.  
+*16-latek wraca z chemii i trzaska drzwiami od pokoju. Po chwili wychodzi do kuchni.*  
+„Cała klasa ma jedynki. Cała. A on, że sami sobie winni, bo trzeba było słuchać.”  
+→ emocja: **złość** · dystraktory: niesprawiedliwość, bezsilność, frustracja
 
-**78.** `id 159` · chłopak, 17 l.  
-*Rozmowa przy kolacji schodzi na maturę. 17-latek podnosi głos.*  
-„Ten egzamin ma zdecydować o całym moim życiu? Przecież to jest chore. Czuję się, jakby ktoś przystawił mi pistolet do głowy.”  
-→ emocja: **strach** · dystraktory: przytłoczenie, bezsilność, złość
+**18.** `id 18` · chłopak, 15 l.  
+*15-latek wraca ze szkoły i od razu podchodzi do mamy z telefonem w ręce.*  
+„Wychowawczyni napisała, że masz przyjść jutro na rozmowę. Nie powiedziała po co. Pytałem dwa razy.”  
+→ emocja: **niepewność** · dystraktory: strach, wstyd, złość
 
-**79.** `id 160` · dziewczyna, 16 l.  
-*16-latka myśli o wyjeździe na studia do innego miasta.*  
-„Chciałabym wyjechać, ale boję się, że sobie nie poradzę. Tutaj mam wszystko, a tam będę zupełnie sama.”  
-→ emocja: **strach** · dystraktory: niepewność, tęsknota, samotność
+**19.** `id 19` · chłopak, 14 l.  
+*14-latek wraca ze szkoły w środku lutego. Siada przy stole i długo miesza herbatę.*  
+„Polonistka odchodzi. Od marca będzie ktoś nowy. Ona jedna nas lubiła.”  
+→ emocja: **smutek** · dystraktory: żal, rozczarowanie, niepewność
 
-**80.** `id 161` · chłopak, 14 l.  
-*14-latek dowiaduje się, że nie dostał się na wymarzony kurs.*  
-„To była moja jedyna szansa. Teraz już nie mam po co próbować.”  
-→ emocja: **bezsilność** · dystraktory: rozczarowanie, smutek, desperacja
+**20.** `id 20` · dziewczyna, 15 l.  
+*15-latka dwa tygodnie ćwiczyła wiersz na konkurs recytatorski. Wraca z przesłuchania w szkole i rzuca kartkę z tekstem na stół.*  
+„Babka wybrała inną. Tamta nauczyła się wczoraj, a ja od dwóch tygodni mówiłam ten wiersz do lustra.”  
+→ emocja: **rozczarowanie** · dystraktory: niesprawiedliwość, żal, zazdrość
+
+### Rówieśnicy, przyjaźń, pierwsze związki, odrzucenie (16)
+
+**21.** `id 21` · dziewczyna, 14 l.  
+*14-latka siedzi na kanapie z telefonem. Nagle odkłada go na bok i patrzy w okno.*  
+„Mają grupę bez mnie. Nazwali ją 'bez Oli'. Ktoś przez pomyłkę wysłał mi screena.”  
+→ emocja: **odrzucenie** · dystraktory: upokorzenie, żal, wstyd
+
+**22.** `id 22` · chłopak, 15 l.  
+*Sobota wieczór. 15-latek przegląda relacje na Instagramie, potem rzuca telefon na łóżko.*  
+„Pół klasy jest teraz na urodzinach u kumpla. Zaprosił wszystkich z ekipy oprócz mnie. Nawet nie udawał, że zapomniał.”  
+→ emocja: **odrzucenie** · dystraktory: smutek, żal, samotność
+
+**23.** `id 23` · dziewczyna, 16 l.  
+*16-latka od godziny leży na łóżku z telefonem na brzuchu. Wchodzi do kuchni z opuchniętymi oczami.*  
+„Zerwał. Przez wiadomość. Po trzech miesiącach.”  
+→ emocja: **smutek** · dystraktory: odrzucenie, żal, upokorzenie
+
+**24.** `id 24` · chłopak, 14 l.  
+*14-latek wraca ze szkoły w pierwszym tygodniu po wakacjach. Zjada obiad w milczeniu i w końcu się odzywa.*  
+„Kuba siedzi teraz z tym nowym. Od pierwszego dnia. Byli razem na obozie i mają swoje żarty, których nie łapię.”  
+→ emocja: **zazdrość** · dystraktory: odrzucenie, smutek, samotność
+
+**25.** `id 25` · dziewczyna, 15 l.  
+*Piątek wieczór. 15-latka siedzi w domu i przegląda relacje dwóch przyjaciółek z podstawówki, każda jest teraz w innej szkole.*  
+„Każda ma już swoją nową ekipę. Piszemy coraz rzadziej. A ja w swojej klasie nie mam nikogo, z kim bym chciała pisać.”  
+→ emocja: **samotność** · dystraktory: smutek, zazdrość, odrzucenie
+
+**26.** `id 26` · chłopak, 16 l.  
+*16-latek od miesiąca pisał wieczorami z dziewczyną poznaną na obozie. Dziś odłożył telefon w połowie rozmowy.*  
+„Pisała to samo do mojego kumpla. Te same wiadomości, słowo w słowo. Myślałem, że to coś.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, upokorzenie, złość
+
+**27.** `id 27` · dziewczyna, 13 l.  
+*13-latka wraca ze szkoły i zamyka się w pokoju. Po godzinie wychodzi i staje w drzwiach kuchni.*  
+„Powiedziałam jej jedną rzecz. Jedną. I dziś wiedziała o tym cała klasa.”  
+→ emocja: **żal** · dystraktory: złość, upokorzenie, wstyd
+
+**28.** `id 28` · chłopak, 15 l.  
+*15-latek przegląda telefon na kanapie. Pokazuje tacie zdjęcie ze stadionu.*  
+„Mówili, że nie ma już biletów. A tu są we trzech na meczu. Nawet nie schowali.”  
+→ emocja: **żal** · dystraktory: odrzucenie, złość, smutek
+
+**29.** `id 29` · chłopak, 15 l.  
+*15-latek piąty raz przegląda szafę. Jutro ma pierwsze spotkanie sam na sam z dziewczyną z równoległej klasy.*  
+„Nie wiem, o czym będę z nią gadał przez dwie godziny. Co, jak siądziemy i będzie cisza?”  
+→ emocja: **niepewność** · dystraktory: strach, wstyd, przytłoczenie
+
+**30.** `id 30` · chłopak, 14 l.  
+*14-latek wraca ze szkoły i zamiast jak zwykle włączyć komputer, kładzie się na łóżku w butach.*  
+„Powiedziałem jej. 'Nie, sorry'. I poszła.”  
+→ emocja: **odrzucenie** · dystraktory: wstyd, smutek, upokorzenie
+
+**31.** `id 31` · dziewczyna, 16 l.  
+*16-latka pisze do przyjaciółki, patrzy na telefon i odkłada go. Trzeci raz tego wieczoru.*  
+„Od kiedy ma chłopaka, na wszystko jest 'potem'. Przyjaźnimy się od zerówki. Teraz jestem opcją na wtedy, kiedy on nie ma czasu.”  
+→ emocja: **zazdrość** · dystraktory: samotność, żal, odrzucenie
+
+**32.** `id 32` · chłopak, 13 l.  
+*13-latek wraca od kolegi z naprzeciwka wcześniej niż zwykle. Siada na schodach w przedpokoju i nie zdejmuje kurtki.*  
+„Przeprowadzają się w lipcu. Do Gdańska. Znamy się od przedszkola.”  
+→ emocja: **smutek** · dystraktory: żal, samotność, bezsilność
+
+**33.** `id 33` · dziewczyna, 17 l.  
+*Wieczór po siedemnastych urodzinach. 17-latka sprząta ze stołu nietknięty kawałek tortu.*  
+„Nie przyszedł. Napisał o dziesiątej wieczorem, że zapomniał. Zapomniał o moich urodzinach.”  
+→ emocja: **żal** · dystraktory: rozczarowanie, złość, smutek
+
+**34.** `id 34` · chłopak, 16 l.  
+*16-latek od 16 czeka na kolegę, z którym ma jutro oddać wspólny projekt. O 20 zamyka laptopa z hukiem.*  
+„Miał być o czwartej. Nie odbiera. Projekt jest na nas obu, a ja mam go zrobić sam?”  
+→ emocja: **złość** · dystraktory: żal, bezsilność, rozczarowanie
+
+**35.** `id 35` · dziewczyna, 14 l.  
+*14-latka wraca ze szkoły i siada przy stole. Nie wyjmuje telefonu.*  
+„Słyszałam w łazience, jak mówiły, że mnie 'tolerują'. Tolerują. Myślałam, że jesteśmy koleżankami.”  
+→ emocja: **upokorzenie** · dystraktory: odrzucenie, żal, wstyd
+
+**36.** `id 36` · chłopak, 15 l.  
+*15-latek wraca z treningu i nie odzywa się przez cały obiad. W końcu odkłada widelec.*  
+„Wszyscy mówią, że to ja wygadałem o tej imprezie. A ja nawet nie wiedziałem, że była.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, samotność
+
+### Wygląd i ciało (12)
+
+**37.** `id 37` · dziewczyna, 14 l.  
+*Wieczór przed zdjęciem klasowym. 14-latka od pół godziny stoi przed lustrem w łazience.*  
+„Jutro zdjęcie, a ja mam całe czoło w krostach. Będzie w albumie klasowym na zawsze.”  
+→ emocja: **wstyd** · dystraktory: bezsilność, złość, smutek
+
+**38.** `id 38` · chłopak, 15 l.  
+*15-latek wraca z pierwszej lekcji wf-u w nowym roku szkolnym. Przy obiedzie nagle się odzywa.*  
+„Przez wakacje wszyscy urośli. Wszyscy oprócz mnie. Stoję w rzędzie ostatni, nawet dziewczyny są wyższe.”  
+→ emocja: **niepewność** · dystraktory: wstyd, smutek, zazdrość
+
+**39.** `id 39` · dziewczyna, 16 l.  
+*16-latka wraca z zajęć na basenie i od razu idzie pod prysznic. Wychodzi po bardzo długim czasie.*  
+„Słyszałam, co mówili o moich udach. Myśleli, że jestem pod wodą. Nie byłam.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, złość, smutek
+
+**40.** `id 40` · chłopak, 16 l.  
+*16-latek od dwóch miesięcy codziennie ćwiczy w pokoju. Staje w kuchni w samej koszulce i rozkłada ręce.*  
+„Dwa miesiące. Codziennie. I wyglądam dokładnie tak samo jak w czerwcu.”  
+→ emocja: **rozczarowanie** · dystraktory: frustracja, bezsilność, wstyd
+
+**41.** `id 41` · dziewczyna, 15 l.  
+*Niedzielny obiad u dziadków. 15-latka wychodzi od stołu w połowie deseru i czeka w samochodzie.*  
+„Wujek musiał przy wszystkich rzucić 'ale ci urosły biodra'. I wszyscy się śmiali, jakby to był żart.”  
+→ emocja: **złość** · dystraktory: upokorzenie, wstyd, bezsilność
+
+**42.** `id 42` · chłopak, 14 l.  
+*14-latek wraca z polskiego, na którym czytał na głos fragment lektury. W domu mówi prawie szeptem.*  
+„Głos mi się załamał w środku zdania. Cała klasa w śmiech, nawet psorka się uśmiechnęła.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, smutek
+
+**43.** `id 43` · dziewczyna, 17 l.  
+*17-latka wraca od fryzjera w czapce, choć jest ciepło. Zdejmuje ją dopiero w swoim pokoju.*  
+„Miało być do ramion. Jest do ucha.”  
+→ emocja: **bezsilność** · dystraktory: złość, wstyd, rozczarowanie
+
+**44.** `id 44` · chłopak, 17 l.  
+*17-latek wraca z imprezy urodzinowej wcześniej, niż zapowiadał. Siada w kuchni i je kanapkę w milczeniu.*  
+„Kumpel wchodzi i wszystkie dziewczyny patrzą na niego. Ja stoję obok i jestem powietrzem. On nawet nic nie robi.”  
+→ emocja: **zazdrość** · dystraktory: niepewność, wstyd, smutek
+
+**45.** `id 45` · dziewczyna, 13 l.  
+*13-latka wraca ze szkoły z bluzą zawiązaną w pasie. Od razu idzie do łazienki.*  
+„Dostałam okres na matmie. Na spodniach było widać. Koleżanka powiedziała to na głos, zanim zdążyłam wstać.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, strach
+
+**46.** `id 46` · chłopak, 15 l.  
+*Niedziela wieczór. 15-latek pakuje torbę na basen, wyjmuje strój, wkłada z powrotem, znów wyjmuje.*  
+„Jutro pierwszy raz basen z klasą. Wszyscy mnie zobaczą bez koszulki. Wszyscy.”  
+→ emocja: **strach** · dystraktory: wstyd, niepewność, przytłoczenie
+
+**47.** `id 47` · dziewczyna, 15 l.  
+*Sobota, 18:40. 15-latka ma wyjść o 19 na urodziny koleżanki, na łóżku leży sześć przymierzonych i zdjętych rzeczy.*  
+„Nie mam w czym iść. W tym wyglądam jak worek, w tym jak dziecko, a w tym jak nie ja.”  
+→ emocja: **frustracja** · dystraktory: wstyd, niepewność, złość
+
+**48.** `id 48` · chłopak, 13 l.  
+*13-latek wrócił wczoraj od ortodonty. Dziś przy kolacji mówi z ręką przy ustach.*  
+„Nazwali mnie 'metalowa szczęka'. Dwa lata z tym chodzić. Nie będę się uśmiechał przez dwa lata.”  
+→ emocja: **smutek** · dystraktory: wstyd, bezsilność, złość
+
+### Internet, telefon, gry, media społecznościowe (10)
+
+**49.** `id 49` · dziewczyna, 14 l.  
+*14-latka siedzi przed komputerem i trzeci raz wpisuje hasło. Odsuwa klawiaturę.*  
+„Konto przejęte. Trzy lata grania, wszystkie skiny. Support odpisał, że nic nie mogą zrobić.”  
+→ emocja: **bezsilność** · dystraktory: złość, żal, rozczarowanie
+
+**50.** `id 50` · dziewczyna, 15 l.  
+*15-latka wraca ze szkoły i zamyka się w pokoju. Wychodzi dopiero wieczorem, bez telefonu w ręce.*  
+„Ktoś przerobił moje zdjęcie i wrzucił na klasową grupę. Wszyscy to widzieli. Ja ostatnia.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, złość, bezsilność
+
+**51.** `id 51` · chłopak, 16 l.  
+*16-latek przez tydzień montował film o swoim rowerze. Dwa dni po publikacji sprawdza statystyki i zamyka aplikację.*  
+„Czterdzieści wyświetleń. Tydzień montażu. Filmik kumpla, jak je kebaba, ma dziesięć tysięcy.”  
+→ emocja: **rozczarowanie** · dystraktory: frustracja, zazdrość, wstyd
+
+**52.** `id 52` · chłopak, 14 l.  
+*Ferie zimowe. 14-latek siedzi w domu, przegląda relacje znajomych na telefonie i odkłada go z westchnieniem.*  
+„Wszyscy są na nartach. Każda relacja to góry i śnieg. A ja mam relację z kanapy.”  
+→ emocja: **zazdrość** · dystraktory: samotność, smutek, żal
+
+**53.** `id 53` · chłopak, 15 l.  
+*15-latek wpada do kuchni z telefonem w ręce i co chwilę odświeża ekran.*  
+„Ktoś pisze z mojego konta do wszystkich znajomych. Jakieś linki. Nie mogę się zalogować i nie wiem, co jeszcze tam wysyła.”  
+→ emocja: **strach** · dystraktory: bezsilność, wstyd, złość
+
+**54.** `id 54` · chłopak, 17 l.  
+*17-latek siedzi na kanapie i przewija telefon, nie otwierając żadnej wiadomości. Potem wyłącza go całkiem.*  
+„Dwieście nieprzeczytanych. Grupa klasowa, grupa od projektu, drużyna, ekipa. Każdy czegoś chce i każdy na już.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, frustracja, złość
+
+**55.** `id 55` · chłopak, 13 l.  
+*Wieczór. 13-latek siedzi przy komputerze ze słuchawkami na szyi, gra jest włączona, ale on nie gra.*  
+„Grają we czterech. Czekałem godzinę, aż ktoś mnie zaprosi. Widzę, że są online.”  
+→ emocja: **odrzucenie** · dystraktory: samotność, smutek, żal
+
+**56.** `id 56` · dziewczyna, 16 l.  
+*16-latka sprawdza telefon co kilka minut, potem kładzie go ekranem do dołu na stole.*  
+„Jest online. Od trzech dni jest online i nie odpisuje. A wczoraj wrzuciła zdjęcie z innymi.”  
+→ emocja: **żal** · dystraktory: odrzucenie, samotność, niepewność
+
+**57.** `id 57` · chłopak, 17 l.  
+*17-latek wraca ze szkoły z kapturem na głowie i zdejmuje go dopiero w pokoju.*  
+„Ktoś wykopał mój filmik z piątej klasy. Ten, jak śpiewam. Puścili go na rzutniku na przerwie.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, bezsilność
+
+**58.** `id 58` · dziewczyna, 15 l.  
+*15-latka prowadzi konto z własnymi rysunkami. Pokazuje mamie telefon z cudzym profilem.*  
+„To mój rysunek. Zdjęła podpis, wrzuciła jako swój i ma trzy razy więcej lajków niż ja.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, bezsilność
+
+### Przytłoczenie i zmęczenie (8)
+
+**59.** `id 59` · chłopak, 16 l.  
+*23:10. 16-latek wraca z korepetycji po treningu i dopiero teraz wyjmuje zeszyty z plecaka.*  
+„Szkoła do czwartej, trening, korki. I teraz mam zrobić dwie prace na jutro. Kiedy niby mam spać?”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, frustracja, złość
+
+**60.** `id 60` · dziewczyna, 15 l.  
+*Druga w nocy. 15-latka budzi się z twarzą na otwartym zeszycie i schodzi do kuchni po wodę, tata jeszcze nie śpi.*  
+„Zasnęłam nad historią. Nie skończyłam. A o siódmej pobudka i jeszcze dwie rzeczy, których nie ruszyłam.”  
+→ emocja: **bezsilność** · dystraktory: przytłoczenie, strach, frustracja
+
+**61.** `id 61` · chłopak, 14 l.  
+*Niedziela, 21:00. 14-latek siedzi na łóżku z plecakiem obok, nie wypakował go od piątku.*  
+„Jutro znowu. Weekend minął, zanim się zaczął.”  
+→ emocja: **smutek** · dystraktory: przytłoczenie, bezsilność, żal
+
+**62.** `id 62` · dziewczyna, 17 l.  
+*Rok przed maturą. 17-latka wraca z sobotniej pracy w kawiarni i siada na podłodze w przedpokoju.*  
+„Rok do matury, trzy korki w tygodniu, praca w soboty. Mam głowę jak balon, zaraz pęknie.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, strach, frustracja
+
+**63.** `id 63` · chłopak, 15 l.  
+*Trzeci dzień grypy. 15-latek leży w łóżku i przegląda w telefonie wiadomości z klasowej grupy.*  
+„Każdy dzień w łóżku to dwa sprawdziany więcej do nadrobienia. Dziś doszła jeszcze kartkówka. Nie wiem, jak to odrobić.”  
+→ emocja: **bezsilność** · dystraktory: przytłoczenie, strach, frustracja
+
+**64.** `id 64` · chłopak, 14 l.  
+*14-latek od tygodnia trzyma się planu nauki przyklejonego nad biurkiem. Jest 23, on dalej siedzi nad zeszytem.*  
+„Zrobiłem plan. Trzymam się go co do minuty. I dalej siedzę o jedenastej, bo oni zadają, jakby każdy miał tylko ich przedmiot.”  
+→ emocja: **frustracja** · dystraktory: bezsilność, przytłoczenie, złość
+
+**65.** `id 65` · chłopak, 15 l.  
+*Środa, 6:45. 15-latek siedzi na brzegu łóżka ubrany do połowy i patrzy w ścianę.*  
+„Budzę się i od razu liczę, ile mam dziś rzeczy. Dochodzę do siedmiu i nie chce mi się wstawać.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, smutek, strach
+
+**66.** `id 66` · dziewczyna, 13 l.  
+*13-latka wraca z angielskiego o 19, trzecie zajęcia tego dnia. Rzuca torbę i siada na podłodze w przedpokoju.*  
+„Dziewczyny po szkole siedzą pod blokiem do wieczora. Ja mam balet, angielski, pianino. Nigdy nie mam po prostu nic.”  
+→ emocja: **żal** · dystraktory: przytłoczenie, zazdrość, bunt
+
+### Pasje, sport, porażki i przegrane (8)
+
+**67.** `id 67` · chłopak, 15 l.  
+*15-latek wraca z finału ligi szkolnej. Wchodzi w stroju, nie przebrał się po meczu.*  
+„Jeden karny. Mój. W ostatniej minucie.”  
+→ emocja: **rozczarowanie** · dystraktory: wstyd, żal, bezsilność
+
+**68.** `id 68` · dziewczyna, 16 l.  
+*16-latka wraca z zawodów tanecznych z torbą na ramieniu. Stawia ją w przedpokoju i nie rozpakowuje.*  
+„Czwarte. Rok treningów po pięć razy w tygodniu. Pierwsze trzy dostały puchary, ja dostałam 'brawa dla wszystkich'.”  
+→ emocja: **żal** · dystraktory: rozczarowanie, smutek, frustracja
+
+**69.** `id 69` · chłopak, 13 l.  
+*13-latek wraca z treningu piłki. Wchodzi i od razu rzuca buty w kąt.*  
+„Trener nie wziął mnie na turniej. Wziął nowego, który trenuje od września. Ja jestem w klubie trzy lata.”  
+→ emocja: **niesprawiedliwość** · dystraktory: odrzucenie, zazdrość, żal
+
+**70.** `id 70` · dziewczyna, 14 l.  
+*14-latka wraca z akrobatyki z obtartymi dłońmi. Siada przy stole i ogląda je.*  
+„Miesiąc robię przerzut. Cała grupa ma, ja nie. Trenerka mówi 'jeszcze raz' i ja znowu leżę na macie.”  
+→ emocja: **frustracja** · dystraktory: bezsilność, złość, wstyd
+
+**71.** `id 71` · chłopak, 17 l.  
+*17-latek wraca o kulach z kontroli u ortopedy. Siada na kanapie i włącza transmisję meczu swojej drużyny.*  
+„Koniec sezonu dla mnie. Oni grają, a ja oglądam ich na telefonie z kanapy. Pierwszy sezon w seniorach.”  
+→ emocja: **smutek** · dystraktory: żal, zazdrość, bezsilność
+
+**72.** `id 72` · dziewczyna, 14 l.  
+*14-latka wraca z międzyszkolnego konkursu piosenki. Siada w samochodzie i zakłada kaptur.*  
+„Zapomniałam drugiej zwrotki. Stałam na scenie, a podkład leciał dalej. Pół szkoły to widziało.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, rozczarowanie, smutek
+
+**73.** `id 73` · chłopak, 16 l.  
+*16-latek wraca z treningu siatkówki. Zjada obiad w milczeniu i odsuwa talerz.*  
+„Dostał powołanie do kadry wojewódzkiej. On. Gram z nim w jednej szóstce od trzech lat i trener nawet na mnie nie spojrzał.”  
+→ emocja: **zazdrość** · dystraktory: niesprawiedliwość, rozczarowanie, żal
+
+**74.** `id 74` · dziewczyna, 17 l.  
+*17-latka wraca z ostatniej próby zespołu. Wnosi gitarę do pokoju i stawia ją w kącie zamiast na stojaku.*  
+„Rozpadamy się. Oni w maju piszą maturę i jadą na studia. Trzy lata grania i koniec, tak po prostu.”  
+→ emocja: **smutek** · dystraktory: żal, samotność, rozczarowanie
+
+### Przyszłość i decyzje (profil, matura, studia, dorosłość) (6)
+
+**75.** `id 75` · chłopak, 14 l.  
+*Marzec, ósma klasa. 14-latek wraca ze spotkania z doradcą zawodowym i kładzie na stole ulotki liceów.*  
+„Wszyscy w klasie wiedzą, gdzie idą. Mat-fiz, biol-chem, technikum. Ja patrzę na te ulotki i żadna nie mówi 'to ja'.”  
+→ emocja: **niepewność** · dystraktory: przytłoczenie, strach, wstyd
+
+**76.** `id 76` · dziewczyna, 17 l.  
+*17-latka wraca z targów edukacyjnych. Przy kolacji obraca w rękach folder jednego kierunku.*  
+„Wszyscy mówią, że po historii sztuki nie ma pracy. Chcę tylko tego. A co, jeśli mają rację?”  
+→ emocja: **niepewność** · dystraktory: strach, przytłoczenie, bezsilność
+
+**77.** `id 77` · chłopak, 18 l.  
+*Dzień po osiemnastych urodzinach. 18-latek siedzi w kuchni nad listą rzeczy do załatwienia, którą sam sobie rozpisał.*  
+„Wszyscy wczoraj: 'no, teraz jesteś dorosły'. Dowód, konto, prawko, matura. Jakby o północy ktoś wcisnął przycisk.”  
+→ emocja: **przytłoczenie** · dystraktory: strach, niepewność, samotność
+
+**78.** `id 78` · dziewczyna, 15 l.  
+*Wrzesień, pierwsza klasa liceum. 15-latka wraca z zebrania, na którym ogłoszono listę grup rozszerzeń.*  
+„Wybrałam tę szkołę dla rozszerzonego angielskiego. A teraz 'grupa nie powstanie, za mało chętnych'. Idę na biologię, której nie chciałam.”  
+→ emocja: **rozczarowanie** · dystraktory: złość, bezsilność, żal
+
+**79.** `id 79` · chłopak, 16 l.  
+*Niedzielny obiad u dziadków. 16-latek wraca do domu i od razu zamyka się w pokoju, wychodzi dopiero wieczorem.*  
+„Każdy przy stole pytał, kim chcę być. Każdy. Mam szesnaście lat, skąd mam to wiedzieć?”  
+→ emocja: **frustracja** · dystraktory: przytłoczenie, niepewność, złość
+
+**80.** `id 80` · dziewczyna, 18 l.  
+*18-latka dostała wynik rekrutacji na wymarzone studia w innym mieście. Siedzi na łóżku i nikomu jeszcze nie napisała.*  
+„Dostałam się. I nagle to jest za trzy miesiące, pięć godzin pociągiem, sama w obcym mieście. Dwa dni temu tego chciałam.”  
+→ emocja: **strach** · dystraktory: niepewność, samotność, przytłoczenie
 
 <a id="poziom-2"></a>
 
 ## Poziom 2: kusi, żeby doradzać i naprawiać (45)
 
-W kodzie ten poziom nie ma podsekcji.
+### Szkoła: oceny, poprawy, konflikt z nauczycielem, odkładanie trudnej rozmowy (10)
 
-**81.** `id 5` · chłopak, 14 l.  
-*Rodzic właśnie odłożył słuchawkę po telefonie od wychowawcy o spóźnieniach. 14-latek wchodzi do kuchni.*  
-„On się na mnie uwziął. Cokolwiek zrobię, i tak mu nie pasuje.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bezsilność, frustracja
+**81.** `id 81` · chłopak, 15 l.  
+*15-latek wraca ze szkoły i kładzie sprawdzian z matematyki na stole, oceną do góry.*  
+„Jedynka. I zanim powiesz: wiem, trzeba było zacząć wcześniej, nie w nocy przed.”  
+→ emocja: **rozczarowanie** · dystraktory: wstyd, frustracja, bezsilność
 
-**82.** `id 6` · chłopak, 15 l.  
-*Przyszła wiadomość od nauczyciela o niewykonanym zadaniu. 15-latek wzrusza ramionami.*  
-„Nie będę tego robić. I tak nikt nie widzi, ile ja się męczę.”  
-→ emocja: **bezsilność** · dystraktory: smutek, złość, samotność
+**82.** `id 82` · dziewczyna, 16 l.  
+*16-latka wraca z lekcji biologii. Rzuca plecak i staje w drzwiach kuchni z założonymi rękami.*  
+„Nie idę więcej na biologię. Powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.”  
+→ emocja: **upokorzenie** · dystraktory: złość, bunt, bezsilność
 
-**83.** `id 7` · chłopak, 15 l.  
-*Wieczór. Na grupie klasowej do projektu nikt nie odpisuje, a termin jutro. 15-latek siedzi z telefonem.*  
-„Zrobili mnie liderem, a teraz mnie olali. Jak nie wyjdzie, to zgadnij, kto oberwie.”  
-→ emocja: **przytłoczenie** · dystraktory: złość, strach, bezsilność
+**83.** `id 83` · chłopak, 14 l.  
+*14-latek od trzech dni nosi w plecaku kartkę z prośbą o poprawę sprawdzianu. Jutro mija termin zgłoszeń.*  
+„Jutro ostatni dzień. Trzy razy stałem pod pokojem nauczycielskim i trzy razy zawróciłem. I wiem, że powiesz, że wystarczy wejść.”  
+→ emocja: **strach** · dystraktory: niepewność, wstyd, bezsilność
 
-**84.** `id 10` · chłopak, 14 l.  
-*Rodzic zatrzymuje auto pod szkołą i wysiada razem z 14-latkiem.*  
-„Zostań w aucie. Nie odprowadzaj mnie.”  
-→ emocja: **wstyd** · dystraktory: bunt, strach, niepewność
+**84.** `id 84` · dziewczyna, 17 l.  
+*17-latka od miesiąca mówi, że pójdzie do wychowawcy w sprawie zmiany rozszerzenia. Dziś znów wraca bez tej rozmowy.*  
+„Znowu nie poszłam. Jak zmienię, będę pół roku za wszystkimi. Jak nie zmienię, to kolejne dwa lata chemii, której nie cierpię.”  
+→ emocja: **niepewność** · dystraktory: strach, przytłoczenie, bezsilność
 
-**85.** `id 11` · chłopak, 15 l.  
-*W sklepie rodzic i 15-latek spotykają jego klasę. Rodzic zaczyna rozmowę z kolegami.*  
-„Nie mów tak przy moich znajomych.”  
-→ emocja: **wstyd** · dystraktory: złość, upokorzenie, bunt
+**85.** `id 85` · chłopak, 15 l.  
+*15-latek sprawdza Librus i odkłada telefon. Potem bierze go z powrotem i patrzy jeszcze raz.*  
+„Poprawa była dziś, myślałem, że w piątek. Ona nie robi drugich terminów. Nie potrzebuję rady, mam przerąbane i tyle.”  
+→ emocja: **bezsilność** · dystraktory: wstyd, strach, złość
 
-**86.** `id 14` · chłopak, 16 l.  
-*16-latek chce wyjść w czymś nietypowym. Rodzic komentuje.*  
-„To jest mój styl. Nie każ mi wyglądać jak ty.”  
-→ emocja: **bunt** · dystraktory: złość, wstyd, frustracja
+**86.** `id 86` · dziewczyna, 14 l.  
+*Maj. 14-latka wraca z egzaminu ósmoklasisty z matematyki i siada na schodach przed domem, zanim wejdzie.*  
+„Nie zrobiłam połowy zadań. Nie mów, że na pewno poszło lepiej, niż myślę. Siedziałam i patrzyłam w kartkę.”  
+→ emocja: **strach** · dystraktory: rozczarowanie, niepewność, przytłoczenie
 
-**87.** `id 27` · dziewczyna, 15 l.  
-*15-latka wraca ze szkoły z plamą na bluzie. Widać, że ktoś jej coś zrobił.*  
-„Nie pytaj, bo i tak nic z tym nie zrobisz. Sama sobie poradzę.”  
-→ emocja: **bezsilność** · dystraktory: wstyd, samotność, złość
+**87.** `id 87` · chłopak, 17 l.  
+*17-latek w drugiej klasie liceum dostał kolejną dwójkę z fizyki rozszerzonej. Przy kolacji sam zaczyna temat.*  
+„Wybrałem mat-fiz, bo wszyscy mówili, że z tego są studia. Siedzę w tym drugi rok i każda lekcja to męka. I nie, nie będę zmieniać klasy.”  
+→ emocja: **żal** · dystraktory: frustracja, bezsilność, rozczarowanie
 
-**88.** `id 29` · chłopak, 15 l.  
-*Rodzic prosi 15-latka, żeby zjadł z rodziną. Bierze talerz i idzie do pokoju.*  
-„Chcę zjeść sam. Po prostu nie mam dziś siły na rozmowy.”  
-→ emocja: **przytłoczenie** · dystraktory: samotność, smutek, bezsilność
+**88.** `id 88` · dziewczyna, 15 l.  
+*15-latka pokazuje mamie test z historii: trzy odpowiedzi zaznaczone jako błędne, obok otwarty podręcznik z tymi samymi zdaniami.*  
+„Zaznaczyła mi trzy błędy, a w książce jest tak, jak napisałam. I nie, nie idź do niej. Potem cała klasa będzie na mnie patrzeć.”  
+→ emocja: **niesprawiedliwość** · dystraktory: bezsilność, złość, żal
 
-**89.** `id 42` · chłopak, 16 l.  
-*16-latek wraca z imprezy później, niż obiecał. Unika wzroku.*  
-„Nie patrz na mnie tak. Ja… ja po prostu chciałem być jak inni.”  
-→ emocja: **wstyd** · dystraktory: strach, żal, bezsilność
+**89.** `id 89` · chłopak, 13 l.  
+*13-latek wraca ze szkoły i siada na łóżku z plecakiem na kolanach. Odzywa się dopiero, kiedy tata zagląda do pokoju.*  
+„Oddałem pustą kartkówkę, a umiałem to. Siedziałem i nie mogłem nic napisać. Wiem, że to głupie.”  
+→ emocja: **wstyd** · dystraktory: bezsilność, strach, frustracja
 
-**90.** `id 59` · chłopak, 15 l.  
-*Rodzic proponuje wspólny film w piątek. 15-latek kręci głową.*  
-„Wolałbym wyjść. Nie jestem już małym dzieckiem.”  
-→ emocja: **bunt** · dystraktory: frustracja, samotność, złość
+**90.** `id 90` · chłopak, 16 l.  
+*16-latek wraca ze sprawdzianu z geografii i przegląda w telefonie oceny klasy na grupowym czacie.*  
+„Pół klasy miało ściągi i mają piątki. Ja się uczyłem i mam trzy. Może od następnego też zacznę ściągać, skoro tak to działa.”  
+→ emocja: **frustracja** · dystraktory: niesprawiedliwość, złość, bunt
 
-**91.** `id 60` · chłopak, 15 l.  
-*Sobota rano. Rodzic budzi 15-latka do sprzątania.*  
-„Serio mam sprzątać w sobotę? Ja cały tydzień jadę na oparach.”  
-→ emocja: **przytłoczenie** · dystraktory: złość, frustracja, bezsilność
+### Relacje: kłótnie przyjacielskie, zawód sercowy, zawiedzenie kogoś (10)
 
-**92.** `id 63` · chłopak, 16 l.  
-*Rodzic mówi: musisz się uczyć. 16-latek macha ręką.*  
-„Ja się umiem nauczyć, tylko nie chcę ciągle żyć pod presją.”  
-→ emocja: **przytłoczenie** · dystraktory: bunt, bezsilność, frustracja
+**91.** `id 91` · dziewczyna, 15 l.  
+*Czwarty dzień, odkąd 15-latka nie odzywa się do przyjaciółki. Przy kolacji sprawdza telefon i odkłada go.*  
+„Dalej nic nie napisała. Cztery dni. I nie, nie napiszę pierwsza, bo to ona powiedziała tamto.”  
+→ emocja: **żal** · dystraktory: złość, samotność, bunt
 
-**93.** `id 65` · chłopak, 15 l.  
-*Kolacja. Rodzic pyta 15-latka o znajomych. Odpowiada chłodno.*  
-„Nie mam ochoty o tym gadać. To i tak nic nie zmieni.”  
-→ emocja: **samotność** · dystraktory: smutek, bezsilność, bunt
+**92.** `id 92` · chłopak, 16 l.  
+*16-latek wraca z parku o 21 bez kurtki, którą miał rano. Siada w kuchni i nie włącza światła.*  
+„Zerwała ze mną. Pół roku. I nie mów, że będą inne, bo nie chcę innych.”  
+→ emocja: **smutek** · dystraktory: odrzucenie, żal, bezsilność
 
-**94.** `id 70` · chłopak, 16 l.  
-*Rozmowa o imprezach. Rodzic mówi, że ma obawy. 16-latek reaguje.*  
-„Uważasz, że jak wyjdę, to od razu zrobię coś głupiego.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, smutek, bunt
+**93.** `id 93` · dziewczyna, 14 l.  
+*Niedziela rano. 14-latka siedzi przy stole i od dziesięciu minut pisze i kasuje wiadomość w telefonie.*  
+„Nie poszłam na jej urodziny, bo poszłam na inne, i ona o tym wie. Wiem, że powinnam napisać. Wiem.”  
+→ emocja: **wstyd** · dystraktory: żal, strach, bezsilność
 
-**95.** `id 71` · chłopak, 16 l.  
-*16-latek pierwszy raz wspomina, że z kimś się spotyka. Rodzic od razu dopytuje o szczegóły.*  
-„Nie chcę przesłuchania. Chcę tylko, żebyś była po mojej stronie.”  
-→ emocja: **samotność** · dystraktory: smutek, złość, bezsilność
+**94.** `id 94` · chłopak, 15 l.  
+*15-latek wraca ze szkoły i wyłącza powiadomienia w telefonie. Przy obiedzie sam zaczyna.*  
+„Mój najlepszy kumpel obgadał mnie przed całą ekipą, a wszyscy mówią: 'pogadaj z nim'. O czym? Mówił to za moimi plecami, nie w twarz.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, złość, odrzucenie
 
-**96.** `id 74` · dziewczyna, 17 l.  
-*17-latka siada naprzeciwko. Widać, że zbiera się na odwagę.*  
-„Chcę ci powiedzieć, że spotykam się z kimś starszym, ale boję się twojej reakcji.”  
-→ emocja: **strach** · dystraktory: niepewność, tęsknota, samotność
+**95.** `id 95` · dziewczyna, 17 l.  
+*17-latka wraca sama z wyjścia, na które miała iść z chłopakiem i z koleżankami. Wróciła wcześniej, niż planowała.*  
+„On nie chce chodzić z moimi znajomymi, one nie chcą go widzieć. Co weekend muszę wybierać. I nie, to nie jest 'to po prostu go rzuć'.”  
+→ emocja: **bezsilność** · dystraktory: przytłoczenie, smutek, niepewność
 
-**97.** `id 76` · chłopak, 16 l.  
-*16-latek chce iść sam do lekarza. Rodzic proponuje, że pójdzie razem.*  
-„Nie chcę, żebyś ze mną szła. To krępujące.”  
-→ emocja: **wstyd** · dystraktory: bunt, niepewność, strach
+**96.** `id 96` · chłopak, 14 l.  
+*Dwa dni przed piętnastymi urodzinami. 14-latek przegląda na czacie odpowiedzi na zaproszenia i odkłada telefon.*  
+„Zaprosiłem dziesięciu, przyjdzie trzech. Reszta 'ma plany'. I nie mów, żebym przełożył, oni nie mają planów, oni mają mnie gdzieś.”  
+→ emocja: **odrzucenie** · dystraktory: samotność, smutek, żal
 
-**98.** `id 78` · dziewczyna, 14 l.  
-*14-latka chce się malować. Rodzic mówi, że za wcześnie.*  
-„Ja chcę się malować jak inne dziewczyny. Czuję się przez ciebie głupio i dziecinnie.”  
-→ emocja: **bunt** · dystraktory: wstyd, złość, bezsilność
+**97.** `id 97` · dziewczyna, 16 l.  
+*16-latka od dwóch dni nie dostaje wiadomości na grupie, na której do tej pory pisały codziennie. Zamyka aplikację i odkłada telefon.*  
+„Powiedziałam, co myślę o tym wyjeździe, i teraz cała grupa milczy. Mam je gdzieś. Serio, mam je gdzieś.”  
+→ emocja: **żal** · dystraktory: odrzucenie, samotność, bunt
 
-**99.** `id 87` · chłopak, 17 l.  
-*Do matury zostały dwa tygodnie. Rodzic pyta: uczysz się? 17-latek odpowiada.*  
-„Ale wynik matury nie będzie mnie definiował.”  
-→ emocja: **bunt** · dystraktory: niepewność, strach, bezsilność
+**98.** `id 98` · chłopak, 17 l.  
+*17-latek obiecał kumplowi pomóc w sobotę przy przeprowadzce i obudził się o 14. W niedzielę wieczorem patrzy w telefon.*  
+„Nie odpisuje od wczoraj. Napisałem dwa razy, trzeci raz nie napiszę. Co, jeśli on ma mnie już dość?”  
+→ emocja: **strach** · dystraktory: wstyd, żal, bezsilność
 
-**100.** `id 88` · dziewczyna, 17 l.  
-*Rano przed próbną maturą 17-latka siedzi nad nietkniętym śniadaniem.*  
-„Boli mnie głowa i ściska w żołądku.”  
-→ emocja: **strach** · dystraktory: przytłoczenie, bezsilność, smutek
+**99.** `id 99` · dziewczyna, 13 l.  
+*13-latka wraca ze szkoły i siada przy stole z telefonem w dłoni. Nie odblokowuje go.*  
+„Powiedział mojej koleżance, że jestem spoko, ale 'jako kumpela'. I nie mów, że mam trzynaście lat i jeszcze będzie milion innych.”  
+→ emocja: **smutek** · dystraktory: odrzucenie, wstyd, żal
 
-**101.** `id 91` · chłopak, 17 l.  
-*Rodzina planuje 18 urodziny 17-latka. Ktoś już rezerwuje salę.*  
-„Nie wiem, czy chcę imprezę. Wolałbym w domu, bez wielkiej akcji.”  
-→ emocja: **niepewność** · dystraktory: strach, samotność, bunt
+**100.** `id 100` · chłopak, 16 l.  
+*Sobota, 19:00. 16-latek stoi w kurtce w przedpokoju, po chwili zdejmuje ją i wiesza.*  
+„Nie idę. Nie mam z kim. I nie dzwoń do ich rodziców, nie jestem w przedszkolu.”  
+→ emocja: **samotność** · dystraktory: wstyd, odrzucenie, smutek
 
-**102.** `id 162` · chłopak, 15 l.  
-*15-latek słucha rodzica, który dopytuje o poprawę ocen zaraz po wejściu do domu.*  
-„Daj spokój, ledwo wszedłem do domu. Cały dzień tylko testy i pytania, a ty od progu znowu to samo!”  
-→ emocja: **przytłoczenie** · dystraktory: złość, frustracja, bezsilność
+### Dom: obowiązki, zmęczenie, odmowa (8)
 
-**103.** `id 163` · dziewczyna, 14 l.  
-*14-latka rysuje w pokoju. Rodzic woła ją na obiad.*  
-„Właśnie teraz miałam najlepszy pomysł na cieniowanie! Zanim wrócę, to wszystko mi ucieknie z głowy!”  
-→ emocja: **frustracja** · dystraktory: złość, bezsilność, smutek
+**101.** `id 101` · chłopak, 15 l.  
+*15-latek wraca z treningu o 20 i widzi zlew pełen naczyń po obiedzie, które miał zmyć.*  
+„Wiem, że to pięć minut. Ale dziś naprawdę nie mam tych pięciu minut, mam jeszcze fizykę i chcę po prostu usiąść.”  
+→ emocja: **frustracja** · dystraktory: przytłoczenie, bezsilność, złość
 
-**104.** `id 164` · chłopak, 16 l.  
-*Rodzic zwraca 16-latkowi uwagę na czas spędzany na TikToku.*  
-„Tylko tam mogę się wyłączyć i o niczym nie myśleć. Bez tego bym chyba zwariował.”  
-→ emocja: **bezsilność** · dystraktory: samotność, przytłoczenie, smutek
+**102.** `id 102` · chłopak, 16 l.  
+*Sobota wieczór, rodzina szykuje się na niedzielny obiad u babci. 16-latek siedzi nad podręcznikami i nie podnosi głowy.*  
+„Nie jadę. Mam dwa sprawdziany w poniedziałek i ani jednego nie ruszyłem. Wiem, że babcia czeka, nie musisz mówić.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, wstyd, żal
 
-**105.** `id 165` · chłopak, 15 l.  
-*15-latek wraca po siedmiu lekcjach i dodatkowym angielskim.*  
-„Nie ruszę palcem. Nawet nie proś mnie o rozładowanie zmywarki, bo po prostu padnę na podłogę.”  
-→ emocja: **przytłoczenie** · dystraktory: bezsilność, złość, frustracja
+**103.** `id 103` · chłopak, 13 l.  
+*13-latek stoi na środku korytarza przed łazienką. Z pralki dobiega stukanie, a drzwiczki nie chcą się otworzyć.*  
+„Chciałem zrobić pranie, zanim wrócisz. Wcisnąłem wszystko naraz i teraz coś stuka. Nie wiem, co nacisnąłem.”  
+→ emocja: **strach** · dystraktory: wstyd, bezsilność, rozczarowanie
 
-**106.** `id 166` · chłopak, 16 l.  
-*Rodzic trzeci dzień z rzędu przypomina 16-latkowi o sprzątaniu pokoju.*  
-„Po co mam to sprzątać, skoro jutro i tak będzie tak samo? Bez sensu. Daj mi spokój.”  
-→ emocja: **bezsilność** · dystraktory: frustracja, przytłoczenie, smutek
+**104.** `id 104` · dziewczyna, 14 l.  
+*14-latka pierwszy raz zrobiła obiad dla całej rodziny. Na stole stoi przypalona zapiekanka, każdy zjadł tylko trochę.*  
+„Robiłam to dwie godziny. Nikt nie zjadł nawet połowy. I nie mów, że było dobre, bo nie było.”  
+→ emocja: **rozczarowanie** · dystraktory: wstyd, żal, frustracja
 
-**107.** `id 167` · dziewczyna, 14 l.  
-*Rodzic podaje 14-latce sobotnią listę zakupów.*  
-„Znowu długa lista. Będę tam stać w kolejkach godzinę. Mój jedyny wolny czas w tygodniu właśnie przepadł.”  
-→ emocja: **frustracja** · dystraktory: złość, bezsilność, smutek
+**105.** `id 105` · chłopak, 15 l.  
+*Sobota, 21:00. 15-latek po całym dniu pomagania wujkowi przy remoncie leży na łóżku w ubraniu, obok sterta rzeczy do odłożenia.*  
+„Nie posprzątam dziś pokoju. Nie dlatego, że nie chcę. Nie dam rady wstać.”  
+→ emocja: **przytłoczenie** · dystraktory: bezsilność, frustracja, złość
 
-**108.** `id 168` · dziewczyna, 15 l.  
-*Wypada kolej 15-latki na zrobienie obiadu.*  
-„Nie cierpię gotować. Wszystko mi się przypala i kuchnia wygląda jak po wojnie. Dlaczego nie możemy po prostu zamówić pizzy?”  
-→ emocja: **frustracja** · dystraktory: bezsilność, złość, przytłoczenie
+**106.** `id 106` · dziewczyna, 15 l.  
+*15-latka została po południu z chorym pięcioletnim bratem. Kiedy tata wraca, ona siedzi na podłodze w jego pokoju, on śpi.*  
+„Płakał godzinę, że chce mamę. Robiłam wszystko. Nie nadaję się do tego i nie mów, że się nadaję.”  
+→ emocja: **bezsilność** · dystraktory: wstyd, smutek, rozczarowanie
 
-**109.** `id 169` · chłopak, 16 l.  
-*16-latek przy kolacji ostrożnie zaczyna temat roku przerwy po maturze.*  
-„Chciałbym po prostu odpocząć rok po szkole, ale wy pewnie uznacie, że jestem leniem i nic nie robię.”  
-→ emocja: **strach** · dystraktory: niepewność, bunt, samotność
+**107.** `id 107` · chłopak, 16 l.  
+*16-latek dzwoni domofonem, choć ma własne klucze. Wchodzi i od razu idzie do swojego pokoju, po chwili wraca.*  
+„Zgubiłem klucze, drugi raz w tym miesiącu. Wiem. Nie musisz nic mówić, sam wiem.”  
+→ emocja: **wstyd** · dystraktory: bezsilność, złość, strach
 
-**110.** `id 170` · dziewczyna, 16 l.  
-*16-latka wraca ze spotkania ze znajomymi i od progu zaczyna o kieszonkowym.*  
-„Inni dostają dwa razy tyle i mogą sobie na coś odłożyć. Ja ledwo mam na bilet i herbatę. Czuję się jak biedak przy moich znajomych.”  
-→ emocja: **wstyd** · dystraktory: bezsilność, niesprawiedliwość, zazdrość
+**108.** `id 108` · dziewczyna, 17 l.  
+*17-latka patrzy na kalendarz w telefonie i siada na kanapie z telefonem w obu dłoniach.*  
+„Babcia miała wczoraj urodziny. Zapomniałam. Chcę zadzwonić, ale co jej powiem, 'sorry, zapomniałam'?”  
+→ emocja: **niepewność** · dystraktory: wstyd, strach, żal
 
-**111.** `id 171` · dziewczyna, 17 l.  
-*Piątkowy wieczór. Rodzic proponuje 17-latce wspólny serial.*  
-„Mam siedzieć z tobą na kanapie, zamiast wyjść do znajomych? Przecież to jest nudne!”  
-→ emocja: **bunt** · dystraktory: frustracja, złość, samotność
+### Decyzje: rzucanie zajęć, wybór szkoły/studiów, praca wakacyjna, nowe środowisko (9)
 
-**112.** `id 223` · dziewczyna, 16 l.  
-*16-latka od dwóch dni nie odzywa się do najlepszej przyjaciółki. Siedzi z telefonem w ręce.*  
-„Nie napiszę pierwsza. Tym razem to ona przegięła.”  
-→ emocja: **złość** · dystraktory: żal, bunt, smutek
+**109.** `id 109` · dziewczyna, 16 l.  
+*16-latka wraca z lekcji pianina i zamiast odłożyć nuty na półkę, wkłada je do szuflady na samo dno.*  
+„Chcę skończyć ze szkołą muzyczną. Osiem lat, wiem, co powiesz. Ale ja już tego nie lubię, siadam do tego jak do kary.”  
+→ emocja: **przytłoczenie** · dystraktory: żal, frustracja, bunt
 
-**113.** `id 224` · chłopak, 18 l.  
-*18-latek wraca z egzaminu na prawo jazdy i rzuca kurtkę na krzesło.*  
-„Oblałem. Na rondzie. Wszyscy zdają za pierwszym razem, tylko nie ja.”  
-→ emocja: **wstyd** · dystraktory: rozczarowanie, złość, bezsilność
+**110.** `id 110` · chłopak, 15 l.  
+*15-latek sprawdził listy przyjętych do liceów. Przegląda stronę szkoły, do której się dostał, i zamyka laptopa.*  
+„Nie dostałem się do dwójki. Idę do czwórki. Nie mów, że to też dobra szkoła, bo wszyscy, których znam, idą do dwójki.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, niepewność, wstyd
 
-**114.** `id 225` · dziewczyna, 17 l.  
-*17-latka cały dzień odświeża pocztę. Wieczorem przychodzi odpowiedź z kawiarni w sprawie pracy wakacyjnej.*  
-„'Wybraliśmy innego kandydata'. Nawet na zmywak mnie nie chcą.”  
-→ emocja: **rozczarowanie** · dystraktory: wstyd, bezsilność, smutek
+**111.** `id 111` · dziewczyna, 17 l.  
+*17-latka ogląda w telefonie zdjęcia akademików w Krakowie, które sama wyszukała. Odkłada telefon i patrzy na zdjęcie klasy na ścianie.*  
+„Wszystkie zostają tutaj. Ja jedna chcę jechać. I nie mów, że będzie super i poznam nowych ludzi, bo nie o to chodzi.”  
+→ emocja: **strach** · dystraktory: niepewność, samotność, smutek
 
-**115.** `id 226` · dziewczyna, 15 l.  
-*15-latka miała iść z przyjaciółką do kina. Godzinę przed seansem dostaje wiadomość, że tamta idzie z kimś innym.*  
-„Bilety już kupiłam. Serio, godzinę przed seansem mi to pisze.”  
-→ emocja: **żal** · dystraktory: złość, odrzucenie, rozczarowanie
+**112.** `id 112` · chłopak, 16 l.  
+*16-latek wraca z pierwszego dnia wakacyjnej pracy w myjni samochodowej. Rzuca kamizelkę na krzesło.*  
+„Szef darł się na mnie przy klientach, bo źle zwinąłem wąż. Jutro tam nie idę. I nie mów, że nie można się poddawać po jednym dniu.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, bezsilność, złość
 
-**116.** `id 227` · chłopak, 16 l.  
-*16-latek od tygodnia odkłada rozmowę z nauczycielem o poprawie oceny. Jutro mija termin.*  
-„Wiem, że wystarczy podejść i zapytać. Ale jak to sobie wyobrażę, to mi się nogi uginają.”  
-→ emocja: **strach** · dystraktory: niepewność, wstyd, przytłoczenie
+**113.** `id 113` · dziewczyna, 14 l.  
+*Maj, ósma klasa. 14-latka wypełnia na laptopie wniosek rekrutacyjny i co chwilę zmienia kolejność szkół.*  
+„Wszystkie dziewczyny idą do jednej szkoły. Ja chcę do plastyka, sama. I wiem, że znajomi to nie wszystko, nie musisz tego mówić.”  
+→ emocja: **niepewność** · dystraktory: strach, samotność, przytłoczenie
 
-**117.** `id 228` · dziewczyna, 14 l.  
-*14-latka wraca z próby zespołu tanecznego. Solówkę, o którą walczyła, dostała inna dziewczyna.*  
-„Ćwiczyłam to przejście codziennie w pokoju. I tak wybrała Maję, bo Maja jest jej ulubienicą.”  
-→ emocja: **niesprawiedliwość** · dystraktory: zazdrość, rozczarowanie, żal
+**114.** `id 114` · chłopak, 17 l.  
+*17-latek wraca z treningu i wyjmuje z torby buty piłkarskie. Zamiast do szafki wkłada je do kartonu.*  
+„Kończę z piłką. Dziesięć lat, wiem. Ale widzę, kto gra w pierwszym składzie, i to nigdy nie będę ja.”  
+→ emocja: **żal** · dystraktory: rozczarowanie, smutek, bezsilność
 
-**118.** `id 229` · dziewczyna, 17 l.  
-*17-latka wraca z kolejnych korepetycji z matematyki.*  
-„Płacicie za te korki, a ja dalej nic nie umiem. Może po prostu jestem za głupia na rozszerzenie.”  
-→ emocja: **bezsilność** · dystraktory: wstyd, przytłoczenie, rozczarowanie
+**115.** `id 115` · dziewczyna, 15 l.  
+*Październik, pierwsza klasa liceum. 15-latka wraca ze szkoły i siada do obiadu z telefonem, na którym nie ma żadnych nowych wiadomości.*  
+„Dalej jem na przerwie sama. Dwa miesiące. I nie, nie zapiszę się na kółko teatralne, żeby 'kogoś poznać'.”  
+→ emocja: **samotność** · dystraktory: odrzucenie, wstyd, niepewność
 
-**119.** `id 230` · chłopak, 16 l.  
-*16-latek wraca ze spotkania z dziewczyną i w kurtce siada przy kuchennym stole.*  
-„Zerwała ze mną. Powiedziała, że to nie przez nikogo, po prostu już nie chce.”  
-→ emocja: **smutek** · dystraktory: żal, odrzucenie, bezsilność
+**116.** `id 116` · chłopak, 18 l.  
+*Czerwiec, po maturze. 18-latek od pół godziny siedzi przed laptopem z otwartą stroną rekrutacji i niczego nie kliknął.*  
+„Wszyscy złożyli papiery. Ja mam pięć kierunków w zakładkach i żaden nie jest mój. Nie wymieniaj mi kolejnych.”  
+→ emocja: **niepewność** · dystraktory: przytłoczenie, strach, bezsilność
 
-**120.** `id 231` · dziewczyna, 13 l.  
-*13-latka po czterech latach gry na skrzypcach odstawia futerał pod ścianę.*  
-„Nie chcę już chodzić na skrzypce. I wiem, że zaraz powiesz, że szkoda tylu lat.”  
-→ emocja: **bunt** · dystraktory: niepewność, strach, przytłoczenie
+**117.** `id 117` · dziewczyna, 16 l.  
+*16-latka po roku w liceum wraca ze szkoły i otwiera na laptopie stronę innej szkoły w mieście.*  
+„Chcę zmienić szkołę. Wiem, co powiesz: wszędzie jest tak samo. Rok próbowałam, nie pasuję tam i nie zacznę pasować.”  
+→ emocja: **bezsilność** · dystraktory: samotność, smutek, frustracja
 
-**121.** `id 232` · chłopak, 14 l.  
-*14-latek wydał całe urodzinowe pieniądze na skina do gry. Kolega właśnie mu napisał, że przepłacił dwa razy.*  
-„Wydałem wszystko w pięć minut. Teraz patrzę na to i sam nie wiem, po co mi to było.”  
-→ emocja: **żal** · dystraktory: wstyd, rozczarowanie, frustracja
+### Pieniądze i rzeczy: strata, zły zakup, kieszonkowe (4)
 
-**122.** `id 233` · dziewczyna, 13 l.  
-*Za trzy dni 13-latka pierwszy raz jedzie na obóz, na którym nikogo nie zna. Przy pakowaniu robi się cicha.*  
-„A co, jeśli nikogo tam nie polubię i cały obóz przesiedzę sama?”  
-→ emocja: **strach** · dystraktory: niepewność, samotność, przytłoczenie
+**118.** `id 118` · chłopak, 14 l.  
+*14-latek odpakował słuchawki zamówione za oszczędności z trzech miesięcy. Siedzi z nimi na łóżku, w telefonie otwarta strona sklepu.*  
+„Nie działają. Strona zniknęła. Trzy miesiące odkładania i nie mów, że to było do przewidzenia.”  
+→ emocja: **wstyd** · dystraktory: złość, bezsilność, rozczarowanie
 
-**123.** `id 234` · chłopak, 15 l.  
-*Miesiąc po zmianie szkoły 15-latek wciąż wraca do domu od razu po lekcjach.*  
-„Oni wszyscy mają swoje paczki z podstawówki. Ja na przerwach patrzę w telefon, żeby nie wyglądać jak ten dziwny.”  
-→ emocja: **samotność** · dystraktory: wstyd, smutek, odrzucenie
+**119.** `id 119` · chłopak, 16 l.  
+*16-latek wraca z miasta i wysypuje całą zawartość plecaka na podłogę w przedpokoju.*  
+„Nie ma portfela, a w nim całe kieszonkowe na miesiąc i legitymacja. Tak, wiem, w tylnej kieszeni. Wiem.”  
+→ emocja: **frustracja** · dystraktory: wstyd, złość, bezsilność
 
-**124.** `id 235` · dziewczyna, 17 l.  
-*17-latka wraca ze szkoły, gdzie pół klasy gadało o studniówce.*  
-„Wszyscy już mają pary. Jak nikogo nie znajdę, to chyba w ogóle nie idę.”  
-→ emocja: **wstyd** · dystraktory: strach, samotność, niepewność
+**120.** `id 120` · chłopak, 16 l.  
+*16-latek przez lipiec pracował na zmywaku w restauracji. Pod koniec sierpnia sprawdza stan konta i pokazuje ekran tacie.*  
+„Zostało czterdzieści złotych z całego lipca. Nawet nie wiem, na co to poszło. I nie chcę wykładu o oszczędzaniu.”  
+→ emocja: **rozczarowanie** · dystraktory: wstyd, złość, bezsilność
 
-**125.** `id 236` · chłopak, 15 l.  
-*15-latek dzień po terminie zorientował się, że zapomniał o urodzinach najlepszego kolegi.*  
-„On o moich pamiętał, a ja mu nawet nie napisałem. Jak ja mu teraz spojrzę w oczy?”  
-→ emocja: **wstyd** · dystraktory: żal, strach, smutek
+**121.** `id 121` · dziewczyna, 13 l.  
+*13-latka siedzi przy komputerze i przegląda swoje konto w grze. Zamyka je i odsuwa się od biurka.*  
+„Wydałam całe kieszonkowe na ten skin, bo wszystkie miały. Dziś nikogo to już nie obchodzi. Tak, wiem, co o tym myślisz.”  
+→ emocja: **żal** · dystraktory: wstyd, rozczarowanie, zazdrość
+
+### Drobna autonomia i wstyd przy rodzicu (lekarz, zakupy, wspólne wyjścia) (4)
+
+**122.** `id 122` · chłopak, 15 l.  
+*Poczekalnia u lekarza. 15-latek siedzi obok mamy, pielęgniarka właśnie wywołała jego nazwisko.*  
+„Nie wchodź ze mną. Mam piętnaście lat, umiem powiedzieć, co mnie boli. Poczekaj tutaj.”  
+→ emocja: **wstyd** · dystraktory: złość, frustracja, bunt
+
+**123.** `id 123` · dziewczyna, 14 l.  
+*Centrum handlowe, sobota. 14-latka wychodzi z przymierzalni i odwiesza rzeczy, które wybrała mama.*  
+„Chcę sama wybrać. Nie w tym sklepie i nie z kimś obok, kto mówi 'ładne' do wszystkiego.”  
+→ emocja: **frustracja** · dystraktory: wstyd, bunt, niepewność
+
+**124.** `id 124` · chłopak, 15 l.  
+*15-latek siedzi w samochodzie pod domem kolegi, u którego są urodziny. Tata wyłącza silnik, żeby wejść i przywitać się z jego rodzicami.*  
+„Nie wchodź, serio. Wszyscy będą patrzeć, kto mnie przyprowadził. Przywitasz się, jak będziesz odbierać.”  
+→ emocja: **wstyd** · dystraktory: frustracja, złość, niepewność
+
+**125.** `id 125` · dziewczyna, 17 l.  
+*17-latka od dwóch miesięcy spotyka się z chłopakiem, o którym w domu wspomina mimochodem. Mama zaproponowała, żeby zaprosić go na obiad.*  
+„Jeszcze nie. Nie wiem, czy to jest na tyle poważne, żeby robić obiady. Jak go przyprowadzę, to już będzie 'oficjalnie'.”  
+→ emocja: **niepewność** · dystraktory: wstyd, strach, frustracja
 
 <a id="poziom-3"></a>
 
 ## Poziom 3: nastolatek zły NA rodzica (75)
 
-### Stare scenki (przepisane) (30)
+### Prywatność i kontrola (telefon, pokój, lokalizacja, czytanie rzeczy, śledzenie w sieci) (18)
 
-**126.** `id 12` · dziewczyna, 15 l.  
-*Rodzic siedzi z gośćmi w salonie i właśnie zażartował o 15-latce.*  
-„Weź przestań!”  
-→ emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
+**126.** `id 126` · dziewczyna, 15 l.  
+*15-latka wchodzi do kuchni i widzi, że mama trzyma jej telefon, zostawiony na ładowaniu.*  
+„Czytałaś moje wiadomości. Co ja takiego zrobiłam, że musisz mnie sprawdzać jak przestępcę?”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, upokorzenie, żal
 
-**127.** `id 13` · chłopak, 14 l.  
-*14-latek stoi na przystanku. Rodzic woła za nim zbyt głośno.*  
-„Nie rób siary!”  
+**127.** `id 127` · chłopak, 16 l.  
+*16-latek znajduje w ustawieniach telefonu udostępnianie lokalizacji, którego sam nie włączał. Wchodzi do salonu z telefonem w ręce.*  
+„Śledzicie mnie. Włączyliście mi to bez słowa. Mam nosić telefon jak obrożę?”  
+→ emocja: **złość** · dystraktory: bunt, upokorzenie, niesprawiedliwość
+
+**128.** `id 128` · dziewczyna, 14 l.  
+*14-latka przebiera się w swoim pokoju, kiedy tata wchodzi bez pukania. Ona zasłania się bluzą.*  
+„Wyjdź! Nie umiesz zapukać?”  
+→ emocja: **wstyd** · dystraktory: złość, upokorzenie, bezsilność
+
+**129.** `id 129` · chłopak, 15 l.  
+*Przy kolacji tata wspomina o poradnikach o trądziku, które 15-latek oglądał wczoraj wieczorem. On odkłada widelec.*  
+„Sprawdzałeś moją historię. To moje. Nie musisz wiedzieć wszystkiego, co oglądam.”  
 → emocja: **wstyd** · dystraktory: złość, upokorzenie, bunt
 
-**128.** `id 18` · chłopak, 17 l.  
-*Kolejna dyskusja o godzinie powrotu. 17-latek rzuca plecak i siada na łóżku.*  
-„Mam 17 lat i chcę wracać później. Czemu ty tego nie widzisz?”  
-→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, bezsilność
+**130.** `id 130` · dziewczyna, 17 l.  
+*17-latka wraca z nocowania u koleżanki. Mama koleżanki wspomniała przy śniadaniu, że wieczorem był telefon z pytaniem, czy ona na pewno tam jest.*  
+„Dzwoniłaś do jej mamy. Sprawdzić. Powiedziałam ci, gdzie jestem, i to nie wystarczyło.”  
+→ emocja: **żal** · dystraktory: złość, upokorzenie, niesprawiedliwość
 
-**129.** `id 21` · chłopak, 16 l.  
-*Rodzic wraca z wywiadówki i chce pogadać o ocenach. 16-latek odsuwa talerz.*  
-„Nie chcę o tym teraz gadać. I nie rób ze mnie projektu do naprawy.”  
-→ emocja: **bunt** · dystraktory: złość, upokorzenie, bezsilność
+**131.** `id 131` · chłopak, 14 l.  
+*Ojciec zażądał kodu do telefonu. 14-latek trzyma telefon w obu rękach i nie podaje.*  
+„To już nie mój telefon. Twój, z moimi rzeczami.”  
+→ emocja: **bezsilność** · dystraktory: złość, bunt, upokorzenie
 
-**130.** `id 31` · chłopak, 13 l.  
-*Rodzic i 13-latek właśnie pokłócili się o drobiazg. Odwraca się do ściany.*  
-„Nie lubię cię.”  
-→ emocja: **złość** · dystraktory: smutek, bezsilność, samotność
-
-**131.** `id 32` · chłopak, 15 l.  
-*Chwila ciszy po kłótni. 15-latek mówi już ciszej, ale twardo.*  
-„Widzisz mnie tylko wtedy, kiedy coś robię źle.”  
-→ emocja: **smutek** · dystraktory: bezsilność, samotność, żal
-
-**132.** `id 33` · chłopak, 14 l.  
-*Rodzic otwiera drzwi do pokoju 14-latka bez pukania.*  
-„Nie wchodź tutaj bez pytania. To jest moja przestrzeń.”  
-→ emocja: **złość** · dystraktory: bunt, strach, bezsilność
-
-**133.** `id 34` · dziewczyna, 16 l.  
-*Rodzic pyta 16-latkę, czemu ostatnio się oddala.*  
-„Bo jak pytasz o wszystko, to mam ochotę tylko uciec. Serio.”  
-→ emocja: **przytłoczenie** · dystraktory: bunt, złość, strach
-
-**134.** `id 35` · chłopak, 15 l.  
-*15-latek odrabia lekcje. Rodzic zaczyna doradzać.*  
-„Przestań mi stać nad głową. Jak mnie ciśniesz, to mam jeszcze większy mętlik.”  
-→ emocja: **przytłoczenie** · dystraktory: złość, bunt, bezsilność
-
-**135.** `id 36` · chłopak, 16 l.  
-*Rodzic mówi: porozmawiajmy. 16-latek włącza głośniej muzykę.*  
-„Nie teraz. Jak będę gotowy, to sam powiem.”  
-→ emocja: **bunt** · dystraktory: przytłoczenie, złość, bezsilność
-
-**136.** `id 37` · chłopak, 15 l.  
-*Rodzic wiesza w kuchni kartkę z nowymi zasadami. 15-latek czyta i prycha.*  
-„Zasady, zasady… A kto pyta, czego ja potrzebuję?”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, samotność
-
-**137.** `id 38` · chłopak, 15 l.  
-*Rodzic przypomina o obowiązkach. 15-latek stoi w progu z telefonem.*  
-„Ja nie jestem robotem. Potrzebuję czasem po prostu nic nie robić.”  
-→ emocja: **przytłoczenie** · dystraktory: bunt, bezsilność, złość
-
-**138.** `id 50` · chłopak, 16 l.  
-*16-latek właśnie znalazł w telefonie rodzica screena ze swojej rozmowy.*  
-„Nie miałaś prawa. Czuję się jak w klatce.”  
-→ emocja: **złość** · dystraktory: żal, strach, bezsilność
-
-**139.** `id 51` · chłopak, 15 l.  
-*Rodzic wrzucił w sieci zdjęcie 15-latka z dzieciństwa. Wpada w panikę.*  
-„Usuń to zdjęcie. Ja nie chcę, żeby to było w internecie.”  
-→ emocja: **złość** · dystraktory: strach, upokorzenie, bezsilność
-
-**140.** `id 52` · chłopak, 16 l.  
-*Właśnie skończyła się ostra kłótnia między rodzicem a 16-latkiem. Drzwi trzaskają.*  
-„Nienawidzę cię.”  
-→ emocja: **złość** · dystraktory: smutek, bezsilność, desperacja
-
-**141.** `id 53` · chłopak, 16 l.  
-*Godzinę po kłótni 16-latek wraca spokojniejszy, ale głos mu się łamie.*  
-„Mogłabyś chociaż raz posłuchać, zamiast tylko rządzić?”  
-→ emocja: **bezsilność** · dystraktory: smutek, żal, samotność
-
-**142.** `id 54` · chłopak, 14 l.  
-*Rodzic prosi 14-latka o wyniesienie śmieci. Eksploduje.*  
-„Zaraz! Czemu zawsze ja? Mam was wszystkich dosyć.”  
-→ emocja: **złość** · dystraktory: przytłoczenie, niesprawiedliwość, bezsilność
-
-**143.** `id 55` · chłopak, 15 l.  
-*Rodzic komentuje bałagan w pokoju 15-latka. Ten mówi ostro.*  
-„To mój pokój. Jak ci się nie podoba, to nie wchodź.”  
-→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, frustracja
-
-**144.** `id 57` · chłopak, 16 l.  
-*16-latek właśnie odkrył na swoim telefonie aplikację do śledzenia lokalizacji.*  
-„Śledzisz mnie? Serio? Po co ci to?”  
-→ emocja: **złość** · dystraktory: żal, strach, bunt
-
-**145.** `id 61` · dziewczyna, 16 l.  
-*Rodzic prosi 16-latkę o pomoc w kuchni. Nawet nie podnosi wzroku.*  
-„Nie. Jestem zmęczona. I nie udawaj, że tego nie słyszysz.”  
-→ emocja: **przytłoczenie** · dystraktory: złość, bunt, bezsilność
-
-**146.** `id 62` · chłopak, 15 l.  
-*Kolejna rozmowa o pomaganiu w domu. 15-latek wchodzi w obronę.*  
-„Przestań gadać, że nic nie robię. Ja też mam swoje rzeczy i swoją głowę.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, bezsilność
-
-**147.** `id 67` · chłopak, 15 l.  
-*Rodzic próbuje postawić granicę. 15-latek krzyczy.*  
-„Zostaw mnie! Jak wejdziesz jeszcze raz, to zamknę drzwi na klucz.”  
-→ emocja: **złość** · dystraktory: strach, bunt, bezsilność
-
-**148.** `id 68` · dziewczyna, 16 l.  
-*Po spięciu o komputer 16-latka rzuca ostro.*  
-„Jak tak dalej będziesz robić, to przestanę z tobą rozmawiać. I będziesz sama.”  
-→ emocja: **złość** · dystraktory: smutek, bezsilność, samotność
-
-**149.** `id 69` · chłopak, 15 l.  
-*15-latek krzyczy z pokoju podczas grania. Rodzic prosi o ciszę.*  
-„Przestań wchodzić co pięć minut! Ja jestem w trakcie.”  
-→ emocja: **złość** · dystraktory: frustracja, bunt, przytłoczenie
-
-**150.** `id 73` · dziewczyna, 16 l.  
-*Rodzic komentuje, że widział 16-latkę całującą się pod domem. Spina się.*  
-„To nie twoja sprawa. Co ty, policja jesteś? Przestań mnie śledzić.”  
-→ emocja: **złość** · dystraktory: bunt, wstyd, strach
-
-**151.** `id 77` · dziewczyna, 13 l.  
-*13-latka ma pretensje, że rodzic powiedział o jej okresie tacie i ciociom.*  
-„Czemu powiedziałaś tacie i ciociom? To było moje i prywatne.”  
-→ emocja: **żal** · dystraktory: złość, upokorzenie, wstyd
-
-**152.** `id 90` · chłopak, 18 l.  
-*Rozmowa o wyprowadzce. 18-latek broni swojej autonomii.*  
-„Przecież mam 18 lat. Czemu moje życie ma być dalej waszą sprawą?”  
-→ emocja: **bunt** · dystraktory: złość, frustracja, bezsilność
-
-**153.** `id 93` · chłopak, 15 l.  
-*Wczoraj rodzic obiecał, że nie będzie krzyczeć. Wieczór, kuchnia. 15-latek mówi.*  
-„Ja już ci nie wierzę. Za każdym razem jest tak samo.”  
-→ emocja: **żal** · dystraktory: bezsilność, smutek, samotność
-
-**154.** `id 95` · dziewczyna, 15 l.  
-*Rodzic próbuje pocieszyć 15-latkę po kłótni z przyjaciółką. Ona odwraca się gwałtownie.*  
-„Nie mów mi, że przesadzam. Ja naprawdę cierpię.”  
-→ emocja: **smutek** · dystraktory: bezsilność, złość, samotność
-
-**155.** `id 46` · dziewczyna, 15 l.  
-*Rodzic przy wszystkich zażartował z marzenia 15-latki. Ona czerwienieje.*  
-„To moje marzenie! Jak się z niego śmiejesz, to jakbyś śmiał się ze mnie.”  
-→ emocja: **upokorzenie** · dystraktory: smutek, złość, bezsilność
-
-### Nowe scenki poziom 3 (45)
-
-**156.** `id 172` · chłopak, 16 l.  
-*16-latek odkrywa, że rodzic bez pytania oddał jego stare, ale wciąż używane gry komputerowe kuzynowi.*  
-„To były moje rzeczy! Dlaczego zawsze decydujesz za mnie i bez pytania grzebiesz w moich szafkach?!”  
-→ emocja: **złość** · dystraktory: niesprawiedliwość, żal, bunt
-
-**157.** `id 173` · chłopak, 14 l.  
-*14-latek prosi o zgodę na powrót z imprezy o północy, a rodzic nie ustępuje: powrót najpóźniej o 22.*  
-„Wszyscy mogą zostać do końca, tylko ja muszę uciekać jak jakiś maluch. Robisz mi obciach przed całą klasą, nigdy mi nie ufasz!”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, wstyd, bunt
-
-**158.** `id 174` · dziewczyna, 16 l.  
-*16-latka słyszy, jak rodzic wychwala młodsze rodzeństwo za drobną pomoc w domu, ignorując jej wcześniejsze porządki.*  
-„Jasne, on jest waszym złotym dzieckiem. Ja mogę posprzątać cały dom i nikt nawet nie zauważy, bo dla was liczy się tylko on!”  
-→ emocja: **niesprawiedliwość** · dystraktory: żal, złość, samotność
-
-**159.** `id 175` · chłopak, 13 l.  
-*13-latek dowiaduje się, że z powodu pilnego wyjazdu rodzinnego nie będzie mógł wziąć udziału w turnieju online z kolegami.*  
-„Nie no, świetnie! Teraz pomyślą, że stchórzyłem i wywalą mnie z klanu. Zawsze musicie mi wszystko psuć w ostatniej chwili!”  
-→ emocja: **złość** · dystraktory: bezsilność, strach, żal
-
-**160.** `id 176` · dziewczyna, 13 l.  
-*13-latka przyłapuje rodzica na tym, że próbował podejrzeć powiadomienia na jej telefonie, gdy zostawiła go na chwilę w kuchni.*  
-„No nie wierzę! Serio musisz mnie tak śledzić?”  
-→ emocja: **złość** · dystraktory: żal, strach, bunt
-
-**161.** `id 177` · chłopak, 16 l.  
-*16-latek przegrywa ważny mecz w grze rankingowej, bo w połowie rundy rodzic kazał mu natychmiast wynieść śmieci.*  
-„No i po randze! Przez ciebie przegraliśmy, bo musiałaś mi teraz truć o tych głupich śmieciach. Zero wyczucia, po prostu niszczysz mi wszystko, co dla mnie ważne!”  
-→ emocja: **złość** · dystraktory: bezsilność, żal, frustracja
-
-**162.** `id 178` · dziewczyna, 17 l.  
-*17-latka słyszy przy obiedzie kolejne pytanie o to, czy na pewno złoży papiery na medycynę, bo 'artysta to nie zawód'.*  
-„Rzygać mi się chce tym waszym prestiżem. Nikogo nie obchodzi, co ja czuję, tylko co powiecie znajomym. Mam dość tej wiecznej presji, dajcie mi w końcu żyć!”  
-→ emocja: **złość** · dystraktory: bunt, bezsilność, smutek
-
-**163.** `id 179` · chłopak, 13 l.  
-*13-latek wraca ze szkoły i odkrywa, że rodzic poukładał mu notatki i papiery na biurku, szukając ważnego dokumentu.*  
-„Znowu tu byłaś?! Wszystko tu leżało tak jak trzeba! Czy ty naprawdę musisz wszędzie łazić? To jest mój pokój!”  
-→ emocja: **złość** · dystraktory: niesprawiedliwość, bunt, bezsilność
-
-**164.** `id 181` · dziewczyna, 16 l.  
-*Rodzic zerka 16-latce przez ramię i pyta, z kim tak pisze.*  
-„To jest moja prywatna sprawa. Czy ja ci zaglądam w telefon? Daj mi w końcu trochę oddechu!”  
-→ emocja: **złość** · dystraktory: bunt, strach, bezsilność
-
-**165.** `id 183` · dziewczyna, 17 l.  
-*17-latka dowiaduje się, że rodzice rozmawiali o jej ocenach z ciocią.*  
-„Po co rozpowiadacie o moich sprawach całej rodzinie? To jest moje życie, a nie temat do plotek przy kawie!”  
-→ emocja: **złość** · dystraktory: żal, upokorzenie, bunt
-
-**166.** `id 184` · chłopak, 14 l.  
-*14-latek po zainstalowaniu przez rodziców aplikacji do kontroli czasu przed ekranem.*  
-„Blokujecie mi telefon o 21? Przecież to jest jedyny czas, kiedy mogę pogadać z ludźmi. Traktujecie mnie jak małe dziecko.”  
-→ emocja: **złość** · dystraktory: bunt, bezsilność, samotność
-
-**167.** `id 185` · dziewczyna, 16 l.  
-*16-latka odkrywa, że mama zaczęła ją obserwować na Instagramie i lajkuje jej zdjęcia.*  
-„Proszę, nie rób mi tego. To jest moja przestrzeń, nie chcę tam mieć rodziców pod każdym postem.”  
-→ emocja: **strach** · dystraktory: wstyd, bunt, złość
-
-**168.** `id 186` · chłopak, 15 l.  
-*Wieczór. 15-latek wypada z pokoju z notesem w ręce.*  
-„Znalazłem to pod łóżkiem, leżało inaczej. Czytałaś to, prawda? Jak mogłaś mi to zrobić?!”  
+**132.** `id 132` · dziewczyna, 16 l.  
+*16-latka znajduje swój notatnik przełożony na inną półkę. Zakładka jest w innym miejscu.*  
+„Przeczytałaś. Tam było wszystko, czego ci nie mówię. Teraz już wiem, dlaczego ci nie mówię.”  
 → emocja: **żal** · dystraktory: złość, upokorzenie, bezsilność
 
-**169.** `id 187` · dziewczyna, 13 l.  
-*Pora spać. Rodzic czeka, aż 13-latka odłoży telefon w salonie.*  
-„Nikt tak nie robi! Wszyscy mają telefony przy sobie, a wy traktujecie mnie, jakbym miała pięć lat.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, wstyd
+**133.** `id 133` · chłopak, 15 l.  
+*15-latek wraca ze szkoły i zastaje posprzątane biurko. Kosz w kuchni jest pełen jego kartek.*  
+„Wyrzuciłaś moje rzeczy. To nie były śmieci, to były notatki do mojego komiksu. Pół roku rysowania.”  
+→ emocja: **złość** · dystraktory: żal, bezsilność, niesprawiedliwość
 
-**170.** `id 188` · chłopak, 17 l.  
-*Przed wyjściem na cały weekend 17-latek słyszy prośbę o dokładny plan, godzina po godzinie.*  
-„Nie wiem dokładnie, co będziemy robić! Po prostu wychodzę. Przecież nie ucieknę z kraju.”  
-→ emocja: **bunt** · dystraktory: złość, frustracja, przytłoczenie
+**134.** `id 134` · chłopak, 13 l.  
+*20:00. 13-latek przychodzi do salonu z telefonem, który właśnie zablokował się przez nowe ustawienia kontroli rodzicielskiej.*  
+„Ósma. O ósmej mi się wyłącza, jak pięciolatkowi. Wszyscy w klasie mogą do dziesiątej.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, bezsilność
 
-**171.** `id 189` · dziewczyna, 16 l.  
-*Rodzic wszedł bez pukania, gdy 16-latka się przebierała.*  
-„Nie mogę mieć nawet chwili dla siebie w tym domu?”  
-→ emocja: **złość** · dystraktory: wstyd, bunt, bezsilność
-
-**172.** `id 190` · dziewczyna, 17 l.  
-*17-latka, której rodzice nie chcą puścić na koncert ulubionego zespołu.*  
-„Oni przyjeżdżają raz na kilka lat! To jest moja jedyna szansa, żeby ich zobaczyć. Wszystko mi ucieka!”  
-→ emocja: **złość** · dystraktory: smutek, bezsilność, tęsknota
-
-**173.** `id 191` · chłopak, 15 l.  
-*15-latek próbuje nagrać filmik na YouTube, ale rodzice ciągle wchodzą mu do pokoju.*  
-„To jest nie do zrobienia. Nigdy nie uda mi się nagrać nic sensownego, jak ciągle ktoś tu łazi i coś chce!”  
-→ emocja: **frustracja** · dystraktory: złość, bezsilność, bunt
-
-**174.** `id 192` · chłopak, 16 l.  
-*16-latek pierwszy raz pokazuje rodzicom swoje nowe hobby. Słyszy śmiech.*  
-„Dla was wszystko, co robię, jest dziwne. Nawet nie spróbowaliście zrozumieć, o co w tym chodzi, od razu jest 'głupie'.”  
-→ emocja: **smutek** · dystraktory: złość, bezsilność, samotność
-
-**175.** `id 193` · chłopak, 17 l.  
-*Rodzic przypomina 17-latkowi o codziennej godzinie ćwiczeń na pianinie.*  
-„Mam dosyć tego pianina. Każda godzina przy nim to dla mnie tortura. Dlaczego nie mogę robić tego, co ja chcę?”  
-→ emocja: **bezsilność** · dystraktory: złość, bunt, smutek
-
-**176.** `id 194` · chłopak, 14 l.  
-*14-latek o swojej kolekcji kart i figurek, którą rodzic nazwał śmieciami.*  
-„To nie są śmieci! Zbierałem to latami! Zupełnie tego nie szanujesz.”  
-→ emocja: **złość** · dystraktory: żal, smutek, bezsilność
-
-**177.** `id 195` · chłopak, 16 l.  
-*16-latek o presji rodziców na konkretny kierunek studiów.*  
-„To wasze marzenia, nie moje. Chcecie, żebym był lekarzem, ale ja mdleję na widok krwi. Nikt mnie nie słucha!”  
-→ emocja: **złość** · dystraktory: bunt, bezsilność, smutek
-
-**178.** `id 197` · dziewczyna, 14 l.  
-*Po kolacji 14-latka sprząta ze stołu. Młodszy brat idzie grać.*  
-„On znowu nie musiał sprzątać po kolacji, bo 'jest mały'. Ja w jego wieku już wszystko robiłam sama. To jest totalnie nie fair!”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, bezsilność
-
-**179.** `id 198` · chłopak, 16 l.  
-*16-latek proszony o pomoc z zakupami, gdy właśnie planował wyjście.*  
-„Dlaczego zawsze przypominasz sobie o zakupach, kiedy ja mam swoje plany? Nigdy nie szanujesz mojego czasu!”  
-→ emocja: **złość** · dystraktory: niesprawiedliwość, bunt, frustracja
-
-**180.** `id 199` · dziewczyna, 13 l.  
-*13-latka, której rodzice nie pozwalają kupić konkretnego ciucha.*  
-„Wszystkie dziewczyny to noszą! Tylko ja mam wyglądać inaczej, bo wam się to nie podoba. Chcecie, żeby wszyscy się ze mnie śmiali?”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, wstyd, strach
-
-**181.** `id 200` · chłopak, 15 l.  
-*Rodzic przy 15-latku po raz trzeci w tym tygodniu otwiera Librusa.*  
-„Mam 15 lat, a wy pilnujecie mnie jak w podstawówce. Czy wy mi w ogóle w czymkolwiek ufacie?”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, bezsilność
-
-**182.** `id 201` · dziewczyna, 17 l.  
-*17-latka, która nie może pojechać pod namiot ze znajomymi.*  
-„Znam ich od lat! Nic mi się nie stanie, ale wy zawsze widzicie najgorsze scenariusze. Mam dość tego pilnowania na każdym kroku.”  
-→ emocja: **złość** · dystraktory: bunt, niesprawiedliwość, bezsilność
-
-**183.** `id 202` · chłopak, 14 l.  
-*Goście jeszcze siedzą w salonie. 14-latek łapie rodzica w kuchni.*  
-„Zrobiłeś ze mnie głupka przy wszystkich, jakbym nie miał nic mądrego do gadania.”  
-→ emocja: **upokorzenie** · dystraktory: złość, żal, bezsilność
-
-**184.** `id 203` · chłopak, 15 l.  
-*Przy obiedzie 15-latek dowiaduje się, że został zapisany na korepetycje z fizyki.*  
-„Nie zapytaliście mnie, czy ja w ogóle chcę tam chodzić. Po prostu mnie tam zapisaliście, jakby moje zdanie w ogóle się nie liczyło.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, bezsilność
-
-**185.** `id 204` · chłopak, 17 l.  
-*17-latek o zakazie prowadzenia samochodu rodziców mimo zdanego prawa jazdy.*  
-„Właśnie zrobiłem prawko! Skąd mam nabrać wprawy, jak wy mi nigdy nie dajecie kluczyków? Zawsze jestem 'za młody'.”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, frustracja, bunt
-
-**186.** `id 205` · chłopak, 17 l.  
-*Kolega podsyła 17-latkowi screena: pod jego postem komentarz od rodzica.*  
-„Po co to zrobiliście? Przecież to jest siara! Teraz moi znajomi będą to wyciągać przez pół roku.”  
-→ emocja: **upokorzenie** · dystraktory: złość, wstyd, bunt
-
-**187.** `id 206` · chłopak, 15 l.  
-*Za oknem leje. Rodzic woła 15-latka: pies czeka na spacer.*  
-„Zawsze ja! Dlaczego to ja muszę iść, kiedy leje, a wy sobie siedzicie przed telewizorem?”  
-→ emocja: **niesprawiedliwość** · dystraktory: złość, bunt, frustracja
-
-**188.** `id 207` · chłopak, 16 l.  
-*16-latek, któremu rodzic każe wynieść śmieci, choć właśnie usiadł.*  
-„Właśnie usiadłem, żeby odpocząć. Czy naprawdę te śmieci nie mogą poczekać do jutra? Musisz mi truć teraz?”  
-→ emocja: **złość** · dystraktory: frustracja, bunt, bezsilność
-
-**189.** `id 208` · chłopak, 17 l.  
-*17-latek o pomaganiu w ogrodzie w weekend.*  
-„Cały weekend mamy kopać te grządki? Przecież ja miałem się spotkać z ekipą. Znowu mi psujecie plany.”  
-→ emocja: **złość** · dystraktory: niesprawiedliwość, bunt, frustracja
-
-**190.** `id 209` · chłopak, 16 l.  
-*Pod szkołą, na oczach kolegów, rodzic przytula 16-latka na pożegnanie.*  
-„Przestań! Robisz mi totalny obciach. Nie jestem już małym dzieckiem!”  
-→ emocja: **wstyd** · dystraktory: złość, upokorzenie, bunt
-
-**191.** `id 210` · dziewczyna, 15 l.  
-*Rodzic ubiera się, żeby iść z 15-latką na zakupy po ubrania.*  
-„Sama sobie wybiorę ubrania. Twój gust to lata dziewięćdziesiąte, nie chcę wyglądać jak ty.”  
-→ emocja: **bunt** · dystraktory: złość, wstyd, frustracja
-
-**192.** `id 211` · chłopak, 14 l.  
-*14-latek ledwo zdjął buty, a już słyszy pytanie, jak było w szkole.*  
-„Normalnie. Jak zawsze. Możesz przestać mnie codziennie przesłuchiwać?”  
+**135.** `id 135` · chłopak, 16 l.  
+*16-latek siedzi z mamą przy kolacji. Telefon wibruje trzeci raz i mama za każdym razem pyta, kto pisze.*  
+„Każde powiadomienie: kto to, kto to, kto to. Kumpel, kumpel, kumpel. Mam ci podać listę?”  
 → emocja: **frustracja** · dystraktory: złość, bunt, przytłoczenie
 
-**193.** `id 212` · dziewczyna, 17 l.  
-*Rodzice proponują 17-latce, żeby wreszcie przyprowadziła nowego chłopaka.*  
-„Nie przyprowadzę go tutaj, żebyście go oceniali od progu. To moja sprawa, z kim się spotykam.”  
-→ emocja: **strach** · dystraktory: bunt, złość, wstyd
+**136.** `id 136` · dziewczyna, 14 l.  
+*14-latka rozmawia w pokoju z koleżanką przez głośnomówiący. Otwiera drzwi i widzi mamę tuż za nimi.*  
+„Stałaś pod drzwiami. Ona to słyszała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.”  
+→ emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
-**194.** `id 213` · chłopak, 16 l.  
-*16-latek opowiada o problemie w szkole. Rodzic od razu wchodzi z gotowym planem.*  
-„Wiem, co mam robić! Nie musisz mi powtarzać wszystkiego po dziesięć razy, jakbym był głupi.”  
-→ emocja: **złość** · dystraktory: frustracja, bunt, upokorzenie
+**137.** `id 137` · chłopak, 15 l.  
+*Nowa zasada w domu: drzwi do pokoju mają być otwarte, kiedy 15-latek siedzi przy komputerze. On stoi w progu z ręką na klamce.*  
+„Nawet drzwi nie mogę zamknąć? Co niby mam tam robić? To mój pokój, nie wasza poczekalnia.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, upokorzenie
 
-**195.** `id 214` · dziewczyna, 15 l.  
-*Z pokoju 15-latki głośno gra muzyka. Rodzic krzywi się od progu.*  
-„Słucham tego, co chcę słuchać. Jak wam się nie podoba, to wyjdźcie z mojego pokoju, ale nie mówcie, że to 'hałas'.”  
-→ emocja: **złość** · dystraktory: bunt, smutek, niesprawiedliwość
+**138.** `id 138` · dziewczyna, 18 l.  
+*18-latka wraca z miasta i widzi na telefonie taty mapę ze swoją lokalizacją. Tata nie zdążył zamknąć aplikacji.*  
+„Mam osiemnaście lat. Osiemnaście. Dalej patrzysz na kropkę na mapie, zamiast po prostu zapytać.”  
+→ emocja: **żal** · dystraktory: złość, upokorzenie, bunt
 
-**196.** `id 215` · chłopak, 14 l.  
-*Rodzice żartują przy kolacji z tego, że 14-latek przeżywa rozstanie z pierwszą dziewczyną.*  
-„Dla was to jest zabawne, ale dla mnie to jest teraz najważniejsze. Nic nie rozumiecie!”  
-→ emocja: **smutek** · dystraktory: złość, samotność, żal
+**139.** `id 139` · chłopak, 14 l.  
+*14-latek wraca ze szkoły i widzi, że rzeczy w jego plecaku są poukładane inaczej, niż je zostawił.*  
+„Przeszukałaś mój plecak. Co chciałaś tam znaleźć?”  
+→ emocja: **upokorzenie** · dystraktory: złość, niesprawiedliwość, żal
 
-**197.** `id 216` · chłopak, 16 l.  
-*Przy gościach rodzic woła 16-latka zdrobniałym imieniem z dzieciństwa.*  
-„Nie mów tak do mnie! Nienawidzę tego imienia, czuję się wtedy jak jakiś niemowlak.”  
-→ emocja: **wstyd** · dystraktory: złość, bunt, smutek
+**140.** `id 140` · dziewczyna, 16 l.  
+*Przy kolacji mama pyta o chłopaka, o którym 16-latka pisała tylko w prywatnej rozmowie z przyjaciółką. Ona odkłada sztućce.*  
+„Skąd o nim wiesz? Nikomu nie mówiłam. Skąd?”  
+→ emocja: **złość** · dystraktory: strach, upokorzenie, bezsilność
 
-**198.** `id 217` · dziewczyna, 15 l.  
-*Rodzic rzuca młodzieżowymi słówkami przy koleżankach 15-latki.*  
-„To było takie cringe'owe. Proszę, po prostu zachowuj się normalnie, a nie udawaj nastolatka.”  
-→ emocja: **wstyd** · dystraktory: złość, upokorzenie, frustracja
+**141.** `id 141` · chłopak, 13 l.  
+*13-latek wyłącza grę, kiedy tata podchodzi z telefonem, na którym jest aplikacja pokazująca czas spędzony w grach.*  
+„Masz to w telefonie, co do minuty. Czterdzieści minut. To po co pytasz, ile grałem, skoro wiesz?”  
+→ emocja: **frustracja** · dystraktory: złość, upokorzenie, bunt
 
-**199.** `id 218` · chłopak, 15 l.  
-*15-latek, który bardzo liczył na wyjazd na obóz sportowy, dowiaduje się, że z powodu awarii samochodu rodzice muszą przesunąć wydatki.*  
-„Obiecaliście mi to pół roku temu! Wszyscy moi kumple już mają opłacone miejsca, a ja teraz mam im powiedzieć, że co? Że znowu coś się zepsuło? Zawsze mi wszystko psujecie w ostatniej chwili!”  
-→ emocja: **złość** · dystraktory: żal, niesprawiedliwość, bezsilność
+**142.** `id 142` · dziewczyna, 18 l.  
+*Mama poprosiła o hasło do telefonu 'na wszelki wypadek'. 18-latka kładzie telefon na stole ekranem do dołu.*  
+„Na wypadek czego? Nie dam. Jak dam, to już nigdy nie będzie moje.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, frustracja
 
-**200.** `id 237` · chłopak, 14 l.  
-*14-latek strzelił pierwszą bramkę w sezonie. Rodzic obiecał przyjść na mecz i nie dotarł.*  
-„Obiecałeś, że będziesz. Wszyscy mieli kogoś na trybunach, tylko ja nie.”  
-→ emocja: **żal** · dystraktory: smutek, złość, samotność
+**143.** `id 143` · chłopak, 16 l.  
+*16-latek dowiaduje się od kolegi, że tata napisał do niego z jego Discorda, żeby nie grali tak długo w nocy. Wchodzi do kuchni z telefonem.*  
+„Napisałeś do Bartka. Z mojego Discorda. Wiesz, jak mnie teraz nazywają?”  
+→ emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
+
+### Autonomia: wyjścia, godziny powrotu, wygląd, muzyka, własny styl (14)
+
+**144.** `id 144` · chłopak, 16 l.  
+*16-latek dostał odmowę na koncert, na który idzie cała jego klasa. Stoi w drzwiach kuchni z biletem w ręce.*  
+„Wszyscy idą, wszyscy. Rodzice każdego się zgodzili, tylko wy nie. Co jest ze mną nie tak?”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, bunt
+
+**145.** `id 145` · chłopak, 15 l.  
+*Piątek, 20:50. 15-latek wraca z boiska dokładnie o godzinie wyznaczonej przez tatę, koledzy zostali.*  
+„Dziewiąta. Oni siedzą do jedenastej, a ja wstaję i mówię 'muszę'. Jak z przedszkola.”  
+→ emocja: **wstyd** · dystraktory: bunt, złość, niesprawiedliwość
+
+**146.** `id 146` · chłopak, 14 l.  
+*Dzień przed zjazdem rodzinnym. Mama kazała ściąć włosy przed wspólnym zdjęciem, 14-latek stoi w łazience i nie dzwoni do fryzjera.*  
+„Nie zetnę. To moje włosy, nie wasza dekoracja.”  
+→ emocja: **złość** · dystraktory: bunt, upokorzenie, bezsilność
+
+**147.** `id 147` · dziewczyna, 17 l.  
+*17-latka wychodzi z łazienki umalowana na wyjście. Tata komentuje, że wygląda 'jak do klubu'.*  
+„'Jak do klubu'. Pół godziny to robiłam, idę do kina z koleżankami. Mam zmyć i pójść jak szara mysz, tak chcesz?”  
+→ emocja: **upokorzenie** · dystraktory: złość, wstyd, żal
+
+**148.** `id 148` · chłopak, 15 l.  
+*15-latek puścił w samochodzie swoją playlistę. Tata po minucie przełącza na radio.*  
+„Minuta. Nawet nie posłuchałeś jednego kawałka do końca. 'To nie muzyka', a twoja to niby muzyka?”  
+→ emocja: **rozczarowanie** · dystraktory: złość, żal, odrzucenie
+
+**149.** `id 149` · dziewczyna, 16 l.  
+*16-latka dostała trzeci rok z rzędu odmowę wyjazdu ze znajomymi nad jezioro. Siedzi na łóżku z otwartą listą rzeczy do spakowania.*  
+„Rok temu 'za rok'. Dwa lata temu 'za rok'. Kiedy w końcu będzie ten rok?”  
+→ emocja: **bezsilność** · dystraktory: złość, niesprawiedliwość, bunt
+
+**150.** `id 150` · chłopak, 17 l.  
+*Sylwester. 17-latek szykuje się na imprezę u kolegi, mama właśnie powiedziała, że ma wrócić o 22.*  
+„O dziesiątej w sylwestra? To ja w ogóle nie idę. Po co, żeby wyjść przed północą jak dzieciak?”  
+→ emocja: **złość** · dystraktory: bunt, niesprawiedliwość, upokorzenie
+
+**151.** `id 151` · dziewczyna, 14 l.  
+*14-latka wraca od koleżanki z pasemkiem niebieskiej farby we włosach, mimo wcześniejszego zakazu.*  
+„Tak, zrobiłam. To moje włosy. Zmyje się za miesiąc, a ty robisz z tego aferę.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, wstyd
+
+**152.** `id 152` · chłopak, 16 l.  
+*16-latek wychodzi z pokoju w nowej, szerokiej bluzie. Mama patrzy na niego i wzdycha.*  
+„Nigdy ci się nie podoba nic, co jest moje. Ani ciuchy, ani muzyka, ani kumple. Nic.”  
+→ emocja: **odrzucenie** · dystraktory: złość, żal, upokorzenie
+
+**153.** `id 153` · dziewczyna, 13 l.  
+*13-latka dostała odmowę na nocowanie u koleżanki, bo mama nie zna jej rodziców. Siedzi na schodach z telefonem.*  
+„Wszystkie będą. Ja będę w domu, jak zawsze. Nawet nie spróbowałaś ich poznać.”  
+→ emocja: **żal** · dystraktory: złość, niesprawiedliwość, samotność
+
+**154.** `id 154` · chłopak, 18 l.  
+*18-latek wychodzi na osiemnastkę kolegi. Tata w przedpokoju przypomina, że ma być w domu o pierwszej.*  
+„O pierwszej, na osiemnastce? Wrócę, jak się skończy. Nie będę pierwszy wychodził, bo tata kazał.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, frustracja
+
+**155.** `id 155` · dziewczyna, 16 l.  
+*16-latka wraca od fryzjera z włosami ściętymi na krótko. Mama na jej widok pyta, co ona sobie zrobiła.*  
+„Co sobie zrobiłam? Ścięłam włosy, moje. I nie, nie wyglądam 'jak chłopak', wyglądam jak ja.”  
+→ emocja: **złość** · dystraktory: upokorzenie, bunt, żal
+
+**156.** `id 156` · chłopak, 15 l.  
+*15-latek dostał zgodę na mecz w sąsiednim mieście tylko pod warunkiem, że pojedzie z nim mama. Koledzy jadą sami pociągiem.*  
+„Wszyscy jadą sami, ja z mamą jak na wycieczce z podstawówki. Mam im powiedzieć, że mama się boi, czy że ja się boję?”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, niesprawiedliwość
+
+**157.** `id 157` · dziewczyna, 16 l.  
+*16-latka dostała propozycję pracy w weekendy w kawiarni koleżanki. Tata odmówił zgody, bo 'najpierw szkoła'.*  
+„Mam średnią cztery osiem. Co jeszcze mam zrobić, żebyś mi uwierzył, że ogarniam? Weekend to mój czas.”  
+→ emocja: **frustracja** · dystraktory: bezsilność, złość, niesprawiedliwość
+
+### Obowiązki i „zawsze ja" (10)
+
+**158.** `id 158` · chłopak, 15 l.  
+*15-latek zakłada buty do wyjścia, kiedy mama woła go do wyniesienia śmieci.*  
+„Znowu ja. Rano ja, wczoraj ja. Jakby w tym domu tylko ja miał ręce.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, bunt
+
+**159.** `id 159` · dziewczyna, 14 l.  
+*14-latka czwarty dzień z rzędu odbiera brata z przedszkola i zostaje z nim do wieczora. Mama wraca o 19.*  
+„Nie jestem jego mamą. Odbieram, karmię, bawię się z nim. Kiedy ja mam czas dla siebie?”  
+→ emocja: **przytłoczenie** · dystraktory: niesprawiedliwość, złość, żal
+
+**160.** `id 160` · chłopak, 16 l.  
+*Osiemdziesiąta piąta minuta meczu Ligi Mistrzów. Mama woła do zmywania, 16-latek wstaje z pilotem w ręce.*  
+„Teraz? Pięć minut do końca i akurat teraz? Zawsze w najgorszym momencie, zawsze.”  
+→ emocja: **złość** · dystraktory: frustracja, niesprawiedliwość, bunt
+
+**161.** `id 161` · chłopak, 17 l.  
+*17-latek wraca o 20 z korepetycji. Tata od progu mówi o nieposprzątanym pokoju.*  
+„Wyszedłem o siódmej rano, wracam o ósmej wieczorem. Kiedy ja mam niby sprzątać? W nocy?”  
+→ emocja: **bezsilność** · dystraktory: przytłoczenie, złość, żal
+
+**162.** `id 162` · chłopak, 13 l.  
+*13-latek wraca ze spaceru z psem w deszczu. Jego siedemnastoletni brat siedzi w pokoju przy grze.*  
+„Pies jest 'nasz', a wychodzę z nim tylko ja. On ma siedemnaście lat i w tym tygodniu nawet smyczy nie dotknął.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, żal, frustracja
+
+**163.** `id 163` · dziewczyna, 15 l.  
+*15-latka umyła podłogę w kuchni. Po chwili widzi, jak mama bierze mop i myje ją jeszcze raz.*  
+„To po co ja to robiłam? Jak i tak zrobisz po mnie, to następnym razem zrób od razu.”  
+→ emocja: **frustracja** · dystraktory: upokorzenie, złość, bezsilność
+
+**164.** `id 164` · chłopak, 18 l.  
+*Piątek wieczór. Ojciec ogłasza, że w sobotę cała rodzina sprząta garaż, a 18-latek ma od tygodnia umówiony wyjazd.*  
+„Nie. Mam plany od tygodnia. Nie można tak po prostu ogłosić, że moja sobota jest wasza.”  
+→ emocja: **bunt** · dystraktory: złość, niesprawiedliwość, frustracja
+
+**165.** `id 165` · dziewczyna, 15 l.  
+*Tata prosi o zrobienie kolacji dla rodziny. 15-latka patrzy w stronę pokoju, w którym jej szesnastoletni brat gra na konsoli.*  
+„Czemu ja? Bo jestem dziewczyną? On ma dwie ręce, a nikt go nie prosi o kolację.”  
+→ emocja: **złość** · dystraktory: niesprawiedliwość, bunt, upokorzenie
+
+**166.** `id 166` · chłopak, 14 l.  
+*14-latek słucha, jak tata po raz kolejny opowiada, że sam w jego wieku pomagał od świtu w gospodarstwie. Przewraca oczami.*  
+„Ty w moim wieku. Wiem, słyszałem to sto razy. Tylko że ja nie jestem tobą.”  
+→ emocja: **frustracja** · dystraktory: złość, bunt, upokorzenie
+
+**167.** `id 167` · dziewczyna, 13 l.  
+*13-latka wraca o 18 z zajęć, zdejmuje buty i siada na kanapie. Po minucie mama woła ją do pomocy w kuchni.*  
+„Minutę. Usiadłam minutę temu. Nigdy nie mogę po prostu usiąść, zawsze coś jest do zrobienia.”  
+→ emocja: **przytłoczenie** · dystraktory: żal, złość, bezsilność
+
+### Wstyd przez rodzica przy ludziach (żarty, zdrobnienia, wtrącanie się, czułości publicznie) (10)
+
+**168.** `id 168` · dziewczyna, 15 l.  
+*Niedzielny obiad z ciocią i jej córkami. Mama opowiada przy stole, że 15-latka 'ma kogoś na oku', ona wstaje od stołu.*  
+„Powiedziałam ci to w tajemnicy. W tajemnicy! A ty przy wszystkich, jakby to był żart z telewizji.”  
+→ emocja: **upokorzenie** · dystraktory: złość, wstyd, żal
+
+**169.** `id 169` · chłopak, 16 l.  
+*16-latek stoi z kolegami pod szkołą. Mama podjeżdża i przez otwarte okno woła go domowym zdrobnieniem.*  
+„Nie przy ludziach. Nigdy.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, żal
+
+**170.** `id 170` · chłopak, 14 l.  
+*14-latek wychodzi ze szkoły z kolegami. Tata czekający przy bramie głośno każe mu zapiąć kurtkę.*  
+„'Zapnij kurtkę'. Na cały chodnik. Oni będą mi to powtarzać do końca roku.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, złość, bezsilność
+
+**171.** `id 171` · chłopak, 15 l.  
+*15-latek stoi po meczu z drużyną, kiedy mama podchodzi i całuje go w czubek głowy. W samochodzie on patrzy w okno.*  
+„Przy całej drużynie. W głowę. Jak pięciolatka.”  
+→ emocja: **złość** · dystraktory: wstyd, upokorzenie, żal
+
+**172.** `id 172` · dziewczyna, 17 l.  
+*Spotkanie ze znajomymi rodziców. 17-latka słyszy z kuchni, jak tata mówi, że 'ona jeszcze nie wie, co chce robić w życiu', i po wyjściu gości staje w drzwiach.*  
+„Mówisz o mnie przy ludziach jak o problemie. 'Jeszcze nie wie'. Jakbym była zepsuta.”  
+→ emocja: **żal** · dystraktory: upokorzenie, złość, wstyd
+
+**173.** `id 173` · chłopak, 14 l.  
+*Po treningu mama podchodzi do trenera i przy całej drużynie pyta, czy 14-latek 'się stara'. W drodze do domu on długo milczy.*  
+„Zapytałaś trenera, czy się staram. Przy wszystkich. Teraz jestem ten, którego mama sprawdza.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, bezsilność
+
+**174.** `id 174` · dziewczyna, 15 l.  
+*15-latka odprowadza koleżankę do drzwi. Tata na pożegnanie żartuje z jej nowej fryzury, a koleżanka wychodzi bez słowa.*  
+„Zażartowałeś z jej włosów. Przy niej. Ona już tu nie wróci i nawet nie wiesz, co zrobiłeś.”  
+→ emocja: **złość** · dystraktory: wstyd, żal, bezsilność
+
+**175.** `id 175` · chłopak, 13 l.  
+*13-latek siedzi z tyłu w samochodzie. Mama przyszła po niego na urodziny kolegi pół godziny przed końcem i przez ten czas rozmawiała w kuchni z jego rodzicami.*  
+„Opowiedziałaś im o mojej alergii i o tym, że śpię przy lampce. Wszyscy to słyszeli. Wszyscy.”  
+→ emocja: **wstyd** · dystraktory: upokorzenie, złość, żal
+
+**176.** `id 176` · dziewczyna, 15 l.  
+*15-latka wrzuciła zdjęcie z koleżankami. Pierwszy komentarz pod spodem jest od mamy, z serduszkami i 'moja piękna córeczka'.*  
+„Usuń to. Teraz. Wszyscy to widzą, a ja nie mogę zablokować własnej mamy.”  
+→ emocja: **upokorzenie** · dystraktory: wstyd, złość, bezsilność
+
+**177.** `id 177` · chłopak, 15 l.  
+*Dzień po wywiadówce. 15-latek wraca ze szkoły i zamiast do pokoju idzie prosto do mamy.*  
+„Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama kumpla mu powiedziała, a on całej klasie.”  
+→ emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
+
+### Presja na wyniki i przyszłość („to nie zawód", codzienne sprawdzanie ocen) (7)
+
+**178.** `id 178` · chłopak, 16 l.  
+*16-latek wraca ze szkoły. Tata wita go w drzwiach pytaniem o trójkę z angielskiego, którą pół godziny temu wpisano w Librusie.*  
+„Zanim wejdę do domu, ty już wiesz. Nie muszę nic mówić, nigdy. Librus mówi za mnie.”  
+→ emocja: **bezsilność** · dystraktory: złość, przytłoczenie, bunt
+
+**179.** `id 179` · dziewczyna, 17 l.  
+*17-latka pokazuje tacie stronę kierunku grafika na uczelni. Tata mówi, że 'to nie jest zawód'.*  
+„Nie zawód. Jasne. Rysuję od ósmego roku życia, a ty widzisz w tym hobby na emeryturę.”  
+→ emocja: **żal** · dystraktory: złość, odrzucenie, rozczarowanie
+
+**180.** `id 180` · chłopak, 15 l.  
+*15-latek przynosi sprawdzian z chemii z piątką. Mama pyta, czy ktoś dostał szóstkę.*  
+„Piątka. A ty pytasz o szóstkę. Nigdy dość.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, bezsilność, złość
+
+**181.** `id 181` · dziewczyna, 14 l.  
+*Dzień wyników egzaminu ósmoklasisty. 14-latka wraca od koleżanki, mama jeszcze w drzwiach pyta 'ile'.*  
+„'Ile'. Nie 'jak było'. Tylko 'ile'.”  
+→ emocja: **smutek** · dystraktory: żal, złość, rozczarowanie
+
+**182.** `id 182` · chłopak, 17 l.  
+*17-latek odczytuje z kalendarza na lodówce, że od wtorku ma korepetycje z matematyki, o których nikt z nim nie rozmawiał.*  
+„Zapisałaś mnie bez pytania. Jak psa do weterynarza.”  
+→ emocja: **złość** · dystraktory: bunt, bezsilność, niesprawiedliwość
+
+**183.** `id 183` · dziewczyna, 16 l.  
+*Sobota. 16-latka stoi ubrana do wyjścia, mama właśnie powiedziała, że zostaje w domu, bo w poniedziałek ma sprawdzian.*  
+„Umiem to. Mogę ci wyrecytować całość, a ty i tak 'zostajesz'. Co jeszcze mam zrobić?”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, bezsilność, frustracja
+
+**184.** `id 184` · chłopak, 18 l.  
+*18-latek po maturze mówi przy obiedzie, że złożył papiery na kulturoznawstwo. Ojciec odkłada widelec i zaczyna o medycynie.*  
+„To moje życie. Nie twoja druga szansa na medycynę. Złożyłem i nie cofnę.”  
+→ emocja: **bunt** · dystraktory: złość, bezsilność, żal
+
+### Porównywanie i faworyzowanie rodzeństwa (6)
+
+**185.** `id 185` · dziewczyna, 15 l.  
+*15-latka pokazuje mamie dyplom z konkursu szkolnego. Mama mówi, że jej siostra w tym wieku była już w finale wojewódzkim.*  
+„Zawsze ona. Przychodzę z czymś swoim i słyszę o niej. Jakby mnie nie było.”  
+→ emocja: **żal** · dystraktory: niesprawiedliwość, zazdrość, złość
+
+**186.** `id 186` · chłopak, 14 l.  
+*Przy kolacji tata chwali młodszego brata za czwórkę z dyktanda. 14-latek odsuwa talerz, w plecaku ma sprawdzian z piątką.*  
+„On dostaje brawa za czwórkę. Ja przyniosłem piątkę i cisza. Nikt nawet nie zapytał.”  
+→ emocja: **zazdrość** · dystraktory: niesprawiedliwość, żal, smutek
+
+**187.** `id 187` · dziewczyna, 16 l.  
+*Goście w salonie. Mama opowiada o sukcesach starszej siostry i przechodzi do innego tematu, 16-latka wychodzi z pokoju.*  
+„O niej dziesięć minut. O mnie zero, nawet nie 'a to młodsza'. Jakbym stała za szybą.”  
+→ emocja: **odrzucenie** · dystraktory: zazdrość, żal, smutek
+
+**188.** `id 188` · chłopak, 17 l.  
+*17-latek dostał odmowę weekendowego wyjazdu, na który jego starszy brat w tym samym wieku dostał zgodę.*  
+„On mógł w moim wieku. Bo 'on był odpowiedzialny'. A ja co, jestem gorszy?”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, zazdrość, żal
+
+**189.** `id 189` · chłopak, 13 l.  
+*13-latek prosi o smartfon zamiast starego telefonu z klawiszami. Tata mówi, że jeszcze za wcześnie, choć jego siostra dostała swój w wieku dwunastu lat.*  
+„Ona dostała smartfon na dwunaste urodziny. Ja mam trzynaście i 'jeszcze za wcześnie'. Jakie są zasady, bo ja ich nie znam?”  
+→ emocja: **złość** · dystraktory: niesprawiedliwość, zazdrość, bunt
+
+**190.** `id 190` · chłopak, 15 l.  
+*Wizyta u cioci. 15-latek słucha, jak mama wypytuje kuzyna o olimpiadę z matematyki, a potem pyta jego, czy on też by nie spróbował.*  
+„Nie jestem nim. Nigdy nie będę. Możesz przestać patrzeć na mnie jak na gorszą wersję?”  
+→ emocja: **smutek** · dystraktory: upokorzenie, zazdrość, żal
+
+### Złamane obietnice i nadszarpnięte zaufanie (6)
+
+**191.** `id 191` · chłopak, 14 l.  
+*14-latek wraca z meczu, na który tata obiecał przyjść. Miejsce obok innych rodziców było puste.*  
+„Obiecałeś. Strzeliłem gola i patrzyłem na trybuny.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, smutek, złość
+
+**192.** `id 192` · dziewczyna, 16 l.  
+*16-latka opowiedziała mamie o kłótni z przyjaciółką pod warunkiem, że zostanie to między nimi. Dziś babcia zapytała ją o to przez telefon.*  
+„Obiecałaś. 'Zostanie między nami'. Babcia wie, komu jeszcze powiedziałaś?”  
+→ emocja: **żal** · dystraktory: złość, upokorzenie, bezsilność
+
+**193.** `id 193` · chłopak, 17 l.  
+*17-latek trzeci raz pyta o obiecany kurs prawa jazdy, który miał zacząć trzy miesiące przed osiemnastką. Tata znów mówi 'może później'.*  
+„Trzeci raz 'może później'. Mówiłeś 'na pewno'. Wszyscy w klasie już jeżdżą, a ja dalej czekam na 'później'.”  
+→ emocja: **frustracja** · dystraktory: rozczarowanie, złość, bezsilność
+
+**194.** `id 194` · dziewczyna, 14 l.  
+*Sobota rano. Tata odwołuje przez pracę wspólny wyjazd do kina i na pizzę, trzeci raz w tym miesiącu, 14-latka zdejmuje kurtkę.*  
+„Trzeci raz. Już nawet nie jestem zdziwiona.”  
+→ emocja: **smutek** · dystraktory: żal, rozczarowanie, tęsknota
+
+**195.** `id 195` · chłopak, 15 l.  
+*15-latek przynosi świadectwo ze średnią, za którą mama obiecała podwyżkę kieszonkowego. Mama mówi, że 'teraz nie jest dobry moment'.*  
+„Umowa była jasna: cztery pięć, mam cztery sześć. Ja się wywiązałem, a ty nagle 'nie ten moment'.”  
+→ emocja: **niesprawiedliwość** · dystraktory: złość, rozczarowanie, żal
+
+**196.** `id 196` · dziewczyna, 17 l.  
+*17-latka wraca z wernisażu szkolnej wystawy, na której wisiały jej prace. Mama obiecała przyjść i dotarła po zakończeniu.*  
+„Każdy miał kogoś. Każdy. Stałam przy swoich obrazach jak sprzedawczyni w pustym sklepie.”  
+→ emocja: **samotność** · dystraktory: żal, rozczarowanie, smutek
+
+### Najtrudniejsze zdania wprost po kłótni (4)
+
+**197.** `id 197` · chłopak, 15 l.  
+*Kłótnia o godzinę powrotu trwała dziesięć minut. 15-latek trzaska drzwiami od pokoju, po chwili je otwiera.*  
+„Nienawidzę cię.”  
+→ emocja: **złość** · dystraktory: żal, bezsilność, bunt
+
+**198.** `id 198` · dziewczyna, 16 l.  
+*16-latka dowiedziała się, że matka jednak zadzwoniła do szkoły w sprawie, którą obiecała zostawić jej do załatwienia samej.*  
+„Już ci nie wierzę.”  
+→ emocja: **rozczarowanie** · dystraktory: żal, złość, smutek
+
+**199.** `id 199` · chłopak, 18 l.  
+*Ojciec w kłótni o oceny nazwał syna leniem. 18-latek stoi w drzwiach swojego pokoju.*  
+„Nie lubię cię. Nie jako ojca. Jako człowieka.”  
+→ emocja: **żal** · dystraktory: złość, upokorzenie, odrzucenie
+
+**200.** `id 200` · dziewczyna, 14 l.  
+*Po kłótni o telefon mama wchodzi do pokoju, żeby dokończyć rozmowę. 14-latka siedzi na łóżku odwrócona do ściany.*  
+„Wyjdź. Nie chcę cię widzieć.”  
+→ emocja: **bezsilność** · dystraktory: złość, żal, smutek
 
 ## Inne pytania i przykłady w aplikacji
 
 ### Scenka próbna (onboarding, przy pierwszym uruchomieniu)
 
-🟢 Poziom 1. Ta sama treść co scenka `id 8`.
+🟢 Poziom 1. Scenka stała, spoza bazy (pochodzi z poprzedniej wersji bazy); ta sama wypowiedź jest przykładem w pomocy „Jak reagować?” i w przykładach kalibrujących prompt oceny AI.
 
 *14-latek siedzi nad obiadem po klasówce. Łyżka krąży w zupie, apetytu brak.*  
 „Starałem się, a i tak wszystko spieprzyłem. Chyba naprawdę jestem do niczego.”  
@@ -1165,23 +1185,9 @@ Po złej odpowiedzi dodatkowo: „Większość rodziców też wybiera tę opcję
 
 ## Uwagi z ekstrakcji
 
-Stan po przeglądzie naturalności (szczegóły: przeglad-scenek.md) i uzupełnieniu bazy do 200 scenek.
-
-1. **Liczba scenek: 200.** Scalono duplikaty (110+111, 112+113), usunięto 56, 83 i bliźniaki 115, 127, 153, 182, dopisano nowe id 219-237. Numery `id` sięgają 237, 37 numerów jest pominiętych; duplikatów `id` nie ma.
-2. **Poziomy:** poziom 1: 80, poziom 2: 45, poziom 3: 75. Scenki 46 i 95 (emocja skierowana na rodzica) przeniesione na poziom 3.
-3. **Podobne scenki zostawione celowo** (ten sam temat, inne ujęcie):
-   - `54` (poz. 3) i `207` (poz. 3): rodzic każe chłopakowi wynieść śmieci (wybuch vs zmęczenie)
-   - `26` (poz. 1) i `141` (poz. 1): hejt w sieci na dziewczynę (strach przed wrzuceniem vs upokorzenie po fali)
-   - `145` (poz. 1) i `147` (poz. 1): dziewczyna uczy się w nocy i nie daje rady (sesja egzaminów vs spiętrzenie jednego dnia)
-   - `31` (poz. 3) i `52` (poz. 3): chłopak po kłótni: „Nie lubię cię” (13 lat) / „Nienawidzę cię” (16 lat)
-   - `175` (poz. 3) i `218` (poz. 3): plany chłopaka przepadają przez sprawy rodzinne
-   - `174` (poz. 3) i `197` (poz. 3): dziewczyna, młodszy brat i niesprawiedliwy podział obowiązków
-   - `178` (poz. 3) i `195` (poz. 3): rodzice pchają na wymarzony przez siebie kierunek
-   - `69` (poz. 3) i `191` (poz. 3): rodzice wchodzą do pokoju, gdy chłopak jest w trakcie
-   - `14` (poz. 2) i `210` (poz. 3): własny styl ubierania
-   - `11` (poz. 2) i `217` (poz. 3): rodzic przy znajomych nastolatka
-   - `59` (poz. 2) i `171` (poz. 2): wspólny wieczór z rodzicem vs wyjście (spokojnie vs z ostrzem)
-4. **Rodzaj rodzica.** W 10 scenkach rodzicem jest matka (50, 53, 68, 71, 76, 77, 177, 179, 185, 186), w 2 ojciec (202, 237), w pozostałych rodzaj rodzica nie wynika z tekstu. Interfejs zwraca się do rodzica w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”); do decyzji przy ewentualnej personalizacji.
-5. **Słownik emocji:** w polach `emo` i `dist` występuje 18 różnych słów, z czego 6 nie ma na „Mapie emocji” (panel 🧭 w aplikacji): bunt, desperacja, niesprawiedliwość, przytłoczenie, zazdrość, żal.
-6. **Podpowiedź po trzech słabych odpowiedziach** jest teraz stała dla scenki (wcześniej losowała się od nowa przy każdym wpisanym znaku).
-7. **Wyzwanie dla znajomego** zawsze wysyła ten sam quiz. W kodzie jest gotowy prompt do generowania quizu A/B/C z dowolnej scenki (`SYS_CHALLENGE`), ale nigdzie nie jest używany.
+1. **Źródło: pula v2** (200 scenek) z sesji „Scenki v2”, gałąź `scenki-v2`, commit `f22fe2f`, wklejona do aplikacji w miejsce poprzedniej bazy. Poprzednia baza 200 scenek zostaje w historii gita (commit `fb6a255`). Numery `id` 1-200, bez luk i duplikatów.
+2. **Poziomy:** poziom 1: 80, poziom 2: 45, poziom 3: 75; 21 sfer opisanych komentarzami w kodzie bazy.
+3. **Zapamiętane losowania:** numery 1-200 wskazują teraz inne scenki niż w poprzedniej bazie, więc aplikacja (stała `DB_VER=2`) jednorazowo zeruje u powracających użytkowników listę już wylosowanych scenek. Statystyki, poziom, odznaki i seria zostają.
+4. **Rodzic w scenkach:** mama pojawia się w 41 scenkach, tata w 33; w pozostałych rodzic nie jest nazwany. Interfejs nadal zwraca się do użytkownika w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”).
+5. **Słownik emocji:** w polach `emo` i `dist` występuje 17 różnych słów, z czego 5 nie ma na „Mapie emocji” (panel 🧭 w aplikacji): bunt, niesprawiedliwość, przytłoczenie, zazdrość, żal.
+6. **Wyzwanie dla znajomego** zawsze wysyła ten sam quiz. W kodzie jest gotowy prompt do generowania quizu A/B/C z dowolnej scenki (`SYS_CHALLENGE`), ale nigdzie nie jest używany.
