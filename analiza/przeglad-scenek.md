@@ -10,6 +10,8 @@ Zastosowane kryteria:
 4. **Czystość ćwiczenia.** Wypowiedź nie powinna sama nazywać emocji docelowej, a kontekst nie powinien jej podpowiadać ani diagnozować. Emocja ma być pokazana, nie podpisana.
 5. **Kontekst jako scena.** Moment i miejsce ("Sobota rano. Rodzic budzi..."), nie temat ("mówi o sprzątaniu").
 
+**Status wdrożenia (2026-10-06, commit `1045778`):** listy A i C wdrożone w całości. Z listy B: scenki 83 i 56 usunięte, 42 i 189 przeredagowane, 46 i 95 przeniesione na poziom 3, bliźniaki 115, 127, 153 i 182 usunięte, 74 zostawiona. Baza uzupełniona 19 nowymi scenkami (id 219-237) do 200. Poniższa treść opisuje stan sprzed wdrożenia.
+
 Wynik: około 117 scenek bez zastrzeżeń. Reszta niżej, w trzech listach:
 
 - **Lista A**: 33 poprawki językowe i logiczne, gotowe podmiany.
