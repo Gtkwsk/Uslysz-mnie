@@ -1,8 +1,8 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "8b550adfb5358bda052164254a31debba298b218",
+  "commit": "bf76fb634ee361ae36c9f6f0a63ef264bb9e5d83",
   "data_eksportu": "2026-10-06",
-  "liczba": 189,
+  "liczba": 187,
   "poziomy": {
     "1": {
       "emoji": "🟢",
@@ -99,8 +99,7 @@
         "złość",
         "smutek",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 2,
@@ -117,8 +116,7 @@
         "strach",
         "bezsilność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 3,
@@ -135,8 +133,7 @@
         "strach",
         "smutek",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 4,
@@ -153,8 +150,7 @@
         "przytłoczenie",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 5,
@@ -171,8 +167,7 @@
         "smutek",
         "rozczarowanie",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 6,
@@ -189,8 +184,7 @@
         "wstyd",
         "złość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 7,
@@ -207,8 +201,7 @@
         "smutek",
         "wstyd",
         "rozczarowanie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 8,
@@ -225,8 +218,7 @@
         "bezsilność",
         "złość",
         "niesprawiedliwość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 9,
@@ -243,8 +235,7 @@
         "złość",
         "frustracja",
         "niesprawiedliwość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 10,
@@ -261,8 +252,7 @@
         "przytłoczenie",
         "niepewność",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 11,
@@ -279,8 +269,7 @@
         "złość",
         "frustracja",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 12,
@@ -297,8 +286,7 @@
         "bezsilność",
         "złość",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 13,
@@ -315,8 +303,7 @@
         "wstyd",
         "strach",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 14,
@@ -333,8 +320,7 @@
         "żal",
         "bezsilność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 15,
@@ -344,15 +330,14 @@
       "linia_w_index_html": 283,
       "wiek": 13,
       "plec": "dziewczyna",
-      "kontekst": "13-latka po kłótni z nauczycielem, który oskarżył ją o ściąganie.",
+      "kontekst": "13-latka po kłótni z nauczycielką, która oskarżyła ją o ściąganie.",
       "wypowiedz": "Wcale nie ściągałam! Patrzyłam w okno, a ona mi zabrała kartkę przy wszystkich. To było tak niesprawiedliwe!",
       "emocja": "niesprawiedliwość",
       "dystraktory": [
         "złość",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 16,
@@ -369,8 +354,7 @@
         "bezsilność",
         "strach",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 17,
@@ -380,76 +364,38 @@
       "linia_w_index_html": 285,
       "wiek": 15,
       "plec": "chłopak",
-      "kontekst": "15-latek wraca do domu po sprawdzianie, na który uczył się trzy dni z rzędu, i dowiaduje się, że dostał ocenę niedostateczną.",
+      "kontekst": "15-latek wraca do domu z jedynką ze sprawdzianu z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.",
       "wypowiedz": "Mam to gdzieś, serio. Po co ja się w ogóle staram, skoro ta baba i tak mnie uwali? To jest jakiś żart, nigdy więcej nie otworzę tego podręcznika.",
       "emocja": "bezsilność",
       "dystraktory": [
         "złość",
         "rozczarowanie",
         "niesprawiedliwość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
       "nr": 18,
-      "id": 111,
+      "id": 112,
       "poziom": 1,
       "sekcja": "Szkoła i presja",
       "linia_w_index_html": 286,
       "wiek": 15,
       "plec": "chłopak",
-      "kontekst": "15-latek wraca do domu po sprawdzianie z chemii, na który uczył się trzy wieczory z rzędu. Rzuca plecakiem o ziemię.",
-      "wypowiedz": "No i po co ja w ogóle otwierałem te książki?! Ta baba i tak mi wlepiła lufę, bo stwierdziła, że metoda jej się nie podoba. Więcej tam nie idę, niech sobie sama rozwiązuje te zadania.",
-      "emocja": "bezsilność",
-      "dystraktory": [
-        "złość",
-        "niesprawiedliwość",
-        "rozczarowanie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
-    },
-    {
-      "nr": 19,
-      "id": 112,
-      "poziom": 1,
-      "sekcja": "Szkoła i presja",
-      "linia_w_index_html": 287,
-      "wiek": 15,
-      "plec": "chłopak",
-      "kontekst": "15-latek został wyrzucony z lekcji przez nauczyciela, który uznał, że to on rzucał papierkami, choć chłopak siedział cicho.",
+      "kontekst": "15-latek został wyrzucony z lekcji przez nauczycielkę, która uznała, że to on rzucał papierkami, choć chłopak siedział cicho.",
       "wypowiedz": "Wzięła mnie na cel i tyle. Inni robili syf, a ona wskazała palcem na mnie, bo tak jej było wygodniej. Aż mnie rozsadza od środka, jak to niesprawiedliwe!",
       "emocja": "niesprawiedliwość",
       "dystraktory": [
         "złość",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 20,
-      "id": 113,
-      "poziom": 1,
-      "sekcja": "Szkoła i presja",
-      "linia_w_index_html": 288,
-      "wiek": 17,
-      "plec": "chłopak",
-      "kontekst": "17-latek został wyproszony z zajęć dodatkowych przez trenera za rzekome przeszkadzanie, choć to inna grupa robiła hałas.",
-      "wypowiedz": "Wziął mnie na cel i tyle. Inni robili syf, a on wskazał palcem na mnie, bo tak mu było wygodniej, bo jestem najstarszy. Aż mnie rozsadza od środka, jak to podłe, noga tam więcej nie postanie!",
-      "emocja": "niesprawiedliwość",
-      "dystraktory": [
-        "złość",
-        "upokorzenie",
-        "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
-    },
-    {
-      "nr": 21,
+      "nr": 19,
       "id": 22,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 291,
+      "linia_w_index_html": 289,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek późnym wieczorem przegląda terminy egzaminów i prób.",
@@ -459,15 +405,14 @@
         "strach",
         "bezsilność",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 22,
+      "nr": 20,
       "id": 23,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 292,
+      "linia_w_index_html": 290,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka wraca ze szkoły. Jutro prezentacja, nerwowo skubie rękaw.",
@@ -477,15 +422,14 @@
         "wstyd",
         "niepewność",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 23,
+      "nr": 21,
       "id": 30,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 293,
+      "linia_w_index_html": 291,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wraca w środku tygodnia i od razu zamyka się w pokoju.",
@@ -495,15 +439,14 @@
         "smutek",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 24,
+      "nr": 22,
       "id": 64,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 294,
+      "linia_w_index_html": 292,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek rozmawia z rodzicem o motywacji. W pewnym momencie zaczyna mówić ciszej.",
@@ -513,15 +456,14 @@
         "smutek",
         "przytłoczenie",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 25,
+      "nr": 23,
       "id": 89,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 295,
+      "linia_w_index_html": 293,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek milknie, kiedy rodzic naciska na temat studiów. Potem mówi cicho.",
@@ -531,15 +473,14 @@
         "niepewność",
         "przytłoczenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 26,
+      "nr": 24,
       "id": 95,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 296,
+      "linia_w_index_html": 294,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "Rodzic próbuje pocieszyć 15-latkę. Reaguje, jakby to był atak.",
@@ -549,15 +490,14 @@
         "bezsilność",
         "złość",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "męska"
+      ]
     },
     {
-      "nr": 27,
+      "nr": 25,
       "id": 46,
       "poziom": 1,
       "sekcja": "Emocje, lęk, smutek",
-      "linia_w_index_html": 297,
+      "linia_w_index_html": 295,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "Rodzic przed chwilą zażartował z tego, o czym marzy 15-latka. Czerwienieje ze złości.",
@@ -567,15 +507,14 @@
         "smutek",
         "złość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 28,
+      "nr": 26,
       "id": 24,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 300,
+      "linia_w_index_html": 298,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka w poniedziałek rano trzyma się za brzuch i nie chce wstać.",
@@ -585,15 +524,14 @@
         "strach",
         "smutek",
         "odrzucenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 29,
+      "nr": 27,
       "id": 114,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 301,
+      "linia_w_index_html": 299,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka przegląda relacje na Instagramie i widzi, że cała jej paczka jest razem na pizzy — bez niej.",
@@ -603,15 +541,14 @@
         "samotność",
         "smutek",
         "zazdrość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 30,
+      "nr": 28,
       "id": 115,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 302,
+      "linia_w_index_html": 300,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka siedzi w ciemnym pokoju z telefonem. Zobaczyła na TikToku relację, jak cała jej paczka bawi się w kinie bez niej.",
@@ -621,15 +558,14 @@
         "samotność",
         "smutek",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 31,
+      "nr": 29,
       "id": 116,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 303,
+      "linia_w_index_html": 301,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wysłał wiadomość do przyjaciela trzy godziny temu, widzi, że została odczytana, ale nie ma odpowiedzi.",
@@ -639,15 +575,14 @@
         "złość",
         "samotność",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 32,
+      "nr": 30,
       "id": 117,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 304,
+      "linia_w_index_html": 302,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek zauważa, że dziewczyna, z którą pisał codziennie przez miesiąc, nagle przestała mu odpisywać i go zghostowała, choć publikuje nowe zdjęcia.",
@@ -657,15 +592,14 @@
         "bezsilność",
         "smutek",
         "niepewność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 33,
+      "nr": 31,
       "id": 118,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 305,
+      "linia_w_index_html": 303,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek słyszy, jak koledzy śmieją się z jego nowej fryzury.",
@@ -675,15 +609,14 @@
         "strach",
         "samotność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 34,
+      "nr": 32,
       "id": 119,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 306,
+      "linia_w_index_html": 304,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek dowiaduje się, że jego najlepszy przyjaciel wysłał screeny ich prywatnej, bardzo osobistej rozmowy do innych osób z klasy.",
@@ -693,15 +626,14 @@
         "żal",
         "złość",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 35,
+      "nr": 33,
       "id": 120,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 307,
+      "linia_w_index_html": 305,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka przygotowuje się do imprezy, ale nagle rezygnuje.",
@@ -711,15 +643,14 @@
         "niepewność",
         "smutek",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 36,
+      "nr": 34,
       "id": 121,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 308,
+      "linia_w_index_html": 306,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek dowiaduje się, że nowy kolega w klasie stał się bardzo popularny.",
@@ -729,15 +660,14 @@
         "samotność",
         "odrzucenie",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 37,
+      "nr": 35,
       "id": 122,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 309,
+      "linia_w_index_html": 307,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka po otrzymaniu screena, na którym koleżanki ją obgadują.",
@@ -747,15 +677,14 @@
         "złość",
         "żal",
         "upokorzenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 38,
+      "nr": 36,
       "id": 123,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 310,
+      "linia_w_index_html": 308,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek nie został zaproszony na osiemnastkę kuzyna, na której bardzo mu zależało.",
@@ -765,15 +694,14 @@
         "wstyd",
         "samotność",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 39,
+      "nr": 37,
       "id": 124,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 311,
+      "linia_w_index_html": 309,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka po powrocie ze szkoły, gdzie grupa dziewczyn ją ignorowała.",
@@ -783,15 +711,14 @@
         "samotność",
         "smutek",
         "upokorzenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 40,
+      "nr": 38,
       "id": 125,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 312,
+      "linia_w_index_html": 310,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka dowiaduje się, że jej chłopak wyjechał na weekend ze znajomymi, o czym zapomniał jej wspomnieć.",
@@ -801,15 +728,14 @@
         "złość",
         "odrzucenie",
         "niepewność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 41,
+      "nr": 39,
       "id": 75,
       "poziom": 1,
       "sekcja": "Rówieśnicy i odrzucenie",
-      "linia_w_index_html": 313,
+      "linia_w_index_html": 311,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka wraca ze szkoły i od razu rzuca się na łóżko.",
@@ -819,15 +745,14 @@
         "smutek",
         "wstyd",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 42,
+      "nr": 40,
       "id": 15,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 316,
+      "linia_w_index_html": 314,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wraca po zdjęciach klasowych. Przygaszony.",
@@ -837,15 +762,14 @@
         "złość",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 43,
+      "nr": 41,
       "id": 25,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 317,
+      "linia_w_index_html": 315,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek podaje rodzicowi telefon. Na grupie klasowej docinki o wyglądzie.",
@@ -855,15 +779,14 @@
         "wstyd",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 44,
+      "nr": 42,
       "id": 79,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 318,
+      "linia_w_index_html": 316,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek stoi przed lustrem w łazience. Długo dotyka skóry twarzy.",
@@ -873,15 +796,14 @@
         "smutek",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 45,
+      "nr": 43,
       "id": 84,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 319,
+      "linia_w_index_html": 317,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "Rozmowa przy kolacji schodzi na szkołę i wygląd. 14-latka mówi cicho.",
@@ -891,15 +813,14 @@
         "bezsilność",
         "smutek",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 46,
+      "nr": 44,
       "id": 85,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 320,
+      "linia_w_index_html": 318,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka staje na wadze po wakacjach. Płacze.",
@@ -909,15 +830,14 @@
         "smutek",
         "wstyd",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 47,
+      "nr": 45,
       "id": 126,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 321,
+      "linia_w_index_html": 319,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek szykuje się na osiemnastkę kolegi, ale po długim staniu przed lustrem nagle zdejmuje wyjściowe ubranie i kładzie się na łóżku.",
@@ -927,15 +847,14 @@
         "strach",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 48,
+      "nr": 46,
       "id": 127,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 322,
+      "linia_w_index_html": 320,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek przygotował się na pierwsze spotkanie z dziewczyną, ale po długim czasie przed lustrem nagle zdejmuje nową bluzę.",
@@ -945,15 +864,14 @@
         "strach",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 49,
+      "nr": 47,
       "id": 128,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 323,
+      "linia_w_index_html": 321,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka mierzy sukienkę na bal ósmoklasisty.",
@@ -963,15 +881,14 @@
         "smutek",
         "bezsilność",
         "strach"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 50,
+      "nr": 48,
       "id": 129,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 324,
+      "linia_w_index_html": 322,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek porównuje swój wzrost z kolegami z klasy.",
@@ -981,15 +898,14 @@
         "smutek",
         "zazdrość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 51,
+      "nr": 49,
       "id": 130,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 325,
+      "linia_w_index_html": 323,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka wraca od fryzjera, patrzy w lustro z przerażeniem.",
@@ -999,15 +915,14 @@
         "smutek",
         "bezsilność",
         "rozczarowanie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 52,
+      "nr": 50,
       "id": 131,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 326,
+      "linia_w_index_html": 324,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek nosi aparat ortodontyczny od tygodnia.",
@@ -1017,15 +932,14 @@
         "wstyd",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 53,
+      "nr": 51,
       "id": 132,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 327,
+      "linia_w_index_html": 325,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka widzi swoje zdjęcie zrobione z ukrycia przez kogoś z klasy.",
@@ -1035,15 +949,14 @@
         "wstyd",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 54,
+      "nr": 52,
       "id": 133,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 328,
+      "linia_w_index_html": 326,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek próbuje dobrać ubrania na wyjście do kina.",
@@ -1053,15 +966,14 @@
         "wstyd",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 55,
+      "nr": 53,
       "id": 134,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 329,
+      "linia_w_index_html": 327,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka porównuje się do modelek z TikToka.",
@@ -1071,15 +983,14 @@
         "smutek",
         "bezsilność",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 56,
+      "nr": 54,
       "id": 135,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 330,
+      "linia_w_index_html": 328,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek ma założyć garnitur na uroczystość rodzinną.",
@@ -1089,15 +1000,14 @@
         "wstyd",
         "bezsilność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 57,
+      "nr": 55,
       "id": 136,
       "poziom": 1,
       "sekcja": "Wygląd i ciało",
-      "linia_w_index_html": 331,
+      "linia_w_index_html": 329,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka narzeka na swoje okulary.",
@@ -1107,15 +1017,14 @@
         "frustracja",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 58,
+      "nr": 56,
       "id": 26,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 334,
+      "linia_w_index_html": 332,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka zauważa, że pod jej filmikiem pojawił się hejt. Rzuca telefon na łóżko.",
@@ -1125,15 +1034,14 @@
         "smutek",
         "bezsilność",
         "upokorzenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 59,
+      "nr": 57,
       "id": 137,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 335,
+      "linia_w_index_html": 333,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka usunęła zdjęcie po tym, jak nikt go nie polubił przez piętnaście minut.",
@@ -1143,15 +1051,14 @@
         "odrzucenie",
         "niepewność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 60,
+      "nr": 58,
       "id": 138,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 336,
+      "linia_w_index_html": 334,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek czyta kłótnię na grupie klasowej na Messengerze.",
@@ -1161,15 +1068,14 @@
         "niepewność",
         "samotność",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 61,
+      "nr": 59,
       "id": 139,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 337,
+      "linia_w_index_html": 335,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka widzi, że jej były chłopak dodał zdjęcie z nową dziewczyną.",
@@ -1179,15 +1085,14 @@
         "złość",
         "odrzucenie",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 62,
+      "nr": 60,
       "id": 140,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 338,
+      "linia_w_index_html": 336,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek dowiaduje się, że jego telefon jest zepsuty.",
@@ -1197,15 +1102,14 @@
         "samotność",
         "przytłoczenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 63,
+      "nr": 61,
       "id": 141,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 339,
+      "linia_w_index_html": 337,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka czyta hejt pod swoim filmikiem.",
@@ -1215,15 +1119,14 @@
         "smutek",
         "bezsilność",
         "strach"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 64,
+      "nr": 62,
       "id": 142,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 340,
+      "linia_w_index_html": 338,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka patrzy na relacje influencerów.",
@@ -1233,15 +1136,14 @@
         "smutek",
         "bezsilność",
         "tęsknota"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 65,
+      "nr": 63,
       "id": 143,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 341,
+      "linia_w_index_html": 339,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka dowiaduje się, że koleżanka wrzuciła jej niekorzystne zdjęcie bez pytania.",
@@ -1251,15 +1153,14 @@
         "upokorzenie",
         "żal",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 66,
+      "nr": 64,
       "id": 144,
       "poziom": 1,
       "sekcja": "Media społecznościowe",
-      "linia_w_index_html": 342,
+      "linia_w_index_html": 340,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek odkrywa, że w grze został oszukany przez innego gracza.",
@@ -1269,15 +1170,14 @@
         "złość",
         "odrzucenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 67,
+      "nr": 65,
       "id": 145,
       "poziom": 1,
       "sekcja": "Przytłoczenie i zmęczenie",
-      "linia_w_index_html": 345,
+      "linia_w_index_html": 343,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka siedzi o dwudziestej trzeciej nad stosem notatek, bo jutro ma dwa sprawdziany i prezentację, a rano musi jeszcze poćwiczyć do zawodów.",
@@ -1287,15 +1187,14 @@
         "bezsilność",
         "strach",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 68,
+      "nr": 66,
       "id": 146,
       "poziom": 1,
       "sekcja": "Przytłoczenie i zmęczenie",
-      "linia_w_index_html": 346,
+      "linia_w_index_html": 344,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka narzeka na poranne wstawanie.",
@@ -1305,15 +1204,14 @@
         "smutek",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 69,
+      "nr": 67,
       "id": 147,
       "poziom": 1,
       "sekcja": "Przytłoczenie i zmęczenie",
-      "linia_w_index_html": 347,
+      "linia_w_index_html": 345,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka uczy się do egzaminów późno w nocy.",
@@ -1323,15 +1221,14 @@
         "bezsilność",
         "desperacja",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 70,
+      "nr": 68,
       "id": 148,
       "poziom": 1,
       "sekcja": "Przytłoczenie i zmęczenie",
-      "linia_w_index_html": 348,
+      "linia_w_index_html": 346,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka odrabia lekcje z matematyki.",
@@ -1341,15 +1238,14 @@
         "bezsilność",
         "złość",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 71,
+      "nr": 69,
       "id": 149,
       "poziom": 1,
       "sekcja": "Pasje i czas wolny",
-      "linia_w_index_html": 351,
+      "linia_w_index_html": 349,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek przegrywa ważny mecz w grze online przez błąd serwera.",
@@ -1359,15 +1255,14 @@
         "złość",
         "bezsilność",
         "rozczarowanie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 72,
+      "nr": 70,
       "id": 150,
       "poziom": 1,
       "sekcja": "Pasje i czas wolny",
-      "linia_w_index_html": 352,
+      "linia_w_index_html": 350,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek dowiaduje się, że trener nie wystawił go w pierwszym składzie.",
@@ -1377,15 +1272,14 @@
         "złość",
         "rozczarowanie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 73,
+      "nr": 71,
       "id": 151,
       "poziom": 1,
       "sekcja": "Pasje i czas wolny",
-      "linia_w_index_html": 353,
+      "linia_w_index_html": 351,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka dowiaduje się, że kółko plastyczne zostało odwołane.",
@@ -1395,15 +1289,14 @@
         "smutek",
         "samotność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 74,
+      "nr": 72,
       "id": 152,
       "poziom": 1,
       "sekcja": "Pasje i czas wolny",
-      "linia_w_index_html": 354,
+      "linia_w_index_html": 352,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka narzeka na stary sprzęt do fotografii.",
@@ -1413,15 +1306,14 @@
         "zazdrość",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 75,
+      "nr": 73,
       "id": 153,
       "poziom": 1,
       "sekcja": "Pasje i czas wolny",
-      "linia_w_index_html": 355,
+      "linia_w_index_html": 353,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek dowiaduje się, że nie został wybrany do szkolnej reprezentacji sportowej, mimo intensywnych treningów.",
@@ -1431,15 +1323,14 @@
         "złość",
         "rozczarowanie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 76,
+      "nr": 74,
       "id": 154,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 358,
+      "linia_w_index_html": 356,
       "wiek": 18,
       "plec": "dziewczyna",
       "kontekst": "18-latka wraca po rozmowie z doradcą zawodowym.",
@@ -1449,15 +1340,14 @@
         "strach",
         "niepewność",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 77,
+      "nr": 75,
       "id": 155,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 359,
+      "linia_w_index_html": 357,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka patrzy na progi punktowe do wymarzonego liceum.",
@@ -1467,15 +1357,14 @@
         "smutek",
         "rozczarowanie",
         "strach"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 78,
+      "nr": 76,
       "id": 156,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 360,
+      "linia_w_index_html": 358,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek mówi o dorosłości.",
@@ -1485,15 +1374,14 @@
         "strach",
         "niepewność",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 79,
+      "nr": 77,
       "id": 157,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 361,
+      "linia_w_index_html": 359,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka zastanawia się nad wyborem profilu klasy.",
@@ -1503,15 +1391,14 @@
         "strach",
         "bezsilność",
         "niepewność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 80,
+      "nr": 78,
       "id": 158,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 362,
+      "linia_w_index_html": 360,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka słucha opowieści rodzica o sukcesach dziecka znajomych.",
@@ -1521,15 +1408,14 @@
         "smutek",
         "zazdrość",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 81,
+      "nr": 79,
       "id": 159,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 363,
+      "linia_w_index_html": 361,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek mówi o maturze.",
@@ -1539,15 +1425,14 @@
         "przytłoczenie",
         "bezsilność",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 82,
+      "nr": 80,
       "id": 160,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 364,
+      "linia_w_index_html": 362,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka myśli o wyjeździe na studia do innego miasta.",
@@ -1557,15 +1442,14 @@
         "niepewność",
         "tęsknota",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 83,
+      "nr": 81,
       "id": 161,
       "poziom": 1,
       "sekcja": "Przyszłość",
-      "linia_w_index_html": 365,
+      "linia_w_index_html": 363,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek dowiaduje się, że nie dostał się na wymarzony kurs.",
@@ -1575,15 +1459,14 @@
         "rozczarowanie",
         "smutek",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 84,
+      "nr": 82,
       "id": 5,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 371,
+      "linia_w_index_html": 369,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "Rodzic właśnie odłożył słuchawkę po telefonie od wychowawcy o spóźnieniach. 14-latek wchodzi do kuchni.",
@@ -1593,15 +1476,14 @@
         "złość",
         "bezsilność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 85,
+      "nr": 83,
       "id": 6,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 372,
+      "linia_w_index_html": 370,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Przyszła wiadomość od nauczyciela o niewykonanym zadaniu. 15-latek wzrusza ramionami.",
@@ -1611,15 +1493,14 @@
         "smutek",
         "złość",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 86,
+      "nr": 84,
       "id": 7,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 373,
+      "linia_w_index_html": 371,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Wieczór. Na grupie klasowej do projektu nikt nie odpisuje, a termin jutro. 15-latek siedzi z telefonem.",
@@ -1629,15 +1510,14 @@
         "złość",
         "strach",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 87,
+      "nr": 85,
       "id": 10,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 374,
+      "linia_w_index_html": 372,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "Rodzic zatrzymuje auto pod szkołą i wysiada razem z 14-latkiem.",
@@ -1647,15 +1527,14 @@
         "bunt",
         "strach",
         "niepewność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 88,
+      "nr": 86,
       "id": 11,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 375,
+      "linia_w_index_html": 373,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "W sklepie rodzic i 15-latek spotykają jego klasę. Rodzic zaczyna rozmowę z kolegami.",
@@ -1665,15 +1544,14 @@
         "złość",
         "upokorzenie",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 89,
+      "nr": 87,
       "id": 14,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 376,
+      "linia_w_index_html": 374,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek chce wyjść w czymś nietypowym. Rodzic komentuje.",
@@ -1683,15 +1561,14 @@
         "złość",
         "wstyd",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 90,
+      "nr": 88,
       "id": 27,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 377,
+      "linia_w_index_html": 375,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka wraca ze szkoły z plamą na bluzie. Widać, że ktoś jej coś zrobił.",
@@ -1701,15 +1578,14 @@
         "wstyd",
         "samotność",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 91,
+      "nr": 89,
       "id": 29,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 378,
+      "linia_w_index_html": 376,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic prosi 15-latka, żeby zjadł z rodziną. Bierze talerz i idzie do pokoju.",
@@ -1719,15 +1595,14 @@
         "samotność",
         "smutek",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 92,
+      "nr": 90,
       "id": 42,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 379,
+      "linia_w_index_html": 377,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek wraca po imprezie. Coś jest inaczej niż zwykle. Widać wstyd.",
@@ -1737,15 +1612,14 @@
         "strach",
         "żal",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 93,
+      "nr": 91,
       "id": 59,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 380,
+      "linia_w_index_html": 378,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic proponuje wspólny film w piątek. 15-latek kręci głową.",
@@ -1755,15 +1629,14 @@
         "frustracja",
         "samotność",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 94,
+      "nr": 92,
       "id": 60,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 381,
+      "linia_w_index_html": 379,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Sobota rano. Rodzic budzi 15-latka do sprzątania.",
@@ -1773,15 +1646,14 @@
         "złość",
         "frustracja",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 95,
+      "nr": 93,
       "id": 63,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 382,
+      "linia_w_index_html": 380,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Rodzic mówi: musisz się uczyć. 16-latek macha ręką.",
@@ -1791,15 +1663,14 @@
         "bunt",
         "bezsilność",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 96,
+      "nr": 94,
       "id": 65,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 383,
+      "linia_w_index_html": 381,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Kolacja. Rodzic pyta 15-latka o znajomych. Odpowiada chłodno.",
@@ -1809,15 +1680,14 @@
         "smutek",
         "bezsilność",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 97,
+      "nr": 95,
       "id": 70,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 384,
+      "linia_w_index_html": 382,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Rozmowa o imprezach. Rodzic mówi, że ma obawy. 16-latek reaguje.",
@@ -1827,15 +1697,14 @@
         "złość",
         "smutek",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 98,
+      "nr": 96,
       "id": 71,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 385,
+      "linia_w_index_html": 383,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek mówi o relacji. Rodzic od razu zaczyna dopytywać o szczegóły.",
@@ -1845,15 +1714,14 @@
         "smutek",
         "złość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 99,
+      "nr": 97,
       "id": 74,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 386,
+      "linia_w_index_html": 384,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka siada naprzeciwko. Widać, że zbiera się na odwagę.",
@@ -1863,15 +1731,14 @@
         "niepewność",
         "tęsknota",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 100,
+      "nr": 98,
       "id": 76,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 387,
+      "linia_w_index_html": 385,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek chce iść sam do lekarza. Rodzic proponuje, że pójdzie razem.",
@@ -1881,15 +1748,14 @@
         "bunt",
         "niepewność",
         "strach"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 101,
+      "nr": 99,
       "id": 78,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 388,
+      "linia_w_index_html": 386,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka chce się malować. Rodzic mówi, że za wcześnie.",
@@ -1899,15 +1765,14 @@
         "wstyd",
         "złość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 102,
+      "nr": 100,
       "id": 83,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 389,
+      "linia_w_index_html": 387,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Wieczór. 16-latek siada obok i mówi cicho, jakby z ulgą.",
@@ -1917,15 +1782,14 @@
         "strach",
         "smutek",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 103,
+      "nr": 101,
       "id": 87,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 390,
+      "linia_w_index_html": 388,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "Do matury zostały dwa tygodnie. Rodzic pyta: uczysz się? 17-latek odpowiada.",
@@ -1935,15 +1799,14 @@
         "niepewność",
         "strach",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 104,
+      "nr": 102,
       "id": 88,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 391,
+      "linia_w_index_html": 389,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka tuż przed próbną maturą.",
@@ -1953,15 +1816,14 @@
         "przytłoczenie",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 105,
+      "nr": 103,
       "id": 91,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 392,
+      "linia_w_index_html": 390,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "Rodzina planuje 18 urodziny 17-latka. Ktoś już rezerwuje salę.",
@@ -1971,15 +1833,14 @@
         "strach",
         "samotność",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 106,
+      "nr": 104,
       "id": 162,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 393,
+      "linia_w_index_html": 391,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek słucha rodzica, który dopytuje o poprawę ocen zaraz po wejściu do domu.",
@@ -1989,15 +1850,14 @@
         "złość",
         "frustracja",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 107,
+      "nr": 105,
       "id": 163,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 394,
+      "linia_w_index_html": 392,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka rysuje w pokoju. Rodzic woła ją na obiad.",
@@ -2007,15 +1867,14 @@
         "złość",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 108,
+      "nr": 106,
       "id": 164,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 395,
+      "linia_w_index_html": 393,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek mówi o uzależnieniu od TikToka, kiedy rodzic zwraca mu uwagę na czas przed ekranem.",
@@ -2025,15 +1884,14 @@
         "samotność",
         "przytłoczenie",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 109,
+      "nr": 107,
       "id": 165,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 396,
+      "linia_w_index_html": 394,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wraca po siedmiu lekcjach i dodatkowym angielskim.",
@@ -2043,15 +1901,14 @@
         "bezsilność",
         "złość",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 110,
+      "nr": 108,
       "id": 166,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 397,
+      "linia_w_index_html": 395,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek mówi o sprzątaniu pokoju.",
@@ -2061,15 +1918,14 @@
         "frustracja",
         "przytłoczenie",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 111,
+      "nr": 109,
       "id": 167,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 398,
+      "linia_w_index_html": 396,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka narzeka na robienie zakupów.",
@@ -2079,15 +1935,14 @@
         "złość",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 112,
+      "nr": 110,
       "id": 168,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 399,
+      "linia_w_index_html": 397,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka narzeka na gotowanie.",
@@ -2097,15 +1952,14 @@
         "bezsilność",
         "złość",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 113,
+      "nr": 111,
       "id": 169,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 400,
+      "linia_w_index_html": 398,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek mówi o pomyśle na gap year po szkole.",
@@ -2115,15 +1969,14 @@
         "niepewność",
         "bunt",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 114,
+      "nr": 112,
       "id": 170,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 401,
+      "linia_w_index_html": 399,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka porównuje swoje kieszonkowe z rówieśnikami.",
@@ -2133,15 +1986,14 @@
         "bezsilność",
         "niesprawiedliwość",
         "zazdrość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 115,
+      "nr": 113,
       "id": 171,
       "poziom": 2,
       "sekcja": "(bez podziału)",
-      "linia_w_index_html": 402,
+      "linia_w_index_html": 400,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka mówi o tym, że nie chce spędzać czasu z rodzicem.",
@@ -2151,15 +2003,14 @@
         "frustracja",
         "złość",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 116,
+      "nr": 114,
       "id": 12,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 409,
+      "linia_w_index_html": 407,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "Rodzic siedzi z gośćmi w salonie i właśnie zażartował o 15-latce.",
@@ -2169,15 +2020,14 @@
         "złość",
         "wstyd",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 117,
+      "nr": 115,
       "id": 13,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 410,
+      "linia_w_index_html": 408,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek stoi na przystanku. Rodzic woła za nim zbyt głośno.",
@@ -2187,15 +2037,14 @@
         "złość",
         "upokorzenie",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 118,
+      "nr": 116,
       "id": 18,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 411,
+      "linia_w_index_html": 409,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "Kolejna dyskusja o godzinie powrotu. 17-latek rzuca plecak i siada na łóżku.",
@@ -2205,15 +2054,14 @@
         "złość",
         "niesprawiedliwość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 119,
+      "nr": 117,
       "id": 21,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 412,
+      "linia_w_index_html": 410,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Rodzic wraca z wywiadówki i chce pogadać o ocenach. 16-latek odsuwa talerz.",
@@ -2223,15 +2071,14 @@
         "złość",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 120,
+      "nr": 118,
       "id": 31,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 413,
+      "linia_w_index_html": 411,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "Rodzic i 13-latek właśnie pokłócili się o drobiazg. Odwraca się do ściany.",
@@ -2241,15 +2088,14 @@
         "smutek",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 121,
+      "nr": 119,
       "id": 32,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 414,
+      "linia_w_index_html": 412,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Chwila ciszy po kłótni. 15-latek mówi już ciszej, ale twardo.",
@@ -2259,15 +2105,14 @@
         "bezsilność",
         "samotność",
         "żal"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 122,
+      "nr": 120,
       "id": 33,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 415,
+      "linia_w_index_html": 413,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "Rodzic otwiera drzwi do pokoju 14-latka bez pukania.",
@@ -2277,15 +2122,14 @@
         "bunt",
         "strach",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 123,
+      "nr": 121,
       "id": 34,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 416,
+      "linia_w_index_html": 414,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "Rodzic pyta 16-latkę, czemu ostatnio się oddala.",
@@ -2295,15 +2139,14 @@
         "bunt",
         "złość",
         "strach"
-      ],
-      "ekran_ladowania_forma": "męska"
+      ]
     },
     {
-      "nr": 124,
+      "nr": 122,
       "id": 35,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 417,
+      "linia_w_index_html": 415,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek odrabia lekcje. Rodzic zaczyna doradzać.",
@@ -2313,15 +2156,14 @@
         "złość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 125,
+      "nr": 123,
       "id": 36,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 418,
+      "linia_w_index_html": 416,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Rodzic mówi: porozmawiajmy. 16-latek włącza głośniej muzykę.",
@@ -2331,15 +2173,14 @@
         "przytłoczenie",
         "złość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 126,
+      "nr": 124,
       "id": 37,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 419,
+      "linia_w_index_html": 417,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic wiesza w kuchni kartkę z nowymi zasadami. 15-latek czyta i prycha.",
@@ -2349,15 +2190,14 @@
         "złość",
         "bunt",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 127,
+      "nr": 125,
       "id": 38,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 420,
+      "linia_w_index_html": 418,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic przypomina o obowiązkach. 15-latek stoi w progu z telefonem.",
@@ -2367,15 +2207,14 @@
         "bunt",
         "bezsilność",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 128,
+      "nr": 126,
       "id": 50,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 421,
+      "linia_w_index_html": 419,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek właśnie znalazł w telefonie rodzica screena ze swojej rozmowy.",
@@ -2385,15 +2224,14 @@
         "żal",
         "strach",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 129,
+      "nr": 127,
       "id": 51,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 422,
+      "linia_w_index_html": 420,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic wrzucił w sieci zdjęcie 15-latka z dzieciństwa. Wpada w panikę.",
@@ -2403,15 +2241,14 @@
         "strach",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 130,
+      "nr": 128,
       "id": 52,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 423,
+      "linia_w_index_html": 421,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Właśnie skończyła się ostra kłótnia między rodzicem a 16-latkiem. Drzwi trzaskają.",
@@ -2421,15 +2258,14 @@
         "smutek",
         "bezsilność",
         "desperacja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 131,
+      "nr": 129,
       "id": 53,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 424,
+      "linia_w_index_html": 422,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Godzinę po kłótni 16-latek wraca spokojniejszy, ale głos mu się łamie.",
@@ -2439,15 +2275,14 @@
         "smutek",
         "żal",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 132,
+      "nr": 130,
       "id": 54,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 425,
+      "linia_w_index_html": 423,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "Rodzic prosi 14-latka o wyniesienie śmieci. Eksploduje.",
@@ -2457,15 +2292,14 @@
         "przytłoczenie",
         "niesprawiedliwość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 133,
+      "nr": 131,
       "id": 55,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 426,
+      "linia_w_index_html": 424,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic komentuje bałagan w pokoju 15-latka. Ten mówi ostro.",
@@ -2475,15 +2309,14 @@
         "złość",
         "niesprawiedliwość",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 134,
+      "nr": 132,
       "id": 56,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 427,
+      "linia_w_index_html": 425,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek nie ma ochoty sprzątać swojego pokoju.",
@@ -2493,15 +2326,14 @@
         "złość",
         "frustracja",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 135,
+      "nr": 133,
       "id": 57,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 428,
+      "linia_w_index_html": 426,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek właśnie odkrył na swoim telefonie aplikację do śledzenia lokalizacji.",
@@ -2511,15 +2343,14 @@
         "żal",
         "strach",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 136,
+      "nr": 134,
       "id": 61,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 429,
+      "linia_w_index_html": 427,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "Rodzic prosi 16-latkę o pomoc w kuchni. Nawet nie podnosi wzroku.",
@@ -2529,15 +2360,14 @@
         "złość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "męska"
+      ]
     },
     {
-      "nr": 137,
+      "nr": 135,
       "id": 62,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 430,
+      "linia_w_index_html": 428,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Kolejna rozmowa o pomaganiu w domu. 15-latek wchodzi w obronę.",
@@ -2547,15 +2377,14 @@
         "złość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 138,
+      "nr": 136,
       "id": 67,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 431,
+      "linia_w_index_html": 429,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Rodzic próbuje postawić granicę. 15-latek krzyczy.",
@@ -2565,15 +2394,14 @@
         "strach",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 139,
+      "nr": 137,
       "id": 68,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 432,
+      "linia_w_index_html": 430,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "Po spięciu o komputer 16-latka idzie w groźbę emocjonalną.",
@@ -2583,15 +2411,14 @@
         "smutek",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 140,
+      "nr": 138,
       "id": 69,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 433,
+      "linia_w_index_html": 431,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek krzyczy z pokoju podczas grania. Rodzic prosi o ciszę.",
@@ -2601,15 +2428,14 @@
         "frustracja",
         "bunt",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 141,
+      "nr": 139,
       "id": 73,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 434,
+      "linia_w_index_html": 432,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "Rodzic komentuje, że widział 16-latkę całującą się pod domem. Spina się.",
@@ -2619,15 +2445,14 @@
         "bunt",
         "wstyd",
         "strach"
-      ],
-      "ekran_ladowania_forma": "męska"
+      ]
     },
     {
-      "nr": 142,
+      "nr": 140,
       "id": 77,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 435,
+      "linia_w_index_html": 433,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka ma pretensje, że rodzic powiedział o jej okresie tacie i ciociom.",
@@ -2637,15 +2462,14 @@
         "złość",
         "upokorzenie",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 143,
+      "nr": 141,
       "id": 90,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 436,
+      "linia_w_index_html": 434,
       "wiek": 18,
       "plec": "chłopak",
       "kontekst": "Rozmowa o wyprowadzce. 18-latek broni swojej autonomii.",
@@ -2655,15 +2479,14 @@
         "złość",
         "frustracja",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 144,
+      "nr": 142,
       "id": 93,
       "poziom": 3,
       "sekcja": "Stare scenki (przepisane)",
-      "linia_w_index_html": 437,
+      "linia_w_index_html": 435,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Wczoraj rodzic obiecał, że nie będzie krzyczeć. Wieczór, kuchnia. 15-latek mówi.",
@@ -2673,15 +2496,14 @@
         "bezsilność",
         "smutek",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 145,
+      "nr": 143,
       "id": 172,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 440,
+      "linia_w_index_html": 438,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek odkrywa, że rodzic bez konsultacji oddał jego stare, ale wciąż używane gry komputerowe kuzynowi.",
@@ -2691,15 +2513,14 @@
         "niesprawiedliwość",
         "żal",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 146,
+      "nr": 144,
       "id": 173,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 441,
+      "linia_w_index_html": 439,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek prosi o zgodę na powrót z imprezy o północy, a rodzic stanowczo upiera się przy godzinie dwudziestej drugiej.",
@@ -2709,15 +2530,14 @@
         "złość",
         "wstyd",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 147,
+      "nr": 145,
       "id": 174,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 442,
+      "linia_w_index_html": 440,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka słyszy, jak rodzic wychwala młodsze rodzeństwo za drobną pomoc w domu, ignorując jej wcześniejsze porządki.",
@@ -2727,15 +2547,14 @@
         "żal",
         "złość",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 148,
+      "nr": 146,
       "id": 175,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 443,
+      "linia_w_index_html": 441,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek dowiaduje się, że z powodu pilnego wyjazdu rodzinnego nie będzie mógł wziąć udziału w turnieju online z kolegami.",
@@ -2745,15 +2564,14 @@
         "bezsilność",
         "strach",
         "żal"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 149,
+      "nr": 147,
       "id": 176,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 444,
+      "linia_w_index_html": 442,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka przyłapuje rodzica na tym, że próbował podejrzeć powiadomienia na jej telefonie, gdy zostawiła go na chwilę w kuchni.",
@@ -2763,15 +2581,14 @@
         "żal",
         "strach",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 150,
+      "nr": 148,
       "id": 177,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 445,
+      "linia_w_index_html": 443,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek przegrywa ważny mecz w grze rankingowej, bo rodzic kazał mu natychmiast wyłączyć komputer, nie pozwalając dokończyć rundy.",
@@ -2781,15 +2598,14 @@
         "bezsilność",
         "żal",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 151,
+      "nr": 149,
       "id": 178,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 446,
+      "linia_w_index_html": 444,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka słyszy przy obiedzie kolejne pytanie o to, czy na pewno złoży papiery na medycynę, bo 'artysta to nie zawód'.",
@@ -2799,15 +2615,14 @@
         "bunt",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 152,
+      "nr": 150,
       "id": 179,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 447,
+      "linia_w_index_html": 445,
       "wiek": 13,
       "plec": "chłopak",
       "kontekst": "13-latek wraca ze szkoły i odkrywa, że rodzic poukładał mu notatki i papiery na biurku, szukając ważnego dokumentu.",
@@ -2817,15 +2632,14 @@
         "niesprawiedliwość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 153,
+      "nr": 151,
       "id": 181,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 448,
+      "linia_w_index_html": 446,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka o tym, że rodzic pyta ją, z kim pisze na telefonie.",
@@ -2835,15 +2649,14 @@
         "bunt",
         "strach",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 154,
+      "nr": 152,
       "id": 182,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 449,
+      "linia_w_index_html": 447,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek, gdy rodzic wchodzi do pokoju bez pukania.",
@@ -2853,15 +2666,14 @@
         "bunt",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 155,
+      "nr": 153,
       "id": 183,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 450,
+      "linia_w_index_html": 448,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka dowiaduje się, że rodzice rozmawiali o jej ocenach z ciocią.",
@@ -2871,15 +2683,14 @@
         "żal",
         "upokorzenie",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 156,
+      "nr": 154,
       "id": 184,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 451,
+      "linia_w_index_html": 449,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek po zainstalowaniu przez rodziców aplikacji do kontroli czasu przed ekranem.",
@@ -2889,15 +2700,14 @@
         "bunt",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 157,
+      "nr": 155,
       "id": 185,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 452,
+      "linia_w_index_html": 450,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka, gdy mama próbuje dołączyć do jej znajomych na Facebooku.",
@@ -2907,15 +2717,14 @@
         "wstyd",
         "bunt",
         "złość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 158,
+      "nr": 156,
       "id": 186,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 453,
+      "linia_w_index_html": 451,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek o czytaniu jego pamiętnika lub notatek przez rodzica.",
@@ -2925,15 +2734,14 @@
         "złość",
         "upokorzenie",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 159,
+      "nr": 157,
       "id": 187,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 454,
+      "linia_w_index_html": 452,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka o tym, że rodzice każą jej zostawiać telefon w salonie na noc.",
@@ -2943,15 +2751,14 @@
         "złość",
         "bunt",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 160,
+      "nr": 158,
       "id": 188,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 455,
+      "linia_w_index_html": 453,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek mówi o planach na weekend, które rodzice chcą znać godzina po godzinie.",
@@ -2961,15 +2768,14 @@
         "złość",
         "frustracja",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 161,
+      "nr": 159,
       "id": 189,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 456,
+      "linia_w_index_html": 454,
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka o tym, że rodzic wszedł do łazienki, gdy ona się kąpała.",
@@ -2979,15 +2785,14 @@
         "wstyd",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 162,
+      "nr": 160,
       "id": 190,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 457,
+      "linia_w_index_html": 455,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka, której rodzice nie chcą puścić na koncert ulubionego zespołu.",
@@ -2997,15 +2802,14 @@
         "smutek",
         "bezsilność",
         "tęsknota"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 163,
+      "nr": 161,
       "id": 191,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 458,
+      "linia_w_index_html": 456,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek próbuje nagrać filmik na YouTube, ale rodzice ciągle wchodzą mu do pokoju.",
@@ -3015,15 +2819,14 @@
         "złość",
         "bezsilność",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 164,
+      "nr": 162,
       "id": 192,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 459,
+      "linia_w_index_html": 457,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek o nowym hobby, które rodzice wyśmiewają.",
@@ -3033,15 +2836,14 @@
         "złość",
         "bezsilność",
         "samotność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 165,
+      "nr": 163,
       "id": 193,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 460,
+      "linia_w_index_html": 458,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek mówi o tym, że rodzice zmuszają go do nauki gry na instrumencie, którego nie lubi.",
@@ -3051,15 +2853,14 @@
         "złość",
         "bunt",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 166,
+      "nr": 164,
       "id": 194,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 461,
+      "linia_w_index_html": 459,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek o swojej kolekcji kart i figurek, którą rodzic nazwał śmieciami.",
@@ -3069,15 +2870,14 @@
         "żal",
         "smutek",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 167,
+      "nr": 165,
       "id": 195,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 462,
+      "linia_w_index_html": 460,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek o presji rodziców na konkretny kierunek studiów.",
@@ -3087,15 +2887,14 @@
         "bunt",
         "bezsilność",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 168,
+      "nr": 166,
       "id": 197,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 463,
+      "linia_w_index_html": 461,
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "14-latka o tym, że młodszy brat może więcej.",
@@ -3105,15 +2904,14 @@
         "złość",
         "żal",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 169,
+      "nr": 167,
       "id": 198,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 464,
+      "linia_w_index_html": 462,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek proszony o pomoc z zakupami, gdy właśnie planował wyjście.",
@@ -3123,15 +2921,14 @@
         "niesprawiedliwość",
         "bunt",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 170,
+      "nr": 168,
       "id": 199,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 465,
+      "linia_w_index_html": 463,
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka, której rodzice nie pozwalają kupić konkretnego ciucha.",
@@ -3141,15 +2938,14 @@
         "złość",
         "wstyd",
         "strach"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 171,
+      "nr": 169,
       "id": 200,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 466,
+      "linia_w_index_html": 464,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek o tym, że rodzice sprawdzają jego oceny codziennie.",
@@ -3159,15 +2955,14 @@
         "złość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 172,
+      "nr": 170,
       "id": 201,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 467,
+      "linia_w_index_html": 465,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka, która nie może pojechać pod namiot ze znajomymi.",
@@ -3177,15 +2972,14 @@
         "bunt",
         "niesprawiedliwość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 173,
+      "nr": 171,
       "id": 202,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 468,
+      "linia_w_index_html": 466,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek o tym, że rodzic przerwał mu wypowiedź przy gościach.",
@@ -3195,15 +2989,14 @@
         "złość",
         "żal",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 174,
+      "nr": 172,
       "id": 203,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 469,
+      "linia_w_index_html": 467,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek o tym, że rodzice wybrali mu zajęcia dodatkowe bez pytania.",
@@ -3213,15 +3006,14 @@
         "złość",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 175,
+      "nr": 173,
       "id": 204,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 470,
+      "linia_w_index_html": 468,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek o zakazie prowadzenia samochodu rodziców mimo zdanego prawa jazdy.",
@@ -3231,15 +3023,14 @@
         "złość",
         "frustracja",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 176,
+      "nr": 174,
       "id": 205,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 471,
+      "linia_w_index_html": 469,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek o tym, że rodzice skomentowali jego post w mediach społecznościowych.",
@@ -3249,15 +3040,14 @@
         "złość",
         "wstyd",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 177,
+      "nr": 175,
       "id": 206,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 472,
+      "linia_w_index_html": 470,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek o tym, że rodzic każe mu wyjść z psem w deszczu.",
@@ -3267,15 +3057,14 @@
         "złość",
         "bunt",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 178,
+      "nr": 176,
       "id": 207,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 473,
+      "linia_w_index_html": 471,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek, któremu rodzic każe wynieść śmieci, choć właśnie usiadł.",
@@ -3285,15 +3074,14 @@
         "frustracja",
         "bunt",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 179,
+      "nr": 177,
       "id": 208,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 474,
+      "linia_w_index_html": 472,
       "wiek": 17,
       "plec": "chłopak",
       "kontekst": "17-latek o pomaganiu w ogrodzie w weekend.",
@@ -3303,15 +3091,14 @@
         "niesprawiedliwość",
         "bunt",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 180,
+      "nr": 178,
       "id": 209,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 475,
+      "linia_w_index_html": 473,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek o tym, że rodzic próbuje go przytulić przy znajomych.",
@@ -3321,15 +3108,14 @@
         "złość",
         "upokorzenie",
         "bunt"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 181,
+      "nr": 179,
       "id": 210,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 476,
+      "linia_w_index_html": 474,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka o tym, że rodzic chce iść z nią na zakupy odzieżowe.",
@@ -3339,15 +3125,14 @@
         "złość",
         "wstyd",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 182,
+      "nr": 180,
       "id": 211,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 477,
+      "linia_w_index_html": 475,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek o tym, że rodzic ciągle pyta, jak było w szkole.",
@@ -3357,15 +3142,14 @@
         "złość",
         "bunt",
         "przytłoczenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 183,
+      "nr": 181,
       "id": 212,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 478,
+      "linia_w_index_html": 476,
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka o tym, że rodzice chcą poznać jej nowego chłopaka.",
@@ -3375,15 +3159,14 @@
         "bunt",
         "złość",
         "wstyd"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 184,
+      "nr": 182,
       "id": 213,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 479,
+      "linia_w_index_html": 477,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek o tym, że rodzic daje mu rady, o które nie prosił.",
@@ -3393,15 +3176,14 @@
         "frustracja",
         "bunt",
         "upokorzenie"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 185,
+      "nr": 183,
       "id": 214,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 480,
+      "linia_w_index_html": 478,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka o tym, że rodzice krytykują jej muzykę.",
@@ -3411,15 +3193,14 @@
         "bunt",
         "smutek",
         "niesprawiedliwość"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 186,
+      "nr": 184,
       "id": 215,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 481,
+      "linia_w_index_html": 479,
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek o tym, że rodzice śmieją się z jego problemów sercowych.",
@@ -3429,15 +3210,14 @@
         "złość",
         "samotność",
         "żal"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 187,
+      "nr": 185,
       "id": 216,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 482,
+      "linia_w_index_html": 480,
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek o tym, że rodzic mówi do niego pieszczotliwym imieniem z dzieciństwa.",
@@ -3447,15 +3227,14 @@
         "złość",
         "bunt",
         "smutek"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 188,
+      "nr": 186,
       "id": 217,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 483,
+      "linia_w_index_html": 481,
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka o tym, że rodzic próbuje być 'fajny' przy jej kolegach.",
@@ -3465,15 +3244,14 @@
         "złość",
         "upokorzenie",
         "frustracja"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     },
     {
-      "nr": 189,
+      "nr": 187,
       "id": 218,
       "poziom": 3,
       "sekcja": "Nowe scenki poziom 3",
-      "linia_w_index_html": 484,
+      "linia_w_index_html": 482,
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek, który bardzo liczył na wyjazd na obóz sportowy, dowiaduje się, że z powodu awarii samochodu rodzice muszą przesunąć wydatki.",
@@ -3483,8 +3261,7 @@
         "żal",
         "niesprawiedliwość",
         "bezsilność"
-      ],
-      "ekran_ladowania_forma": "żeńska"
+      ]
     }
   ]
 }
