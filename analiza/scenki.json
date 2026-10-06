@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "10457782102e75bc965e7d03c537414737823745",
+  "commit": "a0c1897ceb4ec3d909028c6a0a46372b46aaaa11",
   "data_eksportu": "2026-10-06",
   "liczba": 200,
   "poziomy": {
@@ -79,7 +79,7 @@
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.",
-      "wypowiedz": "Nie ogarniam tego. Jak jutro dostanę pałę, to ja serio pęknę.",
+      "wypowiedz": "Nie ogarniam tego. Jak jutro dostanę pałę, to się załamię.",
       "emocja": "przytłoczenie",
       "dystraktory": [
         "strach",
@@ -249,7 +249,7 @@
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka patrzy na listę lektur na ten semestr.",
-      "wypowiedz": "Pięć grubych cegieł w dwa miesiące? Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?",
+      "wypowiedz": "Ja tego wszystkiego nie dam rady przeczytać w trzy miesiące. Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?",
       "emocja": "przytłoczenie",
       "dystraktory": [
         "bezsilność",
@@ -316,7 +316,7 @@
       "linia_w_index_html": 283,
       "wiek": 17,
       "plec": "chłopak",
-      "kontekst": "17-latek patrzy na kalendarz. Do wystawienia ocen został tydzień, a on ma trzy zaległe sprawdziany.",
+      "kontekst": "Ostatni tydzień przed wystawieniem ocen. 17-latek przegląda Librusa: do poprawy matma, polski i chemia.",
       "wypowiedz": "Nie dam rady tego ogarnąć. Za dużo tego.",
       "emocja": "przytłoczenie",
       "dystraktory": [

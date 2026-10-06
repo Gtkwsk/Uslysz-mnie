@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `1045778`, 2026-10-06.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `a0c1897`, 2026-10-06.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -78,7 +78,7 @@ Rozkład wieku: 13 lat (21) · 14 lat (39) · 15 lat (61) · 16 lat (46) · 17 l
 
 **2.** `id 2` · chłopak, 14 l.  
 *14-latek siedzi obok rodzica z zeszytem od matmy. Patrzy w jedną stronę.*  
-„Nie ogarniam tego. Jak jutro dostanę pałę, to ja serio pęknę.”  
+„Nie ogarniam tego. Jak jutro dostanę pałę, to się załamię.”  
 → emocja: **przytłoczenie** · dystraktory: strach, bezsilność, frustracja
 
 **3.** `id 3` · chłopak, 14 l.  
@@ -128,7 +128,7 @@ Rozkład wieku: 13 lat (21) · 14 lat (39) · 15 lat (61) · 16 lat (46) · 17 l
 
 **12.** `id 105` · dziewczyna, 17 l.  
 *17-latka patrzy na listę lektur na ten semestr.*  
-„Pięć grubych cegieł w dwa miesiące? Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?”  
+„Ja tego wszystkiego nie dam rady przeczytać w trzy miesiące. Przecież ja nie mam kiedy spać, a jeszcze korki i treningi. Oni myślą, że ja jestem robotem?”  
 → emocja: **przytłoczenie** · dystraktory: bezsilność, złość, frustracja
 
 **13.** `id 106` · dziewczyna, 14 l.  
@@ -147,7 +147,7 @@ Rozkład wieku: 13 lat (21) · 14 lat (39) · 15 lat (61) · 16 lat (46) · 17 l
 → emocja: **niesprawiedliwość** · dystraktory: złość, upokorzenie, bezsilność
 
 **16.** `id 109` · chłopak, 17 l.  
-*17-latek patrzy na kalendarz. Do wystawienia ocen został tydzień, a on ma trzy zaległe sprawdziany.*  
+*Ostatni tydzień przed wystawieniem ocen. 17-latek przegląda Librusa: do poprawy matma, polski i chemia.*  
 „Nie dam rady tego ogarnąć. Za dużo tego.”  
 → emocja: **przytłoczenie** · dystraktory: bezsilność, strach, desperacja
 
