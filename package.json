@@ -1,0 +1,9 @@
+{
+  "name": "uslysz-mnie",
+  "private": true,
+  "description": "Usłysz Mnie: trening empatycznego reagowania dla rodziców nastolatków",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13",
+    "web-push": "^3.6.7"
+  }
+}

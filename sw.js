@@ -1,121 +1,113 @@
 // ══════════════════════════════════════════════════════════════
-// Usłysz Mnie — Service Worker
-// Codzienne powiadomienia o 20:00 + cache offline
+// Usłysz Mnie: Service Worker
+// Strona: najpierw sieć, więc nowa wersja dociera od razu; z pamięci tylko bez internetu.
+// Biblioteki, czcionki i ikony: z pamięci, odświeżane w tle.
+// Przypomnienia: powiadomienia push wysyłane z serwera (funkcja push-daily).
 // ══════════════════════════════════════════════════════════════
 
-const CACHE_NAME = 'uslyszmnie-v6';
+const CACHE_NAME = 'uslyszmnie-v7';
 
-// Install — cache kluczowych zasobów
+const SHELL = [
+  '/',
+  '/manifest.json',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/apple-touch-icon.png',
+  '/icons/badge-96.png',
+];
+
+// Zasoby z innych serwerów, które wolno trzymać w pamięci (biblioteki i czcionki)
+const CACHEABLE_HOSTS = ['cdnjs.cloudflare.com', 'fonts.googleapis.com', 'fonts.gstatic.com'];
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(['/']);
-    }).catch(() => {})
+    caches.open(CACHE_NAME)
+      .then((cache) => Promise.all(SHELL.map((url) => cache.add(url).catch(() => {}))))
   );
   self.skipWaiting();
 });
 
-// Activate — wyczyść stare cache
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-      );
-    })
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
-  // Ustaw timer powiadomień
-  scheduleNotification();
 });
 
-// Fetch — serve from cache, fallback to network
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      return cached || fetch(event.request).then((response) => {
-        // Cache nowe zasoby
-        if (response.status === 200) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, clone);
-          });
+function networkFirst(request) {
+  return fetch(request)
+    .then((response) => {
+      if (response.ok) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+      }
+      return response;
+    })
+    .catch(() => caches.match(request).then((hit) => hit || caches.match('/')));
+}
+
+function cacheFirstRefresh(request) {
+  return caches.match(request).then((hit) => {
+    const fresh = fetch(request)
+      .then((response) => {
+        if (response.ok || response.type === 'opaque') {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
         }
         return response;
-      }).catch(() => cached);
+      })
+      .catch(() => hit);
+    return hit || fresh;
+  });
+}
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin === self.location.origin) {
+    if (url.pathname.startsWith('/.netlify/')) return; // funkcje serwera zawsze z sieci
+    if (request.mode === 'navigate' || url.pathname === '/' || url.pathname.endsWith('.html')) {
+      event.respondWith(networkFirst(request));
+      return;
+    }
+    event.respondWith(cacheFirstRefresh(request));
+    return;
+  }
+  if (CACHEABLE_HOSTS.includes(url.hostname)) {
+    event.respondWith(cacheFirstRefresh(request));
+  }
+});
+
+// ── PRZYPOMNIENIA (push z serwera) ──
+
+self.addEventListener('push', (event) => {
+  let data = {};
+  try { data = event.data ? event.data.json() : {}; } catch (e) { data = { body: event.data && event.data.text() }; }
+  const title = data.title || '👂 Usłysz Mnie';
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: data.body || 'Dzisiejsza Scenka Dnia czeka.',
+      icon: '/icons/icon-192.png',
+      badge: '/icons/badge-96.png',
+      tag: 'uslyszmnie-daily',
+      renotify: true,
+      data: { url: data.url || '/' },
     })
   );
 });
 
-// ── POWIADOMIENIA ──
-
-const NOTIF_MESSAGES = [
-  { title: "👂 Scenka Dnia czeka", body: "Jedna scenka, dwie minuty. Twoje dziecko poczuje różnicę." },
-  { title: "👂 Usłysz Mnie", body: "Masz chwilę? Dzisiejsza scenka jest gotowa." },
-  { title: "🔥 Nie zgub serii!", body: "Twoja codzienna scenka czeka. Wskakuj!" },
-  { title: "👂 Dwie minuty empatii", body: "Wystarczą, żeby jutro zareagować inaczej." },
-  { title: "💛 Pora na trening", body: "Jedno ćwiczenie dziennie zmienia nawyki." },
-  { title: "👂 Twój nastolatek czeka", body: "Na kogoś, kto usłyszy. Ćwicz z nami." },
-  { title: "🎯 Scenka Dnia", body: "Nowa sytuacja, nowa szansa. Jak odpowiesz?" },
-];
-
-function getRandomMessage() {
-  const day = new Date().getDay();
-  return NOTIF_MESSAGES[day % NOTIF_MESSAGES.length];
-}
-
-function scheduleNotification() {
-  // Oblicz czas do 20:00 dzisiaj lub jutro
-  const now = new Date();
-  let target = new Date(now);
-  target.setHours(20, 0, 0, 0);
-  
-  if (now >= target) {
-    // Już po 20:00 — zaplanuj na jutro
-    target.setDate(target.getDate() + 1);
-  }
-  
-  const delay = target - now;
-  
-  setTimeout(() => {
-    showDailyNotification();
-    // Zaplanuj następne (co 24h)
-    setInterval(showDailyNotification, 24 * 60 * 60 * 1000);
-  }, delay);
-}
-
-function showDailyNotification() {
-  // Sprawdź czy mamy uprawnienia
-  if (self.Notification && Notification.permission === 'granted') {
-    // Sprawdź czy użytkownik nie ukończył już dzisiaj scenki
-    // (nie mamy dostępu do localStorage z SW, więc wysyłamy zawsze — lepiej za dużo niż za mało)
-    const msg = getRandomMessage();
-    self.registration.showNotification(msg.title, {
-      body: msg.body,
-      icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">👂</text></svg>',
-      badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">👂</text></svg>',
-      tag: 'uslyszmnie-daily', // Zapobiega duplikatom
-      renotify: true,
-      requireInteraction: false,
-    });
-  }
-}
-
-// Kliknięcie w powiadomienie — otwórz apkę
+// Kliknięcie w powiadomienie: otwórz aplikację albo przełącz na otwarte okno
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
+  const target = (event.notification.data && event.notification.data.url) || '/';
   event.waitUntil(
-    self.clients.matchAll({ type: 'window' }).then((clients) => {
-      // Jeśli apka jest otwarta — aktywuj okno
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
       for (const client of clients) {
-        if (client.url.includes('/') && 'focus' in client) {
-          return client.focus();
-        }
+        if ('focus' in client) return client.focus();
       }
-      // Jeśli nie — otwórz nowe okno
-      if (self.clients.openWindow) {
-        return self.clients.openWindow('/');
-      }
+      if (self.clients.openWindow) return self.clients.openWindow(target);
     })
   );
 });

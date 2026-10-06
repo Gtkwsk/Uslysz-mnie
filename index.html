@@ -12,6 +12,8 @@
 <link rel="manifest" href="/manifest.json">
 <title>Usłysz Mnie</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -230,20 +232,34 @@ h1{font-size:28px;font-weight:700;color:var(--acd);margin-bottom:4px;letter-spac
 .emo-chip:active{transform:scale(.95);opacity:.7}
 .emo-fab{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:100;transition:all .2s}
 .emo-fab:active{transform:scale(.9)}
+/* ── PROPOZYCJA INSTALACJI ── */
+.inst-sheet{position:fixed;left:12px;right:12px;bottom:12px;max-width:456px;margin:0 auto;background:var(--card);border-radius:20px;box-shadow:0 8px 32px rgba(26,21,18,.18);padding:16px 16px 12px;z-index:80;animation:instUp .35s ease-out both;font-family:'Source Sans 3',sans-serif;text-align:left}
+@keyframes instUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.inst-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.inst-head img{width:52px;height:52px;border-radius:12px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.inst-title{font-size:16px;font-weight:700;color:var(--tx)}
+.inst-sub{font-size:13px;color:var(--tm);line-height:1.4;margin-top:2px}
+.inst-steps{font-size:14px;color:var(--ts);line-height:1.6;background:var(--wm);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.inst-share{display:inline-block;vertical-align:-3px;width:18px;height:18px}
+.inst-btns{display:flex;gap:8px;justify-content:flex-end;align-items:center}
+.inst-yes{background:var(--ac);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.inst-later{background:none;border:none;color:var(--tm);font-size:14px;padding:10px 12px;cursor:pointer;font-family:inherit}
+.notif-fail{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);text-align:center;padding:6px 8px;line-height:1.5}
 </style>
 </head>
 <body>
 <div id="app"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
-<script type="text/babel">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script>
+// Propozycja instalacji: zdarzenie przeglądarki łapane, zanim wystartuje aplikacja
+window.__bip=null;
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__bip=e;window.dispatchEvent(new Event("bip-change"))});
+window.addEventListener("appinstalled",function(){window.__bip=null;window.dispatchEvent(new Event("bip-change"))});
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}
+</script>
+<script type="text/plain" id="app-src">
 const{useState,useEffect,useCallback,useRef}=React;
-
-// Auto-rejestracja SW jeśli powiadomienia są włączone
-if("serviceWorker" in navigator){
-  try{navigator.serviceWorker.register("/sw.js").catch(()=>{})}catch(e){}
-}
 
 // ╔═══════════════════════════════════════════════════════════╗
 // ║  Usłysz Mnie v4.1 — 192 scenki + Scenka Dnia + GPT-5.6   ║
@@ -1012,18 +1028,41 @@ function canAskNotif(notifState,totalScenarios){
   return false;
 }
 
+// Przypomnienia wysyła serwer (funkcja push-daily o 20:00 czasu użytkownika).
+// Telefon zapisuje subskrypcję push; confirm=true prosi serwer o powiadomienie próbne.
+// Bez zmian (ten sam adres, ta sama strefa) telefon odzywa się do serwera najwyżej raz dziennie.
+const PUSH_URL="/.netlify/functions/push";
+const PUSH_SYNC_KEY="uslysz_mnie_push";
+function b64ToBytes(v){const p="=".repeat((4-v.length%4)%4);const b=atob((v+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(b,c=>c.charCodeAt(0))}
+function sameKey(buf,bytes){if(!buf)return false;const a=new Uint8Array(buf);return a.length===bytes.length&&a.every((x,i)=>x===bytes[i])}
+async function subscribePush(confirm){
+  if(!("serviceWorker" in navigator)||!("PushManager" in window))return false;
+  await navigator.serviceWorker.register("/sw.js");
+  const reg=await navigator.serviceWorker.ready;
+  const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"Europe/Warsaw";
+  const day=new Date().toDateString();
+  let sub=await reg.pushManager.getSubscription();
+  if(!confirm&&sub){try{const l=JSON.parse(localStorage.getItem(PUSH_SYNC_KEY)||"null");if(l&&l.ep===sub.endpoint&&l.tz===tz&&l.day===day)return true}catch(e){}}
+  const r=await fetch(PUSH_URL);if(!r.ok)return false;
+  const key=b64ToBytes((await r.json()).publicKey);
+  if(sub&&!sameKey(sub.options&&sub.options.applicationServerKey,key)){await sub.unsubscribe();sub=null}
+  if(!sub)sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});
+  const s=await fetch(PUSH_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({subscription:sub.toJSON(),tz,confirm:!!confirm})});
+  if(s.ok){try{localStorage.setItem(PUSH_SYNC_KEY,JSON.stringify({ep:sub.endpoint,tz,day}))}catch(e){}}
+  return s.ok;
+}
+
+async function notifGranted(){
+  try{if(navigator.permissions&&navigator.permissions.query){const st=await navigator.permissions.query({name:"notifications"});return st.state==="granted"}}catch(e){}
+  return "Notification" in window&&Notification.permission==="granted";
+}
+
 async function requestNotifPermission(){
   if(!("Notification" in window))return false;
   try{
     const perm=await Notification.requestPermission();
     if(perm==="granted"){
-      // Rejestruj service worker jeśli dostępny
-      if("serviceWorker" in navigator){
-        try{await navigator.serviceWorker.register("/sw.js")}catch(e){console.log("SW registration skipped:",e)}
-      }
-      // Wyślij testowe powiadomienie
-      try{new Notification("👂 Usłysz Mnie",{body:"Powiadomienia włączone! Przypomnimy Ci o Scence Dnia.",icon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>"})}catch(e){}
-      return true;
+      return await subscribePush(true);
     }
     return false;
   }catch(e){return false}
@@ -1087,6 +1126,57 @@ function EmotionPanel({open,onClose}){
   );
 }
 
+// ══════════════════════════════════════════════════════════════
+// PROPOZYCJA INSTALACJI: okienko na ekranie startowym, raz na uruchomienie
+// Android/Chrome: przycisk Zainstaluj. iPhone: instrukcja (Safari nie ma przycisku).
+// Nie pokazuje się w zainstalowanej aplikacji, na komputerze (Chrome ma tam ikonę instalacji w pasku adresu)
+// ani w przeglądarkach wbudowanych w Facebooka, Messengera czy Instagrama (tam nie da się dodać ikony).
+// Po "Nie teraz" wraca za 3 dni.
+// ══════════════════════════════════════════════════════════════
+const INSTALL_KEY="uslysz_mnie_install";
+function isStandalone(){try{return window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===true}catch(e){return false}}
+function isIOS(){const ua=navigator.userAgent||"";return /iphone|ipad|ipod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1)}
+function isAndroid(){return /Android/i.test(navigator.userAgent||"")}
+function iosCanAddToHome(){const ua=navigator.userAgent||"";return isIOS()&&/Safari\//.test(ua)&&!/FBAN|FBAV|FB_IAB|Instagram|GSA\//.test(ua)}
+let installOffered=false; // okienko już było w tym uruchomieniu
+function installSnoozed(){try{const t=+localStorage.getItem(INSTALL_KEY)||0;return Date.now()-t<3*86400000}catch(e){return false}}
+const ShareIcon=()=><svg className="inst-share" viewBox="0 0 24 24" fill="none" stroke="#007aff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M6 11v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8"/></svg>;
+
+function InstallBanner(){
+  const[bip,setBip]=useState(()=>window.__bip);
+  const[ready,setReady]=useState(false);
+  const[closed,setClosed]=useState(()=>installOffered);
+  useEffect(()=>{
+    const f=()=>setBip(window.__bip);
+    window.addEventListener("bip-change",f);
+    const t=setTimeout(()=>setReady(true),1200);
+    return()=>{window.removeEventListener("bip-change",f);clearTimeout(t)};
+  },[]);
+  const show=ready&&!closed&&!isStandalone()&&!installSnoozed()&&((!!bip&&isAndroid())||iosCanAddToHome());
+  useEffect(()=>{if(show)installOffered=true},[show]);
+  if(!show)return null;
+  const later=()=>{try{localStorage.setItem(INSTALL_KEY,String(Date.now()))}catch(e){};setClosed(true)};
+  const install=async()=>{
+    const e=bip;window.__bip=null;setBip(null);
+    try{e.prompt();const c=await e.userChoice;if(c&&c.outcome==="accepted"){setClosed(true);return}}catch(err){}
+    later();
+  };
+  return <div className="inst-sheet" role="dialog" aria-label="Instalacja aplikacji">
+    <div className="inst-head">
+      <img src="/icons/icon-192.png" alt=""/>
+      <div>
+        <div className="inst-title">Zainstaluj Usłysz Mnie</div>
+        <div className="inst-sub">Ikona na ekranie telefonu, pełny ekran, bez przeglądarki.</div>
+      </div>
+    </div>
+    {!bip&&<div className="inst-steps">Stuknij <ShareIcon/> <b>Udostępnij</b>, a potem <b>„Do ekranu początkowego”</b>.</div>}
+    <div className="inst-btns">
+      {bip?<><button className="inst-later" onClick={later}>Nie teraz</button><button className="inst-yes" onClick={install}>Zainstaluj</button></>
+      :<button className="inst-yes" onClick={later}>Rozumiem</button>}
+    </div>
+  </div>;
+}
+
 function App(){
   const saved=useRef(loadSaved()).current;
   const[scr,setScr]=useState("start");
@@ -1127,7 +1217,13 @@ function App(){
   const[showNotifBanner,setShowNotifBanner]=useState(false);
   const[teenTyping,setTeenTyping]=useState(true);
   const[notifJustEnabled,setNotifJustEnabled]=useState(false);
+  const[notifFailed,setNotifFailed]=useState(false);
   const[challengeLoading,setChallengeLoading]=useState(false);
+
+  // Osoby z włączonymi powiadomieniami (także ze starej wersji) dostają aktualną subskrypcję push
+  useEffect(()=>{
+    if(notifState.enabled)notifGranted().then(g=>{if(g)return subscribePush(false)}).catch(()=>{});
+  },[]);
 
   // Sprawdź czy dotd jest z dzisiejszego dnia
   const today=new Date().toISOString().slice(0,10);
@@ -1453,6 +1549,7 @@ function App(){
       </div>
 
       <p className="author fu3">© Robert Gutkowski</p>
+      <InstallBanner/>
 
       {/* ═══ MODAL ODZNAK ═══ */}
       {showBadges&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.45)",zIndex:90,display:"flex",alignItems:"center",justifyContent:"center",padding:"20px"}} onClick={()=>setShowBadges(false)}>
@@ -1633,7 +1730,7 @@ function App(){
             const ns={asked:notifState.asked+1,enabled:ok};
             saveNotifState(ns);setNotifState(ns);
             setShowNotifBanner(false);
-            if(ok)setNotifJustEnabled(true);
+            if(ok)setNotifJustEnabled(true);else setNotifFailed(true);
           }}>Tak, przypominaj</button>
           <button className="notif-later" onClick={()=>{
             const ns={...notifState,asked:notifState.asked+1};
@@ -1643,6 +1740,7 @@ function App(){
         </div>
       </div>}
       {notifJustEnabled&&<div className="notif-done">✅ Powiadomienia włączone!</div>}
+      {notifFailed&&<div className="notif-fail">Nie udało się włączyć przypomnień. Na iPhonie działają w aplikacji dodanej do ekranu początkowego.</div>}
 
       <div className="btns fd8">
         {dotdMode?<button className="bp" onClick={goHome}>Wróć do menu →</button>
@@ -1722,6 +1820,30 @@ function App(){
   </>)}
 
 ReactDOM.createRoot(document.getElementById("app")).render(<App/>);
+</script>
+<script>
+// Szybki start: kod aplikacji (JSX) kompiluje się raz, a wynik zostaje w pamięci telefonu.
+// Przy następnych uruchomieniach Babel nie jest pobierany ani uruchamiany.
+// Każda zmiana kodu zmienia odcisk, więc nowa wersja kompiluje się sama.
+(function(){
+  var src=document.getElementById("app-src").textContent;
+  var h=2166136261;for(var i=0;i<src.length;i++){h^=src.charCodeAt(i);h=Math.imul(h,16777619)}
+  var key="uslysz_mnie_build_"+(h>>>0).toString(36)+"_"+src.length;
+  function run(code){var s=document.createElement("script");s.text=code;document.body.appendChild(s)}
+  var cached=null;try{cached=localStorage.getItem(key)}catch(e){}
+  if(cached){run(cached);return}
+  var b=document.createElement("script");
+  b.src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js";b.crossOrigin="anonymous";
+  b.onload=function(){
+    var code=Babel.transform(src,{presets:["react"]}).code;
+    try{
+      for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);if(k&&k.indexOf("uslysz_mnie_build_")===0&&k!==key)localStorage.removeItem(k)}
+      localStorage.setItem(key,code);
+    }catch(e){}
+    run(code);
+  };
+  document.body.appendChild(b);
+})();
 </script>
 </body>
 </html>
