@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "0be2b85",
+  "commit": "3c05cb9",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -300,7 +300,7 @@
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek miał rozpisany plan nauki na cały tydzień. Wraca ze szkoły i wyrzuca kartkę z planem do kosza.",
-      "wypowiedz": "Zapowiedziała na jutro kartkówkę z całego działu. Na jutro! A ja miałem to rozpisane na czwartek.",
+      "wypowiedz": "Matematyczka zapowiedziała na jutro kartkówkę z całego działu. Na jutro! A ja miałem to rozpisane na czwartek.",
       "emocja": "frustracja",
       "dystraktory": [
         "złość",
@@ -334,7 +334,7 @@
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek wraca z chemii i trzaska drzwiami od pokoju. Po chwili wychodzi do kuchni.",
-      "wypowiedz": "Cała klasa ma jedynki. Cała. A on, że sami sobie winni, bo trzeba było słuchać.",
+      "wypowiedz": "Cała klasa ma jedynki. Cała. A chemik na to, że sami sobie winni, bo trzeba było słuchać.",
       "emocja": "złość",
       "dystraktory": [
         "niesprawiedliwość",
@@ -453,7 +453,7 @@
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek wraca ze szkoły w pierwszym tygodniu po wakacjach. Zjada obiad w milczeniu i w końcu się odzywa.",
-      "wypowiedz": "Kuba siedzi teraz z tym nowym. Od pierwszego dnia. Byli razem na obozie i mają swoje żarty, których nie łapię.",
+      "wypowiedz": "Kuba, z którym siedziałem od czwartej klasy, siedzi teraz z tym nowym. Od pierwszego dnia. Byli razem na obozie i mają swoje żarty, których nie łapię.",
       "emocja": "zazdrość",
       "dystraktory": [
         "odrzucenie",
@@ -504,7 +504,7 @@
       "wiek": 13,
       "plec": "dziewczyna",
       "kontekst": "13-latka wraca ze szkoły i zamyka się w pokoju. Po godzinie wychodzi i staje w drzwiach kuchni.",
-      "wypowiedz": "Powiedziałam jej jedną rzecz. Jedną. I dziś wiedziała o tym cała klasa.",
+      "wypowiedz": "Powiedziałam przyjaciółce jedną rzecz w tajemnicy. Jedną. I dziś wiedziała o tym cała klasa.",
       "emocja": "żal",
       "dystraktory": [
         "złość",
@@ -521,7 +521,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek przegląda telefon na kanapie. Pokazuje tacie zdjęcie ze stadionu.",
-      "wypowiedz": "Mówili, że nie ma już biletów. A tu są we trzech na meczu. Nawet nie schowali.",
+      "wypowiedz": "Kumple mówili, że nie ma już biletów. A tu są we trzech na meczu. Nawet się z tym nie kryli.",
       "emocja": "żal",
       "dystraktory": [
         "odrzucenie",
@@ -605,7 +605,7 @@
       "linia_w_index_html": 314,
       "wiek": 17,
       "plec": "dziewczyna",
-      "kontekst": "Wieczór po siedemnastych urodzinach. 17-latka sprząta ze stołu nietknięty kawałek tortu.",
+      "kontekst": "Wieczór po siedemnastych urodzinach, na które nie przyszedł jej chłopak. 17-latka sprząta ze stołu nietknięty kawałek tortu.",
       "wypowiedz": "Nie przyszedł. Napisał o dziesiątej wieczorem, że zapomniał. Zapomniał o moich urodzinach.",
       "emocja": "żal",
       "dystraktory": [
@@ -996,7 +996,7 @@
       "linia_w_index_html": 339,
       "wiek": 16,
       "plec": "dziewczyna",
-      "kontekst": "16-latka sprawdza telefon co kilka minut, potem kładzie go ekranem do dołu na stole.",
+      "kontekst": "16-latka co kilka minut sprawdza, czy przyjaciółka jej odpisała, potem kładzie telefon ekranem do dołu na stole.",
       "wypowiedz": "Jest online. Od trzech dni jest online i nie odpisuje. A wczoraj wrzuciła zdjęcie z innymi.",
       "emocja": "żal",
       "dystraktory": [
@@ -1031,7 +1031,7 @@
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "15-latka prowadzi konto z własnymi rysunkami. Pokazuje mamie telefon z cudzym profilem.",
-      "wypowiedz": "To mój rysunek. Zdjęła podpis, wrzuciła jako swój i ma trzy razy więcej lajków niż ja.",
+      "wypowiedz": "To mój rysunek. Ta dziewczyna usunęła mój podpis, wrzuciła go jako swój i ma trzy razy więcej lajków niż ja.",
       "emocja": "niesprawiedliwość",
       "dystraktory": [
         "złość",
@@ -1184,7 +1184,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wraca z finału ligi szkolnej. Wchodzi w stroju, nie przebrał się po meczu.",
-      "wypowiedz": "Jeden karny. Mój. W ostatniej minucie.",
+      "wypowiedz": "Przegraliśmy przez jeden karny. Mój, w ostatniej minucie. Nie trafiłem.",
       "emocja": "rozczarowanie",
       "dystraktory": [
         "wstyd",
@@ -1286,7 +1286,7 @@
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek wraca z treningu siatkówki. Zjada obiad w milczeniu i odsuwa talerz.",
-      "wypowiedz": "Dostał powołanie do kadry wojewódzkiej. On. Gram z nim w jednej szóstce od trzech lat i trener nawet na mnie nie spojrzał.",
+      "wypowiedz": "Kolega z drużyny dostał powołanie do kadry wojewódzkiej. Gram z nim w jednej szóstce od trzech lat, a trener nawet na mnie nie spojrzał.",
       "emocja": "zazdrość",
       "dystraktory": [
         "niesprawiedliwość",
@@ -1439,7 +1439,7 @@
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka wraca z lekcji biologii. Rzuca plecak i staje w drzwiach kuchni z założonymi rękami.",
-      "wypowiedz": "Nie idę więcej na biologię. Powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.",
+      "wypowiedz": "Nie idę więcej na biologię. Biolożka powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.",
       "emocja": "upokorzenie",
       "dystraktory": [
         "złość",
@@ -1490,7 +1490,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek sprawdza Librus i odkłada telefon. Potem bierze go z powrotem i patrzy jeszcze raz.",
-      "wypowiedz": "Poprawa była dziś, myślałem, że w piątek. Ona nie robi drugich terminów. Nie potrzebuję rady, mam przerąbane i tyle.",
+      "wypowiedz": "Poprawa była dziś, myślałem, że w piątek. Nauczycielka nie robi drugich terminów. Nie potrzebuję rady, mam przerąbane i tyle.",
       "emocja": "bezsilność",
       "dystraktory": [
         "wstyd",
@@ -1575,7 +1575,7 @@
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek wraca ze sprawdzianu z geografii i przegląda w telefonie oceny klasy na grupowym czacie.",
-      "wypowiedz": "Pół klasy miało ściągi i mają piątki. Ja się uczyłem i mam trzy. Może od następnego też zacznę ściągać, skoro tak to działa.",
+      "wypowiedz": "Pół klasy miało ściągi i mają piątki. Ja się uczyłem i mam trzy. Może na następnym też będę ściągać, skoro tak to działa.",
       "emocja": "frustracja",
       "dystraktory": [
         "niesprawiedliwość",
@@ -1626,7 +1626,7 @@
       "wiek": 14,
       "plec": "dziewczyna",
       "kontekst": "Niedziela rano. 14-latka siedzi przy stole i od dziesięciu minut pisze i kasuje wiadomość w telefonie.",
-      "wypowiedz": "Nie poszłam na jej urodziny, bo poszłam na inne, i ona o tym wie. Wiem, że powinnam napisać. Wiem.",
+      "wypowiedz": "Nie poszłam na urodziny przyjaciółki, bo wybrałam inne, i ona o tym wie. Wiem, że powinnam napisać. Wiem.",
       "emocja": "wstyd",
       "dystraktory": [
         "żal",
@@ -1745,7 +1745,7 @@
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "Sobota, 19:00. 16-latek stoi w kurtce w przedpokoju, po chwili zdejmuje ją i wiesza.",
-      "wypowiedz": "Nie idę. Nie mam z kim. I nie dzwoń do ich rodziców, nie jestem w przedszkolu.",
+      "wypowiedz": "Nie idę. Nie mam z kim. I nie dzwoń do rodziców kolegów, nie jestem w przedszkolu.",
       "emocja": "samotność",
       "dystraktory": [
         "wstyd",
@@ -2068,7 +2068,7 @@
       "wiek": 16,
       "plec": "chłopak",
       "kontekst": "16-latek wraca z miasta i wysypuje całą zawartość plecaka na podłogę w przedpokoju.",
-      "wypowiedz": "Nie ma portfela, a w nim całe kieszonkowe na miesiąc i legitymacja. Tak, wiem, w tylnej kieszeni. Wiem.",
+      "wypowiedz": "Nie ma portfela, a w nim całe kieszonkowe na miesiąc i legitymacja. Tak, wiem, nie nosi się portfela w tylnej kieszeni. Wiem.",
       "emocja": "frustracja",
       "dystraktory": [
         "wstyd",
@@ -2255,7 +2255,7 @@
       "wiek": 17,
       "plec": "dziewczyna",
       "kontekst": "17-latka wraca z nocowania u koleżanki. Mama koleżanki wspomniała przy śniadaniu, że wieczorem był telefon z pytaniem, czy ona na pewno tam jest.",
-      "wypowiedz": "Dzwoniłaś do jej mamy. Sprawdzić. Powiedziałam ci, gdzie jestem, i to nie wystarczyło.",
+      "wypowiedz": "Dzwoniłaś do jej mamy, żeby sprawdzić, czy tam jestem. Powiedziałam ci, gdzie jestem, i to nie wystarczyło.",
       "emocja": "żal",
       "dystraktory": [
         "złość",
@@ -2867,7 +2867,7 @@
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek słucha, jak tata po raz kolejny opowiada, że sam w jego wieku pomagał od świtu w gospodarstwie. Przewraca oczami.",
-      "wypowiedz": "Ty w moim wieku. Wiem, słyszałem to sto razy. Tylko że ja nie jestem tobą.",
+      "wypowiedz": "«Ja w twoim wieku». Wiem, słyszałem to sto razy. Tylko że ja nie jestem tobą.",
       "emocja": "frustracja",
       "dystraktory": [
         "złość",
@@ -2952,7 +2952,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek stoi po meczu z drużyną, kiedy mama podchodzi i całuje go w czubek głowy. W samochodzie on patrzy w okno.",
-      "wypowiedz": "Przy całej drużynie. W głowę. Jak pięciolatka.",
+      "wypowiedz": "Przy całej drużynie. W głowę. Jak przedszkolaka.",
       "emocja": "złość",
       "dystraktory": [
         "wstyd",
@@ -3189,7 +3189,7 @@
       "linia_w_index_html": 485,
       "wiek": 15,
       "plec": "dziewczyna",
-      "kontekst": "15-latka pokazuje mamie dyplom z konkursu szkolnego. Mama mówi, że jej siostra w tym wieku była już w finale wojewódzkim.",
+      "kontekst": "15-latka pokazuje mamie dyplom z konkursu szkolnego. Mama mówi, że starsza siostra w tym wieku była już w finale wojewódzkim.",
       "wypowiedz": "Zawsze ona. Przychodzę z czymś swoim i słyszę o niej. Jakby mnie nie było.",
       "emocja": "żal",
       "dystraktory": [
