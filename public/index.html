@@ -1236,7 +1236,7 @@ function App(){
 
   const shareChallenge=async()=>{
     const hook=CHALLENGE_PROMPTS[Math.floor(Math.random()*CHALLENGE_PROMPTS.length)];
-    const text=`👂 Usłysz Mnie — Wyzwanie\n\n${hook}\n\n15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi:\n\n„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”\n\nCo mu powiesz?\nA) Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.\nB) Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.\nC) Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.\n\nSprawdź odpowiedź 👇\nhttps://uslyszmnie.netlify.app/quiz`;
+    const text=`👂 Usłysz Mnie — Wyzwanie\n\n${hook}\n\n15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi i mówi:\n\n„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”\n\nCo mu powiesz?\nA) Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.\nB) Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.\nC) Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.\n\nSprawdź odpowiedź 👇\nhttps://uslyszmnie.netlify.app/quiz`;
     if(navigator.share){
       try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
     }
