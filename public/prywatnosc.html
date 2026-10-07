@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f0eb">
+<title>Prywatność · Usłysz Mnie</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<style>
+:root{--bg:#f5f0eb;--card:#fff;--ac:#e07842;--acd:#c45a24;--tx:#1a1512;--ts:#4a4038;--tm:#8a7e74;--bd:#e0d8d0;--wm:#fdf4ec}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ts);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:680px;margin:0 auto;padding:24px 16px 48px}
+.back{display:inline-block;color:var(--ac);font-weight:600;text-decoration:none;margin-bottom:16px}
+h1{font-family:Georgia,"Times New Roman",serif;color:var(--acd);font-size:28px;line-height:1.25;margin:0 0 4px}
+.upd{color:var(--tm);font-size:14px;margin:0 0 20px}
+section{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px 18px;margin:0 0 12px}
+h2{color:var(--tx);font-size:18px;line-height:1.3;margin:0 0 8px}
+p{margin:0 0 10px}
+p:last-child,ul:last-child{margin-bottom:0}
+ul{margin:0 0 10px;padding-left:20px}
+li{margin:0 0 6px}
+strong{color:var(--tx)}
+.note{background:var(--wm);border-color:#f3d9c4}
+a{color:var(--acd)}
+footer{color:var(--tm);font-size:14px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">← Wróć do aplikacji</a>
+<h1>Polityka prywatności</h1>
+<p class="upd">Aplikacja Usłysz Mnie · ostatnia aktualizacja: 7 października 2026</p>
+
+<section class="note">
+<h2>W skrócie</h2>
+<ul>
+<li>Aplikacja nie ma kont, reklam ani narzędzi śledzących.</li>
+<li>Postępy i historia odpowiedzi zostają w pamięci telefonu.</li>
+<li>Do oceny wysyłana jest tylko scenka i Twoja odpowiedź (albo opis sytuacji w „Mojej sytuacji”). Ocenia ją model AI firmy OpenAI.</li>
+<li>Prosimy nie wpisywać imion, nazw szkół ani innych danych, po których można rozpoznać dziecko lub inną osobę.</li>
+</ul>
+</section>
+
+<section>
+<h2>1. Kto odpowiada za dane</h2>
+<p>Administratorem danych jest <strong>Robert Gutkowski</strong>, autor aplikacji. Kontakt w sprawach prywatności: <strong>[ADRES E-MAIL]</strong>.</p>
+</section>
+
+<section>
+<h2>2. Dane zapisane tylko w telefonie</h2>
+<p>W pamięci przeglądarki lub zainstalowanej aplikacji zapisywane są: postęp i wyniki, historia odpowiedzi, seria dni, odznaki, Scenka Dnia oraz ustawienia (np. czy włączono przypomnienia). Te dane nie są wysyłane na serwer.</p>
+<p>Można je usunąć przyciskiem „Od nowa” w aplikacji, czyszcząc dane strony w ustawieniach przeglądarki albo odinstalowując aplikację.</p>
+</section>
+
+<section>
+<h2>3. Ocena odpowiedzi przez AI</h2>
+<p>Po wysłaniu odpowiedzi aplikacja przekazuje na serwer treść scenki (opis sytuacji, wypowiedź nastolatka, poziom, płeć nastolatka) i Twoją odpowiedź. W „Mojej sytuacji” przekazywany jest opis sytuacji. Serwer przesyła je do OpenAI, która zwraca ocenę.</p>
+<ul>
+<li>Serwer aplikacji nie zapisuje treści odpowiedzi ani opisów.</li>
+<li>Według zasad OpenAI dla usług API przesłane treści nie służą do trenowania modeli i mogą być przechowywane przez OpenAI do 30 dni w celu wykrywania nadużyć.</li>
+<li>Podstawa prawna: wykonanie usługi, o którą prosisz, wysyłając odpowiedź (art. 6 ust. 1 lit. b RODO).</li>
+</ul>
+</section>
+
+<section>
+<h2>4. Dzienny limit ocen</h2>
+<p>Aby chronić aplikację przed nadużyciami, serwer liczy oceny z jednego połączenia w ciągu dnia. Adres IP nie jest zapisywany wprost: zapisywany jest tylko jego skrót kryptograficzny razem z licznikiem. Liczniki są usuwane następnego dnia.</p>
+<p>Podstawa prawna: prawnie uzasadniony interes administratora, czyli bezpieczeństwo i kontrola kosztów usługi (art. 6 ust. 1 lit. f RODO).</p>
+</section>
+
+<section>
+<h2>5. Przypomnienia</h2>
+<p>Przypomnienia o Scence Dnia działają tylko po Twojej zgodzie. Wtedy na serwerze zapisywane są: adres subskrypcji powiadomień nadany przez dostawcę powiadomień w telefonie (Google, Apple, Mozilla lub Microsoft), klucze potrzebne do zaszyfrowania powiadomienia, strefa czasowa oraz daty zapisu i ostatniego przypomnienia. Dzięki strefie czasowej przypomnienie przychodzi o 20:00 czasu lokalnego.</p>
+<ul>
+<li>Przypomnienia można wyłączyć w ustawieniach powiadomień telefonu lub przeglądarki. Wygasła subskrypcja jest usuwana z serwera przy kolejnej próbie wysłania.</li>
+<li>Podstawa prawna: zgoda (art. 6 ust. 1 lit. a RODO), którą można w każdej chwili cofnąć, wyłączając powiadomienia.</li>
+</ul>
+</section>
+
+<section>
+<h2>6. Kto jeszcze ma dostęp do danych</h2>
+<ul>
+<li><strong>Netlify</strong> (USA): utrzymuje stronę i serwer aplikacji. Jak każdy serwer, może zapisywać w dziennikach adres IP i informacje techniczne o połączeniu.</li>
+<li><strong>OpenAI</strong>: ocenia odpowiedzi (punkt 3).</li>
+<li><strong>Google Fonts</strong> (Google) i <strong>cdnjs</strong> (Cloudflare): dostarczają czcionki i biblioteki programistyczne, więc przy ich pobieraniu widzą adres IP urządzenia.</li>
+<li>Dostawcy powiadomień w telefonie (Google, Apple, Mozilla, Microsoft): dostarczają przypomnienia, jeśli zostały włączone.</li>
+</ul>
+<p>Część tych firm przetwarza dane poza Europejskim Obszarem Gospodarczym, głównie w USA. Odbywa się to na podstawie mechanizmów przewidzianych w RODO, np. standardowych klauzul umownych lub ram ochrony danych UE-USA.</p>
+</section>
+
+<section>
+<h2>7. Twoje prawa</h2>
+<p>Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu oraz cofnięcia zgody. W sprawie tych praw można pisać na adres z punktu 1.</p>
+<p>Aplikacja nie ma kont, więc administrator zwykle nie jest w stanie powiązać danych z konkretną osobą (art. 11 RODO). Najszybciej usuniesz swoje dane samodzielnie, jak opisano w punktach 2 i 5.</p>
+<p>Przysługuje Ci też skarga do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, uodo.gov.pl).</p>
+</section>
+
+<section>
+<h2>8. Dla kogo jest aplikacja</h2>
+<p>Usłysz Mnie jest przeznaczona dla dorosłych: rodziców i opiekunów nastolatków. Nie jest przeznaczona do samodzielnego używania przez dzieci. Nie jest też terapią ani poradą psychologiczną.</p>
+</section>
+
+<section>
+<h2>9. Zmiany</h2>
+<p>O zmianach tej polityki informuje data aktualizacji na górze strony.</p>
+</section>
+
+<footer>© Robert Gutkowski · <a href="/">Usłysz Mnie</a></footer>
+</main>
+</body>
+</html>

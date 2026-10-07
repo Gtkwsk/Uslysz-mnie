@@ -200,6 +200,7 @@ h1{font-size:28px;font-weight:700;color:var(--acd);margin-bottom:4px;letter-spac
 .err{background:var(--rl);border-radius:16px;padding:20px;text-align:center;margin:40px 0}.err p{font-size:15px;color:var(--rd);line-height:1.5;margin-bottom:12px}.err button{background:var(--ac);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;cursor:pointer}
 .btns{display:flex;flex-direction:column;gap:10px}
 .author{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);margin-top:16px;letter-spacing:.3px}
+.author a{color:var(--tm)}
 .splash{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:30px 20px;animation:fadeIn .4s ease-out}.splash-inner{text-align:center;max-width:380px}.splash-icon{font-size:56px;margin-bottom:16px;filter:drop-shadow(0 3px 10px rgba(224,120,66,.3))}.splash h2{font-size:24px;font-weight:700;color:var(--acd);margin-bottom:16px}.splash-text{font-size:15px;line-height:1.7;color:var(--ts);margin-bottom:24px}.splash-note{font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:28px;font-style:italic}.splash .bp{max-width:280px;margin:0 auto}
 .hb{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--bd);background:var(--card);color:var(--ac);font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}.hb:active{background:var(--acl)}
 .help{animation:fadeIn .3s ease-out;padding:8px 0 30px}
@@ -450,7 +451,7 @@ const SCENARIOS_DB = [
 {id:155,lv:3,sex:"f",ctx:"16-latka wraca od fryzjera z włosami ściętymi na krótko. Mama na jej widok pyta, co ona sobie zrobiła.",says:"Co sobie zrobiłam? Ścięłam włosy, moje. I nie, nie wyglądam 'jak chłopak', wyglądam jak ja.",emo:"złość",dist:["upokorzenie","bunt","żal"]},
 {id:156,lv:3,sex:"m",ctx:"15-latek dostał zgodę na mecz w sąsiednim mieście tylko pod warunkiem, że pojedzie z nim mama. Koledzy jadą sami pociągiem.",says:"Wszyscy jadą sami, ja z mamą jak na wycieczce z podstawówki. Mam im powiedzieć, że mama się boi, czy że ja się boję?",emo:"wstyd",dist:["upokorzenie","złość","niesprawiedliwość"]},
 {id:157,lv:3,sex:"f",ctx:"16-latka dostała propozycję pracy w weekendy w kawiarni koleżanki. Tata odmówił zgody, bo 'najpierw szkoła'.",says:"Mam średnią cztery osiem. Co jeszcze mam zrobić, żebyś mi uwierzył, że ogarniam? Weekend to mój czas.",emo:"frustracja",dist:["bezsilność","złość","niesprawiedliwość"]},
-// --- Obowiązki i „zawsze ja" ---
+// --- Obowiązki i „zawsze ja” ---
 {id:158,lv:3,sex:"m",ctx:"15-latek zakłada buty do wyjścia, kiedy mama woła go do wyniesienia śmieci.",says:"Znowu ja. Rano ja, wczoraj ja. Jakby w tym domu tylko ja miał ręce.",emo:"niesprawiedliwość",dist:["złość","żal","bunt"]},
 {id:159,lv:3,sex:"f",ctx:"14-latka czwarty dzień z rzędu odbiera brata z przedszkola i zostaje z nim do wieczora. Mama wraca o 19.",says:"Nie jestem jego mamą. Odbieram, karmię, bawię się z nim. Kiedy ja mam czas dla siebie?",emo:"przytłoczenie",dist:["niesprawiedliwość","złość","żal"]},
 {id:160,lv:3,sex:"m",ctx:"Osiemdziesiąta piąta minuta meczu Ligi Mistrzów. Mama woła do zmywania, 16-latek wstaje z pilotem w ręce.",says:"Teraz? Pięć minut do końca i akurat teraz? Zawsze w najgorszym momencie, zawsze.",emo:"złość",dist:["frustracja","niesprawiedliwość","bunt"]},
@@ -472,7 +473,7 @@ const SCENARIOS_DB = [
 {id:175,lv:3,sex:"m",ctx:"13-latek siedzi z tyłu w samochodzie. Mama przyszła po niego na urodziny kolegi pół godziny przed końcem i przez ten czas rozmawiała w kuchni z jego rodzicami.",says:"Opowiedziałaś im o mojej alergii i o tym, że śpię przy lampce. Wszyscy to słyszeli. Wszyscy.",emo:"wstyd",dist:["upokorzenie","złość","żal"]},
 {id:176,lv:3,sex:"f",ctx:"15-latka wrzuciła zdjęcie z koleżankami. Pierwszy komentarz pod spodem jest od mamy, z serduszkami i 'moja piękna córeczka'.",says:"Usuń to. Teraz. Wszyscy to widzą, a ja nie mogę zablokować własnej mamy.",emo:"upokorzenie",dist:["wstyd","złość","bezsilność"]},
 {id:177,lv:3,sex:"m",ctx:"Dzień po wywiadówce. 15-latek wraca ze szkoły i zamiast do pokoju idzie prosto do mamy.",says:"Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama kumpla mu powiedziała, a on całej klasie.",emo:"upokorzenie",dist:["złość","wstyd","bezsilność"]},
-// --- Presja na wyniki i przyszłość („to nie zawód", codzienne sprawdzanie ocen) ---
+// --- Presja na wyniki i przyszłość („to nie zawód”, codzienne sprawdzanie ocen) ---
 {id:178,lv:3,sex:"m",ctx:"16-latek wraca ze szkoły. Tata wita go w drzwiach pytaniem o trójkę z angielskiego, którą pół godziny temu wpisano w Librusie.",says:"Zanim wejdę do domu, ty już wiesz. Nie muszę nic mówić, nigdy. Librus mówi za mnie.",emo:"bezsilność",dist:["złość","przytłoczenie","bunt"]},
 {id:179,lv:3,sex:"f",ctx:"17-latka pokazuje tacie stronę kierunku grafika na uczelni. Tata mówi, że 'to nie jest zawód'.",says:"Nie zawód. Jasne. Rysuję od ósmego roku życia, a ty widzisz w tym hobby na emeryturę.",emo:"żal",dist:["złość","odrzucenie","rozczarowanie"]},
 {id:180,lv:3,sex:"m",ctx:"15-latek przynosi sprawdzian z chemii z piątką. Mama pyta, czy ktoś dostał szóstkę.",says:"Piątka. A ty pytasz o szóstkę. Nigdy dość.",emo:"rozczarowanie",dist:["żal","bezsilność","złość"]},
@@ -587,7 +588,7 @@ function getDotdShareText(score,date,streakVal,sceneSays){
   let txt=`👂 Usłysz Mnie #${dayNum}\n${bar}  ${score}/10\n`;
   if(streakVal>=2)txt+=`🔥 ${streakVal}. dzień z rzędu\n`;
   if(sceneSays){
-    txt+=`\n„${sceneSays}"\nCo odpowiadasz nastolatkowi? 😏\n`;
+    txt+=`\n„${sceneSays}”\nCo odpowiadasz nastolatkowi? 😏\n`;
   }
   txt+=`\nhttps://uslyszmnie.netlify.app`;
   return txt;
@@ -774,11 +775,11 @@ function FeedbackLoading({teenSays,parentResp,girl}){
   return <div className="ml-loading">
     <div className="ml-scene">
       <span className="ml-label">{label}</span>
-      <p className="ml-teen-quote">„{teenSays}"</p>
+      <p className="ml-teen-quote">„{teenSays}”</p>
     </div>
     <div className="ml-answer">
       <span className="ml-label">Twoja odpowiedź:</span>
-      <p className="ml-parent-quote">„{parentResp}"</p>
+      <p className="ml-parent-quote">„{parentResp}”</p>
     </div>
     <div className="ml-bar-wrap">
       <div className="ml-bar" style={{width:barW+"%"}}/>
@@ -1226,7 +1227,7 @@ function App(){
   const shareScene=async()=>{
     if(!fb||!scene)return;
     const bar=Array.from({length:10},(_,i)=>i<fb.score?"🟩":"⬜").join("");
-    const text=`👂 Usłysz Mnie\n${bar}  ${fb.score}/10\n\n„${scene.teen_says}"\nCo odpowiadasz nastolatkowi? 😏\n\nhttps://uslyszmnie.netlify.app`;
+    const text=`👂 Usłysz Mnie\n${bar}  ${fb.score}/10\n\n„${scene.teen_says}”\nCo odpowiadasz nastolatkowi? 😏\n\nhttps://uslyszmnie.netlify.app`;
     if(navigator.share){
       try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
     }
@@ -1235,7 +1236,7 @@ function App(){
 
   const shareChallenge=async()=>{
     const hook=CHALLENGE_PROMPTS[Math.floor(Math.random()*CHALLENGE_PROMPTS.length)];
-    const text=`👂 Usłysz Mnie — Wyzwanie\n\n${hook}\n\n15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi:\n\n„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą."\n\nCo mu powiesz?\nA) Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.\nB) Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.\nC) Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.\n\nSprawdź odpowiedź 👇\nhttps://uslyszmnie.netlify.app/quiz`;
+    const text=`👂 Usłysz Mnie — Wyzwanie\n\n${hook}\n\n15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi:\n\n„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”\n\nCo mu powiesz?\nA) Może spróbuj się do nich uśmiechnąć? Ludzie lgną do pozytywnych osób.\nB) Siedzisz tam sam... i oni zachowują się, jakbyś był niewidzialny.\nC) Nie przejmuj się, w liceum poznasz nowych ludzi i wszystko się zmieni.\n\nSprawdź odpowiedź 👇\nhttps://uslyszmnie.netlify.app/quiz`;
     if(navigator.share){
       try{await navigator.share({text});try{await navigator.clipboard.writeText("")}catch(e){};return}catch(e){}
     }
@@ -1277,11 +1278,11 @@ function App(){
           {onbStep===2&&<>
             <div style={{background:"var(--sp)",borderRadius:"14px",padding:"14px 18px",margin:"0 0 16px",borderLeft:"3px solid var(--ac)",textAlign:"left"}}>
               <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"12px",fontWeight:700,color:"var(--tm)",marginBottom:"6px"}}>Dziecko mówi:</div>
-              <div style={{fontSize:"16px",fontStyle:"italic",color:"var(--ts)"}}>"Nie dam rady…"</div>
+              <div style={{fontSize:"16px",fontStyle:"italic",color:"var(--ts)"}}>„Nie dam rady…”</div>
             </div>
             <div className="onb-vs fu2">
-              <div className="onb-bad"><div className="ovl">✗ ŹLE</div><p>„Nie przesadzaj, to nie takie trudne."</p></div>
-              <div className="onb-good"><div className="ovl">✓ DOBRZE</div><p>„Widzę, że jest ci ciężko."</p></div>
+              <div className="onb-bad"><div className="ovl">✗ ŹLE</div><p>„Nie przesadzaj, to nie takie trudne.”</p></div>
+              <div className="onb-good"><div className="ovl">✓ DOBRZE</div><p>„Widzę, że jest ci ciężko.”</p></div>
             </div>
           </>}
 
@@ -1298,7 +1299,7 @@ function App(){
           <div className="onb-demo-card">
             <p style={{fontSize:"14px",color:"var(--tm)",marginBottom:"12px",fontFamily:"'Source Sans 3',sans-serif",fontWeight:600}}>🟢 Poziom 1</p>
             <p style={{fontSize:"15px",lineHeight:"1.6",color:"var(--ts)",marginBottom:"14px"}}>{DEMO_SCENE.situation}</p>
-            <div className="spb" style={{margin:"0 0 16px"}}><p className="spt">„{DEMO_SCENE.teen_says}"</p></div>
+            <div className="spb" style={{margin:"0 0 16px"}}><p className="spt">„{DEMO_SCENE.teen_says}”</p></div>
             <label className="rl">Co odpowiadasz?</label>
             <textarea value={onbTxt} onChange={e=>setOnbTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." maxLength={1500} className="ta" rows={3}
               onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();
@@ -1325,7 +1326,7 @@ function App(){
           </div>
 
           <div style={{textAlign:"left",marginBottom:"16px"}}>
-            <div className="eb"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{onbTxt}"</p></div>
+            <div className="eb"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{onbTxt}”</p></div>
           </div>
 
           <div style={{textAlign:"left",marginBottom:"16px"}}>
@@ -1360,7 +1361,7 @@ function App(){
             <span className="dotd-label">⭐ Scenka Dnia</span>
             <DotdTimer/>
           </div>
-          <p className="dotd-preview">„{dailyScene.teen_says.length>60?dailyScene.teen_says.slice(0,57)+"…":dailyScene.teen_says}"</p>
+          <p className="dotd-preview">„{dailyScene.teen_says.length>60?dailyScene.teen_says.slice(0,57)+"…":dailyScene.teen_says}”</p>
           <div className="dotd-cta">Odpowiedz → <span style={{fontSize:"11px",opacity:.7,marginLeft:"4px"}}>{le(dailyScene.level)} Poz. {dailyScene.level}</span></div>
         </div>
       :
@@ -1426,7 +1427,7 @@ function App(){
         <p style={{fontSize:"12px",color:"var(--tm)",textAlign:"center",marginTop:"6px",fontFamily:"'Source Sans 3',sans-serif"}}>Wyślij quiz — niech sprawdzi, czy umie słuchać</p>
       </div>
 
-      <p className="author fu3">© Robert Gutkowski</p>
+      <p className="author fu3">© Robert Gutkowski · <a href="/prywatnosc.html">Prywatność</a></p>
       <InstallBanner/>
 
       {/* ═══ MODAL ODZNAK ═══ */}
@@ -1485,11 +1486,11 @@ function App(){
         <p className="help-p"><strong>Nazwij to, co widzisz.</strong> Nie to, co chcesz naprawić. Powiedz jednym zdaniem, co Twoje dziecko czuje — nawet jeśli nie masz pewności. Samo to, że próbujesz, zmienia wszystko.</p>
         <div className="help-ex">
           <div className="he-label">Dziecko mówi:</div>
-          <div className="he-text">„Starałem się, a i tak wszystko spieprzyłem."</div>
+          <div className="he-text">„Starałem się, a i tak wszystko spieprzyłem.”</div>
         </div>
         <div className="help-vs">
-          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Tyle pracy — i jakby to nic nie znaczyło."</p></div>
-          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Następnym razem się lepiej przygotuj."</p></div>
+          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Tyle pracy — i jakby to nic nie znaczyło.”</p></div>
+          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Następnym razem się lepiej przygotuj.”</p></div>
         </div>
       </div>
 
@@ -1497,18 +1498,18 @@ function App(){
         <div className="help-h">⚡ Typowe pułapki</div>
         <p className="help-p">Nie musisz ich unikać perfekcyjnie — wystarczy, że je zauważysz. Większość z nas wpada w nie codziennie. To nie znaczy, że jesteś złym rodzicem. To znaczy, że jesteś człowiekiem.</p>
         <div className="help-ex">
-          <div className="he-text">„Nie przesadzaj" — bagatelizowanie<br/>„Pogadaj z wychowawcą" — naprawianie<br/>„Jak się pouczysz, to będzie lepiej" — doradzanie<br/>„Ja w twoim wieku…" — porównywanie</div>
+          <div className="he-text">„Nie przesadzaj” — bagatelizowanie<br/>„Pogadaj z wychowawcą” — naprawianie<br/>„Jak się pouczysz, to będzie lepiej” — doradzanie<br/>„Ja w twoim wieku…” — porównywanie</div>
         </div>
         <p className="help-p">Wszystkie mają wspólny mianownik: mówią dziecku, że to co czuje jest do naprawienia. A ono chce tylko usłyszeć, że to co czuje — jest.</p>
       </div>
 
       <div className="help-section">
         <div className="help-h">🔴 Gdy jest zły na Ciebie</div>
-        <p className="help-p">To najtrudniejsze. „Nienawidzę cię", „Zostaw mnie", „Nie miałaś prawa". Ciało krzyczy: broń się albo przeproś. Ale jedno i drugie zamyka drzwi.</p>
+        <p className="help-p">To najtrudniejsze. „Nienawidzę cię”, „Zostaw mnie”, „Nie miałaś prawa”. Ciało krzyczy: broń się albo przeproś. Ale jedno i drugie zamyka drzwi.</p>
         <p className="help-p">Spróbuj wytrzymać i zobaczyć, co jest pod złością. Zwykle jest tam ból, strach, albo poczucie, że jest nieważny. Powiedz to, co widzisz — spokojnie, bez cofania się.</p>
         <div className="help-vs">
-          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Czujesz, że zepsułem coś między nami."</p></div>
-          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Nie pozwalam tak do mnie mówić."</p></div>
+          <div className="help-do"><div className="hv-label">✓ Spróbuj tak</div><p>„Czujesz, że zepsułem coś między nami.”</p></div>
+          <div className="help-dont"><div className="hv-label">✗ Nie tak</div><p>„Nie pozwalam tak do mnie mówić.”</p></div>
         </div>
       </div>
 
@@ -1525,14 +1526,14 @@ function App(){
 
     {!showHelp&&scr==="scene"&&!loading&&!err&&scene&&<div className={dotdMode?"dotd-scene":""}>
       {ls>=3&&<div className="rsb"><p>{["Spróbuj powiedzieć to, co widzisz — nie to, co chcesz naprawić.","Nie musisz mieć rozwiązania. Wystarczy, że usłyszysz.","Nazwij to, co czuje — nawet jednym zdaniem.",isGirl(scene)?"Pomyśl: co by chciała usłyszeć, żeby poczuć, że ją rozumiesz?":"Pomyśl: co by chciał usłyszeć, żeby poczuć, że go rozumiesz?","Spróbuj być lustrem, nie ratownikiem.",isGirl(scene)?"Zamiast rady — powiedz, co widzisz w jej oczach.":"Zamiast rady — powiedz, co widzisz w jego oczach."][(scene?.id||0)%6]}</p></div>}
-      {rt&&<div className="tmb"><p>Często pojawia się pułapka „{rt[0]}". To normalne. Spróbuj skupić się na nazywaniu uczuć.</p></div>}
+      {rt&&<div className="tmb"><p>Często pojawia się pułapka „{rt[0]}”. To normalne. Spróbuj skupić się na nazywaniu uczuć.</p></div>}
       <div className="sc fu">
         <div className="sh">
           {dotdMode?<span className="dotd-badge">⭐ SCENKA DNIA</span>:<span className="sg">{le(scene.level)} Poziom {scene.level}</span>}
         </div>
 
         <p className="ss2">{scene.situation}</p>
-        <div className="spb sc-quote"><p className="spt">„{scene.teen_says}"</p></div>
+        <div className="spb sc-quote"><p className="spt">„{scene.teen_says}”</p></div>
         <div className="ra sc-input"><label className="rl">Co odpowiadasz?</label>
           <textarea value={txt} onChange={e=>setTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." maxLength={1500} className="ta" rows={3} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();respond()}}}/>
           <button className="snb" disabled={!txt.trim()||loading} onClick={respond}>Wyślij odpowiedź</button>
@@ -1562,7 +1563,7 @@ function App(){
       </div>}
       {fb.perfect_note&&<div className="pb fd3"><span className="ic">✨</span><p>{fb.perfect_note}</p></div>}
       {fb.trap_detected&&<div className="trb fd3"><span className="ic">⚡</span><span>Pułapka: {fb.trap_detected}</span></div>}
-      <div className="eb fd4"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{pr}"</p></div>
+      <div className="eb fd4"><div className="ebl">Twoja odpowiedź:</div><p className="ebt">„{pr}”</p></div>
       <div className="fd5"><Sec icon="👍" title="Co działa" startOpen><p className="secb">{fb.what_works}</p></Sec></div>
       <div className="fd5"><Sec icon="👀" title="Na co uważać"><p className="secb">{fb.watch_out}</p></Sec></div>
       <div className="rfb fd6"><span className="ic">💭</span><p>{fb.reflection_question}</p></div>
@@ -1591,7 +1592,7 @@ function App(){
           {streak.streak>=2&&<><div className="share-divider"/><div className="share-cell"><div className="val">🔥{streak.streak}</div><div className="lbl">seria</div></div></>}
         </div>
         
-        <p style={{fontSize:"14px",color:"rgba(255,255,255,.6)",fontStyle:"italic",margin:"8px 0 4px",lineHeight:"1.4"}}>„{scene?.teen_says||dailyScene?.teen_says}"<br/><span style={{fontStyle:"normal",fontSize:"13px"}}>Co odpowiadasz nastolatkowi? 😏</span></p>
+        <p style={{fontSize:"14px",color:"rgba(255,255,255,.6)",fontStyle:"italic",margin:"8px 0 4px",lineHeight:"1.4"}}>„{scene?.teen_says||dailyScene?.teen_says}”<br/><span style={{fontStyle:"normal",fontSize:"13px"}}>Co odpowiadasz nastolatkowi? 😏</span></p>
         
         <button className={`share-copy ${copied?"share-copied":""}`} onClick={shareDotd}>
           {copied?"✅ Skopiowano!":"📤 Pochwal się wynikiem"}
@@ -1663,8 +1664,8 @@ function App(){
             <span className="hist-date">{h.date} · Poziom {h.lv}</span>
             <span className="hist-score" style={{backgroundColor:scol(h.score)}}>{h.score}</span>
           </div>
-          <div className="hist-ctx">💬 „{h.says}"</div>
-          <div className="hist-resp">→ „{h.resp}"</div>
+          <div className="hist-ctx">💬 „{h.says}”</div>
+          <div className="hist-resp">→ „{h.resp}”</div>
         </div>)}
       </div>
       <div style={{textAlign:"center",marginTop:"20px"}}>

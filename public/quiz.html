@@ -91,8 +91,8 @@ body{font-family:'Lora',serif;background:var(--bg);color:var(--tx);min-height:10
     <div class="teen-wrap">
       <span class="teen-avatar">🧑</span>
       <div class="teen-bubble">
-        <div class="teen-name">Twój syn mówi</div>
-        <p>„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą."</p>
+        <div class="teen-name">Mówi</div>
+        <p>„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”</p>
       </div>
     </div>
 
@@ -129,7 +129,7 @@ body{font-family:'Lora',serif;background:var(--bg);color:var(--tx);min-height:10
   </div>
 
   <div class="foot">
-    <p>Usłysz Mnie · Trening empatii dla rodziców<br><span class="foot-method">© Robert Gutkowski</span></p>
+    <p>Usłysz Mnie · Trening empatii dla rodziców<br><span class="foot-method">© Robert Gutkowski · <a href="/prywatnosc.html" style="color:inherit">Prywatność</a></span></p>
   </div>
 
 </div>
@@ -167,9 +167,9 @@ function pick(btn, correct) {
     const wasA = btn.dataset.idx === '0';
     fbBox.className = 'fb-box bad';
     if (wasA) {
-      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Rada</span>Syn mówi „nikt mnie nie lubi", a słyszy „zrób coś z sobą". Rada w bólu brzmi jak krytyka — jakby problem był w nim.';
+      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Rada</span>Syn mówi „nikt mnie nie lubi”, a słyszy „zrób coś z sobą”. Rada w bólu brzmi jak krytyka — jakby problem był w nim.';
     } else {
-      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Pocieszanie</span>„Nie przejmuj się" to odcięcie od uczucia. Syn słyszy: twój ból nie jest ważny, poczekaj parę lat.';
+      fbText.innerHTML = '<span class="fb-title">⚡ Pułapka: Pocieszanie</span>„Nie przejmuj się” to odcięcie od uczucia. Syn słyszy: twój ból nie jest ważny, poczekaj parę lat.';
     }
     fbStat.textContent = 'Większość rodziców też wybiera tę opcję. To naturalny odruch.';
   }

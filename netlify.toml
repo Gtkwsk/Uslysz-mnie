@@ -1,5 +1,8 @@
+# Publikowany jest tylko katalog public/ (strona, ikony, service worker).
+# Kod funkcji (netlify/), materiały robocze (analiza/) i pliki npm nie trafiają na stronę.
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
 [functions]
   directory = "netlify/functions"
-
-[build]
-  functions = "netlify/functions"
