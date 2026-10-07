@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "62fdfb7",
+  "commit": "2ef86b0",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -2356,8 +2356,8 @@
       "linia_w_index_html": 431,
       "wiek": 14,
       "plec": "dziewczyna",
-      "kontekst": "14-latka siedzi z koleżanką w swoim pokoju przy zamkniętych drzwiach. Słyszy skrzypnięcie podłogi, otwiera drzwi i widzi mamę tuż za progiem.",
-      "wypowiedz": "Stałaś pod drzwiami. Ona wszystko widziała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.",
+      "kontekst": "14-latka wychodzi spod prysznica i słyszy, jak mama rozmawia przez jej telefon z chłopakiem z klasy, który właśnie zadzwonił. Mama pyta go, czego chce.",
+      "wypowiedz": "Odebrałaś mój telefon. I jeszcze go przesłuchiwałaś. Jutro cała klasa będzie wiedzieć, że moja mama odbiera za mnie telefony.",
       "emocja": "upokorzenie",
       "dystraktory": [
         "złość",
