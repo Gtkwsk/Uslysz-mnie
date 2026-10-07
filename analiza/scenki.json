@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "e5b4cac",
+  "commit": "62fdfb7",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -1439,7 +1439,7 @@
       "wiek": 16,
       "plec": "dziewczyna",
       "kontekst": "16-latka wraca z lekcji biologii. Rzuca plecak i staje w drzwiach kuchni z założonymi rękami.",
-      "wypowiedz": "Nie idę więcej na biologię. Biolożka powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.",
+      "wypowiedz": "Nie idę więcej na biologię. Nauczycielka powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.",
       "emocja": "upokorzenie",
       "dystraktory": [
         "złość",

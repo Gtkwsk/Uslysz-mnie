@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `e5b4cac`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `62fdfb7`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -496,7 +496,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **82.** `id 82` · dziewczyna, 16 l.  
 *16-latka wraca z lekcji biologii. Rzuca plecak i staje w drzwiach kuchni z założonymi rękami.*  
-„Nie idę więcej na biologię. Biolożka powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.”  
+„Nie idę więcej na biologię. Nauczycielka powiedziała przy całej klasie, że z moimi wynikami to najwyżej na kasę. Nie będę tam siedzieć i tego słuchać.”  
 → emocja: **upokorzenie** · dystraktory: złość, bunt, bezsilność
 
 **83.** `id 83` · chłopak, 14 l.  
