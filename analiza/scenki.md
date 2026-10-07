@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `94bb8a7`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `c6ce03a`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -73,7 +73,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **1.** `id 1` · chłopak, 15 l.  
 *15-latek spędził cały weekend nad fizyką. W środę wraca ze szkoły i rzuca sprawdzian na blat w kuchni.*  
-„Dwa. Cały weekend nauki w plecy.”  
+„Mierna. Cały weekend nauki w plecy.”  
 → emocja: **rozczarowanie** · dystraktory: frustracja, bezsilność, wstyd
 
 **2.** `id 2` · dziewczyna, 14 l.  
@@ -128,7 +128,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **12.** `id 12` · dziewczyna, 15 l.  
 *Koniec roku szkolnego. 15-latka wraca z zakończenia i kładzie świadectwo na stole bez słowa.*  
-„Cztery siedemdziesiąt cztery. Do paska zabrakło jednej setnej. Jedna ocena z plastyki wyżej i bym miała.”  
+„4,7, do paska zabrakło pięć setnych. Jedna ocena wyżej i bym miała.”  
 → emocja: **żal** · dystraktory: rozczarowanie, frustracja, niesprawiedliwość
 
 **13.** `id 13` · chłopak, 15 l.  

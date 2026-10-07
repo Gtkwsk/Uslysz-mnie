@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "94bb8a7",
+  "commit": "c6ce03a",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -62,7 +62,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek spędził cały weekend nad fizyką. W środę wraca ze szkoły i rzuca sprawdzian na blat w kuchni.",
-      "wypowiedz": "Dwa. Cały weekend nauki w plecy.",
+      "wypowiedz": "Mierna. Cały weekend nauki w plecy.",
       "emocja": "rozczarowanie",
       "dystraktory": [
         "frustracja",
@@ -249,7 +249,7 @@
       "wiek": 15,
       "plec": "dziewczyna",
       "kontekst": "Koniec roku szkolnego. 15-latka wraca z zakończenia i kładzie świadectwo na stole bez słowa.",
-      "wypowiedz": "Cztery siedemdziesiąt cztery. Do paska zabrakło jednej setnej. Jedna ocena z plastyki wyżej i bym miała.",
+      "wypowiedz": "4,7, do paska zabrakło pięć setnych. Jedna ocena wyżej i bym miała.",
       "emocja": "żal",
       "dystraktory": [
         "rozczarowanie",
