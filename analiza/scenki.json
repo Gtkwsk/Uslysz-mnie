@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "97f746c",
+  "commit": "0be2b85",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -1422,7 +1422,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "15-latek wraca ze szkoły i kładzie sprawdzian z matematyki na stole, oceną do góry.",
-      "wypowiedz": "Jedynka. I zanim powiesz: wiem, trzeba było zacząć wcześniej, nie w nocy przed.",
+      "wypowiedz": "Jedynka. Wiem, co powiesz. Że trzeba było się uczyć wcześniej, a nie w nocy przed sprawdzianem.",
       "emocja": "rozczarowanie",
       "dystraktory": [
         "wstyd",

@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `97f746c`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `0be2b85`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -491,7 +491,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **81.** `id 81` · chłopak, 15 l.  
 *15-latek wraca ze szkoły i kładzie sprawdzian z matematyki na stole, oceną do góry.*  
-„Jedynka. I zanim powiesz: wiem, trzeba było zacząć wcześniej, nie w nocy przed.”  
+„Jedynka. Wiem, co powiesz. Że trzeba było się uczyć wcześniej, a nie w nocy przed sprawdzianem.”  
 → emocja: **rozczarowanie** · dystraktory: wstyd, frustracja, bezsilność
 
 **82.** `id 82` · dziewczyna, 16 l.  
