@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "50b524e",
+  "commit": "114b3fa",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -3054,7 +3054,7 @@
       "wiek": 15,
       "plec": "chłopak",
       "kontekst": "Dzień po wywiadówce. 15-latek wraca ze szkoły i zamiast do pokoju idzie prosto do mamy.",
-      "wypowiedz": "Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama Tomka to usłyszała i powiedziała synowi, a on całej klasie.",
+      "wypowiedz": "Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama Tomka to usłyszała i powiedziała mu, a on całej klasie.",
       "emocja": "upokorzenie",
       "dystraktory": [
         "złość",

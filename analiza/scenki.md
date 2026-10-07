@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `50b524e`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `114b3fa`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -993,7 +993,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **177.** `id 177` · chłopak, 15 l.  
 *Dzień po wywiadówce. 15-latek wraca ze szkoły i zamiast do pokoju idzie prosto do mamy.*  
-„Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama Tomka to usłyszała i powiedziała synowi, a on całej klasie.”  
+„Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama Tomka to usłyszała i powiedziała mu, a on całej klasie.”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
 ### Presja na wyniki i przyszłość („to nie zawód”, codzienne sprawdzanie ocen) (7)
