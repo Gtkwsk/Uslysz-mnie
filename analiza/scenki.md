@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `0ddcfeb`, 2026-10-06.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `94bb8a7`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -892,7 +892,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 „Mam średnią cztery osiem. Co jeszcze mam zrobić, żebyś mi uwierzył, że ogarniam? Weekend to mój czas.”  
 → emocja: **frustracja** · dystraktory: bezsilność, złość, niesprawiedliwość
 
-### Obowiązki i „zawsze ja" (10)
+### Obowiązki i „zawsze ja” (10)
 
 **158.** `id 158` · chłopak, 15 l.  
 *15-latek zakłada buty do wyjścia, kiedy mama woła go do wyniesienia śmieci.*  
@@ -996,7 +996,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 „Zapytałaś przy wszystkich rodzicach, czemu nie mam kolegów. Mama kumpla mu powiedziała, a on całej klasie.”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
-### Presja na wyniki i przyszłość („to nie zawód", codzienne sprawdzanie ocen) (7)
+### Presja na wyniki i przyszłość („to nie zawód”, codzienne sprawdzanie ocen) (7)
 
 **178.** `id 178` · chłopak, 16 l.  
 *16-latek wraca ze szkoły. Tata wita go w drzwiach pytaniem o trójkę z angielskiego, którą pół godziny temu wpisano w Librusie.*  
@@ -1150,8 +1150,8 @@ Typowe pułapki wymienione w pomocy: „Nie przesadzaj” (bagatelizowanie), „
 
 Jedyne pytanie zamknięte w aplikacji. Zawsze to samo, bez losowania.
 
-*15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi.*  
-Twój syn mówi: „Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”  
+*15-latek wraca ze szkoły. Rzuca plecak, zamyka się w pokoju. Po chwili wychodzi i mówi:*  
+„Nikt mnie nie lubi. Siedzę na przerwie sam jak palec, a oni udają, że mnie nie widzą.”  
 Pytanie: **„Co mu powiesz?”**
 
 | | Odpowiedź | Wynik | Komentarz po wyborze |
@@ -1190,4 +1190,4 @@ Po złej odpowiedzi dodatkowo: „Większość rodziców też wybiera tę opcję
 3. **Zapamiętane losowania:** numery 1-200 wskazują teraz inne scenki niż w poprzedniej bazie, więc aplikacja (stała `DB_VER=2`) jednorazowo zeruje u powracających użytkowników listę już wylosowanych scenek. Statystyki, poziom, odznaki i seria zostają.
 4. **Rodzic w scenkach:** mama pojawia się w 41 scenkach, tata w 33; w pozostałych rodzic nie jest nazwany. Interfejs nadal zwraca się do użytkownika w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”).
 5. **Słownik emocji:** w polach `emo` i `dist` występuje 17 różnych słów, z czego 5 nie ma na „Mapie emocji” (panel 🧭 w aplikacji): bunt, niesprawiedliwość, przytłoczenie, zazdrość, żal.
-6. **Wyzwanie dla znajomego** zawsze wysyła ten sam quiz. W kodzie jest gotowy prompt do generowania quizu A/B/C z dowolnej scenki (`SYS_CHALLENGE`), ale nigdzie nie jest używany.
+6. **Wyzwanie dla znajomego** zawsze wysyła ten sam quiz (bez losowania).
