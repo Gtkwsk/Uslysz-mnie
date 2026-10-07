@@ -265,8 +265,7 @@ const{useState,useEffect,useCallback,useRef}=React;
 // ║  Usłysz Mnie v4.1 — 192 scenki + Scenka Dnia + GPT-5.6   ║
 // ╚═══════════════════════════════════════════════════════════╝
 
-// ── API (klucz ukryty w Netlify Environment Variables) ──
-const MODEL="gpt-5.6-terra";
+// ── AI: model, klucz i instrukcje są na serwerze (netlify/functions/api.mjs, netlify/lib/prompts.mjs) ──
 
 // ══════════════════════════════════════════════════════════════
 
@@ -525,124 +524,8 @@ function drawScene(level, usedIds){
   };
 }
 
-// ══════════════════════════════════════════════════════════════
-// PROMPT: FEEDBACK — zachowany z v2
-// ══════════════════════════════════════════════════════════════
-const SYS_FEEDBACK = `Oceniasz odpowiedzi rodziców na emocje nastolatków. Metoda Faber-Mazlish.
-
-ZASADA: Empatia = być PRZY dziecku. Nie naprawiać, nie doradzać, nie tłumaczyć.
-
-Program uczy dwóch narzędzi:
-1. Nazywanie uczuć — "To cię wkurza", "Czujesz się sam", "Czujesz, że to niesprawiedliwe"
-2. Echo (ciepłe odbicie) — "Dużo z siebie dałeś ... liczyłeś na lepszy wynik"
-
-Jeśli rodzic użyje czegoś innego (fantazja, cisza, "Mmm") — oceń pozytywnie, ale w sugestiach dawaj tylko nazywanie i echo.
-
-Rozpoznawaj empatię szeroko: potoczne ("No to lipa"), metafory ("Masz w głowie kocioł"), odważne ("Czujesz się niewystarczający") — to wszystko jest dobre.
-
-SKALA — co obniża ocenę:
-10: Celne nazwanie uczucia lub trafne echo. Krótko, naturalnie. Nie szukaj wad.
-8-9: Empatia trafia. Rodzic jest przy dziecku.
-7: Empatia jest, ale ostrożna — zostaje na poziomie sytuacji, nie schodzi głębiej.
-6: Empatia + rada. Zaczął dobrze, potem przeskoczył na naprawianie.
-4-5: Pułapka dominuje — ratowanie, rada, moralizowanie, logika — ale bez wrogości.
-2-3: Bagatelizowanie, uciszanie, nietrafne nazwanie uczucia, wypytywanie.
-1: Atak, kara, odrzucenie.
-
-Pułapki (każda obniża): Ratowanie, Rada, Tłumaczenie, Moralizowanie, Bagatelizowanie, Porównywanie, Wypytywanie, Przełączanie na siebie, Logika, Nietrafne nazwanie uczucia.
-Drobna rada PO dobrej empatii = naturalny odruch, nie karz surowo (max -1).
-
-PRZYKŁADY — nastolatek: "Starałem się, a i tak wszystko spieprzyłem. Chyba jestem do niczego."
-4: "Następnym razem się lepiej przygotuj" → rada zamiast obecności
-5: "Nie mów tak o sobie, jeden sprawdzian to nie koniec świata" → pocieszanie
-7: "To musi być frustrujące — tyle pracy i taki wynik" → widzi sytuację, nie uczucie
-9: "Dałeś z siebie ile mogłeś... i to i tak nie wystarczyło" → przy dziecku
-10: "Tyle pracy — i jakby to nic nie znaczyło." → trafia w ból pod spodem
-
-FEEDBACK — krótko, prosto, po ludzku:
-- what_works: 1-2 zdania. Co zrobiono dobrze. Formy neutralne płciowo.
-- watch_out: 1 zdanie. Przy >=9 co jest świetne. Przy niższym — na co uważać.
-- reflection_question: Jedno pytanie o przeżycie RODZICA w tej konkretnej sytuacji. Nie generyczne.
-
-JĘZYK — mów po polsku jak człowiek, nie jak tłumaczenie z angielskiego:
-"Jest ci samotno" → "Czujesz się sam" / "Nikogo tu nie masz"
-"Odczuwasz frustrację" → "Wkurza cię to"
-"To musi być trudne" → "To jest ciężkie"
-"To musi być bolesne" → "To boli"
-"Odczuwasz smutek" → "Jest ci ciężko"
-"Czujesz się bezsilny" → "Nie masz już siły"
-"Czujesz się przytłoczony" → "Za dużo tego na raz"
-"Odczuwasz niesprawiedliwość" → "To niesprawiedliwe"
-"Odczuwasz lęk" → "Boisz się"
-"Czujesz gniew" → "Jesteś wściekły"
-"...i samotnie" → "...i nikogo"
-Jeśli zdanie brzmi jak z podręcznika — przepisz prościej.
-
-SUGESTIE — max 10 słów każda, jak rodzic w kuchni:
-Poziom 1-2:
-- naming: Nazwij uczucie którego dziecko nie powiedziało wprost. "Czujesz, że cokolwiek zrobisz, to nie wystarczy."
-- warm: Echo — rodzic mówi DO dziecka, odbijając jego sytuację własnymi słowami. Zawsze w 2. osobie (ty/ci/cię). NIGDY opis w 3. osobie. "Dużo z siebie dałeś ... liczyłeś na lepszy wynik.", "Miałaś plan, przygotowałaś się, a i tak nie wyszło.", "Liczyłeś na nich, a oni cię olali."
-Poziom 3 (dziecko zły na rodzica):
-- best: Nazwij co dziecko czuje WOBEC RODZICA lub co jest POD złością (ból, strach, tęsknota). Zależnie od scenki jedno lub drugie trafia celniej. "Wkurza cię, że się wtrącam." / "Boisz się, że ci nie ufam." (naming="" warm="")
-
-POZIOM 3 — DODATKOWE WYTYCZNE:
-Poziom 3 to scenki gdzie dziecko kieruje emocje wprost na rodzica. To najtrudniejszy moment — rodzic stoi pod ostrzałem i musi nie uciec, nie oddać, nie wzbudzić poczucia winy.
-
-Pułapki specyficzne dla poziomu 3 (każda obniża mocno):
-- Obrona: "Robiłem to dla twojego dobra", "Ale ja tylko chcę pomóc" → rodzic broni siebie zamiast słuchać dziecka
-- Kontratak: "Nie mów tak do mnie", "Jak możesz!" → rodzic oddaje cios
-- Wzbudzanie poczucia winy: "Tyle dla ciebie robię, a ty tak?", "Jak możesz tak mówić po tym wszystkim" → rodzic zamienia się w ofiarę
-- Pułapki z poziomu 1-2 (rada, moralizowanie, bagatelizowanie) też obowiązują.
-
-Skala dla poziomu 3:
-10: Rodzic nazywa co dziecko czuje wobec niego LUB trafia w to co jest pod złością. Krótko, bez obrony. "Wściekasz się, że nie słucham." / "Czujesz, że ci nie ufam."
-8-9: Rodzic jest przy dziecku, nie broni się, ale nie trafia celnie w emocję.
-6-7: Rodzic próbuje empatii, ale przemyca obronę lub tłumaczenie. "Rozumiem, że cię to denerwuje, ale chciałem tylko..."
-4-5: Obrona lub poczucie winy dominują, ale bez agresji.
-2-3: Kontratak, kara, uciszanie.
-1: Atak, odrzucenie, groźba.
-
-PRZYKŁADY — nastolatek: "Widzisz mnie tylko wtedy, kiedy coś robię źle."
-3: "To nieprawda, wczoraj rozmawialiśmy o filmie" → obrona, zaprzeczenie bólowi dziecka
-5: "Nie mów tak, staram się być dobrym rodzicem" → poczucie winy
-7: "Widzę, że to cię boli" → empatia, ale ogólnikowa, nie dotyka sedna
-9: "Czujesz, że widzę tylko twoje potknięcia... a nie ciebie" → przy dziecku, trafia głębiej
-10: "Chcesz, żebym cię widział... nie tylko twoje błędy." → trafia w tęsknotę pod złością
-
-POLSZCZYZNA: Emocje przez osobę ("jest ci smutno"). Formy żeńskie dla dziewcząt. Polskie znaki.
-teen_reaction: Max 8 słów, 3 osoba. "Poczuł, że ktoś go widzi."
-Score >=9: dodaj perfect_note. Pułapka dominuje: trap_detected="nazwa".
-
-FORMAT — czysty JSON (proste cudzysłowy "):
-{"score":N,"teen_reaction":"...","what_works":"...","watch_out":"...","reflection_question":"...","suggestions":{"warm":"...","naming":"...","best":""},"trap_detected":null,"perfect_note":null}`;
-
-const FB_MSG=(sc,resp)=>`POZIOM: ${sc.level}
-SYTUACJA: ${sc.situation}
-${isGirl(sc)?"Nastolatka (dziewczyna)":"Nastolatek (chłopak)"} mówi: "${sc.teen_says}"
-
-ODPOWIEDŹ RODZICA: "${resp}"
-
-Oceń. WYŁĄCZNIE czysty JSON.`;
-
-// ── PROMPT: GENEROWANIE SCENKI Z OPISU RODZICA ──
-const SYS_CUSTOM=`Rodzic opisuje sytuację z własnym nastolatkiem. Na podstawie opisu wygeneruj scenkę treningową.
-
-Twoim zadaniem jest:
-1. Wyciągnij z opisu: co nastolatek powiedział lub mógłby powiedzieć
-2. Stwórz krótki kontekst (1-2 zdania, z wiekiem i płcią jeśli podane, np. "15-latek wraca ze szkoły...")
-3. Stwórz wypowiedź nastolatka (naturalna, potoczna, jak prawdziwy nastolatek)
-4. Oceń poziom trudności: 1 (emocja czytelna), 2 (kusi żeby doradzać), 3 (zły na rodzica)
-5. Podaj płeć nastolatka w polu sex: "m" (chłopak) albo "f" (dziewczyna)
-
-Jeśli rodzic nie podał wieku — oszacuj. Jeśli nie podał płci — wybierz.
-Wypowiedź nastolatka ma brzmieć autentycznie — potocznie, z emocją, jak polski nastolatek w domu.
-
-FORMAT — WYŁĄCZNIE czysty JSON:
-{"level":N,"sex":"m/f","situation":"kontekst","teen_says":"wypowiedź"}`;
-
-const CUSTOM_MSG=(desc)=>`Rodzic opisuje sytuację: "${desc}"
-
-Wygeneruj scenkę. WYŁĄCZNIE czysty JSON.`;
+// Instrukcje dla AI (ocena odpowiedzi, scenka z opisu) są na serwerze: netlify/lib/prompts.mjs.
+// Telefon wysyła tylko dane scenki i odpowiedź rodzica.
 
 // ── HISTORIA ODPOWIEDZI ──
 const HIST_KEY="uslysz_mnie_hist";
@@ -796,40 +679,50 @@ function fixPolish(obj){
 }
 
 // ══════════════════════════════════════════════════════════════
-// API CALL — GPT-5.6 Terra (tylko do feedbacku)
+// API CALL: ocena odpowiedzi i scenka z opisu (funkcja api na serwerze)
+// Najwyżej 2 próby; ponowienie tylko po kłopocie z siecią, chwilowym błędzie serwera
+// albo nieczytelnej odpowiedzi AI. Po wyczerpaniu dziennego limitu bez ponawiania.
 // ══════════════════════════════════════════════════════════════
-async function callAPI(sys,msg,effort="medium",attempt=1){
+class LimitError extends Error{constructor(scope){super("limit");this.scope=scope}}
+const LIMIT_MSG=e=>e.scope==="all"
+  ?"Aplikacja wykorzystała już dzisiejszy limit ocen. Zapraszamy jutro, scenki poczekają."
+  :"Z tego połączenia wykorzystano już dzisiejszy limit ocen. Zapraszamy jutro, scenki poczekają.";
+const feedbackReq=(sc,resp)=>({type:"feedback",level:[1,2,3].includes(+sc.level)?+sc.level:2,girl:isGirl(sc),situation:sc.situation,teen_says:sc.teen_says,response:resp});
+const customReq=desc=>({type:"custom",description:desc});
+
+async function callAPI(payload,attempt=1){
   try{
     const controller=new AbortController();
     const timeout=setTimeout(()=>controller.abort(),45000);
-    const r=await fetch("/.netlify/functions/api",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      signal:controller.signal,
-      body:JSON.stringify({model:MODEL,max_completion_tokens:1024,reasoning_effort:effort,
-        messages:[{role:"system",content:sys},{role:"user",content:msg}]})
-    });
-    clearTimeout(timeout);
-    if(!r.ok){const errBody=await r.text().catch(()=>"");throw new Error(`API ${r.status}: ${errBody.slice(0,200)}`);}
+    let r;
+    try{
+      r=await fetch("/.netlify/functions/api",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        signal:controller.signal,
+        body:JSON.stringify(payload)
+      });
+    }finally{clearTimeout(timeout)}
+    if(r.status===429){const b=await r.json().catch(()=>({}));if(b.error==="limit")throw new LimitError(b.scope)}
+    if(!r.ok)throw new Error(`API ${r.status}`);
     const d=await r.json();
-    const t=d.choices?.[0]?.message?.content||"";
+    const t=d.content||"";
     const clean=t.replace(/```json|```/g,"").trim();
     const start=clean.indexOf("{");const end=clean.lastIndexOf("}");
     if(start===-1||end===-1)throw new Error("No JSON");
     let jsonStr=clean.slice(start,end+1);
     try{return fixPolish(JSON.parse(jsonStr))}catch(e1){
-      let fix1=jsonStr.replace(/[\u201E\u201D\u201C\u00AB\u00BB]/g,'\\"');
+      let fix1=jsonStr.replace(/[„”“«»]/g,'\\"');
       try{return fixPolish(JSON.parse(fix1))}catch(e2){
-        let fix2=jsonStr.replace(/[\u201E\u201D\u201C\u00AB\u00BB\u201A\u2018\u2019]/g,"'");
-        try{return fixPolish(JSON.parse(fix2))}catch(e3){throw e3}
+        let fix2=jsonStr.replace(/[„”“«»‚‘’]/g,"'");
+        try{return fixPolish(JSON.parse(fix2))}catch(e3){throw new Error("No JSON")}
       }
     }
   }catch(e){
-    const isRetryable=e.name==="AbortError"||e.message.includes("429")||e.message.includes("5")||e.message.includes("fetch")||e.message.includes("JSON");
-    if(isRetryable&&attempt<5){
-      const delay=Math.min(1500*Math.pow(1.5,attempt-1),12000)+Math.random()*1000;
-      await new Promise(r=>setTimeout(r,delay));
-      return callAPI(sys,msg,effort,attempt+1);
+    const retry=!(e instanceof LimitError)&&(e.name==="AbortError"||e instanceof TypeError||/^API 50[234]$/.test(e.message)||e.message==="No JSON");
+    if(retry&&attempt<2){
+      await new Promise(r=>setTimeout(r,1500+Math.random()*1000));
+      return callAPI(payload,attempt+1);
     }
     throw e;
   }
@@ -941,21 +834,6 @@ const CHALLENGE_PROMPTS=[
   "Sprawdź czy umiesz nie doradzać 😏",
   "Większość rodziców wpada w pułapkę 😏",
 ];
-
-const SYS_CHALLENGE=`Dostajesz scenę: kontekst + wypowiedź nastolatka. Wygeneruj quiz z 3 opcjami odpowiedzi rodzica.
-
-ZASADY:
-- Dokładnie 1 opcja empatyczna (correct:true) — krótka, naturalna, nazywa uczucie lub jest przy dziecku
-- Dokładnie 2 opcje-pułapki (correct:false) — typowe błędy rodziców: doradzanie, pocieszanie, bagatelizowanie, moralizowanie
-- Każda opcja: max 10 słów, brzmi jak prawdziwy rodzic
-- Pułapki NIE mogą być karykaturalnie złe — muszą brzmieć rozsądnie, żeby kusiły
-- Kolejność losowa (empatyczna nie zawsze na tej samej pozycji)
-- Opcja empatyczna powinna być wyraźnie empatyczna — ale NIE oczywista
-
-FORMAT — WYŁĄCZNIE czysty JSON:
-{"quiz":[{"text":"...","correct":false},{"text":"...","correct":true},{"text":"...","correct":false}]}`;
-
-const CHALLENGE_MSG=(sc)=>`SYTUACJA: ${sc.ctx}\nNastolatek mówi: "${sc.says}"\n\nWygeneruj quiz. WYŁĄCZNIE czysty JSON.`;
 
 // ══════════════════════════════════════════════════════════════
 // ODZNAKI NARRACYJNE
@@ -1312,7 +1190,7 @@ function App(){
     if(!txt.trim())return;
     const t=txt.trim();setPr(t);setTxt("");setL(true);setErr(null);setLdTxt("Jak to zabrzmi nastolatkowi");
     try{
-      const f=await callAPI(SYS_FEEDBACK,FB_MSG(scene,t),"medium");
+      const f=await callAPI(feedbackReq(scene,t));
       setFb(f);setScr("feedback");setFD(true);setTeenTyping(true);setTimeout(()=>setTeenTyping(false),1400);
       setStreak(markToday({streak:streak.streak,lastDay:streak.lastDay}));
       addToHistory(scene,t,f.score);setHistory(loadHistory());
@@ -1324,7 +1202,7 @@ function App(){
         const bdata=loadBadges();bdata._dotdCount=(bdata._dotdCount||0)+1;saveBadges(bdata);setUnlockedBadges(bdata);
       }
     }catch(e){
-      setErr("Nie udało się uzyskać oceny. Sprawdź połączenie z internetem i spróbuj ponownie.");
+      setErr(e instanceof LimitError?LIMIT_MSG(e):"Nie udało się uzyskać oceny. Sprawdź połączenie z internetem i spróbuj ponownie.");
       setPr("");setTxt(t);
     }
     setL(false);
@@ -1368,11 +1246,11 @@ function App(){
     if(!customTxt.trim())return;
     setL(true);setErr(null);setLdTxt("Tworzę scenkę z Twojego opisu…");
     try{
-      const raw=await callAPI(SYS_CUSTOM,CUSTOM_MSG(customTxt.trim()),"medium");
+      const raw=await callAPI(customReq(customTxt.trim()));
       const sc={id:9999,level:raw.level||2,sex:raw.sex==="m"||raw.sex==="f"?raw.sex:null,situation:raw.situation,teen_says:raw.teen_says};
       setSc(sc);setScr("scene");setCustomMode(true);setCustomTxt("");
     }catch(e){
-      setErr("Nie udało się wygenerować scenki. Spróbuj ponownie.");
+      setErr(e instanceof LimitError?LIMIT_MSG(e):"Nie udało się wygenerować scenki. Spróbuj ponownie.");
     }
     setL(false);
   };
@@ -1422,13 +1300,13 @@ function App(){
             <p style={{fontSize:"15px",lineHeight:"1.6",color:"var(--ts)",marginBottom:"14px"}}>{DEMO_SCENE.situation}</p>
             <div className="spb" style={{margin:"0 0 16px"}}><p className="spt">„{DEMO_SCENE.teen_says}"</p></div>
             <label className="rl">Co odpowiadasz?</label>
-            <textarea value={onbTxt} onChange={e=>setOnbTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." className="ta" rows={3}
+            <textarea value={onbTxt} onChange={e=>setOnbTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." maxLength={1500} className="ta" rows={3}
               onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();
                 if(onbTxt.trim()){setOnbLoading(true);
-                  callAPI(SYS_FEEDBACK,FB_MSG(DEMO_SCENE,onbTxt.trim()),"medium").then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
+                  callAPI(feedbackReq(DEMO_SCENE,onbTxt.trim())).then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
                 }}}}/>
             <button className="snb" disabled={!onbTxt.trim()} onClick={()=>{setOnbLoading(true);
-              callAPI(SYS_FEEDBACK,FB_MSG(DEMO_SCENE,onbTxt.trim()),"medium").then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
+              callAPI(feedbackReq(DEMO_SCENE,onbTxt.trim())).then(f=>{setOnbFb(f);setOnbLoading(false)}).catch(()=>{setOnbFb({score:7,teen_reaction:"Poczuł, że próbujesz go zrozumieć.",what_works:"Dobry początek — samo to, że spróbowałeś, wiele znaczy.",watch_out:"Każda kolejna scenka będzie łatwiejsza.",reflection_question:"Co poczułeś, kiedy czytałeś jego słowa?"});setOnbLoading(false)})
             }}>Wyślij odpowiedź</button>
           </div>
           <button className="onb-skip" onClick={()=>{markOnboardingDone();setOnbDone(true)}}>Pomiń</button>
@@ -1656,7 +1534,7 @@ function App(){
         <p className="ss2">{scene.situation}</p>
         <div className="spb sc-quote"><p className="spt">„{scene.teen_says}"</p></div>
         <div className="ra sc-input"><label className="rl">Co odpowiadasz?</label>
-          <textarea value={txt} onChange={e=>setTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." className="ta" rows={3} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();respond()}}}/>
+          <textarea value={txt} onChange={e=>setTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." maxLength={1500} className="ta" rows={3} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();respond()}}}/>
           <button className="snb" disabled={!txt.trim()||loading} onClick={respond}>Wyślij odpowiedź</button>
         </div></div>
       {dotdMode&&<div style={{textAlign:"center",marginTop:"8px"}}><span style={{fontSize:"12px",color:"#a08830",fontFamily:"'Source Sans 3',sans-serif"}}>⭐ Masz jeden strzał — to Scenka Dnia</span></div>}
@@ -1764,7 +1642,7 @@ function App(){
       <div className="custom-intro"><p>Opisz, co się wydarzyło — co powiedział Twój nastolatek, w jakiej sytuacji. AI stworzy scenkę treningową, na którą będziesz mógł odpowiedzieć i dostać feedback.</p></div>
       <div className="ra">
         <label className="rl">Co powiedział Twój nastolatek? Co się działo?</label>
-        <textarea value={customTxt} onChange={e=>setCustomTxt(e.target.value)} placeholder="Np. Mój 15-letni syn wrócił ze szkoły wściekły i powiedział, że nienawidzi nauczyciela..." className="ta" rows={4}/>
+        <textarea value={customTxt} onChange={e=>setCustomTxt(e.target.value)} placeholder="Np. Mój 15-letni syn wrócił ze szkoły wściekły i powiedział, że nienawidzi nauczyciela..." maxLength={1500} className="ta" rows={4}/>
         <button className="snb" disabled={!customTxt.trim()||loading} onClick={submitCustom}>Stwórz scenkę →</button>
       </div>
       <div style={{textAlign:"center",marginTop:"16px"}}>
