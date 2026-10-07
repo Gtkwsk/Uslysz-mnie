@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `129e40c`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `97f746c`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -220,7 +220,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **30.** `id 30` · chłopak, 14 l.  
 *14-latek wraca ze szkoły i zamiast jak zwykle włączyć komputer, kładzie się na łóżku w butach.*  
-„Powiedziałem jej. A ona: «Nie, sorry». I poszła.”  
+„Powiedziałem jej, że mi się podoba. A ona: «Nie, sorry». I poszła.”  
 → emocja: **odrzucenie** · dystraktory: wstyd, smutek, upokorzenie
 
 **31.** `id 31` · dziewczyna, 16 l.  

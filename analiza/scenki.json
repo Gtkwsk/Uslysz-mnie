@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "129e40c",
+  "commit": "97f746c",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -555,7 +555,7 @@
       "wiek": 14,
       "plec": "chłopak",
       "kontekst": "14-latek wraca ze szkoły i zamiast jak zwykle włączyć komputer, kładzie się na łóżku w butach.",
-      "wypowiedz": "Powiedziałem jej. A ona: «Nie, sorry». I poszła.",
+      "wypowiedz": "Powiedziałem jej, że mi się podoba. A ona: «Nie, sorry». I poszła.",
       "emocja": "odrzucenie",
       "dystraktory": [
         "wstyd",
