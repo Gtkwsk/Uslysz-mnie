@@ -14,7 +14,7 @@ const ipHash = (ip) => createHash("sha256").update("uslysz-mnie:" + ip).digest("
 // Hojny limit na adres, bo cała szkoła albo rodzina może wychodzić do internetu z jednego IP.
 // Limit dla całej aplikacji wyznacza najwyższy możliwy koszt dnia. Oba można zmienić zmiennymi LIMIT_IP i LIMIT_DAY w Netlify.
 export const limits = () => ({
-  ip: Number(process.env.LIMIT_IP) || 40,
+  ip: Number(process.env.LIMIT_IP) || 100,
   day: Number(process.env.LIMIT_DAY) || 2000,
 });
 
