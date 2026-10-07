@@ -1,6 +1,6 @@
 {
   "zrodlo": "index.html, tablica SCENARIOS_DB",
-  "commit": "7bfc952",
+  "commit": "e5b4cac",
   "data_eksportu": "2026-10-07",
   "liczba": 200,
   "poziomy": {
@@ -2356,8 +2356,8 @@
       "linia_w_index_html": 431,
       "wiek": 14,
       "plec": "dziewczyna",
-      "kontekst": "14-latka rozmawia w pokoju z koleżanką przez głośnik. Koleżanka pyta, kto tam szura pod drzwiami. 14-latka otwiera i widzi mamę tuż za progiem.",
-      "wypowiedz": "Stałaś pod drzwiami. Ona to słyszała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.",
+      "kontekst": "14-latka siedzi z koleżanką w swoim pokoju przy zamkniętych drzwiach. Słyszy skrzypnięcie podłogi, otwiera drzwi i widzi mamę tuż za progiem.",
+      "wypowiedz": "Stałaś pod drzwiami. Ona wszystko widziała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.",
       "emocja": "upokorzenie",
       "dystraktory": [
         "złość",

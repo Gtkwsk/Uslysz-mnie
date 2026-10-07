@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `7bfc952`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `e5b4cac`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -781,8 +781,8 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **frustracja** · dystraktory: złość, bunt, przytłoczenie
 
 **136.** `id 136` · dziewczyna, 14 l.  
-*14-latka rozmawia w pokoju z koleżanką przez głośnik. Koleżanka pyta, kto tam szura pod drzwiami. 14-latka otwiera i widzi mamę tuż za progiem.*  
-„Stałaś pod drzwiami. Ona to słyszała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.”  
+*14-latka siedzi z koleżanką w swoim pokoju przy zamkniętych drzwiach. Słyszy skrzypnięcie podłogi, otwiera drzwi i widzi mamę tuż za progiem.*  
+„Stałaś pod drzwiami. Ona wszystko widziała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
 **137.** `id 137` · chłopak, 15 l.  
