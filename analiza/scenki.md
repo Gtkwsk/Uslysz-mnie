@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `3c05cb9`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `7bfc952`, 2026-10-07.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -78,7 +78,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **2.** `id 2` · dziewczyna, 14 l.  
 *14-latka wraca ze szkoły ze spuszczoną głową i od progu idzie do swojego pokoju. Po chwili wychodzi po herbatę.*  
-„Matematyczka wzięła mnie do tablicy z czegoś, czego jeszcze nie było. Stałam tam jak słup, a oni rechotali.”  
+„Matematyczka wzięła mnie do tablicy z czegoś, czego jeszcze nie przerabialiśmy. Stałam tam jak słup, a oni rechotali.”  
 → emocja: **wstyd** · dystraktory: upokorzenie, złość, smutek
 
 **3.** `id 3` · chłopak, 16 l.  
@@ -157,8 +157,8 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **złość** · dystraktory: niesprawiedliwość, bezsilność, frustracja
 
 **18.** `id 18` · chłopak, 15 l.  
-*15-latek wraca ze szkoły i od razu podchodzi do mamy z telefonem w ręce.*  
-„Wychowawczyni napisała, że masz przyjść jutro na rozmowę. Nie powiedziała po co. Pytałem dwa razy.”  
+*15-latek wraca ze szkoły i jeszcze w kurtce podchodzi do mamy.*  
+„Wychowawczyni kazała ci przekazać, że masz jutro przyjść na rozmowę. Nie powiedziała po co. Pytałem dwa razy.”  
 → emocja: **niepewność** · dystraktory: strach, wstyd, złość
 
 **19.** `id 19` · chłopak, 14 l.  
@@ -175,7 +175,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **21.** `id 21` · dziewczyna, 14 l.  
 *14-latka siedzi na kanapie z telefonem. Nagle odkłada go na bok i patrzy w okno.*  
-„Mają grupę bez mnie. Nazwali ją «bez Oli». Ktoś przez pomyłkę wysłał mi screena.”  
+„Dziewczyny z klasy mają grupę beze mnie. Nazwali ją «bez Oli». Ktoś przez pomyłkę wysłał mi screena.”  
 → emocja: **odrzucenie** · dystraktory: upokorzenie, żal, wstyd
 
 **22.** `id 22` · chłopak, 15 l.  
@@ -225,7 +225,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **31.** `id 31` · dziewczyna, 16 l.  
 *16-latka pisze do przyjaciółki, patrzy na telefon i odkłada go. Trzeci raz tego wieczoru.*  
-„Od kiedy ma chłopaka, na wszystko jest «potem». Przyjaźnimy się od zerówki. Teraz jestem opcją na wtedy, kiedy on nie ma czasu.”  
+„Od kiedy ma chłopaka, na wszystko odpisuje «potem». Przyjaźnimy się od zerówki. Teraz jestem opcją na wtedy, kiedy on nie ma czasu.”  
 → emocja: **zazdrość** · dystraktory: samotność, żal, odrzucenie
 
 **32.** `id 32` · chłopak, 13 l.  
@@ -239,18 +239,18 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **żal** · dystraktory: rozczarowanie, złość, smutek
 
 **34.** `id 34` · chłopak, 16 l.  
-*16-latek od 16 czeka na kolegę, z którym ma jutro oddać wspólny projekt. O 20 zamyka laptopa z hukiem.*  
+*16-latek od czwartej po południu czeka na kolegę, z którym ma jutro oddać wspólny projekt. O ósmej wieczorem zamyka laptopa z hukiem.*  
 „Miał być o czwartej. Nie odbiera. Projekt jest na nas obu, a ja mam go zrobić sam?”  
 → emocja: **złość** · dystraktory: żal, bezsilność, rozczarowanie
 
 **35.** `id 35` · dziewczyna, 14 l.  
 *14-latka wraca ze szkoły i siada przy stole. Nie wyjmuje telefonu.*  
-„Słyszałam w łazience, jak mówiły, że mnie tolerują. Tolerują. Myślałam, że jesteśmy koleżankami.”  
+„Słyszałam w łazience, jak dziewczyny z mojej ekipy mówiły, że mnie tolerują. Tolerują. Myślałam, że jesteśmy koleżankami.”  
 → emocja: **upokorzenie** · dystraktory: odrzucenie, żal, wstyd
 
 **36.** `id 36` · chłopak, 15 l.  
 *15-latek wraca z treningu i nie odzywa się przez cały obiad. W końcu odkłada widelec.*  
-„Wszyscy mówią, że to ja wygadałem o tej imprezie. A ja nawet nie wiedziałem, że była.”  
+„Wszyscy mówią, że to ja wygadałem rodzicom o sobotniej imprezie. A ja nawet nie wiedziałem, że była.”  
 → emocja: **niesprawiedliwość** · dystraktory: złość, żal, samotność
 
 ### Wygląd i ciało (12)
@@ -262,12 +262,12 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **38.** `id 38` · chłopak, 15 l.  
 *15-latek wraca z pierwszej lekcji wf-u w nowym roku szkolnym. Przy obiedzie nagle się odzywa.*  
-„Przez wakacje wszyscy urośli. Wszyscy oprócz mnie. Stoję w rzędzie ostatni, nawet dziewczyny są wyższe.”  
+„Przez wakacje wszyscy urośli. Wszyscy oprócz mnie. Na zbiórce stoję ostatni w szeregu, nawet dziewczyny są wyższe.”  
 → emocja: **niepewność** · dystraktory: wstyd, smutek, zazdrość
 
 **39.** `id 39` · dziewczyna, 16 l.  
 *16-latka wraca z zajęć na basenie i od razu idzie pod prysznic. Wychodzi po bardzo długim czasie.*  
-„Słyszałam, co mówili o moich udach. Myśleli, że jestem pod wodą. Nie byłam.”  
+„Słyszałam, co chłopaki mówili o moich udach. Myśleli, że jestem pod wodą. Nie byłam.”  
 → emocja: **upokorzenie** · dystraktory: wstyd, złość, smutek
 
 **40.** `id 40` · chłopak, 16 l.  
@@ -311,8 +311,8 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **frustracja** · dystraktory: wstyd, niepewność, złość
 
 **48.** `id 48` · chłopak, 13 l.  
-*13-latek wrócił wczoraj od ortodonty. Dziś przy kolacji mówi z ręką przy ustach.*  
-„Nazwali mnie «metalowa szczęka». Dwa lata z tym chodzić. Nie będę się uśmiechał przez dwa lata.”  
+*13-latek wrócił wczoraj od ortodonty z aparatem na zębach. Dziś przy kolacji mówi z ręką przy ustach.*  
+„W klasie nazwali mnie «metalowa szczęka». Dwa lata z tym chodzić. Nie będę się uśmiechał przez dwa lata.”  
 → emocja: **smutek** · dystraktory: wstyd, bezsilność, złość
 
 ### Internet, telefon, gry, media społecznościowe (10)
@@ -349,7 +349,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **55.** `id 55` · chłopak, 13 l.  
 *Wieczór. 13-latek siedzi przy komputerze ze słuchawkami na szyi, gra jest włączona, ale on nie gra.*  
-„Grają we czterech. Czekałem godzinę, aż ktoś mnie zaprosi. Widzę, że są online.”  
+„Chłopaki grają we czterech. Czekałem godzinę, aż ktoś mnie zaprosi. Widzę, że są online.”  
 → emocja: **odrzucenie** · dystraktory: samotność, smutek, żal
 
 **56.** `id 56` · dziewczyna, 16 l.  
@@ -391,12 +391,12 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **63.** `id 63` · chłopak, 15 l.  
 *Trzeci dzień grypy. 15-latek leży w łóżku i przegląda w telefonie wiadomości z klasowej grupy.*  
-„Każdy dzień w łóżku to dwa sprawdziany więcej do nadrobienia. Dziś doszła jeszcze kartkówka. Nie wiem, jak to odrobić.”  
+„Trzy dni w łóżku i już dwa sprawdziany do nadrobienia. Dziś doszła jeszcze kartkówka. Nie wiem, kiedy ja to wszystko napiszę.”  
 → emocja: **bezsilność** · dystraktory: przytłoczenie, strach, frustracja
 
 **64.** `id 64` · chłopak, 14 l.  
 *14-latek od tygodnia trzyma się planu nauki przyklejonego nad biurkiem. Jest 23, on dalej siedzi nad zeszytem.*  
-„Zrobiłem plan. Trzymam się go co do minuty. I dalej siedzę o jedenastej, bo oni zadają, jakby każdy miał tylko ich przedmiot.”  
+„Zrobiłem plan. Trzymam się go co do minuty. I dalej siedzę o jedenastej, bo każdy nauczyciel zadaje tak, jakbyśmy mieli tylko jego przedmiot.”  
 → emocja: **frustracja** · dystraktory: bezsilność, przytłoczenie, złość
 
 **65.** `id 65` · chłopak, 15 l.  
@@ -428,7 +428,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **70.** `id 70` · dziewczyna, 14 l.  
 *14-latka wraca z akrobatyki z obtartymi dłońmi. Siada przy stole i ogląda je.*  
-„Miesiąc robię przerzut. Cała grupa ma, ja nie. Trenerka mówi «jeszcze raz» i ja znowu leżę na macie.”  
+„Od miesiąca ćwiczę przerzut. Cała grupa już umie, tylko ja nie. Trenerka mówi «jeszcze raz» i ja znowu leżę na macie.”  
 → emocja: **frustracja** · dystraktory: bezsilność, złość, wstyd
 
 **71.** `id 71` · chłopak, 17 l.  
@@ -443,7 +443,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **73.** `id 73` · chłopak, 16 l.  
 *16-latek wraca z treningu siatkówki. Zjada obiad w milczeniu i odsuwa talerz.*  
-„Kolega z drużyny dostał powołanie do kadry wojewódzkiej. Gram z nim w jednej szóstce od trzech lat, a trener nawet na mnie nie spojrzał.”  
+„Kolega z drużyny dostał powołanie do kadry wojewódzkiej. Gramy razem w pierwszym składzie od trzech lat, a trener nawet na mnie nie spojrzał.”  
 → emocja: **zazdrość** · dystraktory: niesprawiedliwość, rozczarowanie, żal
 
 **74.** `id 74` · dziewczyna, 17 l.  
@@ -480,7 +480,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **80.** `id 80` · dziewczyna, 18 l.  
 *18-latka dostała wynik rekrutacji na wymarzone studia w innym mieście. Siedzi na łóżku i nikomu jeszcze nie napisała.*  
-„Dostałam się. I nagle to jest za trzy miesiące, pięć godzin pociągiem, sama w obcym mieście. Dwa dni temu tego chciałam.”  
+„Dostałam się. I nagle to jest za trzy miesiące, pięć godzin pociągiem, sama w obcym mieście. Jeszcze dwa dni temu tylko tego chciałam.”  
 → emocja: **strach** · dystraktory: niepewność, samotność, przytłoczenie
 
 <a id="poziom-2"></a>
@@ -542,12 +542,12 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 ### Relacje: kłótnie przyjacielskie, zawód sercowy, zawiedzenie kogoś (10)
 
 **91.** `id 91` · dziewczyna, 15 l.  
-*Czwarty dzień, odkąd 15-latka nie odzywa się do przyjaciółki. Przy kolacji sprawdza telefon i odkłada go.*  
-„Dalej nic nie napisała. Cztery dni. I nie, nie napiszę pierwsza, bo to ona powiedziała tamto.”  
+*Czwarty dzień po kłótni z przyjaciółką. 15-latka przy kolacji sprawdza telefon i odkłada go.*  
+„Dalej nic nie napisała. Cztery dni. I nie, nie napiszę pierwsza, bo to ona mi nagadała.”  
 → emocja: **żal** · dystraktory: złość, samotność, bunt
 
 **92.** `id 92` · chłopak, 16 l.  
-*16-latek wraca z parku o 21 bez kurtki, którą miał rano. Siada w kuchni i nie włącza światła.*  
+*16-latek wraca o 21 ze spotkania z dziewczyną. Siada w kuchni i nie włącza światła.*  
 „Zerwała ze mną. Pół roku. I nie mów, że będą inne, bo nie chcę innych.”  
 → emocja: **smutek** · dystraktory: odrzucenie, żal, bezsilność
 
@@ -572,7 +572,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **odrzucenie** · dystraktory: samotność, smutek, żal
 
 **97.** `id 97` · dziewczyna, 16 l.  
-*16-latka od dwóch dni nie dostaje wiadomości na grupie, na której do tej pory pisały codziennie. Zamyka aplikację i odkłada telefon.*  
+*16-latka od dwóch dni nie dostaje żadnych wiadomości na grupie z koleżankami, na której planowały wspólny wyjazd. Zamyka aplikację i odkłada telefon.*  
 „Powiedziałam, co myślę o tym wyjeździe, i teraz cała grupa milczy. Mam je gdzieś. Serio, mam je gdzieś.”  
 → emocja: **żal** · dystraktory: odrzucenie, samotność, bunt
 
@@ -583,11 +583,11 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **99.** `id 99` · dziewczyna, 13 l.  
 *13-latka wraca ze szkoły i siada przy stole z telefonem w dłoni. Nie odblokowuje go.*  
-„Powiedział mojej koleżance, że jestem spoko, ale «jako kumpela». I nie mów, że mam trzynaście lat i jeszcze będzie milion innych.”  
+„Chłopak, który mi się podoba, powiedział mojej koleżance, że jestem spoko, ale «jako kumpela». I nie mów, że mam trzynaście lat i jeszcze będzie milion innych.”  
 → emocja: **smutek** · dystraktory: odrzucenie, wstyd, żal
 
 **100.** `id 100` · chłopak, 16 l.  
-*Sobota, 19:00. 16-latek stoi w kurtce w przedpokoju, po chwili zdejmuje ją i wiesza.*  
+*Sobota, 19:00. Cała klasa idzie dziś na koncert. 16-latek stoi w kurtce w przedpokoju, po chwili zdejmuje ją i wiesza.*  
 „Nie idę. Nie mam z kim. I nie dzwoń do rodziców kolegów, nie jestem w przedszkolu.”  
 → emocja: **samotność** · dystraktory: wstyd, odrzucenie, smutek
 
@@ -604,7 +604,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **przytłoczenie** · dystraktory: bezsilność, wstyd, żal
 
 **103.** `id 103` · chłopak, 13 l.  
-*13-latek stoi na środku korytarza przed łazienką. Z pralki dobiega stukanie, a drzwiczki nie chcą się otworzyć.*  
+*Mama wraca z pracy. 13-latek stoi w korytarzu przed łazienką, z pralki dobiega stukanie, a drzwiczki nie chcą się otworzyć.*  
 „Chciałem zrobić pranie, zanim wrócisz. Wcisnąłem wszystko naraz i teraz coś stuka. Nie wiem, co nacisnąłem.”  
 → emocja: **strach** · dystraktory: wstyd, bezsilność, rozczarowanie
 
@@ -619,12 +619,12 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **przytłoczenie** · dystraktory: bezsilność, frustracja, złość
 
 **106.** `id 106` · dziewczyna, 15 l.  
-*15-latka została po południu z chorym pięcioletnim bratem. Kiedy tata wraca, ona siedzi na podłodze w jego pokoju, on śpi.*  
+*15-latka została po południu z chorym pięcioletnim bratem. Kiedy tata wraca, ona siedzi na podłodze w pokoju brata, mały już śpi.*  
 „Płakał godzinę, że chce mamę. Robiłam wszystko. Nie nadaję się do tego i nie mów, że się nadaję.”  
 → emocja: **bezsilność** · dystraktory: wstyd, smutek, rozczarowanie
 
 **107.** `id 107` · chłopak, 16 l.  
-*16-latek dzwoni domofonem, choć ma własne klucze. Wchodzi i od razu idzie do swojego pokoju, po chwili wraca.*  
+*16-latek dzwoni domofonem, choć zwykle otwiera sobie sam. Wchodzi i od razu idzie do swojego pokoju, po chwili wraca.*  
 „Zgubiłem klucze, drugi raz w tym miesiącu. Wiem. Nie musisz nic mówić, sam wiem.”  
 → emocja: **wstyd** · dystraktory: bezsilność, złość, strach
 
@@ -647,7 +647,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **111.** `id 111` · dziewczyna, 17 l.  
 *17-latka ogląda w telefonie zdjęcia akademików w Krakowie, które sama wyszukała. Odkłada telefon i patrzy na zdjęcie klasy na ścianie.*  
-„Wszystkie zostają tutaj. Ja jedna chcę jechać. I nie mów, że będzie super i poznam nowych ludzi, bo nie o to chodzi.”  
+„Wszystkie dziewczyny z klasy zostają tutaj. Ja jedna chcę jechać. I nie mów, że będzie super i poznam nowych ludzi, bo nie o to chodzi.”  
 → emocja: **strach** · dystraktory: niepewność, samotność, smutek
 
 **112.** `id 112` · chłopak, 16 l.  
@@ -761,12 +761,12 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **bezsilność** · dystraktory: złość, bunt, upokorzenie
 
 **132.** `id 132` · dziewczyna, 16 l.  
-*16-latka znajduje swój notatnik przełożony na inną półkę. Zakładka jest w innym miejscu.*  
+*16-latka znajduje swój pamiętnik na innej półce niż zwykle. Zakładka jest w innym miejscu.*  
 „Przeczytałaś. Tam było wszystko, czego ci nie mówię. Teraz już wiem, dlaczego ci nie mówię.”  
 → emocja: **żal** · dystraktory: złość, upokorzenie, bezsilność
 
 **133.** `id 133` · chłopak, 15 l.  
-*15-latek wraca ze szkoły i zastaje posprzątane biurko. Kosz w kuchni jest pełen jego kartek.*  
+*15-latek wraca ze szkoły i widzi, że mama posprzątała mu biurko. Kosz w kuchni jest pełen jego kartek.*  
 „Wyrzuciłaś moje rzeczy. To nie były śmieci, to były notatki do mojego komiksu. Pół roku rysowania.”  
 → emocja: **złość** · dystraktory: żal, bezsilność, niesprawiedliwość
 
@@ -781,7 +781,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **frustracja** · dystraktory: złość, bunt, przytłoczenie
 
 **136.** `id 136` · dziewczyna, 14 l.  
-*14-latka rozmawia w pokoju z koleżanką przez głośnomówiący. Otwiera drzwi i widzi mamę tuż za nimi.*  
+*14-latka rozmawia w pokoju z koleżanką przez głośnik. Koleżanka pyta, kto tam szura pod drzwiami. 14-latka otwiera i widzi mamę tuż za progiem.*  
 „Stałaś pod drzwiami. Ona to słyszała. Jutro cała klasa będzie wiedzieć, że moja mama podsłuchuje.”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
@@ -806,17 +806,17 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **złość** · dystraktory: strach, upokorzenie, bezsilność
 
 **141.** `id 141` · chłopak, 13 l.  
-*13-latek wyłącza grę, kiedy tata podchodzi z telefonem, na którym jest aplikacja pokazująca czas spędzony w grach.*  
+*13-latek wyłącza grę, kiedy tata podchodzi i pyta, ile dziś grał. Tata ma w telefonie aplikację, która liczy czas spędzony w grach.*  
 „Masz to w telefonie, co do minuty. Czterdzieści minut. To po co pytasz, ile grałem, skoro wiesz?”  
 → emocja: **frustracja** · dystraktory: złość, upokorzenie, bunt
 
 **142.** `id 142` · dziewczyna, 18 l.  
 *Mama poprosiła o hasło do telefonu „na wszelki wypadek”. 18-latka kładzie telefon na stole ekranem do dołu.*  
-„Na wypadek czego? Nie dam. Jak dam, to już nigdy nie będzie moje.”  
+„Na wypadek czego? Nie dam. Jak dam, to ten telefon już nigdy nie będzie mój.”  
 → emocja: **bunt** · dystraktory: złość, niesprawiedliwość, frustracja
 
 **143.** `id 143` · chłopak, 16 l.  
-*16-latek dowiaduje się od kolegi, że tata napisał do niego z jego Discorda, żeby nie grali tak długo w nocy. Wchodzi do kuchni z telefonem.*  
+*16-latek dowiaduje się, że tata wszedł na jego konto na Discordzie i napisał z niego do Bartka, żeby nie grali tak długo w nocy. Wchodzi do kuchni z telefonem.*  
 „Napisałeś do Bartka. Z mojego Discorda. Wiesz, jak mnie teraz nazywają?”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, bezsilność
 
@@ -833,7 +833,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **wstyd** · dystraktory: bunt, złość, niesprawiedliwość
 
 **146.** `id 146` · chłopak, 14 l.  
-*Dzień przed zjazdem rodzinnym. Mama kazała ściąć włosy przed wspólnym zdjęciem, 14-latek stoi w łazience i nie dzwoni do fryzjera.*  
+*Dzień przed zjazdem rodzinnym. Mama kazała mu ściąć włosy przed wspólnym zdjęciem, 14-latek stoi w łazience i nie dzwoni do fryzjera.*  
 „Nie zetnę. To moje włosy, nie wasza dekoracja.”  
 → emocja: **złość** · dystraktory: bunt, upokorzenie, bezsilność
 
@@ -843,7 +843,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, żal
 
 **148.** `id 148` · chłopak, 15 l.  
-*15-latek puścił w samochodzie swoją playlistę. Tata po minucie przełącza na radio.*  
+*15-latek puścił w samochodzie swoją playlistę. Tata po minucie przełącza na radio i mówi, że to nie muzyka.*  
 „Minuta. Nawet nie posłuchałeś jednego kawałka do końca. «To nie muzyka», a twoja to niby muzyka?”  
 → emocja: **rozczarowanie** · dystraktory: złość, żal, odrzucenie
 
@@ -868,7 +868,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **odrzucenie** · dystraktory: złość, żal, upokorzenie
 
 **153.** `id 153` · dziewczyna, 13 l.  
-*13-latka dostała odmowę na nocowanie u koleżanki, bo mama nie zna jej rodziców. Siedzi na schodach z telefonem.*  
+*13-latka nie dostała zgody na nocowanie u koleżanki, na które idą wszystkie dziewczyny z klasy, bo mama nie zna rodziców tej koleżanki. Siedzi na schodach z telefonem.*  
 „Wszystkie będą. Ja będę w domu, jak zawsze. Nawet nie spróbowałaś ich poznać.”  
 → emocja: **żal** · dystraktory: złość, niesprawiedliwość, samotność
 
@@ -947,7 +947,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 ### Wstyd przez rodzica przy ludziach (żarty, zdrobnienia, wtrącanie się, czułości publicznie) (10)
 
 **168.** `id 168` · dziewczyna, 15 l.  
-*Niedzielny obiad z ciocią i jej córkami. Mama opowiada przy stole, że 15-latka „ma kogoś na oku”, ona wstaje od stołu.*  
+*Niedzielny obiad z ciocią i kuzynkami. Mama opowiada przy stole, że 15-latka „ma kogoś na oku”. Córka wstaje od stołu.*  
 „Powiedziałam ci to w tajemnicy. W tajemnicy! A ty przy wszystkich, jakby to był żart z telewizji.”  
 → emocja: **upokorzenie** · dystraktory: złość, wstyd, żal
 
@@ -982,7 +982,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **złość** · dystraktory: wstyd, żal, bezsilność
 
 **175.** `id 175` · chłopak, 13 l.  
-*13-latek siedzi z tyłu w samochodzie. Mama przyszła po niego na urodziny kolegi pół godziny przed końcem i przez ten czas rozmawiała w kuchni z jego rodzicami.*  
+*13-latek siedzi z tyłu w samochodzie. Mama przyszła po niego na urodziny kolegi pół godziny przed końcem i przez ten czas rozmawiała w kuchni z rodzicami kolegi.*  
 „Opowiedziałaś im o mojej alergii i o tym, że śpię przy lampce. Wszyscy to słyszeli. Wszyscy.”  
 → emocja: **wstyd** · dystraktory: upokorzenie, złość, żal
 
@@ -1024,7 +1024,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **złość** · dystraktory: bunt, bezsilność, niesprawiedliwość
 
 **183.** `id 183` · dziewczyna, 16 l.  
-*Sobota. 16-latka stoi ubrana do wyjścia, mama właśnie powiedziała, że zostaje w domu, bo w poniedziałek ma sprawdzian.*  
+*Sobota. 16-latka stoi ubrana do wyjścia, mama właśnie powiedziała, że córka zostaje w domu, bo w poniedziałek ma sprawdzian.*  
 „Umiem to. Mogę ci wyrecytować całość, a ty i tak «zostajesz». Co jeszcze mam zrobić?”  
 → emocja: **niesprawiedliwość** · dystraktory: złość, bezsilność, frustracja
 
@@ -1061,7 +1061,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **złość** · dystraktory: niesprawiedliwość, zazdrość, bunt
 
 **190.** `id 190` · chłopak, 15 l.  
-*Wizyta u cioci. 15-latek słucha, jak mama wypytuje kuzyna o olimpiadę z matematyki, a potem pyta jego, czy on też by nie spróbował.*  
+*Wizyta u cioci. 15-latek słucha, jak mama wypytuje kuzyna o olimpiadę z matematyki, a potem pyta syna, czy on też by nie spróbował.*  
 „Nie jestem nim. Nigdy nie będę. Możesz przestać patrzeć na mnie jak na gorszą wersję?”  
 → emocja: **smutek** · dystraktory: upokorzenie, zazdrość, żal
 
@@ -1083,7 +1083,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 → emocja: **frustracja** · dystraktory: rozczarowanie, złość, bezsilność
 
 **194.** `id 194` · dziewczyna, 14 l.  
-*Sobota rano. Tata odwołuje przez pracę wspólny wyjazd do kina i na pizzę, trzeci raz w tym miesiącu, 14-latka zdejmuje kurtkę.*  
+*Sobota rano. Tata odwołuje przez pracę wspólny wyjazd do kina i na pizzę, trzeci raz w tym miesiącu. 14-latka zdejmuje kurtkę.*  
 „Trzeci raz. Już nawet nie jestem zdziwiona.”  
 → emocja: **smutek** · dystraktory: żal, rozczarowanie, tęsknota
 
@@ -1188,6 +1188,6 @@ Po złej odpowiedzi dodatkowo: „Większość rodziców też wybiera tę opcję
 1. **Źródło: pula v2** (200 scenek) z sesji „Scenki v2”, gałąź `scenki-v2`, commit `6f0767e`, wklejona do aplikacji w miejsce poprzedniej bazy. Poprzednia baza 200 scenek zostaje w historii gita (commit `fb6a255`). Numery `id` 1-200, bez luk i duplikatów.
 2. **Poziomy:** poziom 1: 80, poziom 2: 45, poziom 3: 75; 21 sfer opisanych komentarzami w kodzie bazy.
 3. **Zapamiętane losowania:** numery 1-200 wskazują teraz inne scenki niż w poprzedniej bazie, więc aplikacja (stała `DB_VER=2`) jednorazowo zeruje u powracających użytkowników listę już wylosowanych scenek. Statystyki, poziom, odznaki i seria zostają.
-4. **Rodzic w scenkach:** mama pojawia się w 41 scenkach, tata w 33; w pozostałych rodzic nie jest nazwany. Interfejs nadal zwraca się do użytkownika w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”).
+4. **Rodzic w scenkach:** mama pojawia się w 43 scenkach, tata w 33; w pozostałych rodzic nie jest nazwany. Interfejs nadal zwraca się do użytkownika w rodzaju męskim („Co poczułeś”, „żebyś nie zgubił serii”).
 5. **Słownik emocji:** w polach `emo` i `dist` występuje 17 różnych słów, z czego 5 nie ma na „Mapie emocji” (panel 🧭 w aplikacji): bunt, niesprawiedliwość, przytłoczenie, zazdrość, żal.
 6. **Wyzwanie dla znajomego** zawsze wysyła ten sam quiz (bez losowania).
