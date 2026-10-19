@@ -233,6 +233,7 @@ h1{font-size:28px;font-weight:700;color:var(--acd);margin-bottom:4px;letter-spac
 .emo-chip:active{transform:scale(.95);opacity:.7}
 .emo-fab{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:100;transition:all .2s}
 .emo-fab:active{transform:scale(.9)}
+.emo-fab-space{height:56px} /* miejsce pod przyciskiem mapy emocji: koniec ekranu da się przewinąć ponad niego */
 /* ── PROPOZYCJA INSTALACJI ── */
 .inst-sheet{position:fixed;left:12px;right:12px;bottom:12px;max-width:456px;margin:0 auto;background:var(--card);border-radius:20px;box-shadow:0 8px 32px rgba(26,21,18,.18);padding:16px 16px 12px;z-index:80;animation:instUp .35s ease-out both;font-family:'Source Sans 3',sans-serif;text-align:left}
 @keyframes instUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -809,14 +810,15 @@ function Confetti(){
 }
 
 // ── STREAK ──
+// Seria przy uruchomieniu: samo otwarcie aplikacji jej nie zwiększa (to robi markToday po odpowiedzi).
+// Ostatni dzień dziś albo wczoraj: seria trwa. Dawniej: przerwana, następna odpowiedź zacznie od 1.
 function getStreak(saved){
   if(!saved?.lastDay)return{streak:0,lastDay:null};
   const today=new Date().toISOString().slice(0,10);
-  const last=saved.lastDay;
-  if(last===today)return{streak:saved.streak||1,lastDay:last};
   const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
-  if(last===yesterday)return{streak:(saved.streak||0)+1,lastDay:today};
-  return{streak:1,lastDay:today};
+  const last=saved.lastDay;
+  if(last===today||last===yesterday)return{streak:saved.streak||1,lastDay:last};
+  return{streak:0,lastDay:last};
 }
 function markToday(saved){
   const today=new Date().toISOString().slice(0,10);
@@ -1098,6 +1100,7 @@ function App(){
   const[notifJustEnabled,setNotifJustEnabled]=useState(false);
   const[notifFailed,setNotifFailed]=useState(false);
   const[challengeLoading,setChallengeLoading]=useState(false);
+  const[sceneNo,setSceneNo]=useState(0); // numer scenki w nagłówku, ustalany przy losowaniu
 
   // Osoby z włączonymi powiadomieniami (także ze starej wersji) dostają aktualną subskrypcję push
   useEffect(()=>{
@@ -1166,6 +1169,7 @@ function App(){
 
   const getScene=useCallback((level)=>{
     const sc=drawScene(level,usedIds);
+    setSceneNo(stats.t+1);
     if(sc){
       setUsedIds(prev=>{const n=new Set(prev);n.add(sc.id);return n});
       setSc(sc);
@@ -1177,7 +1181,7 @@ function App(){
       const sc2=drawScene(level,new Set());
       if(sc2){setSc(sc2);setScr("scene");setErr(null);setUsedIds(new Set([sc2.id]))}
     }
-  },[usedIds]);
+  },[usedIds,stats.t]);
 
   const startGame=(l)=>{
     setLv(l);
@@ -1249,7 +1253,7 @@ function App(){
     try{
       const raw=await callAPI(customReq(customTxt.trim()));
       const sc={id:9999,level:raw.level||2,sex:raw.sex==="m"||raw.sex==="f"?raw.sex:null,situation:raw.situation,teen_says:raw.teen_says};
-      setSc(sc);setScr("scene");setCustomMode(true);setCustomTxt("");
+      setSc(sc);setSceneNo(stats.t+1);setScr("scene");setCustomMode(true);setCustomTxt("");
     }catch(e){
       setErr(e instanceof LimitError?LIMIT_MSG(e):"Nie udało się wygenerować scenki. Spróbuj ponownie.");
     }
@@ -1464,7 +1468,7 @@ function App(){
     </div></div>);
 
   return(<>
-    <div className="tb"><button className="bb" onClick={goHome}>← Menu</button><span className="tl">{dotdMode?"⭐ Scenka Dnia":`${le(lv)} Poziom ${lv}${stats.t>0?` · Scenka ${stats.t+1}`:""}`}</span><button className="hb" onClick={()=>setShowHelp(!showHelp)}>?</button></div>
+    <div className="tb"><button className="bb" onClick={goHome}>← Menu</button><span className="tl">{dotdMode?"⭐ Scenka Dnia":`${le(lv)} Poziom ${lv}${(scr==="scene"||scr==="feedback")&&sceneNo>1?` · Scenka ${sceneNo}`:""}`}</span><button className="hb" onClick={()=>setShowHelp(!showHelp)}>?</button></div>
 
     {showHelp&&<div className="help fu">
       <div style={{fontSize:"40px",textAlign:"center",marginBottom:"8px"}}>💡</div>
@@ -1633,7 +1637,7 @@ function App(){
     </div>}
 
     <EmotionPanel open={emoPanelOpen} onClose={()=>setEmoPanelOpen(false)} />
-    {(scr==="scene"||scr==="feedback")&&!loading&&!showHelp&&<button className="emo-fab" onClick={()=>setEmoPanelOpen(true)} title="Mapa emocji">🧭</button>}
+    {(scr==="scene"||scr==="feedback")&&!loading&&!showHelp&&<><div className="emo-fab-space"/><button className="emo-fab" onClick={()=>setEmoPanelOpen(true)} title="Mapa emocji">🧭</button></>}
 
     {!showHelp&&scr==="custom"&&!loading&&<div className="fw fu">
       <div style={{textAlign:"center",padding:"10px 0 16px"}}>
