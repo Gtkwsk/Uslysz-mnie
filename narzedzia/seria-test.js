@@ -64,7 +64,7 @@ http.createServer((q, r) => {
   await answer(pg); const t2 = await title(pg); ok(t2 === t1, "ocena tej samej scenki: „" + t2 + "”");
   await pg.click("text=Udoskonal odpowiedź"); await pg.waitForSelector("textarea"); const t3 = await title(pg); ok(t3 === t1, "udoskonalenie tej samej scenki: „" + t3 + "”");
   await answer(pg); ok(await title(pg) === t1, "ocena po udoskonaleniu: „" + await title(pg) + "”");
-  await pg.click("text=Następna sytuacja"); await pg.waitForSelector("textarea"); const t4 = await title(pg); ok(t4.endsWith("Scenka 7"), "następna scenka (2 oceny w statystyce): „" + t4 + "”");
+  await pg.click("text=Następna sytuacja"); await pg.waitForSelector("textarea"); const t4 = await title(pg); ok(t4.endsWith("Scenka 6"), "następna scenka (poprawka nie liczy się jako nowa): „" + t4 + "”");
   await ctx.close();
   ({ ctx, pg } = await open(st(0, null, 0)));
   await pg.click("text=Poziom 1"); await pg.waitForSelector("textarea"); ok(await title(pg) === "🟢 Poziom 1", "pierwsza scenka bez numeru: „" + await title(pg) + "”");

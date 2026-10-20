@@ -607,9 +607,13 @@ function loadHistory(){
 function saveHistory(hist){
   try{localStorage.setItem(HIST_KEY,JSON.stringify(hist.slice(0,50)))}catch(e){}
 }
-function addToHistory(scene,response,score){
+function addToHistory(scene,response,score,retry){
   const hist=loadHistory();
-  hist.unshift({ctx:scene.situation,says:scene.teen_says,resp:response,score,date:new Date().toISOString().slice(0,10),lv:scene.level});
+  const entry={ctx:scene.situation,says:scene.teen_says,resp:response,score,date:new Date().toISOString().slice(0,10),lv:scene.level};
+  // Poprawka tej samej scenki: jeden wpis z najlepszą odpowiedzią
+  if(retry&&hist[0]&&hist[0].ctx===entry.ctx&&hist[0].says===entry.says){
+    if(score>hist[0].score)hist[0]=entry;
+  }else hist.unshift(entry);
   saveHistory(hist);
 }
 
@@ -1101,6 +1105,9 @@ function App(){
   const[notifFailed,setNotifFailed]=useState(false);
   const[challengeLoading,setChallengeLoading]=useState(false);
   const[sceneNo,setSceneNo]=useState(0); // numer scenki w nagłówku, ustalany przy losowaniu
+  // Najlepszy dotąd wynik bieżącej scenki ({score,trap}) albo null przed pierwszą odpowiedzią.
+  // Scenka liczy się w postępie raz: poprawka podmienia jej wynik tylko wtedy, gdy jest lepsza.
+  const sceneBest=useRef(null);
 
   // Osoby z włączonymi powiadomieniami (także ze starej wersji) dostają aktualną subskrypcję push
   useEffect(()=>{
@@ -1121,22 +1128,37 @@ function App(){
 
   useEffect(()=>{
     if(!fbDone||!fb)return;
-    setSt(s=>({t:s.t+1,ts:s.ts+fb.score,b:Math.max(s.b,fb.score)}));
+    const prevBest=sceneBest.current; // null: pierwsza odpowiedź na tę scenkę
+    const better=!prevBest||fb.score>prevBest.score;
+    if(better)sceneBest.current={score:fb.score,trap:fb.trap_detected||null};
+    const newStats={
+      t:stats.t+(prevBest?0:1),
+      ts:stats.ts+(prevBest?Math.max(0,fb.score-prevBest.score):fb.score),
+      b:Math.max(stats.b,fb.score)
+    };
+    setSt(newStats);
     const curLv=scene?.level||lv;
-    if(fb.score>=7){
+    if(fb.score>=7&&(!prevBest||prevBest.score<7)){
       setLvGood(s=>{const n={...s,[curLv]:s[curLv]+1};
         if(n[curLv]>=10&&curLv<3){setLv(curLv+1);setNote("🎉 Świetna robota! Masz już "+n[curLv]+" dobrych odpowiedzi na tym poziomie — czas na wyższy.");}
         return n;});
     }
-    if(fb.score<6){setLs(s=>s+1)}else{setLs(0)}
-    if(fb.trap_detected)setTc(c=>({...c,[fb.trap_detected]:(c[fb.trap_detected]||0)+1}));
-    if(ls>=2&&fb.score<5&&lv>1){setLv(l=>l-1);setNote("Wracasz na łatwiejszy poziom — to normalne, ćwicz dalej!")}
+    if(!prevBest){
+      if(fb.score<6){setLs(s=>s+1)}else{setLs(0)}
+      if(ls>=2&&fb.score<5&&lv>1){setLv(l=>l-1);setNote("Wracasz na łatwiejszy poziom — to normalne, ćwicz dalej!")}
+    }else if(fb.score>=6)setLs(0);
+    if(better&&(fb.trap_detected||prevBest?.trap))setTc(c=>{
+      const n={...c};
+      if(prevBest?.trap)n[prevBest.trap]=Math.max(0,(n[prevBest.trap]||0)-1);
+      if(fb.trap_detected)n[fb.trap_detected]=(n[fb.trap_detected]||0)+1;
+      return n;
+    });
     
     // ── SPRAWDŹ ODZNAKI ──
     setTimeout(()=>{
       const currentHist=loadHistory();
       const bd=computeBadgeData(
-        {t:stats.t+1,ts:stats.ts+fb.score,b:Math.max(stats.b,fb.score)},
+        newStats,
         currentHist,streak,dotd
       );
       const prev=loadBadges();
@@ -1154,12 +1176,12 @@ function App(){
         setBadgeToast(newBadge);
         setTimeout(()=>setBadgeToast(null),3500);
         // Pokaż baner powiadomień przy odznace "Idziesz do przodu" (3 scenki)
-        if(newBadge.id==="going_forward"&&canAskNotif(notifState,stats.t+1)){
+        if(newBadge.id==="going_forward"&&canAskNotif(notifState,newStats.t)){
           setTimeout(()=>setShowNotifBanner(true),4000); // po toaście odznaki
         }
       }
       // Drugi trigger: 8 scenek bez odznaki
-      if(!newBadge&&canAskNotif(notifState,stats.t+1)){
+      if(!newBadge&&prevBest===null&&canAskNotif(notifState,newStats.t)){
         setTimeout(()=>setShowNotifBanner(true),1500);
       }
     },500);
@@ -1169,7 +1191,7 @@ function App(){
 
   const getScene=useCallback((level)=>{
     const sc=drawScene(level,usedIds);
-    setSceneNo(stats.t+1);
+    setSceneNo(stats.t+1);sceneBest.current=null;
     if(sc){
       setUsedIds(prev=>{const n=new Set(prev);n.add(sc.id);return n});
       setSc(sc);
@@ -1198,7 +1220,7 @@ function App(){
       const f=await callAPI(feedbackReq(scene,t));
       setFb(f);setScr("feedback");setFD(true);setTeenTyping(true);setTimeout(()=>setTeenTyping(false),1400);
       setStreak(markToday({streak:streak.streak,lastDay:streak.lastDay}));
-      addToHistory(scene,t,f.score);setHistory(loadHistory());
+      addToHistory(scene,t,f.score,sceneBest.current!==null);setHistory(loadHistory());
       // Zapisz wynik Scenki Dnia
       if(dotdMode){
         const dotdData={date:today,score:f.score,response:t};
@@ -1217,7 +1239,7 @@ function App(){
   const goHome=()=>{setScr("start");setSc(null);setFb(null);setErr(null);setNote(null);setShowHelp(false);setLs(0);setCustomMode(false);setCustomTxt("");setDotdMode(false);setCopied(false);setShowBadges(false)};
 
   const startDotd=()=>{
-    setSc(dailyScene);setScr("scene");setDotdMode(true);setErr(null);setFb(null);setPr("");setTxt("");
+    setSc(dailyScene);sceneBest.current=null;setScr("scene");setDotdMode(true);setErr(null);setFb(null);setPr("");setTxt("");
   };
 
   const shareDotd=async()=>{
@@ -1253,7 +1275,7 @@ function App(){
     try{
       const raw=await callAPI(customReq(customTxt.trim()));
       const sc={id:9999,level:raw.level||2,sex:raw.sex==="m"||raw.sex==="f"?raw.sex:null,situation:raw.situation,teen_says:raw.teen_says};
-      setSc(sc);setSceneNo(stats.t+1);setScr("scene");setCustomMode(true);setCustomTxt("");
+      setSc(sc);setSceneNo(stats.t+1);sceneBest.current=null;setScr("scene");setCustomMode(true);setCustomTxt("");
     }catch(e){
       setErr(e instanceof LimitError?LIMIT_MSG(e):"Nie udało się wygenerować scenki. Spróbuj ponownie.");
     }

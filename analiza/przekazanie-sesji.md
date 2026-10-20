@@ -95,6 +95,7 @@ Wymagania: Node 22, `npm ci` w katalogu repozytorium, Playwright zainstalowany g
 | `icons.js` | renderowanie ikon z emoji 👂 (Noto Color Emoji). |
 | `shot.js` | zrzuty stron prywatności, quizu i 404 w szerokości telefonu. |
 | `seria-test.js` | seria dni (otwarcie aplikacji jej nie zwiększa), numer scenki w nagłówku (ten sam od losowania do oceny i udoskonalenia), przycisk 🧭 nie zasłania końca ekranu w trzech rozmiarach telefonu. |
+| `poprawka-test.js` | liczenie poprawek („Spróbuj ponownie”, „Udoskonal odpowiedź”): scenka liczy się raz, z najlepszym wynikiem, w statystykach, poziomie, pułapkach, historii i podsumowaniu. |
 
 Typowy komplet po zmianie aplikacji: `uitest.js`, `uitest2.js`, `limittest.js`, `pwatest.js` (porty np. 8765, 8767, 8771, 8791), po zmianie funkcji dodatkowo `api-test.mjs` i `push-test.mjs`.
 
