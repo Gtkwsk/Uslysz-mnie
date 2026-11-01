@@ -12,9 +12,10 @@ export const dayKey = (date = new Date()) =>
 const ipHash = (ip) => createHash("sha256").update("uslysz-mnie:" + ip).digest("hex").slice(0, 32);
 
 // Hojny limit na adres, bo cała szkoła albo rodzina może wychodzić do internetu z jednego IP.
+// 1000 wystarcza na test „Sprawdź się” (11 zapytań) dla 50 osób w jednej sieci, np. na warsztatach, z zapasem.
 // Limit dla całej aplikacji wyznacza najwyższy możliwy koszt dnia. Oba można zmienić zmiennymi LIMIT_IP i LIMIT_DAY w Netlify.
 export const limits = () => ({
-  ip: Number(process.env.LIMIT_IP) || 500,
+  ip: Number(process.env.LIMIT_IP) || 1000,
   day: Number(process.env.LIMIT_DAY) || 2000,
 });
 

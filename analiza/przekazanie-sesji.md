@@ -60,7 +60,7 @@ narzedzia/               skrypty testowe i pomocnicze (opis w punkcie 6)
 **Ocena odpowiedzi przez AI (`netlify/functions/api.mjs`)**
 - Telefon wysyła tylko dane: `{type:"feedback", level, girl, situation, teen_says, response}` albo `{type:"custom", description}`. Model (`gpt-5.6-terra`), instrukcje (`netlify/lib/prompts.mjs`: `SYS_FEEDBACK`, `SYS_CUSTOM`), `reasoning_effort` ("medium") i limit odpowiedzi (1024 tokeny) ustala serwer. Inne zapytania dostają 400.
 - Klucz OpenAI: zmienna środowiskowa Netlify `OPEN_API_KEY`. Automatyczne doładowanie salda w OpenAI jest wyłączone (saldo to górna granica wydatków). Osobny klucz tylko dla aplikacji jest opcjonalny i niewykonany.
-- Limity dzienne w Netlify Blobs (magazyn `limity`): 500 ocen na adres IP (zapis jako skrót; do 2026-11-01 było 100) i 2000 dla całej aplikacji; dzień liczony czasem polskim. Zmienne `LIMIT_IP`, `LIMIT_DAY` nadpisują wartości. `limits-cleanup.mjs` (@daily) usuwa stare liczniki. Po przekroczeniu serwer zwraca 429 z `scope` ("ip" lub "all"), a aplikacja pokazuje komunikat bez ponawiania.
+- Limity dzienne w Netlify Blobs (magazyn `limity`): 1000 ocen na adres IP (zapis jako skrót; do 2026-11-01 było 100) i 2000 dla całej aplikacji; dzień liczony czasem polskim. Zmienne `LIMIT_IP`, `LIMIT_DAY` nadpisują wartości. `limits-cleanup.mjs` (@daily) usuwa stare liczniki. Po przekroczeniu serwer zwraca 429 z `scope` ("ip" lub "all"), a aplikacja pokazuje komunikat bez ponawiania.
 - Aplikacja ponawia zapytanie najwyżej raz (łącznie 2 próby) i tylko po błędzie sieci, 502/503/504 lub nieczytelnej odpowiedzi.
 
 **Przypomnienia (push)**
@@ -117,7 +117,7 @@ Typowy komplet po zmianie aplikacji: `uitest.js`, `uitest2.js`, `limittest.js`, 
 - Zmiany w aplikacji do rozważenia: przycisk zgłaszania odpowiedzi wygenerowanej przez AI (wymóg Google dla treści AI); okienko instalacji w TWA i tak się nie pokaże (tryb standalone), ale warto sprawdzić; powiadomienia w TWA (Android 13+ pyta o zgodę).
 - Materiały do sklepu: opis krótki (do 80 znaków) i pełny, grafika funkcji 1024×500, ikona 512 (jest), zrzuty ekranu z proporcjami najwyżej 2:1 (obecne w `public/screenshots/` mają 780×1688, czyli za wysokie dla sklepu), polityka prywatności (jest), formularz bezpieczeństwa danych, klasyfikacja wiekowa, grupa docelowa dorośli, kategoria Rodzicielstwo.
 - **Bezpłatna czy płatna:** Google pisze, że po udostępnieniu aplikacji jako bezpłatnej nie można zmienić jej na płatną; trzeba wtedy utworzyć nową aplikację z nowym identyfikatorem pakietu (to osobna pozycja w sklepie, bez instalacji i ocen, a na koncie prywatnym najpewniej ponowny test zamknięty). Płatną można zmienić na bezpłatną, ale nie z powrotem. W formularzu tworzenia aplikacji wybiera się „bezpłatna/płatna”; nie ustalono, czy nigdy nieopublikowana aplikacja jest już zablokowana (sprawdzić w Play Console, strona „Ceny aplikacji”). Nowa wersja (aktualizacja) tej samej aplikacji nie zmienia typu. Zarabiać można później w bezpłatnej aplikacji przez abonament lub zakup w aplikacji (profil płatności w Play Console, produkty w Monetyzacji); za treści cyfrowe w aplikacji ze sklepu Google wymaga Google Play Billing, a w TWA opisano to przez Digital Goods API (wymaga przebudowania paczki i weryfikacji zakupów na serwerze; dokumentacja częściowo sprzed kilku lat). Prowizje zmieniły się od 30 czerwca 2026 w EOG (według strony Google subskrypcje 10% plus 5% za rozliczenie przez Google Play; tabela nieczytelna, potwierdzić w konsoli). Skutki podatkowe sprzedaży do ustalenia przez użytkownika z księgowym.
-- Koszty AI rosną z użyciem; limity 500/2000 chronią budżet, a ewentualny model „bezpłatnie z limitem, abonament bez limitu” wymagałby rozpoznawania płacących po stronie serwera (aplikacja nie ma kont).
+- Koszty AI rosną z użyciem; limity 1000/2000 chronią budżet, a ewentualny model „bezpłatnie z limitem, abonament bez limitu” wymagałby rozpoznawania płacących po stronie serwera (aplikacja nie ma kont).
 
 **Inne**
 - Test na prawdziwym telefonie (instalacja, trzy scenki, zgoda na przypomnienia, powiadomienie próbne, przypomnienie o 20:00) jest po stronie użytkownika; wyniku nie zgłosił.
@@ -181,7 +181,7 @@ Wartości kluczy i haseł nie są nigdzie zapisane w repozytorium i nie należy 
 - Wdrażanie automatyczne z `main`. `netlify.toml`: `publish = "public"`, funkcje w `netlify/functions`.
 - **Zmienne środowiskowe używane przez kod:**
   - `OPEN_API_KEY` (wymagana): klucz OpenAI, ustawiony przez autora.
-  - `LIMIT_IP` i `LIMIT_DAY` (opcjonalne, nadpisują 500 i 2000). Według rozmowy nie były ustawiane, więc działają wartości domyślne. Panelu nie sprawdzano.
+  - `LIMIT_IP` i `LIMIT_DAY` (opcjonalne, nadpisują 1000 i 2000). Według rozmowy nie były ustawiane, więc działają wartości domyślne. Panelu nie sprawdzano.
   - Innych zmiennych kod nie czyta.
   - Zmiana zmiennej działa dopiero po ponownym wdrożeniu (Deploys → Trigger deploy).
 - **Klucze VAPID** do przypomnień nie są zmiennymi. Funkcja `push` tworzy je sama przy pierwszym użyciu i zapisuje w Netlify Blobs (magazyn `przypomnienia`, klucz `vapid`). Usunięcie tego wpisu unieważni wszystkie subskrypcje.
@@ -216,7 +216,7 @@ Wartości kluczy i haseł nie są nigdzie zapisane w repozytorium i nie należy 
 - Cała stara baza zastąpiona pulą v2, pisaną od zera bez znajomości starych scenek, według `analiza/instrukcja-nowe-scenki.md`.
 - 10 „scenek z życia” odrzucone („Nie bierz ich”).
 - Aplikacja na telefon: wybrany wariant „dopracowana PWA z propozycją instalacji po uruchomieniu” (jest). App Store odłożony (99 USD rocznie, potrzebny Mac, ryzyko odrzucenia opakowanej strony).
-- Limity: proponowane 40 na adres IP, autor zmienił na 100 dziennie, a 2026-11-01 (po dodaniu testu „Sprawdź się”, 11 zapytań na test) na 500. 2000 dziennie łącznie bez zmian.
+- Limity: proponowane 40 na adres IP, autor zmienił na 100 dziennie, a 2026-11-01 (po dodaniu testu „Sprawdź się”, 11 zapytań na test) na 1000, żeby test wystarczył dla 50 osób naraz w jednej sieci (warsztaty: 50 × 11 = 550 zapytań z jednego IP). 2000 dziennie łącznie bez zmian.
 - Polityka prywatności: administrator Robert Gutkowski, kontakt gtkwsk@gmail.com, adres publicznie na stronie. Data w polityce: 7 października 2026.
 - Quiz: nad wypowiedzią nie ma podpisu „Twój syn mówi”. Opis kończy się „Po chwili wychodzi i mówi:”, tak samo w tekście wyzwania dla znajomego.
 - **Cytaty:** «…» w wypowiedziach, „…” w opisach, mowa zależna tam, gdzie brzmi naturalniej. Zasada autora: „Forma ma nie przeszkadzać, żeby rodzic skupił się na tym, czego się uczy.”
