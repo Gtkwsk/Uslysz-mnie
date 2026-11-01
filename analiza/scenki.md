@@ -1,6 +1,6 @@
 # Usłysz Mnie: pytania w aplikacji
 
-Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `114b3fa`, 2026-10-07.
+Eksport z `index.html` (tablica `SCENARIOS_DB`), commit `7444bf8`, 2026-11-01.
 Te same dane do arkusza: [`scenki.csv`](scenki.csv) (Excel, separator „;”), do dalszej obróbki: [`scenki.json`](scenki.json).
 
 ## Spis treści
@@ -667,7 +667,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **115.** `id 115` · dziewczyna, 15 l.  
 *Październik, pierwsza klasa liceum. 15-latka wraca ze szkoły i siada do obiadu z telefonem, na którym nie ma żadnych nowych wiadomości.*  
-„Dalej jem na przerwie sama. Dwa miesiące. Wszyscy mają już swoje grupki i nie wiem, jak się do którejś wcisnąć.”  
+„Dalej jestem na przerwie sama. Dwa miesiące. Wszyscy mają już swoje grupki i nie wiem, jak się do którejś wcisnąć.”  
 → emocja: **samotność** · dystraktory: odrzucenie, wstyd, niepewność
 
 **116.** `id 116` · chłopak, 18 l.  
@@ -1037,7 +1037,7 @@ Rozkład wieku: 13 lat (20) · 14 lat (41) · 15 lat (55) · 16 lat (45) · 17 l
 
 **185.** `id 185` · dziewczyna, 15 l.  
 *15-latka pokazuje mamie dyplom z konkursu szkolnego. Mama mówi, że starsza siostra w tym wieku była już w finale wojewódzkim.*  
-„Zawsze ona. Przychodzę z czymś swoim i słyszę o niej. Jakby mnie nie było.”  
+„Zawsze ona. Przychodzę z czymś swoim i słyszę o niej. Jakbym była nieważna.”  
 → emocja: **żal** · dystraktory: niesprawiedliwość, zazdrość, złość
 
 **186.** `id 186` · chłopak, 14 l.  
