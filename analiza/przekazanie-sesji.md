@@ -54,6 +54,7 @@ narzedzia/               skrypty testowe i pomocnicze (opis w punkcie 6)
 - Płeć nastolatka: `sex` ("m"/"f") steruje formami („Nastolatek/Nastolatka”, „zrozumiany/zrozumiana”) i trafia do oceny; dla scenek własnych AI zwraca `sex`.
 - Funkcje: Scenka Dnia (wybór deterministyczny wg daty, jeden strzał dziennie), seria dni, odznaki, historia, „Moja sytuacja” (AI tworzy scenkę z opisu rodzica), wyzwanie dla znajomego (stały quiz), pomoc „Jak reagować?”, panel emocji, onboarding.
 - Klucze `localStorage`: `uslysz_mnie_v4` (postęp), `_hist`, `_dotd`, `_badges`, `_onb`, `_notif`, `_install`, `_push`.
+- Test „Sprawdź się” (od 2026-11-01, komponent `TestFlow`): kafelek przed Poziomem 1, 10 stałych scenek (`TEST_IDS`: 10, 22, 76, 67, 86, 114, 115, 126, 186, 191). Każda odpowiedź jest oceniana w tle zwykłym zapytaniem `feedback`, ocen nie widać do końca. Po ostatniej scence zapytanie `test_summary` (instrukcja `SYS_TEST`, limit 3000 tokenów) opisuje styl odpowiadania, mocne strony, 2–3 rzeczy do poćwiczenia i ciepłe zakończenie. Wynik liczbowy to suma ocen (0–100), liczona w aplikacji. Test w toku: `uslysz_mnie_test`, ostatni wynik: `uslysz_mnie_test_wynik`. Test liczy się do serii dni, ale nie do statystyk, poziomu, odznak ani historii treningu. Jeden test to 11 zapytań do AI.
 - Propozycja instalacji (`InstallBanner`): okienko po 1,2 s na ekranie startowym, raz na uruchomienie; Android: przycisk (zdarzenie `beforeinstallprompt`), iPhone: instrukcja „Udostępnij → Do ekranu początkowego” (Safari i Chrome iOS, nie przeglądarki Facebooka/Instagrama); ukryte w trybie `standalone`, na komputerze i na 3 dni po „Nie teraz”.
 
 **Ocena odpowiedzi przez AI (`netlify/functions/api.mjs`)**
@@ -96,6 +97,7 @@ Wymagania: Node 22, `npm ci` w katalogu repozytorium, Playwright zainstalowany g
 | `shot.js` | zrzuty stron prywatności, quizu i 404 w szerokości telefonu. |
 | `seria-test.js` | seria dni (otwarcie aplikacji jej nie zwiększa), numer scenki w nagłówku (ten sam od losowania do oceny i udoskonalenia), przycisk 🧭 nie zasłania końca ekranu w trzech rozmiarach telefonu. |
 | `poprawka-test.js` | liczenie poprawek („Spróbuj ponownie”, „Udoskonal odpowiedź”): scenka liczy się raz, z najlepszym wynikiem, w statystykach, poziomie, pułapkach, historii i podsumowaniu. |
+| `sprawdz-test.js` | test „Sprawdź się”: kafelek przed Poziomem 1, brak ocen po drodze, oceny w tle, przerwa i powrót, błąd analizy i ponowienie, wynik, styl, polecany poziom, brak wpływu na statystyki treningu. |
 
 Typowy komplet po zmianie aplikacji: `uitest.js`, `uitest2.js`, `limittest.js`, `pwatest.js` (porty np. 8765, 8767, 8771, 8791), po zmianie funkcji dodatkowo `api-test.mjs` i `push-test.mjs`.
 

@@ -114,3 +114,37 @@ FORMAT — WYŁĄCZNIE czysty JSON:
 export const customMsg = (description) => `Rodzic opisuje sytuację: "${description}"
 
 Wygeneruj scenkę. WYŁĄCZNIE czysty JSON.`;
+
+// Test „Sprawdź się”: 10 odpowiedzi rodzica, każda już oceniona przez SYS_FEEDBACK.
+// Wynik liczbowy (suma ocen) liczy aplikacja; tu powstaje opis sposobu odpowiadania.
+export const SYS_TEST = `Rodzic nastolatka zrobił test „Sprawdź się”: 10 krótkich scenek, w każdej odpowiedział własnymi słowami na to, co powiedział nastolatek. Każda odpowiedź jest już oceniona w skali 1-10 według metody Faber-Mazlish (nagradzane: nazywanie uczuć i echo; pułapki: rada, ratowanie, pocieszanie, tłumaczenie, moralizowanie, bagatelizowanie, porównywanie, wypytywanie, przełączanie na siebie, logika, nietrafne nazwanie uczucia; na poziomie 3, gdy złość nastolatka jest skierowana na rodzica, także obrona, kontratak i wzbudzanie poczucia winy). Ocen nie zmieniaj.
+
+ZADANIE: na podstawie wszystkich 10 odpowiedzi opisz SPOSÓB odpowiadania tego rodzica i to, co warto poćwiczyć. Szukaj wzorców, które powtarzają się w kilku odpowiedziach, a nie pojedynczych potknięć. Sprawdź, czy sposób odpowiadania zmienia się od poziomu 1 do poziomu 3.
+
+STYL: nazwij go jednym z określeń albo połączeniem dwóch (np. "Towarzysz z odruchem Doradcy"):
+- Towarzysz: jest przy dziecku, nazywa uczucia, odbija to, co słyszy.
+- Doradca: szybko przechodzi do rozwiązań i rad.
+- Pocieszyciel: uspokaja, zapewnia, że będzie dobrze, umniejsza problem.
+- Wyjaśniacz: tłumaczy, daje szerszą perspektywę, przekonuje logiką.
+- Wychowawca: ocenia, poucza, moralizuje.
+- Pytający: dopytuje o szczegóły zamiast usłyszeć uczucie.
+- Obrońca: przy złości dziecka broni siebie, tłumaczy się albo odpowiada atakiem.
+
+TON: ciepło, z szacunkiem i nadzieją, jak życzliwy superwizor, który widzi starania. Najpierw to, co już wychodzi, potem kierunek rozwoju. Za każdym odruchem rodzica stoi dobra intencja (troska, chęć pomocy, chęć ochrony): nazwij ją. Bez oceniania osoby, bez straszenia, bez żargonu psychologicznego.
+Zwracaj się bezpośrednio ("Twoje odpowiedzi", "umiesz"), formami neutralnymi płciowo: nie używaj czasowników w czasie przeszłym z rodzajem (nie "zrobiłeś" ani "zrobiłaś"; pisz "w kilku odpowiedziach pojawia się..."). Odwołuj się do konkretnych scenek opisem (np. "przy przegranym karnym"), nie numerem.
+
+POLSZCZYZNA: prosto i po ludzku, bez kalek z angielskiego. Przykładowe zdania do dziecka: najwyżej 10 słów, w 2. osobie, tak jak rodzic mówi w kuchni, w rodzaju zgodnym z płcią nastolatka ze scenki, do której się odnoszą.
+
+FORMAT: WYŁĄCZNIE czysty JSON (proste cudzysłowy "):
+{"style_name":"nazwa stylu","style":"2-3 zdania: jak ten rodzic zwykle odpowiada i jaka dobra intencja za tym stoi","strengths":"1-2 zdania: co już dobrze wychodzi, konkretnie","improve":[{"tip":"1 zdanie: co poćwiczyć","example":"przykładowe zdanie do dziecka z jednej ze scenek"}],"encouragement":"1-2 ciepłe zdania na koniec, które dodają odwagi"}
+improve: 2 albo 3 punkty, od najważniejszego.`;
+
+export const testMsg = (items) => items.map((it, i) => `${i + 1}. POZIOM ${it.level}, ${it.girl ? "nastolatka (dziewczyna)" : "nastolatek (chłopak)"}
+SYTUACJA: ${it.situation}
+MÓWI: "${it.teen_says}"
+ODPOWIEDŹ RODZICA: "${it.response}"
+OCENA: ${it.score}/10${it.trap ? `, pułapka: ${it.trap}` : ""}`).join("\n\n") + `
+
+SUMA: ${items.reduce((a, it) => a + it.score, 0)}/100
+
+Opisz sposób odpowiadania. WYŁĄCZNIE czysty JSON.`;

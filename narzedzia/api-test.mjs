@@ -64,6 +64,30 @@ const env = (store, f, ip = "1.2.3.4") => ({ store, ip, apiKey: "sk-test", fetch
   assert.equal(st.m.size, 2); // tylko jedno poprawne zapytanie policzone (all + ip)
   ok("odrzucone zapytania nie zużywają limitu");
 }
+// 2b) Analiza testu „Sprawdź się”: 10 ocenionych odpowiedzi, dłuższy limit odpowiedzi, instrukcja z serwera
+{
+  const st = new MemStore(), f = openai(200, '{"style":"x"}');
+  const it = (o = {}) => ({ level: 1, girl: false, situation: "15-latek wraca ze szkoły.", teen_says: "Nikt mnie nie lubi.", response: "Czujesz się sam.", score: 7, trap: null, ...o });
+  const items = Array.from({ length: 10 }, (_, i) => it({ level: i < 4 ? 1 : i < 7 ? 2 : 3, girl: i % 2 === 1, score: i + 1, trap: i === 0 ? "Rada" : null }));
+  const r = await handle(req({ type: "test_summary", items }), env(st, f));
+  assert.equal(r.status, 200);
+  const b = f.calls[0].body;
+  assert.equal(b.max_completion_tokens, 3000); assert.equal(b.model, "gpt-5.6-terra");
+  assert.equal(b.messages[0].content, prompts.SYS_TEST);
+  assert.match(b.messages[1].content, /^1\. POZIOM 1, nastolatek \(chłopak\)\nSYTUACJA: 15-latek wraca ze szkoły\.\nMÓWI: "Nikt mnie nie lubi\."\nODPOWIEDŹ RODZICA: "Czujesz się sam\."\nOCENA: 1\/10, pułapka: Rada/);
+  assert.match(b.messages[1].content, /10\. POZIOM 3, nastolatka \(dziewczyna\)/);
+  assert.match(b.messages[1].content, /SUMA: 55\/100/);
+  ok("analiza testu: instrukcja i limit 3000 z serwera, wszystkie 10 odpowiedzi z ocenami w treści");
+  const bad = [
+    items.slice(0, 9), [...items, it()], items.map((x, i) => i ? x : it({ score: 11 })), items.map((x, i) => i ? x : it({ score: 7.5 })),
+    items.map((x, i) => i ? x : it({ trap: "a".repeat(41) })), items.map((x, i) => i ? x : it({ response: "" })),
+    items.map((x, i) => i ? x : it({ level: 0 })), items.map((x, i) => i ? x : null), "nie tablica",
+  ];
+  const statuses = [];
+  for (const x of bad) statuses.push((await handle(req({ type: "test_summary", items: x }), env(st, f))).status);
+  assert.deepEqual(statuses, bad.map(() => 400)); assert.equal(f.calls.length, 1);
+  ok("analiza testu: zła liczba odpowiedzi, wynik spoza 1-10, za długie pola: 400 bez wywołania OpenAI");
+}
 // 3) Limity
 {
   const st = new MemStore(), f = openai();

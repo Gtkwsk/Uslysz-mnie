@@ -1,12 +1,14 @@
-// Ocena odpowiedzi rodzica i scenka z opisu („Moja sytuacja”) przez OpenAI.
+// Ocena odpowiedzi rodzica, scenka z opisu („Moja sytuacja”) i analiza testu „Sprawdź się” przez OpenAI.
 // Telefon wysyła tylko dane; model, instrukcje i długość odpowiedzi ustala serwer,
-// więc funkcja nie służy do niczego poza tymi dwoma zadaniami. Klucz: zmienna OPEN_API_KEY w Netlify.
+// więc funkcja nie służy do niczego poza tymi trzema zadaniami. Klucz: zmienna OPEN_API_KEY w Netlify.
 import { getStore } from "@netlify/blobs";
 import { STORE as LIMITS, takeQuota } from "../lib/limits.mjs";
-import { SYS_FEEDBACK, SYS_CUSTOM, feedbackMsg, customMsg } from "../lib/prompts.mjs";
+import { SYS_FEEDBACK, SYS_CUSTOM, SYS_TEST, feedbackMsg, customMsg, testMsg } from "../lib/prompts.mjs";
 
 const MODEL = "gpt-5.6-terra";
 const MAX_TOKENS = 1024;
+const MAX_TOKENS_TEST = 3000; // analiza 10 odpowiedzi naraz: dłuższe rozumowanie i odpowiedź
+export const TEST_LEN = 10;
 const EFFORT = "medium";
 export const MAX_LEN = { situation: 600, teen_says: 600, response: 1500, description: 1500 };
 
@@ -16,6 +18,13 @@ const json = (data, status = 200) => new Response(JSON.stringify(data), {
 });
 
 const text = (v, max) => typeof v === "string" && v.trim().length > 0 && v.length <= max;
+
+// Jedna odpowiedź z testu „Sprawdź się”, już oceniona (wynik 1-10, pułapka albo null)
+const testItem = (it) => it && typeof it === "object"
+  && [1, 2, 3].includes(it.level) && typeof it.girl === "boolean"
+  && text(it.situation, MAX_LEN.situation) && text(it.teen_says, MAX_LEN.teen_says) && text(it.response, MAX_LEN.response)
+  && Number.isInteger(it.score) && it.score >= 1 && it.score <= 10
+  && (it.trap === null || (typeof it.trap === "string" && it.trap.length <= 40));
 
 // Zwraca wiadomości dla modelu albo null, gdy dane są niepoprawne
 export function buildMessages(body) {
@@ -27,6 +36,14 @@ export function buildMessages(body) {
     return [
       { role: "system", content: SYS_FEEDBACK },
       { role: "user", content: feedbackMsg({ level, girl, situation, teen_says, response }) },
+    ];
+  }
+  if (body.type === "test_summary") {
+    const { items } = body;
+    if (!Array.isArray(items) || items.length !== TEST_LEN || !items.every(testItem)) return null;
+    return [
+      { role: "system", content: SYS_TEST },
+      { role: "user", content: testMsg(items) },
     ];
   }
   if (body.type === "custom") {
@@ -55,7 +72,7 @@ export async function handle(req, { store, ip, apiKey, fetchImpl = fetch }) {
     r = await fetchImpl("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({ model: MODEL, messages, max_completion_tokens: MAX_TOKENS, reasoning_effort: EFFORT }),
+      body: JSON.stringify({ model: MODEL, messages, max_completion_tokens: body.type === "test_summary" ? MAX_TOKENS_TEST : MAX_TOKENS, reasoning_effort: EFFORT }),
     });
   } catch {
     return json({ error: "upstream" }, 502);

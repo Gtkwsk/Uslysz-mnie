@@ -234,6 +234,32 @@ h1{font-size:28px;font-weight:700;color:var(--acd);margin-bottom:4px;letter-spac
 .emo-fab{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:100;transition:all .2s}
 .emo-fab:active{transform:scale(.9)}
 .emo-fab-space{height:56px} /* miejsce pod przyciskiem mapy emocji: koniec ekranu da się przewinąć ponad niego */
+/* ── SPRAWDŹ SIĘ ── */
+.lb-test{border-color:var(--ac)}
+.tst-lead{font-size:16px;line-height:1.6;color:var(--ts)}
+.tst-info{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:var(--ts)}
+.tst-note{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--tm);text-align:center;margin-top:14px}
+.tst-prog{display:flex;gap:5px;margin:2px 0 14px}.tst-prog span{flex:1;height:5px;border-radius:3px;background:var(--bd)}.tst-prog span.d{background:var(--ac)}.tst-prog span.c{background:var(--acl);box-shadow:inset 0 0 0 1.5px var(--ac)}
+.tst-last{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--bd);border-radius:14px;padding:12px 16px}
+.tst-lastl{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.6px}
+.tst-lastn{font-family:'Source Sans 3',sans-serif;font-size:22px;font-weight:800;color:var(--acd)}
+.tst-link{background:none;border:none;color:var(--ac);font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;cursor:pointer;padding:6px 0}
+.tst-score{display:flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border-radius:50%;margin:10px auto 8px;color:#fff;animation:sr .6s cubic-bezier(.34,1.56,.64,1) both}
+.tst-n{font-family:'Source Sans 3',sans-serif;font-size:44px;font-weight:800;line-height:1}.tst-of{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;margin-top:4px}
+.tst-band{font-size:19px;font-weight:700;color:var(--acd)}
+.tst-prev{font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--tm);margin-top:4px}
+.tst-style{background:var(--card);border-radius:16px;padding:18px 20px;box-shadow:0 2px 16px rgba(26,21,18,.06)}.tst-style p{font-size:16px;line-height:1.65;color:var(--ts);margin-top:6px}
+.tst-sn{font-size:21px;font-weight:700;color:var(--acd);margin-top:4px}
+.tst-box{background:var(--wm);border-radius:16px;padding:16px 18px}.tst-box p{font-size:16px;line-height:1.6;color:var(--ts)}
+.tst-good{background:var(--gl)}.tst-good p{color:#155c3e}
+.tst-bt{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:var(--ts);margin-bottom:8px}
+.tst-tip+.tst-tip{margin-top:12px;padding-top:12px;border-top:1px solid var(--bd)}
+.tst-ex{font-style:italic;color:var(--acd)!important;margin-top:4px}
+.tst-enc{font-size:17px;line-height:1.6;color:var(--ts);text-align:center;padding:4px 8px}
+.tst-item{padding:12px 0;border-top:1px solid var(--bd)}.tst-item:first-child{border-top:none;padding-top:0}
+.tst-item p{font-size:15px;line-height:1.55;margin-top:6px}
+.tst-ih{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--tm)}
+.tst-says{font-style:italic;color:var(--ts)}.tst-resp{color:var(--tm)}
 /* ── PROPOZYCJA INSTALACJI ── */
 .inst-sheet{position:fixed;left:12px;right:12px;bottom:12px;max-width:456px;margin:0 auto;background:var(--card);border-radius:20px;box-shadow:0 8px 32px rgba(26,21,18,.18);padding:16px 16px 12px;z-index:80;animation:instUp .35s ease-out both;font-family:'Source Sans 3',sans-serif;text-align:left}
 @keyframes instUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -1062,6 +1088,192 @@ function InstallBanner(){
   </div>;
 }
 
+// ══════════════════════════════════════════════════════════════
+// SPRAWDŹ SIĘ: test z 10 scenek, ocena i analiza dopiero na końcu
+// Każda odpowiedź jest oceniana w tle (ta sama ocena co w treningu), wyników nie widać aż do końca.
+// Po ostatniej scence serwer opisuje sposób odpowiadania (zapytanie test_summary).
+// Wynik liczbowy to suma ocen 10 odpowiedzi (0-100). Test nie wpływa na statystyki treningu.
+// ══════════════════════════════════════════════════════════════
+const TEST_IDS=[10,22,76,67,86,114,115,126,186,191]; // od poziomu 1 do 3, 5 chłopców i 5 dziewczyn, różne tematy
+const TEST_LEN=TEST_IDS.length;
+const TEST_RUN_KEY="uslysz_mnie_test";       // test w toku: {idx, answers, evals}
+const TEST_RES_KEY="uslysz_mnie_test_wynik"; // ostatni wynik z analizą
+const loadJSON=k=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):null}catch(e){return null}};
+const saveJSON=(k,v)=>{try{if(v==null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const testScenes=()=>TEST_IDS.map(id=>{const r=SCENARIOS_DB.find(s=>s.id===id);return{id:r.id,level:r.lv,sex:r.sex,situation:r.ctx,teen_says:r.says}});
+const testBand=t=>t>=85?"Słuchasz bardzo uważnie":t>=70?"Dobrze słyszysz swoje dziecko":t>=50?"Dobry kierunek":"Dobry początek drogi";
+const fmtDay=d=>{try{return new Date(d+"T12:00:00").toLocaleDateString("pl-PL",{day:"numeric",month:"long"})}catch(e){return d}};
+// Poziom do dalszego treningu: pierwszy, na którym średnia z testu jest poniżej 7
+function testLevel(items){
+  for(const l of [1,2]){const xs=items.filter(i=>i.level===l);if(xs.length&&xs.reduce((a,i)=>a+i.score,0)/xs.length<7)return l}
+  return 3;
+}
+function testTileText(){
+  const run=loadJSON(TEST_RUN_KEY),res=loadJSON(TEST_RES_KEY);
+  if(run&&run.idx>0)return run.idx>=TEST_LEN?"Wszystko gotowe, brakuje tylko analizy":`Test w toku: ${run.idx} z ${TEST_LEN}`;
+  if(res)return `Ostatni wynik: ${res.total}/100 · ${fmtDay(res.date)}`;
+  return `${TEST_LEN} sytuacji, wynik i analiza na końcu`;
+}
+
+function TestFlow({onHome,onTrain,onFinished}){
+  const scenes=useRef(testScenes()).current;
+  const runRef=useRef(loadJSON(TEST_RUN_KEY));
+  const[run,setRun]=useState(runRef.current);
+  const[result,setResult]=useState(()=>loadJSON(TEST_RES_KEY));
+  const[view,setView]=useState("intro"); // intro | q | analyzing | error | result
+  const[txt,setTxt]=useState("");
+  const[err,setErr]=useState(null);
+  const pending=useRef({});
+  const updateRun=fn=>{runRef.current=fn(runRef.current);saveJSON(TEST_RUN_KEY,runRef.current);setRun(runRef.current)};
+  useEffect(()=>{window.scrollTo({top:0,behavior:"smooth"})},[view,run&&run.idx]);
+
+  // Ocena jednej odpowiedzi; wynik trafia do zapisanego testu, więc po przerwie nie trzeba oceniać od nowa
+  const evalItem=i=>{
+    const r=runRef.current;
+    if(r.evals[i])return Promise.resolve(r.evals[i]);
+    if(pending.current[i])return pending.current[i];
+    const answer=r.answers[i];
+    const p=callAPI(feedbackReq(scenes[i],answer)).then(f=>{
+      const score=Math.round(+f.score);
+      if(!(score>=1&&score<=10))throw new Error("No JSON");
+      const fb={...f,score};
+      updateRun(x=>x&&x.answers[i]===answer?{...x,evals:Object.assign([...x.evals],{[i]:fb})}:x);
+      return fb;
+    }).finally(()=>{delete pending.current[i]});
+    pending.current[i]=p;
+    return p;
+  };
+
+  const finish=async()=>{
+    setView("analyzing");setErr(null);
+    try{
+      const evals=await Promise.all(scenes.map((_,i)=>evalItem(i)));
+      const r=runRef.current;
+      const items=scenes.map((sc,i)=>{
+        const trap=typeof evals[i].trap_detected==="string"&&evals[i].trap_detected.trim()?evals[i].trap_detected.trim().slice(0,40):null;
+        return{level:sc.level,girl:isGirl(sc),situation:sc.situation,teen_says:sc.teen_says,response:r.answers[i],score:evals[i].score,trap};
+      });
+      const s=await callAPI({type:"test_summary",items});
+      if(!s||typeof s.style!=="string")throw new Error("No JSON");
+      const res={
+        date:new Date().toISOString().slice(0,10),
+        total:items.reduce((a,it)=>a+it.score,0),
+        prev:result?result.total:null,
+        items:items.map((it,i)=>{const sg=evals[i].suggestions||{};return{level:it.level,says:it.teen_says,resp:it.response,score:it.score,
+          works:evals[i].what_works||"",watch:evals[i].watch_out||"",hint:sg.best||sg.naming||sg.warm||""}}),
+        summary:{style_name:s.style_name||"",style:s.style,strengths:s.strengths||"",
+          improve:Array.isArray(s.improve)?s.improve.filter(x=>x&&x.tip).slice(0,3):[],encouragement:s.encouragement||""}
+      };
+      saveJSON(TEST_RES_KEY,res);setResult(res);
+      runRef.current=null;saveJSON(TEST_RUN_KEY,null);setRun(null);
+      setView("result");
+      if(onFinished)onFinished();
+    }catch(e){
+      setErr(e instanceof LimitError?LIMIT_MSG(e):"Nie udało się przygotować analizy. Odpowiedzi są zapisane, można spróbować ponownie.");
+      setView("error");
+    }
+  };
+
+  const start=()=>{pending.current={};updateRun(()=>({idx:0,answers:[],evals:[]}));setTxt("");setView("q")};
+  const resume=()=>{if(runRef.current.idx>=TEST_LEN)finish();else{setTxt("");setView("q")}};
+  const next=()=>{
+    const t=txt.trim();if(!t)return;
+    const i=runRef.current.idx;
+    updateRun(x=>({...x,idx:i+1,answers:Object.assign([...x.answers],{[i]:t}),evals:Object.assign([...x.evals],{[i]:null})}));
+    evalItem(i).catch(()=>{}); // ocena w tle; brakujące oceny finish() pobierze jeszcze raz
+    setTxt("");
+    if(i+1>=TEST_LEN)finish();
+  };
+
+  if(view==="intro"){
+    const inProgress=run&&run.idx>0;
+    return(<div className="fw fu">
+      <div style={{textAlign:"center",padding:"14px 0 4px"}}>
+        <div style={{fontSize:"44px",marginBottom:"10px"}}>📝</div>
+        <h2 style={{fontSize:"22px",color:"var(--acd)",marginBottom:"8px"}}>Sprawdź się</h2>
+        <p className="tst-lead">{TEST_LEN} sytuacji, od łatwiejszych do najtrudniejszych. Odpowiedz na każdą tak, jak w domu, własnymi słowami.</p>
+      </div>
+      <div className="eb"><p className="tst-info">Po drodze nie ma ocen. Na końcu pojawi się wynik w punktach, opis Twojego sposobu odpowiadania i podpowiedzi, co warto poćwiczyć.</p>
+        <p className="tst-info" style={{marginTop:"6px"}}>⏱️ Około 10 minut. Można przerwać i wrócić później.</p></div>
+      {result&&!inProgress&&<div className="tst-last">
+        <div><div className="tst-lastl">Ostatni wynik · {fmtDay(result.date)}</div><div className="tst-lastn">{result.total}/100</div></div>
+        <button className="tst-link" onClick={()=>setView("result")}>Zobacz analizę →</button>
+      </div>}
+      <div className="btns">
+        {inProgress
+          ?<><button className="bp" onClick={resume}>{run.idx>=TEST_LEN?"Dokończ analizę →":`Kontynuuj · sytuacja ${run.idx+1} z ${TEST_LEN} →`}</button>
+            <button className="bp bp-ghost" onClick={start}>Zacznij od nowa</button></>
+          :<button className="bp" onClick={start}>{result?"Zrób test jeszcze raz →":"Zaczynam →"}</button>}
+      </div>
+    </div>);
+  }
+
+  if(view==="q"&&run&&run.idx<TEST_LEN){
+    const i=run.idx,sc=scenes[i];
+    return(<div>
+      <div className="tst-prog" aria-label={`Sytuacja ${i+1} z ${TEST_LEN}`}>{scenes.map((_,k)=><span key={k} className={k<i?"d":k===i?"c":""}/>)}</div>
+      <div className="sc fu" key={i}>
+        <div className="sh"><span className="sg">Sytuacja {i+1} z {TEST_LEN}</span><span className="sg">{le(sc.level)}</span></div>
+        <p className="ss2">{sc.situation}</p>
+        <div className="spb sc-quote"><p className="spt">„{sc.teen_says}”</p></div>
+        <div className="ra sc-input"><label className="rl">Co odpowiadasz?</label>
+          <textarea value={txt} onChange={e=>setTxt(e.target.value)} placeholder="Wpisz swoją odpowiedź..." maxLength={1500} className="ta" rows={3}
+            onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();next()}}}/>
+          <button className="snb" disabled={!txt.trim()} onClick={next}>{i+1<TEST_LEN?"Dalej →":"Zakończ i zobacz wynik"}</button>
+        </div>
+      </div>
+      <p className="tst-note">Ocenę i analizę zobaczysz po ostatniej sytuacji.</p>
+    </div>);
+  }
+
+  if(view==="analyzing")return(<div><Loading text="Analizuję Twoje odpowiedzi"/><p className="tst-note">To może potrwać do pół minuty.</p></div>);
+
+  if(view==="error")return(<div>
+    <div className="err"><p>{err}</p><button onClick={finish}>Spróbuj ponownie</button></div>
+    <div className="btns"><button className="bp bp-ghost" onClick={onHome}>Wróć do menu</button></div>
+  </div>);
+
+  if(view==="result"&&result){
+    const{total,prev,items,summary:s}=result;
+    const diff=prev==null?null:total-prev;
+    const lvRec=testLevel(items);
+    return(<div className="fw fu">
+      <div style={{textAlign:"center",paddingTop:"8px"}}>
+        <div className="tst-lastl">Twój wynik</div>
+        <div className="tst-score" style={{backgroundColor:scol(total/10)}}><span className="tst-n">{total}</span><span className="tst-of">na 100</span></div>
+        <p className="tst-band">{testBand(total)}</p>
+        {diff!=null&&<p className="tst-prev">{diff>0?`To o ${diff} pkt więcej niż poprzednio (${prev}).`:diff===0?`Tyle samo co poprzednio.`:`Poprzednio: ${prev}. Wynik zmienia się z dnia na dzień i to normalne.`}</p>}
+      </div>
+      <div className="tst-style">
+        <div className="tst-lastl">Twój sposób odpowiadania</div>
+        {s.style_name&&<div className="tst-sn">{s.style_name}</div>}
+        <p>{s.style}</p>
+      </div>
+      {s.strengths&&<div className="tst-box tst-good"><div className="tst-bt">💪 Co już Ci wychodzi</div><p>{s.strengths}</p></div>}
+      {s.improve.length>0&&<div className="tst-box"><div className="tst-bt">🌱 Co warto poćwiczyć</div>
+        {s.improve.map((x,k)=><div className="tst-tip" key={k}><p>{x.tip}</p>{x.example&&<p className="tst-ex">„{x.example}”</p>}</div>)}
+      </div>}
+      {s.encouragement&&<div className="tst-enc">💛 {s.encouragement}</div>}
+      <Sec icon="📋" title="Twoje odpowiedzi po kolei">
+        <div className="secb">{items.map((it,k)=><div className="tst-item" key={k}>
+          <div className="tst-ih"><span>{k+1}. {le(it.level)}</span><span style={{color:scol(it.score),fontWeight:700}}>{it.score}/10</span></div>
+          <p className="tst-says">„{it.says}”</p>
+          <p className="tst-resp">Twoja odpowiedź: „{it.resp}”</p>
+          {it.works&&<p>👍 {it.works}</p>}
+          {it.watch&&<p>👀 {it.watch}</p>}
+          {it.hint&&<p>💡 Można powiedzieć: „{it.hint}”</p>}
+        </div>)}</div>
+      </Sec>
+      <div className="btns">
+        <button className="bp" onClick={()=>onTrain(lvRec)}>Ćwicz dalej: Poziom {lvRec} →</button>
+        <button className="bp bp-ghost" onClick={onHome}>Wróć do menu</button>
+      </div>
+    </div>);
+  }
+
+  return null;
+}
+
 function App(){
   const saved=useRef(loadSaved()).current;
   const[scr,setScr]=useState("start");
@@ -1422,6 +1634,9 @@ function App(){
 
       <div className="ib fu2"><p>Ćwiczysz reagowanie na trudne emocje dziecka. Nie ma jednej dobrej odpowiedzi — są lepsze i gorsze sposoby. Odpowiadaj własnymi słowami, tak jak w domu.</p></div>
       <div className="lp fu3">
+        <button className="lb lb-test" onClick={()=>setScr("test")}>
+          <span className="e">📝</span><div><div className="l">Sprawdź się</div><div className="d">{testTileText()}</div></div>
+        </button>
         {[{l:1,la:"Podstawy",d:"Emocja wyraźna, łatwa do odczytania",e:"🟢"},{l:2,la:"Trudniej się powstrzymać",d:"Pokusa rady i naprawy",e:"🟡"},{l:3,la:"Kiedy to o Ciebie chodzi",d:"Emocje skierowane na rodzica",e:"🔴"}].map(x=>(
           <button key={x.l} className="lb" onClick={()=>startGame(x.l)}>
             <span className="e">{x.e}</span><div><div className="l">Poziom {x.l} — {x.la}</div><div className="d">{x.d}</div></div>
@@ -1490,7 +1705,7 @@ function App(){
     </div></div>);
 
   return(<>
-    <div className="tb"><button className="bb" onClick={goHome}>← Menu</button><span className="tl">{dotdMode?"⭐ Scenka Dnia":`${le(lv)} Poziom ${lv}${(scr==="scene"||scr==="feedback")&&sceneNo>1?` · Scenka ${sceneNo}`:""}`}</span><button className="hb" onClick={()=>setShowHelp(!showHelp)}>?</button></div>
+    <div className="tb"><button className="bb" onClick={goHome}>← Menu</button><span className="tl">{scr==="test"?"📝 Sprawdź się":dotdMode?"⭐ Scenka Dnia":`${le(lv)} Poziom ${lv}${(scr==="scene"||scr==="feedback")&&sceneNo>1?` · Scenka ${sceneNo}`:""}`}</span><button className="hb" onClick={()=>setShowHelp(!showHelp)}>?</button></div>
 
     {showHelp&&<div className="help fu">
       <div style={{fontSize:"40px",textAlign:"center",marginBottom:"8px"}}>💡</div>
@@ -1546,7 +1761,7 @@ function App(){
       <button className="bp" style={{marginTop:"12px"}} onClick={()=>setShowHelp(false)}>Wracam do ćwiczenia →</button>
     </div>}
 
-    {!showHelp&&stats.t>0&&<div className="stb"><div className="si"><span className="sn">{stats.t}</span><span className="sl2">sytuacji</span></div><div className="si"><span className="sn">{(stats.ts/stats.t).toFixed(1)}</span><span className="sl2">średnia</span></div><div className="si"><span className="sn">{stats.b}</span><span className="sl2">najlepsza</span></div></div>}
+    {!showHelp&&stats.t>0&&scr!=="test"&&<div className="stb"><div className="si"><span className="sn">{stats.t}</span><span className="sl2">sytuacji</span></div><div className="si"><span className="sn">{(stats.ts/stats.t).toFixed(1)}</span><span className="sl2">średnia</span></div><div className="si"><span className="sn">{stats.b}</span><span className="sl2">najlepsza</span></div></div>}
     {!showHelp&&loading&&(scene&&pr&&scr==="scene"?<FeedbackLoading teenSays={scene.teen_says} parentResp={pr} girl={isGirl(scene)}/>:<Loading text={ldTxt}/>)}
     {!showHelp&&err&&!loading&&<div className="err"><p>{err}</p><button onClick={()=>{setErr(null);if(scr==="custom"){setCustomTxt(customTxt)}else if(!fb)getScene(lv);else{setTxt(pr);setPr("")}}}>Spróbuj ponownie</button></div>}
 
@@ -1656,6 +1871,10 @@ function App(){
           {fb&&fb.score>=7&&fb.score<=8&&<button className="bs" style={{borderColor:"var(--teal)",color:"var(--teal)"}} onClick={retry}>Udoskonal odpowiedź</button>}
         </>}
       </div>
+    </div>}
+
+    {scr==="test"&&<div style={{display:showHelp?"none":"block"}}>
+      <TestFlow onHome={goHome} onTrain={l=>{goHome();startGame(l)}} onFinished={()=>setStreak(s=>markToday({streak:s.streak,lastDay:s.lastDay}))}/>
     </div>}
 
     <EmotionPanel open={emoPanelOpen} onClose={()=>setEmoPanelOpen(false)} />
