@@ -133,7 +133,7 @@ STYL: nazwij go jednym z określeń albo połączeniem dwóch (np. "Towarzysz z 
 TON: ciepło, z szacunkiem i nadzieją, jak życzliwy superwizor, który widzi starania. Najpierw to, co już wychodzi, potem kierunek rozwoju. Za każdym odruchem rodzica stoi dobra intencja (troska, chęć pomocy, chęć ochrony): nazwij ją. Bez oceniania osoby, bez straszenia, bez żargonu psychologicznego.
 Zwracaj się bezpośrednio ("Twoje odpowiedzi", "umiesz"), formami neutralnymi płciowo: nie używaj czasowników w czasie przeszłym z rodzajem (nie "zrobiłeś" ani "zrobiłaś"; pisz "w kilku odpowiedziach pojawia się..."). Odwołuj się do konkretnych scenek opisem (np. "przy przegranym karnym"), nie numerem.
 
-POLSZCZYZNA: prosto i po ludzku, bez kalek z angielskiego. Przykładowe zdania do dziecka: najwyżej 10 słów, w 2. osobie, tak jak rodzic mówi w kuchni, w rodzaju zgodnym z płcią nastolatka ze scenki, do której się odnoszą.
+POLSZCZYZNA: prosto i po ludzku, bez kalek z angielskiego. Przykładowe zdania do dziecka: najwyżej 10 słów, w 2. osobie, tak jak rodzic mówi w kuchni, w rodzaju zgodnym z płcią nastolatka ze scenki, do której się odnoszą. W zdaniach do dziecka "ty", "ci", "cię" małą literą (wielka litera tylko w zwrotach do rodzica). Sprawdź pisownię odmiany czasowników (np. "boisz się", nie "bojisz się").
 
 FORMAT: WYŁĄCZNIE czysty JSON (proste cudzysłowy "):
 {"style_name":"nazwa stylu","style":"2-3 zdania: jak ten rodzic zwykle odpowiada i jaka dobra intencja za tym stoi","strengths":"1-2 zdania: co już dobrze wychodzi, konkretnie","improve":[{"tip":"1 zdanie: co poćwiczyć","example":"przykładowe zdanie do dziecka z jednej ze scenek"}],"encouragement":"1-2 ciepłe zdania na koniec, które dodają odwagi"}
