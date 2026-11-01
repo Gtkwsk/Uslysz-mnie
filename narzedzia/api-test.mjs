@@ -107,8 +107,8 @@ const env = (store, f, ip = "1.2.3.4") => ({ store, ip, apiKey: "sk-test", fetch
   assert.ok([...st.m.keys()].every((k) => !k.includes("9.9.9.9")));
   ok("adresy IP zapisane tylko jako skrót");
   delete process.env.LIMIT_IP; delete process.env.LIMIT_DAY;
-  assert.deepEqual(limits.limits(), { ip: 100, day: 2000 });
-  ok("domyślne limity: 100 na adres, 2000 dziennie");
+  assert.deepEqual(limits.limits(), { ip: 500, day: 2000 });
+  ok("domyślne limity: 500 na adres, 2000 dziennie");
   // nowy dzień (północ w Polsce) zeruje liczniki
   const st2 = new MemStore();
   const late = new Date("2026-10-07T21:59:00Z"), next = new Date("2026-10-07T22:00:30Z"); // 23:59 i 00:00 w Warszawie
