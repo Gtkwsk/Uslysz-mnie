@@ -229,6 +229,8 @@ Wartości kluczy i haseł nie są nigdzie zapisane w repozytorium i nie należy 
   - 82 „Nauczycielka powiedziała”;
   - 136 mama odbiera telefon córki (dwie wcześniejsze wersje z podsłuchiwaniem pod drzwiami autor uznał za nielogiczne);
   - 177 „Mama Tomka to usłyszała i powiedziała mu, a on całej klasie.”
+  - 115 „Dalej jestem na przerwie sama.” (nie „jem”; 2026-11-01);
+  - 185 „Jakbym była nieważna.” (nie „Jakby mnie nie było.”; 2026-11-01).
 - Przegląd stylu robiono na Sonnecie (autor przełączył model, oczekując większej uważności na brzmienie), resztę na Opusie.
 - Google Play: konto prywatne, publikacja później. Bezpłatna czy płatna: nierozstrzygnięte (punkt 8).
 - Kontynuacja pracy na innym koncie Claude.
